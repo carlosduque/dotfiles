@@ -6,7 +6,20 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="wedisagree"
+#ZSH_THEME="amuse"
+#ZSH_THEME="cloud"
+#ZSH_THEME="crunch"
+#ZSH_THEME="cypher"
+#ZSH_THEME="dallas"
+#ZSH_THEME="dieter"
+#ZSH_THEME="gallois"
+#ZSH_THEME="miloshadzic"
+#ZSH_THEME="mrtazz"
+#ZSH_THEME="pygmalion"
+#ZSH_THEME="smt"
+ZSH_THEME="tjkirch"
+#ZSH_THEME="tonotdo"
+#ZSH_THEME="wedisagree"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -57,7 +70,7 @@ export PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-export LC_TYPE="es_HN.UTF-8"
+export LC_ALL="es_HN.UTF-8"
 export LANG="es_HN.UTF-8"
 
 # Preferred editor for local and remote sessions
