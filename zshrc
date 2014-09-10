@@ -59,7 +59,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git ant bundler gem jruby rails rake ruby tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -72,6 +72,7 @@ export PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local
 # export LANG=en_US.UTF-8
 export LC_ALL="es_ES.UTF-8"
 export LC_COLLATE="C"
+
 export LANG="es_ES.UTF-8"
 
 # Preferred editor for local and remote sessions
