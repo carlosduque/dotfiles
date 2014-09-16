@@ -32,5 +32,5 @@
   changed = green
   untracked = blue
 [alias]
-ls = log --pretty='format:%C(cyan)%h %C(dim cyan)%ad %C(reset)%s %C(bold yellow)%d %C(magenta)%an, %C(dim magenta)%ar' --all --date=short
+ls = log --pretty='format:%C(cyan)%h%C(reset) %C(dim cyan)%ad%C(reset) %s %C(bold yellow)%d %C(magenta)%an,%C(reset) %C(dim magenta)%ar' --all --date=short
 lg = log --oneline --decorate --graph
