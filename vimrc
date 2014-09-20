@@ -28,61 +28,57 @@ function MyDiff()
 endfunction
 
 
-" usar config de Vim y no de Vi
-set nocompatible
-
+set nocompatible    "usar config de Vim y no de Vi
 set guifont=consolas:h9
+set autoread        "para actualizar cuando un archivo es leido desde fuera
+set backspace=indent,eol,start   " permitir el backspace sobre todo en modo insert
 
-" para actualizar cuando un archivo es leido desde fuera
-set autoread
+syntax on           "activar el highlight
+filetype on         "enable filetype detection:
+filetype plugin indent on
+filetype plugin on
 
-" permitir el backspace sobre todo en modo insert
-set backspace=indent,eol,start
+colorscheme desert  "para gvim
+set encoding=utf-8  "para que los achivos editados sean UTF-8
 
-" activar el highlight
-syntax on
-
-" enable filetype detection:
-filetype on
-
-" para gvim
-colorscheme desert
-
-" para que los achivos editados sean UTF-8
-set encoding=utf-8
-
-" el folding es manual
-set foldmethod=manual
-
-" Iluminar los elementos buscados
-set hlsearch
-
+set foldmethod=indent "el folding puede ser manual, indent, syntax, expr
+set hlsearch        "iluminar los elementos buscados
 set incsearch
-
-" ignorar el *case* al buscar
-set ignorecase
-
+set ignorecase      "ignorar el *case* al buscar
 set nobackup
-
 set nowb
-
-set noswapfile
-
+set noswapfile      "no temp file
 set nowritebackup
-
-" siempre mostrar la posicion actual
-set ruler
-
+set ruler           "siempre mostrar la posicion actual
 set showmatch
+set showmode        "show the current mode
+set showcmd         "show the partially-typed commands in the status line
+set nowrap          "don't activate wrapping
+set number          "activate line numbers
+
+" ##########################################################
+" Comply to PEP 8(Pythons style guide):
+" ##########################################################
+set autoindent      "al saltar a la siguiente linea q mantenga la  sangria
+set copyindent      "copy the previous indentation on autoindenting
+set expandtab       "para que al presionar tab, inserte espacios y no \\t
+set shiftwidth=4    "number of spaces to use for autoindentingno estoy seguro para que es esto
+set shiftround      "use multiple of shiftwidth when indenting with '<' and '>'
+set tabstop=4       "un tab de 4 espacios
+set softtabstop=4   "para que vim vea los 4 espacios seguidos del tabstop y funcione el backspace eliminando los 4
+set textwidth=120   "numero de columnas antes
+set showmatch       "set show matching parenthesis
+set smarttab        "insert tabs on the start of a line according to shiftwidth, not tabstop
+set history=1000    " remember more commands and search history
+set undolevels=1000 " use many levels of undo
+
+set laststatus=2    "siempre mostrar la barra de estado
 
 " cambiar los colores de la barra de estado
 hi clear StatusLine
 hi clear StatusLineNC
 hi statusline cterm=NONE ctermbg=black ctermfg=lightgreen guibg=black guifg=lightgreen
 hi StatusLineNC cterm=NONE ctermbg=black ctermfg=darkgrey guibg=black guifg=lightgreen
-
-" siempre mostrar la barra de estado
-set laststatus=2
 
 " configurar la barra de estado
 set statusline+=%1*          "color to user mode 1
@@ -116,35 +112,24 @@ set statusline+=\,           "comma
 set statusline+=C:%03c       "current column in three characters left padded by zeros
 set statusline+=\]           "close bracket
 set statusline+=\|           "pipe
-set statusline+=%02p%%\        "current % into file followed by the % sign
-"set statusline+=%)          "end of item group
-
-" que muestre el *modo* actual
-set showmode "show the current mode
-
-"show the partially-typed commands in the status line
-set showcmd
-
-"Do not activate wrapping
-set nowrap
-
-"Activate line numbers
-set number
+set statusline+=%02p%%\      "current % into file followed by the % sign
+"set statusline+=%)           "end of item group
 
 " ##########################################################
-" Comply to PEP 8(Pythons style guide):
+" Plugins 
 " ##########################################################
-set autoindent    "al saltar a la siguiente linea q mantenga la  sangria
-set expandtab     "para que al presionar tab, inserte espacios y no \\t
-set shiftwidth=2  "no estoy seguro para que es esto
-set shiftround    "esto tampoco
-set tabstop=2     "un tab de 4 espacios
+" Pathogen
+execute pathogen#infect()
+call pathogen#helptags() " generate helptags for everything in ‘runtimepath’
 
-" para que vim vea los 4 espacios seguidos del tabstop y funcione el backspace eliminando los 4
-set softtabstop=2
-
-set textwidth=120
-
+" ##########################################################
+" Key bindings 
+" ##########################################################
+let mapleader=","  "set ',' instead of '\' as <leader>
 " para usar 'aspell' usando ctrl+t 
 " map ^T :w!<CR>:!aspell check %<CR>:e! %<CR>
-
+map <leader>nt :NERDTreeToggle<CR>
+nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <CR>
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :source $MYVIMRC<CR>
