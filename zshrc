@@ -65,7 +65,10 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/home/carlos/bin:/Users/carlos/.rvm/gems/ruby-1.9.3-p484/bin:/Users/carlos/.rvm/gems/ruby-1.9.3-p484@global/bin:/Users/carlos/.rvm/rubies/ruby-1.9.3-p484/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin:/Library/Frameworks/JRuby.framework/Versions/Current/bin:/Users/carlos/.rvm/bin:/Users/carlos/.rvm/bin"
+export COMMON_PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/home/carlos/bin"
+export MAC_PATH="/Users/carlos/.rvm/bin:/Users/carlos/.rvm/gems/ruby-1.9.3-p484/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
+export CYG_PATH="C:\\Program Files\\Java\\jdk1.6.0_45\\bin:C:\\Users\\A07942A\\apps\\java\\apache-ant-1.9.4\\bin"
+export PATH=$COMMON_PATH:$MAC_PATH:$CYG_PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -94,8 +97,8 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="mvim ~/.zshrc"
+alias ohmyzsh="mvim ~/.oh-my-zsh"
 
 # Always work in a tmux session if tmux is installed
 if which tmux 2>&1 >/dev/null; then
