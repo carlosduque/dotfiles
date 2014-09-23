@@ -22,6 +22,7 @@ set nocursorline                  "don't highlight all the line of the cursor
 hi CursorLine cterm=NONE ctermbg=darkmagenta ctermfg=white guibg=darkmagenta guifg=white
 set nocursorcolumn        "don't highlight all the column of the cursor
 hi CursorColumn cterm=NONE ctermbg=darkmagenta ctermfg=white guibg=darkmagenta guifg=white
+let g:airline_theme             = 'molokai'
 
 " Searching and movement ---{{{
 set hlsearch            "highlight search
