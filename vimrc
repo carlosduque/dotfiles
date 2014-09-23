@@ -108,14 +108,14 @@ set laststatus=2        "siempre mostrar la barra de estado
 " Key bindings ---{{{
 let mapleader=","  "set ',' instead of '\' as <leader>
 
-" para usar 'aspell' usando ctrl+t 
+" para usar 'aspell' usando ctrl+t
 " map ^T :w!<CR>:!aspell check %<CR>:e! %<CR>
 map <leader>nt :NERDTreeToggle<CR>
 
 " convert markdown to html
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <CR>
 
-" Quickly editing 
+" Quickly editing
 nmap <silent> <leader>ev :vsplit $MYVIMRC<cr>
 nmap <silent> <leader>sv :source $MYVIMRC<cr>
 nmap <silent> <leader>et :vsplit ~/.tmux.conf<cr>
