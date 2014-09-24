@@ -32,7 +32,7 @@ set smartcase
 set showmatch           "set show matching parenthesis
 
 " Fold ---{{{
-set foldmethod=indent   "el folding puede ser manual, indent, syntax, expr
+set foldmethod=manual   "el folding puede ser manual, indent, syntax, expr
 
 " Tabs, spaces and wrapping ---{{{
 set tabstop=4           "un tab de 4 espacios
