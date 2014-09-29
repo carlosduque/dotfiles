@@ -17,9 +17,9 @@ export ZSH=$HOME/dotfiles/oh-my-zsh
 #ZSH_THEME="mrtazz"
 #ZSH_THEME="pygmalion"
 #ZSH_THEME="smt"
-ZSH_THEME="tjkirch"
+#ZSH_THEME="tjkirch"
 #ZSH_THEME="tonotdo"
-#ZSH_THEME="wedisagree"
+ZSH_THEME="wedisagree"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
