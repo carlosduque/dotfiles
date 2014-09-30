@@ -1,25 +1,48 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/dotfiles/oh-my-zsh
+source $HOME/dotfiles/zsh-antigen/antigen.zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="amuse"
-#ZSH_THEME="cloud"
-#ZSH_THEME="crunch"
-#ZSH_THEME="cypher"
-#ZSH_THEME="dallas"
-#ZSH_THEME="dieter"
-#ZSH_THEME="gallois"
+# User configuration
+export EDITOR=vim
+export BROWSER=$(which google-chrome chromium-browser firefox w3m links2 links lynx | grep -Pm1 '^/')
+export TZ=America/Santiago
+
+export COMMON_PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/home/carlos/bin"
+export MAC_PATH="/Users/carlos/.rvm/bin:/Users/carlos/.rvm/gems/ruby-1.9.3-p484/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
+export CYG_PATH="C:\\Program Files\\Java\\jdk1.6.0_45\\bin:C:\\Users\\A07942A\\apps\\java\\apache-ant-1.9.4\\bin"
+export PATH=$COMMON_PATH:$MAC_PATH:$CYG_PATH
+export PATH=$PATH:~/.bin
+# export MANPATH="/usr/local/man:$MANPATH"
+
+antigen use oh-my-zsh
+
+antigen bundles <<EOBUNDLES
+    git
+    ant
+    bundler
+    gem
+    jruby
+    rails
+    rake
+    ruby
+    tmux
+    command-not-found
+    # ZSH port of Fish shell's history search feature.
+    zsh-users/zsh-history-substring-search
+    # Syntax highlighting bundle.
+    zsh-users/zsh-syntax-highlighting
+EOBUNDLES
+
+if [ "$OSTYPE"="darwin11.0" ]; then
+      antigen-bundle osx
+fi
+
+# Load the theme.
+
 #ZSH_THEME="miloshadzic"
-#ZSH_THEME="mrtazz"
-#ZSH_THEME="pygmalion"
-#ZSH_THEME="smt"
-#ZSH_THEME="tjkirch"
 #ZSH_THEME="tonotdo"
-ZSH_THEME="wedisagree"
+#ZSH_THEME="gallois"
+#ZSH_THEME="cloud"
+#ZSH_THEME="tjkirch"
+antigen theme wedisagree
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -42,34 +65,11 @@ CASE_SENSITIVE="true"
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="yyyy-mm-dd"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git ant bundler gem jruby rails rake ruby tmux zsh-syntax-highlighting)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-export COMMON_PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/home/carlos/bin"
-export MAC_PATH="/Users/carlos/.rvm/bin:/Users/carlos/.rvm/gems/ruby-1.9.3-p484/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
-export CYG_PATH="C:\\Program Files\\Java\\jdk1.6.0_45\\bin:C:\\Users\\A07942A\\apps\\java\\apache-ant-1.9.4\\bin"
-export PATH=$COMMON_PATH:$MAC_PATH:$CYG_PATH
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -79,26 +79,10 @@ export LC_COLLATE="C"
 export LANG="es_ES.UTF-8"
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+export EDITOR='vim'
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-alias zshconfig="mvim ~/.zshrc"
-alias ohmyzsh="mvim ~/.oh-my-zsh"
+# aliases
+alias zshconfig="vim ~/.zshrc"
 
 # Always work in a tmux session if tmux is installed
 if which tmux 2>&1 >/dev/null; then
@@ -107,3 +91,5 @@ if which tmux 2>&1 >/dev/null; then
   fi
 fi
 
+# Tell antigen that you're done.
+antigen apply
