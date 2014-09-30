@@ -113,12 +113,13 @@ let mapleader=","  "set ',' instead of '\' as <leader>
 map <leader>nt :NERDTreeToggle<CR>
 
 " convert markdown to html
-nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <CR>
+nmap <leader>md :%!~/bin/Markdown.pl --html4tags <CR>
 
 " Quickly editing
 nmap <silent> <leader>ev :vsplit $MYVIMRC<cr>
 nmap <silent> <leader>sv :source $MYVIMRC<cr>
 nmap <silent> <leader>et :vsplit ~/.tmux.conf<cr>
+nmap <silent> <leader>ez :vsplit ~/.zshrc<cr>
 
 " toggle line wrapping
 nnoremap <leader>w :set wrap!
