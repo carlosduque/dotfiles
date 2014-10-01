@@ -2,7 +2,7 @@ source $HOME/dotfiles/zsh-antigen/antigen.zsh
 
 # User configuration
 export EDITOR=vim
-export BROWSER=$(which google-chrome chromium-browser firefox w3m links2 links lynx | grep -Pm1 '^/')
+#export BROWSER=$(which google-chrome chromium-browser firefox w3m links2 links lynx | grep -Pm1 '^/')
 export TZ=America/Santiago
 
 export COMMON_PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/home/carlos/bin"
@@ -85,11 +85,11 @@ export EDITOR='vim'
 alias zshconfig="vim ~/.zshrc"
 
 # Always work in a tmux session if tmux is installed
-if which tmux 2>&1 >/dev/null; then
-  if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-    tmux attach -t hack || tmux new -s hack; exit
-  fi
-fi
+#if which tmux 2>&1 >/dev/null; then
+#  if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+#    tmux attach -t hack || tmux new -s hack; exit
+#  fi
+#fi
 
 # Tell antigen that you're done.
 antigen apply
