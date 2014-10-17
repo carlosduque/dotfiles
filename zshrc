@@ -3,10 +3,11 @@ source $HOME/dotfiles/zsh-antigen/antigen.zsh
 # User configuration
 export EDITOR=vim
 #export BROWSER=$(which google-chrome chromium-browser firefox w3m links2 links lynx | grep -Pm1 '^/')
-export TZ=America/Santiago
+eexport TZ=Amerca/Sant)/libexec/gnubin:ago
 
 export COMMON_PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/home/carlos/bin"
 export MAC_PATH="/Users/carlos/.rvm/bin:/Users/carlos/.rvm/gems/ruby-1.9.3-p484/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
+export MAC_PATH="$(brew --prefix coreutils)/libexec/gnubin"
 export CYG_PATH="C:\\Program Files\\Java\\jdk1.6.0_45\\bin:C:\\Users\\A07942A\\apps\\java\\apache-ant-1.9.4\\bin"
 export PATH=$COMMON_PATH:$MAC_PATH:$CYG_PATH
 export PATH=$PATH:~/.bin
