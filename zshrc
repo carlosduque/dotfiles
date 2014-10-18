@@ -5,12 +5,23 @@ export EDITOR=vim
 #export BROWSER=$(which google-chrome chromium-browser firefox w3m links2 links lynx | grep -Pm1 '^/')
 export TZ=America/Santiago
 
-export COMMON_PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/home/carlos/bin"
-export MAC_PATH="/Users/carlos/.rvm/bin:/Users/carlos/.rvm/gems/ruby-1.9.3-p484/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin:/Library/Frameworks/JRuby.framework/Versions/Current/bin"
-export CYG_PATH="C:\\Program Files\\Java\\jdk1.6.0_45\\bin:C:\\Users\\A07942A\\apps\\java\\apache-ant-1.9.4\\bin:C:\\Users\\A07942A\\apps\\HashiCorp\\Vagrant\\bin"
-export WIN_PATH="C:\\WINDOWS:C:\\WINDOWS\\System32:C:\\WINDOWS\\System32\\WBEM:C:\\WINDOWS\\SYSTEM32\\WINDOWSPOWERSHELL\\V1.0\\"
-export PATH=$COMMON_PATH:$MAC_PATH:$CYG_PATH:$WIN_PATH
-export PATH=$PATH:~/.bin
+export BASE_PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export CUSTOM_PATH="/Users/carlos/.rvm/bin:/Users/carlos/.rvm/gems/ruby-1.9.3-p484/bin"
+    export CUSTOM_PATH=$CUSTOM_PATH:"/usr/local/git/bin:/usr/local/MacGPG2/bin"
+    export CUSTOM_PATH=$CUSTOM_PATH:"/Library/Frameworks/JRuby.framework/Versions/Current/bin"
+    export CUSTOM_PATH=$CUSTOM_PATH:"$(brew --prefix coreutils)/libexec/gnubin"
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+    export CUSTOM_PATH="$(brew --prefix coreutils)/libexec/gnubin"
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+    export CUSTOM_PATH="C:\\Program Files\\Java\\jdk1.6.0_45\\bin:C:\\Users\\A07942A\\apps\\java\\apache-ant-1.9.4\\bin"
+    export CUSTOM_PATH=$CUSTOM_PATH:"C:\\WINDOWS:C:\\WINDOWS\\System32"
+    export CUSTOM_PATH=$CUSTOM_PATH:"C:\\WINDOWS\\System32\\WBEM:C:\\WINDOWS\\SYSTEM32\\WINDOWSPOWERSHELL\\V1.0\\"
+else
+    #unknown
+fi
+export PATH=$BASE_PATH:$CUSTOM_PATH
+export PATH=$PATH:~/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 antigen use oh-my-zsh
@@ -32,18 +43,26 @@ antigen bundles <<EOBUNDLES
     zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
-if [ "$OSTYPE"="darwin11.0" ]; then
+if [ "$OSTYPE"="darwin13.0" ]; then
       antigen-bundle osx
 fi
 
 # Load the theme.
-
-#ZSH_THEME="miloshadzic"
-#ZSH_THEME="tonotdo"
-#ZSH_THEME="gallois"
-#ZSH_THEME="cloud"
-#ZSH_THEME="tjkirch"
-antigen theme wedisagree
+#antigen theme crunch
+#antigen theme cypher
+#antigen theme dallas
+#antigen theme dieter
+#antigen theme miloshadzic
+#antigen theme mrtazz
+#antigen theme muse
+#antigen theme pygmalion
+#antigen theme smt
+#antigen theme sunrise
+#antigen theme tonotdo
+#antigen theme gallois
+antigen theme cloud
+#antigen theme tjkirch
+#antigen theme wedisagree
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
