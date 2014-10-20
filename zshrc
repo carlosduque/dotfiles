@@ -11,8 +11,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export CUSTOM_PATH=$CUSTOM_PATH:"/usr/local/git/bin:/usr/local/MacGPG2/bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"/Library/Frameworks/JRuby.framework/Versions/Current/bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"$(brew --prefix coreutils)/libexec/gnubin"
-elif [[ "$OSTYPE" == "freebsd"* ]]; then
-    export CUSTOM_PATH="$(brew --prefix coreutils)/libexec/gnubin"
+#elif [[ "$OSTYPE" == "freebsd"* ]]; then
+#    export CUSTOM_PATH="~/bin"
 elif [[ "$OSTYPE" == "cygwin" ]]; then
     export CUSTOM_PATH="C:\\Program Files\\Java\\jdk1.6.0_45\\bin:C:\\Users\\A07942A\\apps\\java\\apache-ant-1.9.4\\bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"C:\\WINDOWS:C:\\WINDOWS\\System32"
@@ -41,10 +41,18 @@ antigen bundles <<EOBUNDLES
     zsh-users/zsh-history-substring-search
     # Syntax highlighting bundle.
     zsh-users/zsh-syntax-highlighting
+    catimg
+    encode64
+    jsontools
+    urltools
+    vagrant
+    vi-mode
+    web-search
 EOBUNDLES
 
-if [ "$OSTYPE"="darwin13.0" ]; then
+if [ "$OSTYPE"="darwin"* ]; then
       antigen-bundle osx
+      antigen-bundle brew
 fi
 
 # Load the theme.
