@@ -12,11 +12,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export CUSTOM_PATH=$CUSTOM_PATH:"/Library/Frameworks/JRuby.framework/Versions/Current/bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"$(brew --prefix coreutils)/libexec/gnubin"
 elif [[ "$OSTYPE" == "freebsd"* ]]; then
-    export CUSTOM_PATH="$(brew --prefix coreutils)/libexec/gnubin"
+    export CUSTOM_PATH=""
 elif [[ "$OSTYPE" == "cygwin" ]]; then
     export CUSTOM_PATH="C:\\Program Files\\Java\\jdk1.6.0_45\\bin:C:\\Users\\A07942A\\apps\\java\\apache-ant-1.9.4\\bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"C:\\WINDOWS:C:\\WINDOWS\\System32"
     export CUSTOM_PATH=$CUSTOM_PATH:"C:\\WINDOWS\\System32\\WBEM:C:\\WINDOWS\\SYSTEM32\\WINDOWSPOWERSHELL\\V1.0\\"
+    export CUSTOM_PATH=$CUSTOM_PATH:"C:\\Users\\A07942A\\apps\\HashiCorp\\Vagrant\\bin"
 else
     #unknown
 fi
