@@ -1,12 +1,16 @@
 [user]
-	name = Carlos Duque
-	email = carlosduque.hn@gmail.com
+  name = Carlos Duque
+  email = carlosduque.hn@gmail.com
+
+[core]
+  whitespace = trailing-space,space-before-tab
+  autocrlf = input
 
 [github]
   user = carlosduque
 
 [push]
-	default = simple
+  default = simple
 
 [color]
   diff = auto
@@ -31,6 +35,8 @@
   added = yellow
   changed = green
   untracked = blue
+
 [alias]
-ls = log --pretty='format:%C(cyan)%h%C(reset) %C(dim cyan)%ad%C(reset) %s %C(bold yellow)%d %C(magenta)%an,%C(reset) %C(dim magenta)%ar' --all --date=short
-lg = log --oneline --decorate --graph
+  ls = log --pretty='format:%C(cyan)%h%C(reset) %C(dim cyan)%ad%C(reset) %s %C(bold yellow)%d %C(magenta)%an,%C(reset) %C(dim magenta)%ar' --all --date=short
+  lg = log --oneline --decorate --graph
+
