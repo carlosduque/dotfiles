@@ -1,0 +1,21 @@
+MAILDIR = $HOME/mail # Asegurarse de que existe!!
+DEFAULT = $MAILDIR/inbox
+LOGFILE = $HOME/mail/log
+VERBOSE=on
+
+
+# ^TO en vez de ^To:.* creado en procmail para encontrar cualquier to: To: TO: etc
+:0
+* ^TOcarlosduque.hn@gmail.com   
+carlosduque.hn/
+
+:0
+* ^TOalcros@gmail.com
+alcros/
+
+# default rule, drops messages into the default box
+# cuando se usa maildir no es necesario bloquear(lock) el archivo con :0: basta con :0
+:0
+* .*
+inbox/
+

@@ -1,0 +1,107 @@
+# Con esta configuracion se asume lo siguiente:
+# * se esta usando fetchmail para traer los archivos del servidor
+# * se esta usando procmail para llevar los correos a los folders necesarios
+# * se esta usando mutt solo para ver los correos
+
+set realname="Carlos"
+set mbox_type = Maildir
+
+# donde se va a guardar todo (maiboxes =XXX) en otras definiciones esta ref
+# se abrevia con '+'
+set folder=$HOME/mail
+
+# incomming mail: de donde leer el correo (inbox)
+set spoolfile = +inbox
+
+# donde guardar los leidos ('+' indica lo seteado en 'set folder =')
+# comentado para dejar que procmail los mueva
+set mbox = +read
+
+#donde guardar msgs de salida
+set record = +sent
+
+#donde guardar msgs pospuestos (drafts)
+set postponed = +drafts
+
+#Incluir el mensaje en un reply
+set include = yes
+
+#El sujeto en mensajes reenviados
+set forward_format="Fw: %s"
+
+#setear vim como editor
+#set editor = "vim +':set textwidth=77' +':set wrap ' +\`awk '/^$/ {print i+2; exit} {i++} %s\'` %s'"
+set editor = "vim +':set textwidth=77' +':set wrap' +\`awk '/^$/ {print i+2; exit} {i++}' %s\` %s"
+
+# set pop_host="pop.gmail.com"
+# My email address
+# set pop_user="alcros@gmail.com"
+# My email account password
+# set pop_pass="secret"
+# set pop_delete=no
+
+set sendmail = /usr/sbin/sendmail
+#smtp_url =  smtp[s]://[user[:pass]@]host[:port]/
+set smtp_url =  "smtp://carlosduque.hn@gmail.com:sihhe029lord@smtp.gmail.com:587"
+#set smtp_pass = 
+
+#lines for the index, everything else is the mail's body
+#set pager_index_lines = 10
+
+# # Too many email headers make reading a message difficult
+ignore *
+unignore From: To: Cc: Subject: Date: #Only these are shown in the header
+hdr_order From: Date: To: Cc: Subject: #Order to display headers
+mailboxes =inbox
+mailboxes =alcros
+mailboxes =carlosduque.hn
+mailboxes =read
+
+# Asiga la tecla 'g' para ejecutar fetchmail y recolectar el correo
+macro index g "!fetchmail -k<enter>"  'run fetchmail -k'
+
+# Para utilizar w3m en mutt
+macro index \cB |w3m\n "call w3m to extract URLs out of a message"
+macro pager \cB |w3m\n "call w3m to extract URLs out of a message"
+# Para llamar la documentacion en html
+macro generic <f1> "!w3m /usr/doc/mutt/html/manual.html\n" "Mostrar la documentacion de  Mutt"
+macro index   <f1> "!w3m /usr/doc/mutt/html/manual.html\n" "Mostrar la documentacion de  Mutt"
+macro pager   <f1> "!w3m /usr/doc/mutt/html/manual.html\n" "Mostrar la documentacion de  Mutt"
+
+
+# Ver 'Hooks' y 'Patterns en la documentacion de mutt.
+# Todos los mensajes
+message-hook ~A                                  'set pager="builtin"'
+# Mensajes que se originan desde una REGEXP
+message-hook '~f "carlosduque.hn@gmail.com"'     'set pager="w3m"'
+# Mensajes que contienen una REGEXP en el sujeto
+message-hook '~s "Linux Magazine"'               'set pager="w3m"'
+
+#default mbox to (s)ave mail is =keep
+#save-hook .* =read
+
+#COLORS
+color header  yellow   black  "^(From:|Sender:|Return-Path:)"
+color header  green    black  "^(to|cc):"
+color header  cyan     black  "^(subject):"
+color header  magenta  black  "^(date):"
+
+color body magenta black "(ftp|http)://[^ ]+"         # recoge URLs
+color body blue    black [-a-z_0-9.]+@[-a-z_0-9.]+    # marca direcciones de email
+color body yellow  black '\"[^"]*\"'                  # marca cadenas entre comilla
+
+color quoted    cyan black
+color quoted1   yellow black
+color quoted2   red black
+color quoted3   green black
+color quoted4   cyan black
+color quoted5   yellow black
+color quoted6   red black
+color quoted7   green black
+
+color index green black ~N    # Nuevo
+color index white black ~O    # Viejo
+color index red black   ~F    # Importante
+color index brightblue  black ~T # Marcado
+color index brightblack black ~D  # Borrar
+

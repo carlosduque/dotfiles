@@ -1,0 +1,27 @@
+# Don't show the message
+startup_message off
+
+# Always autodetach
+autodetach on
+
+# Run everythin in UTF8
+defutf8 on
+
+# If a window goes unresponsive, don't block the whole session waiting for it.
+nonblock on
+
+screen -t superuser su -
+screen -t mail mutt
+screen -t contacts abook
+screen -t py python
+#screen -t mc mc
+#screen -t audioplayer ncmpc -c
+#screen -t shell bash
+#screen -t althalen ssh -l carlos althalen
+
+# Create a status line showing currently open sessions
+hardstatus on
+hardstatus alwayslastline
+#hardstatus string "%w%=%m/%d %c"
+hardstatus string '%{= kG}[%{G}%H%{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%d/%m %{G}%C%A]'
+
