@@ -51,7 +51,7 @@ antigen bundles <<EOBUNDLES
     web-search
 EOBUNDLES
 
-if [ "$OSTYPE"="darwin"* ]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
       antigen-bundle osx
       antigen-bundle brew
 fi
