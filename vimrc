@@ -113,7 +113,7 @@ let mapleader=","  "set ',' instead of '\' as <leader>
 map <leader>nt :NERDTreeToggle<CR>
 
 " convert markdown to html
-nmap <leader>md :%!~/.bin/Markdown.pl --html4tags <CR>
+nmap <leader>md :%!~/bin/Markdown.pl --html4tags <CR>
 
 " Quickly editing
 nmap <silent> <leader>ev :vsplit $MYVIMRC<cr>
