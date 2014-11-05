@@ -57,20 +57,21 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # Load the theme.
-#antigen theme crunch
+antigen theme cloud
+#antigen theme mrtazz
+#antigen theme tjkirch
+#antigen theme tonotdo
+#antigen theme miloshadzic
 #antigen theme cypher
+#
+#antigen theme crunch
 #antigen theme dallas
 #antigen theme dieter
-#antigen theme miloshadzic
-#antigen theme mrtazz
 #antigen theme muse
 #antigen theme pygmalion
 #antigen theme smt
 #antigen theme sunrise
-#antigen theme tonotdo
 #antigen theme gallois
-antigen theme cloud
-#antigen theme tjkirch
 #antigen theme wedisagree
 
 # Uncomment the following line to use case-sensitive completion.
