@@ -57,12 +57,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # Load the theme.
-antigen theme cloud
+#antigen theme cloud
 #antigen theme mrtazz
 #antigen theme tjkirch
 #antigen theme tonotdo
 #antigen theme miloshadzic
-#antigen theme cypher
+antigen theme cypher
 #
 #antigen theme crunch
 #antigen theme dallas
