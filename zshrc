@@ -58,7 +58,8 @@ fi
 
 # Load the theme.
 ### --short
-antigen theme cloud
+#antigen theme cloud
+antigen theme theunraveler
 #antigen theme mrtazz
 #antigen theme miloshadzic
 #antigen theme cypher
