@@ -59,7 +59,8 @@ fi
 # Load the theme.
 ### --short
 #antigen theme cloud
-antigen theme theunraveler
+#antigen theme theunraveler
+antigen theme carlosduque/oh-my-zsh-themes chess
 #antigen theme mrtazz
 #antigen theme miloshadzic
 #antigen theme cypher
