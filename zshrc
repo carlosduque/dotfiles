@@ -60,7 +60,8 @@ fi
 ### --short
 #antigen theme cloud
 #antigen theme theunraveler
-antigen theme carlosduque/oh-my-zsh-themes chess
+#antigen theme carlosduque/oh-my-zsh-themes chess
+antigen theme carlosduque/oh-my-zsh-themes stealth
 #antigen theme mrtazz
 #antigen theme miloshadzic
 #antigen theme cypher
