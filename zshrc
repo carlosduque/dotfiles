@@ -1,3 +1,4 @@
+#zmodload zsh/zprof  # load zprof module
 source $HOME/dotfiles/zsh-antigen/antigen.zsh
 
 # User configuration
@@ -42,17 +43,17 @@ antigen bundles <<EOBUNDLES
     zsh-users/zsh-history-substring-search
     # Syntax highlighting bundle.
     zsh-users/zsh-syntax-highlighting
-    # catimg
+    catimg
     encode64
-    # jsontools
-    # urltools
+    jsontools
+    urltools
     # vagrant
     # vi-mode
     # web-search
 EOBUNDLES
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-      antigen-bundle osx
+      #antigen-bundle osx
       antigen-bundle brew
 fi
 
@@ -132,3 +133,6 @@ fi
 
 # Tell antigen that you're done.
 antigen apply
+
+#zprof  #zsh profiling
+
