@@ -28,27 +28,27 @@ export PATH=$PATH:~/bin
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
-    git
-    ant
-    bundler
-    gem
-    jruby
-    rails
-    rake
-    ruby
-    tmux
-    command-not-found
+    # git
+    # ant
+    # bundler
+    # gem
+    # jruby
+    # rails
+    # rake
+    # ruby
+    # tmux
+    # command-not-found
     # ZSH port of Fish shell's history search feature.
     zsh-users/zsh-history-substring-search
     # Syntax highlighting bundle.
     zsh-users/zsh-syntax-highlighting
-    catimg
+    # catimg
     encode64
-    jsontools
-    urltools
-    vagrant
-    vi-mode
-    web-search
+    # jsontools
+    # urltools
+    # vagrant
+    # vi-mode
+    # web-search
 EOBUNDLES
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -121,6 +121,7 @@ export EDITOR='vim'
 
 # aliases
 alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.vimrc"
 
 # Always work in a tmux session if tmux is installed
 if which tmux 2>&1 >/dev/null; then
