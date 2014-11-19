@@ -38,21 +38,21 @@ antigen bundles <<EOBUNDLES
     # ruby
     # tmux
     # command-not-found
-    # ZSH port of Fish shell's history search feature.
+    ### ZSH port of Fish shell's history search feature.
     zsh-users/zsh-history-substring-search
-    # Syntax highlighting bundle.
-    zsh-users/zsh-syntax-highlighting
+    ### Syntax highlighting bundle.
+    # zsh-users/zsh-syntax-highlighting
     # catimg
     encode64
-    # jsontools
-    # urltools
+    jsontools
+    urltools
     # vagrant
     # vi-mode
     # web-search
 EOBUNDLES
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-      antigen-bundle osx
+      #antigen-bundle osx
       antigen-bundle brew
 fi
 
