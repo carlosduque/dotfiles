@@ -14,24 +14,9 @@ export EDITOR=vim
 #export BROWSER=$(which google-chrome chromium-browser firefox w3m links2 links lynx | grep -Pm1 '^/')
 export TZ=America/Santiago
 
-export BASE_PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin"
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    export CUSTOM_PATH="/Users/carlos/.rvm/bin:/Users/carlos/.rvm/gems/ruby-1.9.3-p484/bin"
-    export CUSTOM_PATH=$CUSTOM_PATH:"/usr/local/git/bin:/usr/local/MacGPG2/bin"
-    export CUSTOM_PATH=$CUSTOM_PATH:"/Library/Frameworks/JRuby.framework/Versions/Current/bin"
-    export CUSTOM_PATH=$CUSTOM_PATH:"$(brew --prefix coreutils)/libexec/gnubin"
-#elif [[ "$OSTYPE" == "freebsd"* ]]; then
-#    export CUSTOM_PATH="~/bin"
-elif [[ "$OSTYPE" == "cygwin" ]]; then
-    export CUSTOM_PATH="C:\\Program Files\\Java\\jdk1.6.0_45\\bin:C:\\Users\\A07942A\\apps\\java\\apache-ant-1.9.4\\bin"
-    export CUSTOM_PATH=$CUSTOM_PATH:"C:\\WINDOWS:C:\\WINDOWS\\System32"
-    export CUSTOM_PATH=$CUSTOM_PATH:"C:\\WINDOWS\\System32\\WBEM:C:\\WINDOWS\\SYSTEM32\\WINDOWSPOWERSHELL\\V1.0\\"
-    export CUSTOM_PATH=$CUSTOM_PATH:"C:\\Users\\A07942A\\apps\\HashiCorp\\Vagrant\\bin"
-else
-    #unknown
-fi
-export PATH=$BASE_PATH:$CUSTOM_PATH
+# setup PATH variable
 export PATH=$PATH:~/bin
+. ~/bin/setup_path_variable.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
