@@ -33,6 +33,11 @@ tmux send-keys "ssh beastie" C-m
 tmux split-window -v
 tmux select-pane -t 1
 
+tmux rename-window -t hack:1 "terminal"
+tmux rename-window -t hack:2 "dev"
+tmux rename-window -t hack:3 "algorithms"
+tmux rename-window -t hack:4 "remote"
+
 # go back to window 1
 tmux select-window -t hack:1
 

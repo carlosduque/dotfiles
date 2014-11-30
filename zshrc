@@ -14,7 +14,7 @@ export LANG="es_ES.UTF-8"
 
 # setup PATH variable
 export PATH=$PATH:~/bin
-. ~/bin/setup_path_variable.sh
+source ~/bin/setup_path_variable.sh
 
 antigen use oh-my-zsh
 
@@ -91,11 +91,14 @@ HIST_STAMPS="yyyy-mm-dd"
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
 
+# setup tmux
+SESSION=hack
+
 # Always work in a tmux session if tmux is installed
 if which tmux 2>&1 >/dev/null; then
-  if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-    tmux attach -t hack || tmux new -s hack; exit
-  fi
+    if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+        tmux attach -t $SESSION || tmux new -s $SESSION; exit
+    fi
 fi
 
 # Tell antigen that you're done.
