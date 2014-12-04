@@ -4,7 +4,7 @@
 
 [core]
   whitespace = trailing-space,space-before-tab
-  autocrlf = true
+  autocrlf = false
   excludesfile = ~/.gitignore
 
 [github]
