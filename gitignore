@@ -1,6 +1,7 @@
 ## Full directories
 build/
 dist/
+.vagrant/
 
 .gitignore
 
@@ -13,7 +14,6 @@ dist/
 
 ## Logs and databases
 *.log
-*.sql
 *.sqlite
 
 ## Packages
