@@ -27,4 +27,4 @@ else
     export CUSTOM_PATH="$JAVA_HOME/bin:$ANT_HOME/bin:$MAVEN_HOME/bin:$OPENEJB_HOME/bin"
 fi
 
-export PATH=$BASE_PATH:$CUSTOM_PATH
+export PATH=$PATH:$BASE_PATH:$CUSTOM_PATH
