@@ -5,11 +5,13 @@ export BASE_PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
     export OPENEJB_HOME=~/srv/openejb/inst
+    export CATALINA_HOME=~/srv/tomcat/inst
     export CUSTOM_PATH="$(brew --prefix coreutils)/libexec/gnubin"
     export CUSTOM_PATH=$CUSTOM_PATH:"/Users/carlos/.rvm/bin:/Users/carlos/.rvm/gems/ruby-1.9.3-p484/bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"/usr/local/git/bin:/usr/local/MacGPG2/bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"/Library/Frameworks/JRuby.framework/Versions/Current/bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"$OPENEJB_HOME/bin"
+    export CUSTOM_PATH=$CUSTOM_PATH:"$CATALINA_HOME/bin"
     #elif [[ "$OSTYPE" == "freebsd"* ]]; then
     #    export CUSTOM_PATH="~/bin"
 elif [[ "$OSTYPE" == "cygwin" ]]; then
@@ -27,7 +29,9 @@ else
     export ANT_HOME=/usr/share/ant
     export MAVEN_HOME=/usr/share/maven
     export OPENEJB_HOME=/srv/openejb/inst
+    export CATALINA_HOME=/srv/tomcat/inst
     export CUSTOM_PATH="$JAVA_HOME/bin:$ANT_HOME/bin:$MAVEN_HOME/bin:$OPENEJB_HOME/bin"
+    export CUSTOM_PATH="$CUSTOM_PATH:$CATALINA_HOME/bin"
 fi
 
 export PATH=$PATH:$BASE_PATH:$CUSTOM_PATH
