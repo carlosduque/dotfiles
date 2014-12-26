@@ -11,6 +11,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export CUSTOM_PATH=$CUSTOM_PATH:"/usr/local/git/bin:/usr/local/MacGPG2/bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"/Library/Frameworks/JRuby.framework/Versions/Current/bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"$OPENEJB_HOME/bin"
+    export CUSTOM_PATH=$CUSTOM_PATH:"$CATALINA_HOME/bin"
     #elif [[ "$OSTYPE" == "freebsd"* ]]; then
     #    export CUSTOM_PATH="~/bin"
 elif [[ "$OSTYPE" == "cygwin" ]]; then
@@ -30,6 +31,7 @@ else
     export OPENEJB_HOME=/srv/openejb/inst
     export CATALINA_HOME=/srv/tomcat/inst
     export CUSTOM_PATH="$JAVA_HOME/bin:$ANT_HOME/bin:$MAVEN_HOME/bin:$OPENEJB_HOME/bin"
+    export CUSTOM_PATH="$CUSTOM_PATH:$CATALINA_HOME/bin"
 fi
 
 export PATH=$PATH:$BASE_PATH:$CUSTOM_PATH
