@@ -1,6 +1,9 @@
 ## Full directories
 build/
 dist/
+bin/
+target/
+
 .settings/
 .vagrant/
 .settings
@@ -10,7 +13,6 @@ dist/
 .gitignore
 
 .project
-.classpath
 
 ## Compiled sources
 *.class
