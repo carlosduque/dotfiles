@@ -3,6 +3,8 @@ build/
 dist/
 bin/
 target/
+ivy-cache/
+repository/
 
 .settings/
 .vagrant/

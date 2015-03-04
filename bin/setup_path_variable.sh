@@ -6,7 +6,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
     export OPENEJB_HOME=~/srv/openejb/inst
     export CATALINA_HOME=~/srv/tomcat/inst
-    export MW_HOME=~/srv/weblogic/inst
+    export MW_HOME=~/srv/weblogic/wls1036
     export CUSTOM_PATH="$(brew --prefix coreutils)/libexec/gnubin"
     export CUSTOM_PATH=$CUSTOM_PATH:"/Users/carlos/.rvm/bin:/Users/carlos/.rvm/gems/ruby-1.9.3-p484/bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"/usr/local/git/bin:/usr/local/MacGPG2/bin"
