@@ -94,7 +94,7 @@ menubar_visible=1
 free_space=1
 horizontal_split=0
 vertical_equal=1
-left_panel_size=44
+left_panel_size=90
 horizontal_equal=1
 top_panel_size=1
 
@@ -112,7 +112,28 @@ clipboard_paste=
 spell_language=en
 
 [Colors]
-base_color=lightgray,green:normal=green,default:selected=white,gray:marked=yellow,default:markselect=yellow,gray:directory=blue,default:executable=brightgreen,default:link=cyan,default:device=brightmagenta,default:special=lightgray,default:errors=red,default:reverse=green,default:gauge=green,default:input=white,gray:dnormal=green,gray:dfocus=brightgreen,gray:dhotnormal=cyan,gray:dhotfocus=brightcyan,gray:menu=green,default:menuhot=cyan,default:menusel=green,gray:menuhotsel=cyan,default:helpnormal=cyan,default:editnormal=green,default:editbold=blue,default:editmarked=gray,blue:stalelink=red,default
+base_color=normal=,default:
+selected=black,green:
+marked=brightyellow,black:
+markselect=white,cyan:
+editnormal=white,black:
+editbold=yellow,black:
+menu=black,cyan:
+menuhot=red,cyan:
+menusel=white,blue:
+menuhotsel=white,blue:
+dnormal=black,cyan:
+dfocus=white,blue:
+dhotnormal=red,cyan:
+dhotfocus=red,blue:
+input=white,black:
+reverse=black,cyan:
+executable=brightred,black:
+directory=brightgreen,black:
+link=lightgray,black:
+device=brightmagenta,black:
+special=blue,black:
+core=green,black
 
 screen-256color=
 color_terminals=
