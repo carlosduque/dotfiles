@@ -106,6 +106,7 @@ set laststatus=2        "siempre mostrar la barra de estado
 "set statusline+=%)           "end of item group
 
 " Key bindings ---{{{
+let mapleader=","  "set ',' instead of '\' as <leader>
 
 " Note: on remap, noremap, nnoremap and vnoremap
 " remap is an option that makes mappings work recursively.
@@ -132,16 +133,13 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-nnoremap j gj " move down in display (not real) lines
-nnoremap k gk " move up in display lines
 " disable h j k l (learn to use wordwise motions !!)
-"noremap h <nop>
-"noremap j <nop>
-"noremap k <nop>
-"noremap l <nop>
+" noremap h <nop>
+" noremap j <nop>
+" noremap k <nop>
+" noremap l <nop>
 
-" reset <leader>
-let mapleader=","  "set ',' instead of '\' as <leader>
+inoremap jj <esc> " use jj in insert mode to go back to normal mode
 
 " >>> easymotion
 " <leader><leader>w (<plug>(easymotion-w)) to trigger the word motion w
