@@ -106,11 +106,71 @@ set laststatus=2        "siempre mostrar la barra de estado
 "set statusline+=%)           "end of item group
 
 " Key bindings ---{{{
+
+" Note: on remap, noremap, nnoremap and vnoremap
+" remap is an option that makes mappings work recursively.
+" :map and :noremap are recursive and non-recursive versions of the various mapping commands.
+" What that means is that if you do:
+"    :map j gg
+"    :map Q j
+"    :noremap W j
+"
+" j will be mapped to gg. Q will also be mapped to gg, because j will be expanded for the recursive mapping.
+" W will be mapped to j (and not to gg) because j will not be expanded for the non-recursive mapping.
+" operartor modes (:map and :noremap)
+"    normal mode (:nmap and :nnoremap)
+"    visual mode (:vmap and :vnoremap)
+" and so on.
+
+" disable arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+nnoremap j gj " move down in display (not real) lines
+nnoremap k gk " move up in display lines
+" disable h j k l (learn to use wordwise motions !!)
+"noremap h <nop>
+"noremap j <nop>
+"noremap k <nop>
+"noremap l <nop>
+
+" reset <leader>
 let mapleader=","  "set ',' instead of '\' as <leader>
+
+" >>> easymotion
+" <leader><leader>w (<plug>(easymotion-w)) to trigger the word motion w
 
 " para usar 'aspell' usando ctrl+t
 " map ^T :w!<CR>:!aspell check %<CR>:e! %<CR>
+
+" >>> NERDTree
 map <leader>nt :NERDTreeToggle<CR>
+
+" >>> ctrlp
+" :CtrlP or :CtrlPBuffer or : CtrlPMRU or :CtrlPMixed to search in files, buffers and MRU files
+" Press <F5> to purge the cache for the current directory to get new files, remove deleted files and apply new ignore
+" options.
+" Press <c-f> and <c-b> to cycle between modes.
+" Press <c-d> to switch to filename only search instead of full path.
+" Press <c-r> to switch to regexp mode.
+" Use <c-j>, <c-k> or the arrow keys to navigate the result list.
+" Use <c-t> or <c-v>, <c-x> to open the selected entry in a new tab or in a new split.
+"
+" Use <c-n>, <c-p> to select the next/previous string in the prompt's history.
+" Use <c-y> to create a new file and its parent directories.
+" Use <c-z> to mark/unmark multiple files and <c-o> to open them
+map <leader>cp :CtrlP<CR> " or just plain ctrl+p :-)
+
+" >>> bufexplorer
+" <leader>be (normal open)
+" <leader>bs (force horizontal split open)
+" <leader>bv (force vertical split open)
 
 " convert markdown to html
 nmap <leader>md :%!~/bin/Markdown.pl --html4tags <CR>
@@ -174,3 +234,5 @@ augroup line_return
         \ endif
 augroup END
 
+" Autosave files when losing focus
+au FocusLost * :wa
