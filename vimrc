@@ -163,7 +163,8 @@ map <leader>nt :NERDTreeToggle<CR>
 " Use <c-n>, <c-p> to select the next/previous string in the prompt's history.
 " Use <c-y> to create a new file and its parent directories.
 " Use <c-z> to mark/unmark multiple files and <c-o> to open them
-map <leader>cp :CtrlP<CR> " or just plain ctrl+p :-)
+map <leader>cp :CtrlP<CR>
+" or just plain ctrl+p :-)
 
 " >>> bufexplorer
 " <leader>be (normal open)
