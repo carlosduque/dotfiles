@@ -16,7 +16,6 @@ set hidden                        "hide buffers when not displayed
 
 " Color scheme ---{{{
 syntax on                         "activar el highlight
-colorscheme desert                "molokai, desert
 set t_Co=256                      "force 256 colors on the terminal
 set nocursorline                  "don't highlight all the line of the cursor
 hi CursorLine cterm=NONE ctermbg=darkmagenta ctermfg=white guibg=darkmagenta guifg=white
