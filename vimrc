@@ -34,10 +34,10 @@ set showmatch           "set show matching parenthesis
 set foldmethod=manual   "el folding puede ser manual, indent, syntax, expr
 
 " Tabs, spaces and wrapping ---{{{
-set tabstop=4           "un tab de 4 espacios
-set softtabstop=4       "para que vim vea los 4 espacios seguidos del tabstop y funcione el backspace eliminando los 4
+set tabstop=2           "un tab de X espacios
+set softtabstop=2       "para que vim vea los X espacios seguidos del tabstop y funcione el backspace eliminando los 4
 set smarttab            "insert tabs on the start of a line according to shiftwidth, not tabstop
-set shiftwidth=4        "number of spaces to use for autoindentingno estoy seguro para que es esto
+set shiftwidth=2        "number of spaces to use for autoindent
 set expandtab           "para que al presionar tab, inserte espacios y no \\t
 set nowrap              "don't activate wrapping
 set textwidth=120       "numero de columnas
@@ -140,6 +140,9 @@ inoremap <right> <nop>
 
 inoremap jj <esc> " use jj in insert mode to go back to normal mode
 
+" vim's builtin explorer, useful for renaming current file
+map <leader>ex :Explore<CR>
+
 " >>> easymotion
 " <leader><leader>w (<plug>(easymotion-w)) to trigger the word motion w
 
@@ -162,7 +165,7 @@ map <leader>nt :NERDTreeToggle<CR>
 " Use <c-n>, <c-p> to select the next/previous string in the prompt's history.
 " Use <c-y> to create a new file and its parent directories.
 " Use <c-z> to mark/unmark multiple files and <c-o> to open them
-map <leader>cp :CtrlP<CR>
+" map <leader>cp :CtrlP<CR>
 " or just plain ctrl+p :-)
 
 " >>> bufexplorer
@@ -174,10 +177,12 @@ map <leader>cp :CtrlP<CR>
 nmap <leader>md :%!~/bin/Markdown.pl --html4tags <CR>
 
 " Quickly editing
-nmap <silent> <leader>ev :vsplit $MYVIMRC<cr>
-nmap <silent> <leader>sv :source $MYVIMRC<cr>
-nmap <silent> <leader>et :vsplit ~/.tmux.conf<cr>
-nmap <silent> <leader>ez :vsplit ~/.zshrc<cr>
+nmap <silent> <leader>evimrc :vsplit $MYVIMRC<cr>
+nmap <silent> <leader>egvimrc :vsplit $HOME/.gvimrc<cr>
+nmap <silent> <leader>srcvim :source $MYVIMRC<cr>
+nmap <silent> <leader>srcgvim :source $HOME/.gvimrc<cr>
+nmap <silent> <leader>etmux :vsplit ~/.tmux.conf<cr>
+nmap <silent> <leader>ezshrc :vsplit ~/.zshrc<cr>
 
 " toggle line wrapping
 nnoremap <leader>w :set wrap!
