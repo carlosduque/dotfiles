@@ -165,7 +165,7 @@ map <leader>nt :NERDTreeToggle<CR>
 " Use <c-n>, <c-p> to select the next/previous string in the prompt's history.
 " Use <c-y> to create a new file and its parent directories.
 " Use <c-z> to mark/unmark multiple files and <c-o> to open them
-" map <leader>cp :CtrlP<CR>
+map <leader>cp :CtrlP<CR>
 " or just plain ctrl+p :-)
 
 " >>> bufexplorer
@@ -177,10 +177,10 @@ map <leader>nt :NERDTreeToggle<CR>
 nmap <leader>md :%!~/bin/Markdown.pl --html4tags <CR>
 
 " Quickly editing
-nmap <silent> <leader>evimrc :vsplit $MYVIMRC<cr>
-nmap <silent> <leader>egvimrc :vsplit $HOME/.gvimrc<cr>
-nmap <silent> <leader>srcvim :source $MYVIMRC<cr>
-nmap <silent> <leader>srcgvim :source $HOME/.gvimrc<cr>
+nmap <silent> <leader>evim :vsplit $MYVIMRC<cr>
+nmap <silent> <leader>egvim :vsplit $HOME/.gvimrc<cr>
+nmap <silent> <leader>svim :source $MYVIMRC<cr>
+nmap <silent> <leader>sgvim :source $HOME/.gvimrc<cr>
 nmap <silent> <leader>etmux :vsplit ~/.tmux.conf<cr>
 nmap <silent> <leader>ezshrc :vsplit ~/.zshrc<cr>
 
