@@ -8,7 +8,6 @@ filetype plugin indent on         "enable filetype detection:
 set nocompatible                  "usar config de Vim y no de Vi
 set encoding=utf-8                "para que los achivos editados sean UTF-8
 set backspace=indent,eol,start    "permitir el backspace sobre todo en modo insert
-set guifont=consolas:h9
 set autoread                      "para actualizar cuando un archivo es leido desde fuera
 set clipboard=unnamed             "use the system clipboard
 set noruler                       "no mostrar info con posicion actual, esto se hara con statusbar
