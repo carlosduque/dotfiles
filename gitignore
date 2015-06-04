@@ -1,27 +1,29 @@
-## Full directories
+
+.gitignore
+build.info
+
+## eclipse
+.settings/
+.classpath
+.project
+
+## Compiled sources
 build/
 dist/
 bin/
 target/
-ivy-cache/
-repository/
-
-.settings/
-.vagrant/
-.settings
-.classpath
-.project
-
-.gitignore
-
-build.info
-
-## Compiled sources
 *.class
 *.exe
 *.com
 *.o
 *.so
+
+## artifact repositories
+ivy-cache/
+repository/
+
+## application specific dirs
+.vagrant/
 
 ## Logs and databases
 *.log
@@ -32,7 +34,6 @@ build.info
 *.dmg
 *.gz
 *.iso
-#*.jar
 *.rar
 *.tar
 *.zip
@@ -43,6 +44,8 @@ build.info
 ._*
 .Spotlight-V100
 .Trashes
-ehthumbs.db
+thumbs.db
 Thumbs.db
+
+## History files
 .netrwhist
