@@ -21,7 +21,10 @@ set nocursorline                  "don't highlight all the line of the cursor
 hi CursorLine cterm=NONE ctermbg=darkmagenta ctermfg=white guibg=darkmagenta guifg=white
 set nocursorcolumn        "don't highlight all the column of the cursor
 hi CursorColumn cterm=NONE ctermbg=darkmagenta ctermfg=white guibg=darkmagenta guifg=white
-let g:airline_theme             = 'molokai'
+
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
 
 " Searching and movement ---{{{
 set hlsearch            "highlight search
@@ -60,7 +63,7 @@ set nowb                "prevents automatic write backup
 " Indentation ---{{{
 set autoindent          "al saltar a la siguiente linea q mantenga la  sangria
 set copyindent          "copy the previous indentation on autoindenting
-set showmode            "show the current mode
+set noshowmode            "show the current mode
 set showcmd             "show the partially-typed commands in the status line
 set shiftround          "use multiple of shiftwidth when indenting with '<' and '>'
 
@@ -71,11 +74,7 @@ set undolevels=1000     "use many levels of undo
 " Status bar ---{{{
 set laststatus=2        "siempre mostrar la barra de estado
 " configurar la barra de estado
-"set statusline+=%1*          "color to user mode 1
-"set statusline+=%<           "where to truncate line if too long
 "set statusline+=%-F          "full path to file in the buffer
-"set statusline+=%=           "separation point between left and right aligned items
-"set statusline+=%-14.(      "right align
 "set statusline+=%m           "modified flag
 "set statusline+=%r           "readonlyflag
 "set statusline+=%h           "help flag
@@ -87,22 +86,6 @@ set laststatus=2        "siempre mostrar la barra de estado
 "set statusline+=\|           "pipe
 "set statusline+=%{(&fenc==\"\"?&enc:&fenc)} "encoding
 "set statusline+=>            "
-"set statusline+=\ \-\        "dash separator
-"set statusline+=[            "open bracket
-"set statusline+=char:\%03.3b "ASCII value of char
-"set statusline+=\/           "slash
-"set statusline+=0x%04B       "HEX value of char
-"set statusline+=]            "close bracket
-"set statusline+=\ \-\        "dash separator
-"set statusline+=\ \[        "dash separator
-"set statusline+=c:%03c,     "current column in three characters left padded by zeros
-"set statusline+=l:%03l       "current line in three characters left padded by zeros
-"set statusline+=\/           "slash
-"set statusline+=%L           "total lines
-"set statusline+=\]           "close bracket
-"set statusline+=\ \-\        "space + dash
-"set statusline+=%02p%%\      "current % into file followed by the % sign
-"set statusline+=%)           "end of item group
 
 " Key bindings ---{{{
 let mapleader=","  "set ',' instead of '\' as <leader>
