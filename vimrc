@@ -3,26 +3,26 @@
 execute pathogen#infect()
 call pathogen#helptags()          "generate helptags for everything in ‘runtimepath’
 
+colorscheme molokai
+let g:airline_theme             = 'molokai'
+
 filetype plugin indent on         "enable filetype detection:
-
-set nocompatible                  "usar config de Vim y no de Vi
-set encoding=utf-8                "para que los achivos editados sean UTF-8
-set backspace=indent,eol,start    "permitir el backspace sobre todo en modo insert
-set guifont=consolas:h9
-set autoread                      "para actualizar cuando un archivo es leido desde fuera
-set clipboard=unnamed             "use the system clipboard
-set noruler                       "no mostrar info con posicion actual, esto se hara con statusbar
-set hidden                        "hide buffers when not displayed
-
-" Color scheme ---{{{
 syntax on                         "activar el highlight
+
 set t_Co=256                      "force 256 colors on the terminal
+
 set nocursorline                  "don't highlight all the line of the cursor
 hi CursorLine cterm=NONE ctermbg=darkmagenta ctermfg=white guibg=darkmagenta guifg=white
 set nocursorcolumn        "don't highlight all the column of the cursor
 hi CursorColumn cterm=NONE ctermbg=darkmagenta ctermfg=white guibg=darkmagenta guifg=white
-let g:airline_theme             = 'molokai'
 
+set nocompatible                  "usar config de Vim y no de Vi
+set encoding=utf-8                "para que los achivos editados sean UTF-8
+set backspace=indent,eol,start    "permitir el backspace sobre todo en modo insert
+set autoread                      "para actualizar cuando un archivo es leido desde fuera
+set clipboard=unnamed             "use the system clipboard
+set noruler                       "no mostrar info con posicion actual, esto se hara con statusbar
+set hidden                        "hide buffers when not displayed
 " Searching and movement ---{{{
 set hlsearch            "highlight search
 set incsearch           "incremental searches
