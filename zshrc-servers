@@ -1,0 +1,24 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory autocd beep extendedglob nomatch notify
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/a07942a/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+autoload -U colors && colors
+# PROMPT="%{$fg_bold[green]%}%c %{$fg_bold[yellow]%}♪ %{$reset_color%}"
+# PROMPT="%{$fg_bold[cyan]%}%c %{$reset_color%}"
+# PROMPT='%{$fg_bold[cyan]%}♞  %{$fg_bold[green]%}%c %{$fg_bold[yellow]%}⨠ %{$reset_color%}'
+PROMPT="%{$fg[magenta]%}%n%{$fg_bold[cyan]%}@%{$fg[yellow]%}%m%{$fg_bold[green]%}[%c] %{$reset_color%}"
+
+#RPROMPT="%{$fg[white]%}%n%{$fg[cyan]%} ♫ %{$fg[blue]%}%m %{$reset_color%}"
+#RPROMPT="%{$fg[magenta]%}%n%{$fg_bold[magenta]%} @%{$fg_bold[magenta]%}%m %{$reset_color%}"
+RPROMPT="%{$fg[cyan]%}%T %{$reset_color%}"
+

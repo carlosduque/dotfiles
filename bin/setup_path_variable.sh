@@ -1,15 +1,11 @@
 #!/usr/bin/env sh
 
-export BASE_PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin"
-
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
     export OPENEJB_HOME="~/srv/openejb/inst"
     export CATALINA_HOME="~/srv/tomcat/inst"
     export MW_HOME="~/srv/weblogic/wls1036"
     export CUSTOM_PATH="$(brew --prefix coreutils)/libexec/gnubin"
-    # export CUSTOM_PATH=$CUSTOM_PATH:"$HOME/.rvm/bin"
-    # export CUSTOM_PATH=$CUSTOM_PATH:"$HOME/.rvm/gems/ruby-2.2.1/bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"/usr/local/git/bin:/usr/local/MacGPG2/bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"/Library/Frameworks/JRuby.framework/Versions/Current/bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"$OPENEJB_HOME/bin"
@@ -28,6 +24,7 @@ elif [[ "$OSTYPE" == "cygwin" ]]; then
     export CUSTOM_PATH="$CUSTOM_PATH:$WINAPPS_HOME\\HashiCorp\\Vagrant\\bin"
 else
     #"freebsd"* || "linux-gnu"*
+    export CUSTOM_PATH="$CUSTOM_PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
     export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
     export ANT_HOME=/usr/share/ant
     export MAVEN_HOME=/usr/share/maven
@@ -36,7 +33,6 @@ else
     export MW_HOME=/srv/weblogic/inst
     export CUSTOM_PATH="$JAVA_HOME/bin:$ANT_HOME/bin:$MAVEN_HOME/bin:$OPENEJB_HOME/bin"
     export CUSTOM_PATH="$CUSTOM_PATH:$CATALINA_HOME/bin:$MW_HOME/bin"
-    export CUSTOM_PATH="$CUSTOM_PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 fi
 
 # export PATH=$PATH:$BASE_PATH:$CUSTOM_PATH

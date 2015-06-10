@@ -1,23 +1,6 @@
 
 " Basics ---{{{
-execute pathogen#infect()
-call pathogen#helptags()          "generate helptags for everything in ‘runtimepath’
-
-" Color scheme ---{{{
-colorscheme molokai
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ }
-
 filetype plugin indent on         "enable filetype detection:
-syntax on                         "activar el highlight
-
-set t_Co=256                      "force 256 colors on the terminal
-
-set nocursorline                  "don't highlight all the line of the cursor
-hi CursorLine cterm=NONE ctermbg=darkmagenta ctermfg=white guibg=darkmagenta guifg=white
-set nocursorcolumn        "don't highlight all the column of the cursor
-hi CursorColumn cterm=NONE ctermbg=darkmagenta ctermfg=white guibg=darkmagenta guifg=white
 
 set nocompatible                  "usar config de Vim y no de Vi
 set encoding=utf-8                "para que los achivos editados sean UTF-8
@@ -26,6 +9,14 @@ set autoread                      "para actualizar cuando un archivo es leido de
 set clipboard=unnamed             "use the system clipboard
 set noruler                       "no mostrar info con posicion actual, esto se hara con statusbar
 set hidden                        "hide buffers when not displayed
+
+" Color scheme ---{{{
+syntax on                         "activar el highlight
+set t_Co=256                      "force 256 colors on the terminal
+set nocursorline                  "don't highlight all the line of the cursor
+hi CursorLine cterm=NONE ctermbg=darkmagenta ctermfg=white guibg=darkmagenta guifg=white
+set nocursorcolumn        "don't highlight all the column of the cursor
+hi CursorColumn cterm=NONE ctermbg=darkmagenta ctermfg=white guibg=darkmagenta guifg=white
 
 " Searching and movement ---{{{
 set hlsearch            "highlight search
@@ -45,7 +36,7 @@ set shiftwidth=2        "number of spaces to use for autoindent
 set expandtab           "para que al presionar tab, inserte espacios y no \\t
 set nowrap              "don't activate wrapping
 set textwidth=120       "numero de columnas
-set colorcolumn=+1      "show when you are beyond textwidth
+" set colorcolumn=+1      "show when you are beyond textwidth
 hi ColorColumn cterm=NONE ctermbg=darkcyan ctermfg=white guibg=darkcyan guifg=white
 set list
 set listchars=tab:▷⋅,trail:⋅,nbsp:⋅ "display tabs and trailing spaces
@@ -64,7 +55,7 @@ set nowb                "prevents automatic write backup
 " Indentation ---{{{
 set autoindent          "al saltar a la siguiente linea q mantenga la  sangria
 set copyindent          "copy the previous indentation on autoindenting
-set noshowmode            "show the current mode
+set showmode            "show the current mode
 set showcmd             "show the partially-typed commands in the status line
 set shiftround          "use multiple of shiftwidth when indenting with '<' and '>'
 
@@ -75,18 +66,23 @@ set undolevels=1000     "use many levels of undo
 " Status bar ---{{{
 set laststatus=2        "siempre mostrar la barra de estado
 " configurar la barra de estado
-"set statusline+=%-F          "full path to file in the buffer
-"set statusline+=%m           "modified flag
-"set statusline+=%r           "readonlyflag
-"set statusline+=%h           "help flag
-"set statusline+=%w           "preview flag
-"set statusline+=<            "
-"set statusline+=%{&ff}       "current file format
-"set statusline+=\|           "pipe
-"set statusline+=%Y           "current filetype
-"set statusline+=\|           "pipe
-"set statusline+=%{(&fenc==\"\"?&enc:&fenc)} "encoding
-"set statusline+=>            "
+hi User1 ctermfg=15 ctermbg=0
+hi User2 ctermfg=46 ctermbg=0
+hi User3 ctermfg=11 ctermbg=0
+hi User4 ctermfg=7 ctermbg=0
+hi User5 ctermfg=6 ctermbg=0
+set statusline=
+set statusline +=%1*\ %n\ %*            "buffer number
+set statusline +=%5*%{&ff}%*            "file format
+set statusline +=%3*\ %{''.(&fenc!=''?&fenc:&enc).''}      "Encoding
+set statusline +=\⋅
+set statusline +=%3*%y%*                "file type
+set statusline +=%4*\ %<%F%*            "full path
+set statusline +=%2*%m%*                "modified flag
+set statusline +=%1*%=%5l%*             "current line
+set statusline +=%2*/%L%*               "total lines
+set statusline +=%1*%4v\ %*             "virtual column number
+set statusline +=%2*0x%04B\ %*          "character under cursor
 
 " Key bindings ---{{{
 let mapleader=","  "set ',' instead of '\' as <leader>
@@ -127,39 +123,6 @@ inoremap jj <esc> " use jj in insert mode to go back to normal mode
 " vim's builtin explorer, useful for renaming current file
 map <leader>ex :Explore<CR>
 
-" >>> easymotion
-" <leader><leader>w (<plug>(easymotion-w)) to trigger the word motion w
-
-" para usar 'aspell' usando ctrl+t
-" map ^T :w!<CR>:!aspell check %<CR>:e! %<CR>
-
-" >>> NERDTree
-map <leader>nt :NERDTreeToggle<CR>
-
-" >>> ctrlp
-" :CtrlP or :CtrlPBuffer or : CtrlPMRU or :CtrlPMixed to search in files, buffers and MRU files
-" Press <F5> to purge the cache for the current directory to get new files, remove deleted files and apply new ignore
-" options.
-" Press <c-f> and <c-b> to cycle between modes.
-" Press <c-d> to switch to filename only search instead of full path.
-" Press <c-r> to switch to regexp mode.
-" Use <c-j>, <c-k> or the arrow keys to navigate the result list.
-" Use <c-t> or <c-v>, <c-x> to open the selected entry in a new tab or in a new split.
-"
-" Use <c-n>, <c-p> to select the next/previous string in the prompt's history.
-" Use <c-y> to create a new file and its parent directories.
-" Use <c-z> to mark/unmark multiple files and <c-o> to open them
-map <leader>cp :CtrlP<CR>
-" or just plain ctrl+p :-)
-
-" >>> bufexplorer
-" <leader>be (normal open)
-" <leader>bs (force horizontal split open)
-" <leader>bv (force vertical split open)
-
-" convert markdown to html
-nmap <leader>md :%!~/bin/Markdown.pl --html4tags <CR>
-
 " Quickly editing
 nmap <silent> <leader>evim :vsplit $MYVIMRC<cr>
 nmap <silent> <leader>egvim :vsplit $HOME/.gvimrc<cr>
@@ -176,12 +139,6 @@ nnoremap <leader>n :setlocal number!<cr>
 
 " toggle cursorline/cursorcolumn
 nnoremap <leader>c :set cursorline! cursorcolumn!<cr>
-
-" map Silver Searcher
-map <leader>a :Ag!<space>
-
-" search for word under cursor with Silver Searcher
-map <leader>A :Ag! "<C-r>=expand('<cword>')<CR>"
 
 " clear the command line and search highlighting
 noremap <C-l> :nohlsearch<CR>
@@ -223,3 +180,4 @@ augroup END
 
 " Autosave files when losing focus
 au FocusLost * :wa
+
