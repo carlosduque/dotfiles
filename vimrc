@@ -4,7 +4,8 @@ execute pathogen#infect()
 call pathogen#helptags()          "generate helptags for everything in ‘runtimepath’
 
 " Color scheme ---{{{
-colorscheme molokai
+set background=dark
+colorscheme solarized
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
