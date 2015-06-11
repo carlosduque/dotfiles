@@ -12,9 +12,9 @@ export LC_ALL="es_ES.UTF-8"
 export LC_COLLATE="C"
 export LANG="es_ES.UTF-8"
 
-# setup PATH variable
-export PATH=$PATH:~/bin
-source ~/bin/setup_path_variable.sh
+# # setup PATH variable
+# export PATH=$PATH:~/bin
+# source ~/bin/setup_path_variable.sh
 
 antigen use oh-my-zsh
 
@@ -86,20 +86,6 @@ COMPLETION_WAITING_DOTS="true"
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="yyyy-mm-dd"
-
-# aliases
-alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vimrc"
-
-# setup tmux
-SESSION=hack
-
-# Always work in a tmux session if tmux is installed
-#if which tmux 2>&1 >/dev/null; then
-#    if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-#        tmux attach -t $SESSION || tmux new -s $SESSION; exit
-#    fi
-#fi
 
 # Tell antigen that you're done.
 antigen apply
