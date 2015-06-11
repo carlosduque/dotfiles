@@ -20,6 +20,3 @@ print -P "\e[0;35m System:  \e[1;35m`uname -srm`\e[1;32m"
 print -P "\e[0;35m Date:    \e[1;35m%D{%m.%d.%Y}"
 print -P "\e[0;35m Time:    \e[1;35m%D{%H:%M}"
 
-print -P "\e[1;36m"
-[ fortune > /dev/null ] && [ cowsay > /dev/null ] && fortune -s | cowsay
-
