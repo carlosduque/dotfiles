@@ -1,21 +1,6 @@
 #zmodload zsh/zprof  # load zprof module
 source $HOME/dotfiles/zsh-antigen/antigen.zsh
 
-# User configuration
-export EDITOR=vim
-#export BROWSER=$(which google-chrome chromium-browser firefox w3m links2 links lynx | grep -Pm1 '^/')
-export TZ=America/Santiago
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-export LC_ALL="es_ES.UTF-8"
-export LC_COLLATE="C"
-export LANG="es_ES.UTF-8"
-
-# # setup PATH variable
-# export PATH=$PATH:~/bin
-# source ~/bin/setup_path_variable.sh
-
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
@@ -79,7 +64,6 @@ CASE_SENSITIVE="true"
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to change the command execution time
@@ -91,5 +75,4 @@ HIST_STAMPS="yyyy-mm-dd"
 antigen apply
 
 #zprof  #zsh profiling
-
 
