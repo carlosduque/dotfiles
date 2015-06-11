@@ -71,6 +71,10 @@ COMPLETION_WAITING_DOTS="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="yyyy-mm-dd"
 
+# Print a random, hopefully interesting, adage.
+print -P "\e[1;36m"
+[ fortune > /dev/null ] && [ cowsay > /dev/null ] && fortune -s | cowsay
+
 # Tell antigen that you're done.
 antigen apply
 
