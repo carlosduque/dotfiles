@@ -191,6 +191,14 @@ noremap <C-l> :nohlsearch<CR>
 map <F5> :setlocal spell! spelllang=en_us<cr>
 imap <F5> <ESC>:setlocal spell! spelllang=en_us<cr>
 
+" xmpfilter (from rcodetools, run ruby code and insert output into buffer)
+nmap <buffer> <F4> <Plug>(xmpfilter-run)
+xmap <buffer> <F4> <Plug>(xmpfilter-run)
+imap <buffer> <F4> <Plug>(xmpfilter-run)
+nmap <buffer> <F3> <Plug>(xmpfilter-mark)
+xmap <buffer> <F3> <Plug>(xmpfilter-mark)
+imap <buffer> <F3> <Plug>(xmpfilter-mark)
+
 " execute current file
 map <leader>e :call ExecuteFile(expand("%"))<cr>
 
@@ -224,3 +232,4 @@ augroup END
 
 " Autosave files when losing focus
 au FocusLost * :wa
+
