@@ -1,0 +1,8 @@
+g:xmpfilter_cmd	xmpfilter.txt	/*g:xmpfilter_cmd*
+xmpfilter-changelog	xmpfilter.txt	/*xmpfilter-changelog*
+xmpfilter-commands	xmpfilter.txt	/*xmpfilter-commands*
+xmpfilter-contents	xmpfilter.txt	/*xmpfilter-contents*
+xmpfilter-examples	xmpfilter.txt	/*xmpfilter-examples*
+xmpfilter-introduction	xmpfilter.txt	/*xmpfilter-introduction*
+xmpfilter-mappings	xmpfilter.txt	/*xmpfilter-mappings*
+xmpfilter-variables	xmpfilter.txt	/*xmpfilter-variables*

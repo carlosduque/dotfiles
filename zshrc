@@ -73,7 +73,7 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Print a random, hopefully interesting, adage.
 print -P "\e[1;36m"
-[ fortune > /dev/null ] && [ cowsay > /dev/null ] && fortune -s | cowsay
+[ type fortune &> /dev/null ] && [ type cowsay &> /dev/null ] && fortune -s | cowsay
 
 # Tell antigen that you're done.
 antigen apply

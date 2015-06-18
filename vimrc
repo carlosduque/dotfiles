@@ -102,7 +102,7 @@ let mapleader=","  "set ',' instead of '\' as <leader>
 "
 " j will be mapped to gg. Q will also be mapped to gg, because j will be expanded for the recursive mapping.
 " W will be mapped to j (and not to gg) because j will not be expanded for the non-recursive mapping.
-" operartor modes (:map and :noremap)
+" operator modes (:map and :noremap)
 "    normal mode (:nmap and :nnoremap)
 "    visual mode (:vmap and :vnoremap)
 " and so on.
@@ -208,6 +208,14 @@ nmap <silent> <leader>sgvim :source $HOME/.gvimrc<cr>
 nmap <silent> <leader>etmux :vsplit ~/.tmux.conf<cr>
 nmap <silent> <leader>ezshrc :vsplit ~/.zshrc<cr>
 
+" xmpfilter: from rcodetools, run ruby code and insert output into buffer
+nmap <buffer> <F4> <Plug>(xmpfilter-run)
+xmap <buffer> <F4> <Plug>(xmpfilter-run)
+imap <buffer> <F4> <Plug>(xmpfilter-run)
+nmap <buffer> <F3> <Plug>(xmpfilter-mark)
+xmap <buffer> <F3> <Plug>(xmpfilter-mark)
+imap <buffer> <F3> <Plug>(xmpfilter-mark)
+
 " Functions ---{{{
 " execute current file
 map <leader>e :call ExecuteFile(expand("%"))<cr>
@@ -241,3 +249,4 @@ augroup END
 
 " Autosave files when losing focus
 au FocusLost * :wa
+
