@@ -123,6 +123,17 @@ inoremap <right> <nop>
 " noremap k <nop>
 " noremap l <nop>
 
+" resize split windows height
+" <C-W>+
+" <C-W>-
+" resize vertical windows width
+" <C-W>>
+" <C-W><
+" resize to equal dimensions
+" <C-W>=
+" maximum size
+" <C-W>_
+
 inoremap jj <esc> " use jj in insert mode to go back to normal mode
 
 " vim's builtin explorer, useful for renaming current file
@@ -158,22 +169,14 @@ map <leader>cp :CtrlP<CR>
 " <leader>bs (force horizontal split open)
 " <leader>bv (force vertical split open)
 
-" convert markdown to html
-nmap <leader>md :%!~/bin/Markdown.pl --html4tags <CR>
-
-" Quickly editing
-nmap <silent> <leader>evim :vsplit $MYVIMRC<cr>
-nmap <silent> <leader>egvim :vsplit $HOME/.gvimrc<cr>
-nmap <silent> <leader>svim :source $MYVIMRC<cr>
-nmap <silent> <leader>sgvim :source $HOME/.gvimrc<cr>
-nmap <silent> <leader>etmux :vsplit ~/.tmux.conf<cr>
-nmap <silent> <leader>ezshrc :vsplit ~/.zshrc<cr>
-
 " toggle line wrapping
 nnoremap <leader>w :set wrap!
 
 " toggle line numbers
 nnoremap <leader>n :setlocal number!<cr>
+
+" toggle relative line numbers
+nnoremap <leader>rn :setlocal relativenumber!<cr>
 
 " toggle cursorline/cursorcolumn
 nnoremap <leader>c :set cursorline! cursorcolumn!<cr>
@@ -191,10 +194,24 @@ noremap <C-l> :nohlsearch<CR>
 map <F5> :setlocal spell! spelllang=en_us<cr>
 imap <F5> <ESC>:setlocal spell! spelllang=en_us<cr>
 
+" remap emmet leader key
+let g:user_emmet_leader_key='mmt'
+
+" convert markdown to html
+nmap <leader>md :%!~/bin/Markdown.pl --html4tags <CR>
+
+" Quickly editing
+nmap <silent> <leader>evim :vsplit $MYVIMRC<cr>
+nmap <silent> <leader>egvim :vsplit $HOME/.gvimrc<cr>
+nmap <silent> <leader>svim :source $MYVIMRC<cr>
+nmap <silent> <leader>sgvim :source $HOME/.gvimrc<cr>
+nmap <silent> <leader>etmux :vsplit ~/.tmux.conf<cr>
+nmap <silent> <leader>ezshrc :vsplit ~/.zshrc<cr>
+
+" Functions ---{{{
 " execute current file
 map <leader>e :call ExecuteFile(expand("%"))<cr>
 
-" Functions ---{{{
 " execute file if we know how
 function! ExecuteFile(filename)
   :w
