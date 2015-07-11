@@ -2,7 +2,7 @@
 type = SimpleIMAPSSLRetriever
 server = imap.gmail.com
 username = carlosduque.hn@gmail.com
-password = sihhelord.029
+password = s3cr3t
 port = 993
 mailboxes = ('INBOX', '[Gmail]/All Mail')
 
