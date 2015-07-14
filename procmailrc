@@ -1,6 +1,6 @@
 MAILDIR = $HOME/mail # Asegurarse de que existe!!
 DEFAULT = $MAILDIR/inbox
-LOGFILE = $HOME/mail/log
+LOGFILE = $MAILDIR/log
 VERBOSE=on
 
 

@@ -1,5 +1,5 @@
 # Con esta configuracion se asume lo siguiente:
-# * se esta usando fetchmail para traer los archivos del servidor
+# * se esta usando fetchmail/getmail para traer los archivos del servidor
 # * se esta usando procmail para llevar los correos a los folders necesarios
 # * se esta usando mutt solo para ver los correos
 
@@ -17,20 +17,20 @@ set spoolfile = +inbox
 # comentado para dejar que procmail los mueva
 set mbox = +read
 
-#donde guardar msgs de salida
+# donde guardar msgs de salida
 set record = +sent
 
-#donde guardar msgs pospuestos (drafts)
+# donde guardar msgs pospuestos (drafts)
 set postponed = +drafts
 
-#Incluir el mensaje en un reply
+# incluir el mensaje en un reply
 set include = yes
 
-#El sujeto en mensajes reenviados
+# el sujeto en mensajes reenviados
 set forward_format="Fw: %s"
 
-#setear vim como editor
-#set editor = "vim +':set textwidth=77' +':set wrap ' +\`awk '/^$/ {print i+2; exit} {i++} %s\'` %s'"
+# setear vim como editor
+# set editor = "vim +':set textwidth=77' +':set wrap ' +\`awk '/^$/ {print i+2; exit} {i++} %s\'` %s'"
 set editor = "vim +':set textwidth=77' +':set wrap' +\`awk '/^$/ {print i+2; exit} {i++}' %s\` %s"
 
 # set pop_host="pop.gmail.com"
@@ -42,13 +42,13 @@ set editor = "vim +':set textwidth=77' +':set wrap' +\`awk '/^$/ {print i+2; exi
 
 set sendmail = /usr/sbin/sendmail
 #smtp_url =  smtp[s]://[user[:pass]@]host[:port]/
-set smtp_url =  "smtp://carlosduque.hn@gmail.com:sihhe029lord@smtp.gmail.com:587"
+set smtp_url =  "smtp://carlosduque.hn@gmail.com:s3cr3t@smtp.gmail.com:587"
 #set smtp_pass = 
 
-#lines for the index, everything else is the mail's body
+# lines for the index, everything else is the mail's body
 #set pager_index_lines = 10
 
-# # Too many email headers make reading a message difficult
+# too many email headers make reading a message difficult
 ignore *
 unignore From: To: Cc: Subject: Date: #Only these are shown in the header
 hdr_order From: Date: To: Cc: Subject: #Order to display headers
@@ -58,18 +58,19 @@ mailboxes =carlosduque.hn
 mailboxes =read
 
 # Asiga la tecla 'g' para ejecutar fetchmail y recolectar el correo
-macro index g "!fetchmail -k<enter>"  'run fetchmail -k'
+# macro index g "!fetchmail -k<enter>"  'run fetchmail -k'
+macro index g "!getmail --dont-delete -n<enter>"  'run getmail'
 
 # Para utilizar w3m en mutt
 macro index \cB |w3m\n "call w3m to extract URLs out of a message"
 macro pager \cB |w3m\n "call w3m to extract URLs out of a message"
+
 # Para llamar la documentacion en html
 macro generic <f1> "!w3m /usr/doc/mutt/html/manual.html\n" "Mostrar la documentacion de  Mutt"
 macro index   <f1> "!w3m /usr/doc/mutt/html/manual.html\n" "Mostrar la documentacion de  Mutt"
 macro pager   <f1> "!w3m /usr/doc/mutt/html/manual.html\n" "Mostrar la documentacion de  Mutt"
 
-
-# Ver 'Hooks' y 'Patterns en la documentacion de mutt.
+# Ver 'Hooks' y Patterns en la documentacion de mutt.
 # Todos los mensajes
 message-hook ~A                                  'set pager="builtin"'
 # Mensajes que se originan desde una REGEXP
