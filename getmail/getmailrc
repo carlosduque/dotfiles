@@ -1,0 +1,17 @@
+[retriever]
+type = SimpleIMAPSSLRetriever
+server = imap.gmail.com
+username = carlosduque.hn@gmail.com
+password = s3cr3t
+port = 993
+mailboxes = ('INBOX', '[Gmail]/All Mail')
+
+# [destination]
+# type = Maildir
+# path = ~/mail/carlosduque.hn@gmail.com/
+
+[destination]
+type = MDA_external
+path = /usr/bin/procmail
+arguments = ("-f", "%(sender)", "-m", "/Users/carlos/.procmailrc")
+
