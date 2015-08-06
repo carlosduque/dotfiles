@@ -49,7 +49,7 @@ set textwidth=120       "numero de columnas
 set colorcolumn=+1      "show when you are beyond textwidth
 hi ColorColumn cterm=NONE ctermbg=darkcyan ctermfg=white guibg=darkcyan guifg=white
 set list
-set listchars=tab:▷⋅,trail:⋅,nbsp:⋅ "display tabs and trailing spaces
+set listchars=eol:¬,tab:»·,trail:¤,nbsp:· "display tabs and trailing spaces
 
 " Backups ---{{{
 set nobackup
@@ -138,6 +138,8 @@ inoremap jj <esc> " use jj in insert mode to go back to normal mode
 
 " vim's builtin explorer, useful for renaming current file
 map <leader>ex :Explore<CR>
+" set current files dir, as vim's ccd
+map <leader>mkhome :cd %:p:h<CR>
 
 " >>> easymotion
 " <leader><leader>w (<plug>(easymotion-w)) to trigger the word motion w
@@ -147,6 +149,9 @@ map <leader>ex :Explore<CR>
 
 " >>> NERDTree
 map <leader>nt :NERDTreeToggle<CR>
+
+" >>> Tagbar
+map <leader>tb :TagbarToggle<CR>
 
 " >>> ctrlp
 " :CtrlP or :CtrlPBuffer or : CtrlPMRU or :CtrlPMixed to search in files, buffers and MRU files
@@ -171,6 +176,9 @@ map <leader>cp :CtrlP<CR>
 
 " toggle line wrapping
 nnoremap <leader>w :set wrap!
+
+" toggle listchars
+nnoremap <leader>l :set list!<cr>
 
 " toggle line numbers
 nnoremap <leader>n :setlocal number!<cr>
