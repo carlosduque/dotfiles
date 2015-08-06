@@ -5,7 +5,7 @@ call pathogen#helptags()          "generate helptags for everything in ‘runtim
 
 " Color scheme ---{{{
 set background=dark
-colorscheme solarized
+colorscheme vividchalk
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
@@ -27,6 +27,9 @@ set autoread                      "para actualizar cuando un archivo es leido de
 set clipboard=unnamed             "use the system clipboard
 set noruler                       "no mostrar info con posicion actual, esto se hara con statusbar
 set hidden                        "hide buffers when not displayed
+set number
+set relativenumber
+set nolist
 
 " Searching and movement ---{{{
 set hlsearch            "highlight search
