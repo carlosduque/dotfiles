@@ -1,4 +1,4 @@
-if [[ -f ~/init.sh ]]; then
-  source ~/init.sh
+if [[ -f ~/bin/init-vm.sh ]]; then
+  source ~/bin/init-vm.sh
 fi
 
