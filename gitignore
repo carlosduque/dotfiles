@@ -1,9 +1,9 @@
-
 .gitignore
 build.info
 
 ## eclipse
 .settings/
+.metadata/
 .classpath
 .project
 
