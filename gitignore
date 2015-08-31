@@ -47,5 +47,10 @@ repository/
 thumbs.db
 Thumbs.db
 
+# jekyll
+_site/
+.sass-cache/
+.jekyll-metadata
+
 ## History files
 .netrwhist
