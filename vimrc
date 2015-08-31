@@ -178,7 +178,7 @@ map <leader>cp :CtrlP<CR>
 " <leader>bv (force vertical split open)
 
 " toggle line wrapping
-nnoremap <leader>w :set wrap!
+nnoremap <leader>w :set wrap!<cr>
 
 " toggle listchars
 nnoremap <leader>l :set list!<cr>
