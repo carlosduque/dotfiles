@@ -151,6 +151,7 @@ map <leader>mkhome :cd %:p:h<CR>
 " map ^T :w!<CR>:!aspell check %<CR>:e! %<CR>
 
 " >>> NERDTree
+let g:NERDTreeWinPos = "right"
 map <leader>nt :NERDTreeToggle<CR>
 
 " >>> Tagbar
