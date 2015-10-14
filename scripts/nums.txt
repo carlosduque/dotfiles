@@ -1,0 +1,36 @@
+# FreeBSD
+base:      1.2GB
+update:    1.25
+portsnap:  4.81
+basics:    4.99
+* pkg
+* vim-lite
+* zsh #% chsh -s /usr/local/bin/zsh {user} ##to change the shell to bash
+* bash #some scripts need it, e.g.: solr startup scripts 
+* tmux
+* sudo
+* lsof
+* tree
+* netcat
+* curl
+* w3m / elinks
+
+extras:    5.3
+* mc
+* virtualbox-ose-additions #when vm
+* git
+
+dev: 5.58
+* openjdk-7.80.15,1
+* ruby-2.1.6,1
+
+X:    5.67GB
+* xorg
+* fluxbox
+
+Desktop: 8.15
+* Gnome+Slim
+
+Nicer desktop:
+* Cinnamon: 8.30
+
