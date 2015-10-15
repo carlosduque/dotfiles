@@ -11,6 +11,8 @@ elseif has("gui_gtk2")
   set guifont=Dina\ ttf\ 10px\ 12
 elseif has("x11")
   set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
+elseif has("mac")
+  set guifont=Dina-medium:h16
 else
   set guifont=Courier_New:h10:cDEFAULT
 endif
