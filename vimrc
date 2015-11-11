@@ -206,7 +206,7 @@ noremap <C-l> :nohlsearch<CR>
 map <F5> :setlocal spell! spelllang=en_us<cr>
 imap <F5> <ESC>:setlocal spell! spelllang=en_us<cr>
 
-" remap emmet leader key
+" remap emmet leader key, type: mmt, the trailing comma is required
 let g:user_emmet_leader_key='mmt'
 
 " convert markdown to html

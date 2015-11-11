@@ -1,4 +1,4 @@
-if [[ -f ~/bin/vm-init.sh ]]; then
-  source ~/bin/vm-init.sh
+if [[ -f $HOME/bin/vm-init.sh ]]; then
+  source $HOME/bin/vm-init.sh
 fi
 
