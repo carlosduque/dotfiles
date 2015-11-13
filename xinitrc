@@ -1,3 +1,4 @@
+# run: xinit <window manager> or startx ~/.xinitrc <wm>
 # default: fluxbox
 
 session=${1:-fluxbox}
