@@ -10,7 +10,7 @@ build.info
 ## Compiled sources
 build/
 dist/
-bin/
+#bin/
 target/
 *.class
 *.exe

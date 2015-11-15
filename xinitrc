@@ -11,8 +11,8 @@ case $session in
 #    dwm               ) exec dwm;;
 #    enlightenment     ) exec enlightenment_start;;
 #    ede               ) exec startede;;
-#    fluxbox           ) exec startfluxbox;;
-    gnome             ) exec gnome-session;;
+    fluxbox           ) exec startfluxbox;;
+#    gnome             ) exec gnome-session;;
 #    gnome-classic     ) exec gnome-session --session=gnome-classic;;
 #    i3|i3wm           ) exec i3;;
 #    icewm             ) exec icewm-session;;
