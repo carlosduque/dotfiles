@@ -1,0 +1,206 @@
+
+style.name:	tertius3o
+style.author: 	avatar3o
+style.date:	10 Apr 2004
+style.credits:	all me! j/k 
+style.comments:	Questions, comments, snide remarks?; <AIM: avatar3o>
+
+
+! Toolbar settings...
+toolbar: 			flat gradient vertical Bevell
+toolbar.color: 			#000000
+toolbar.colorTo: 		#000066 
+toolbar.textColor: 		#ffffff
+toolbar.font: 			snap
+toolbar.justify: 		center
+toolbar.bevelWidth: 		1
+toolbar.button.borderWidth:	1
+toolbar.borderWidth:		1
+toolbar.shaped:			1
+toolbar.borderColor:		#ffffff
+
+toolbar.button:			Flat Gradient Vertical Bevell
+toolbar.button.color:		#000000
+toolbar.button.colorTo:		#000066
+toolbar.button.picColor:	#ffffff
+
+toolbar.button.pressed:		Flat Gradient Diagonal Bevell
+toolbar.button.pressed.color:	#ffffff
+toolbar.button.pressed.colorTo:	#00ffff
+toolbar.button.pressed.picColor:black
+
+toolbar.label:			Flat Solid Horizontal Bevell
+toolbar.label.color:		#000000
+toolbar.label.colorTo:		#000066
+toolbar.label.textColor:	#ffffff
+
+toolbar.windowLabel:		flat gradient vertical Bevell
+toolbar.windowLabel.color:	#000000
+toolbar.windowLabel.colorTo:	#000066
+toolbar.windowLabel.textColor:	#ffffff
+
+	toolbar.clock: flat gradient vertical Bevell
+	! toolbar.clock.pixmap: 
+	toolbar.clock.color: black
+	toolbar.clock.colorTo: #000066
+	toolbar.clock.textColor: #ffffff
+	toolbar.clock.font: snap
+	toolbar.clock.justify: center
+	toolbar.clock.borderWidth: 1
+	toolbar.clock.borderColor: white
+
+	! Workspace name:
+	toolbar.workspace: flat gradient vertical Bevell
+	! toolbar.workspace.pixmap: 
+	toolbar.workspace.color: black
+	toolbar.workspace.colorTo: #000066
+	toolbar.workspace.textColor: #ffffff
+	toolbar.workspace.font: snap
+	toolbar.workspace.borderWidth: 1
+	toolbar.workspace.borderColor: white
+	toolbar.workspace.justify: center
+
+	! This is for an empty iconbar: 
+	toolbar.iconbar.empty: flat gradient vertical Bevell
+	! toolbar.iconbar.empty.pixmap: 
+	toolbar.iconbar.empty.color: black
+	toolbar.iconbar.empty.colorTo:  #000066
+	toolbar.iconbar.empty.textColor: #ffffff
+	toolbar.iconbar.empty.font: snap
+	toolbar.iconbar.empty.borderWidth: 1
+	toolbar.iconbar.empty.borderColor: white
+	toolbar.iconbar.empty.justify: center
+
+	! Focused window in iconbar:
+	toolbar.iconbar.focused: flat gradient vertical Bevell
+	! toolbar.iconbar.focused.pixmap: 
+	toolbar.iconbar.focused.color: #000000
+	toolbar.iconbar.focused.colorTo: #0000ff
+	toolbar.iconbar.focused.textColor: #00ffff
+	toolbar.iconbar.focused.font: snap
+
+	! UnFocused window in iconbar:
+	toolbar.iconbar.unfocused: flat gradient vertical Bevell
+	! toolbar.iconbar.unfocused.pixmap: 
+	toolbar.iconbar.unfocused.color: black
+	toolbar.iconbar.unfocused.colorTo: #000066
+	toolbar.iconbar.unfocused.textColor: #ffffff
+	toolbar.iconbar.unfocused.font: snap
+
+	toolbar.iconbar.borderWidth: 1
+	toolbar.iconbar.borderColor: white
+
+
+
+! Menu settings...
+menu.borderWidth:		1
+menu.borderColor:		white
+
+menu.frame:			Flat Gradient Diagonal Bevell interlaced
+menu.frame.color:		#000000
+menu.frame.colorTo:		#000099
+menu.frame.textColor:		#ffffff
+menu.frame.font:		snap
+menu.frame.justify:		Right
+menu.frame.disableColor:	#666666
+
+menu.title:			Flat Solid Horizontal Bevell
+menu.title.color:		#000000
+menu.title.textColor:		#00ffff
+menu.title.font:		snap
+menu.title.justify:		Center
+
+menu.hilite:			Flat Gradient Diagonal Bevell interlaced
+menu.hilite.color:		#ffffff
+menu.hilite.colorTo:		#00ffff
+menu.hilite.textColor:		#000000
+
+menu.bullet:			Triangle
+menu.bullet.position:		Right
+
+! Window settings...
+
+window.borderWidth:		1
+window.borderColor:		white
+
+! - [] X buttons
+window.button.focus:		Flat Gradient Vertical Bevell
+window.button.focus.color:	#000066
+window.button.focus.colorTo:	#0000ff
+window.button.focus.picColor:	#ffffff
+window.button.unfocus:		parentrelative
+window.button.unfocus.color:	#28455a
+window.button.unfocus.picColor:	#007c73
+
+!the bottom corner parts
+window.grip.focus:		Flat Gradient Vertical Bevell
+window.grip.focus.color:	#0000ff
+window.grip.focus.colorTo:	#000066
+window.grip.unfocus:		Flat Solid Horizontal Bevell
+window.grip.unfocus.color:	#000033
+
+!the bottom middle bar, between the "grips"
+window.handle.focus:		Flat Gradient Vertical Bevell
+window.handle.focus.color:	#000099
+window.handle.focus.colorTo:	#000000
+window.handle.unfocus:		Flat Solid Horizontal Bevell
+window.handle.unfocus.color:	#28455a
+!the part w/ the words
+window.label.focus:		Flat Gradient Vertical Bevell
+window.label.focus.color:	#000033
+window.label.focus.colorTo:	#0000ff
+window.label.focus.textColor:	#ffffff
+window.label.focus.font:	snap
+window.label.focus.justify:	Center
+window.label.unfocus:		Flat Solid Vertical Bevell
+window.label.unfocus.color:	#000033
+window.label.unfocus.textColor:	#007c73
+
+window.title.focus:		Raised Bevel1 Gradient Vertical Bevell
+window.title.focus.color:	#000033
+window.title.focus.colorTo:	#0000ff
+window.title.unfocus:		Flat Gradient pipecross Bevell
+window.title.unfocus.color:	#000033
+window.title.unfocus.colorTo:	#000033
+
+window.button.pressed:		Raised Bevel1 Solid Horizontal Bevell
+window.button.pressed.color:	#28455a
+
+! doesn't work yet anyways, but good to have
+window.tab.justify:                     Center
+window.tab.label.unfocus:               Flat Solid Bevell
+window.tab.label.unfocus.color:         #000033
+window.tab.label.unfocus.textColor:     #000033
+window.tab.label.focus:                 Flat Solid
+window.tab.label.focus.color:           #385588
+window.tab.label.focus.textColor:       #c5d3d6
+window.tab.borderWidth:                 1
+window.tab.borderColor:                 rgb:10/10/10
+window.tab.font:                        nu
+
+window.font:			snap
+window.justify:			Center
+
+slit:					flat gradient vertical Bevell
+slit.color:				#000000
+slit.colorTo:				#000000
+slit.borderWidth:			1
+slit.bevelWidth:			3
+slit.borderColor:			#ffffff
+
+window.frame.focusColor:		#c5d3d6
+window.frame.unfocusColor:		#28455a
+handleWidth:				5
+frameWidth:				0
+bevelWidth:				3
+borderWidth:				1
+borderColor:				#333333
+
+
+!menu.roundCorners:			BottomLeft BottomRight
+!window.roundCorners:			TopRight TopLeft BottomLeft BottomRight
+
+rootCommand:	fbsetbg -a ~/.fluxbox/backgrounds/Sinus.jpg
+!rootCommand:	wmsetbg --scale ~/.fluxbox/backgrounds/Sinus2.jpg
+
+*Font:					snap
