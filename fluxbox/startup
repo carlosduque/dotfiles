@@ -5,8 +5,8 @@
 # You can set your favourite wallpaper here if you don't want
 # to do it from your style.
 # fbsetbg usa otra setter, display (imageMagick) no se recomienda asi q instale 'feh'
-fbsetbg -a ~/data/imgs/wallpapers/nightfear1024x768.jpg
 # fbsetbg -f ~/.fluxbox/lastwallpaper
+fbsetbg -f ~/.fluxbox/backgrounds/sid_posthuman.jpg
 #
 # This sets a black background
 
@@ -24,7 +24,7 @@ fbsetbg -a ~/data/imgs/wallpapers/nightfear1024x768.jpg
 # xset r rate 195 35
 #
 # Your own fonts-dir:
-# xset +fp "/home/carlos/.fonts"
+xset +fp "$HOME/.fonts"
 #
 # Your favourite mouse cursor:
 # xsetroot -cursor_name right_ptr
@@ -40,14 +40,15 @@ fbsetbg -a ~/data/imgs/wallpapers/nightfear1024x768.jpg
 # wmsmixer -w &
  idesk &
  conky -d
- root-tail -f -g 570x125+665+660 -fn '-*-clean-medium-r-normal-*-*-*-*-*-c-*-iso8859-1' --wordwrap --justify /var/log/daemon.log,grey,DAEMON /var/log/messages,grey,MSGS /var/log/ulog/syslogemu.log,red,FIREWALL
- adesklets &
- fbpager &
- aterm -bg black -fg white -sl 1000 -vb -sb -fade 80 -tr -sh 15 -fn Terminus -fb Terminus -geometry 137x30+215+80 -e screen &
+# root-tail -f -g 570x125+665+660 -fn '-*-clean-medium-r-normal-*-*-*-*-*-c-*-iso8859-1' --wordwrap --justify /var/log/daemon.log,grey,DAEMON /var/log/messages,grey,MSGS /var/log/ulog/syslogemu.log,red,FIREWALL
+# adesklets &
+# fbpager &
+#aterm -bg black -fg white -sl 1000 -vb -sb -fade 80 -tr -sh 15 -fn Terminus -fb Terminus -geometry 137x30+215+80 -e screen &
+urxvt -bg black -fg white -sl 1000 -vb -sb -fade 80 -tr -sh 15 -geometry 137x30+215+80 &
 
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.
 
-exec /usr/bin/fluxbox
+exec /usr/local/bin/fluxbox
 # or if you want to keep a log:
 # exec /usr/bin/fluxbox -log "/home/carlos/.fluxbox/log"
