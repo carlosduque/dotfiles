@@ -17,7 +17,7 @@ source $HOME/bin/setup_path_variable.sh
 path=('/usr/local/heroku/bin' $path)
 export PATH
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # aliases
 alias zshconfig="vim $HOME/.zshrc"

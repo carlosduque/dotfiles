@@ -36,3 +36,4 @@ $(type fortune &> /dev/null) && $(type cowsay &> /dev/null) && fortune -s | cows
 
 #zprof  #zsh profiling
 
+eval "$(rbenv init -)"
