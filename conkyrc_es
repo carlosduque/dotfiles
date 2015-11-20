@@ -19,7 +19,7 @@ background yes
 use_xft yes
 
 # Xft font when Xft is enabled
-xftfont Bitstream Vera Sans Mono:size=8
+xftfont Bitstream Vera Sans Mono:size=7
 
 # Text alpha when using Xft
 xftalpha 0.8
@@ -74,9 +74,10 @@ default_outline_color white
 
 # Text alignment, other possible values are commented
 #alignment top_left
-alignment top_right
+#alignment top_right
 #alignment bottom_left
 #alignment bottom_right
+alignment middle_right
 
 # Gap between borders of screen and text
 # same thing as passing -x at command line
