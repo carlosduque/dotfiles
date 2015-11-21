@@ -5,7 +5,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export OPENEJB_HOME="$HOME/srv/openejb/inst"
     export CATALINA_HOME="$HOME/srv/tomcat/inst"
     export MW_HOME="$HOME/srv/weblogic/wls1036"
-    export CUSTOM_PATH="$HOME/.rbenv/bin"
+    export RBENV_ROOT="/usr/local/var/rbenv"
+    #export CUSTOM_PATH="$HOME/.rbenv/bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"$(/usr/local/bin/brew --prefix coreutils)/libexec/gnubin"
     export CUSTOM_PATH=$CUSTOM_PATH:"/usr/local/git/bin:/usr/local/MacGPG2/bin"
     export CUSTOM_PATH=$CUSTOM_PATH:"/Library/Frameworks/JRuby.framework/Versions/Current/bin"
@@ -26,6 +27,7 @@ elif [[ "$OSTYPE" == "cygwin" ]]; then
 else
     #"freebsd"* || "linux-gnu"*
     export CUSTOM_PATH="$CUSTOM_PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+    #export CUSTOM_PATH="$HOME/.rbenv/bin"
     export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
     export ANT_HOME=/usr/share/ant
     export MAVEN_HOME=/usr/share/maven

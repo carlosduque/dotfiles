@@ -30,10 +30,12 @@ COMPLETION_WAITING_DOTS="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="yyyy-mm-dd"
 
+# initializers
+eval "$(rbenv init -)"
+
 # Print a random, hopefully interesting, adage.
 print -P "\e[1;36m"
 $(type fortune &> /dev/null) && $(type cowsay &> /dev/null) && fortune -s | cowsay
 
 #zprof  #zsh profiling
 
-eval "$(rbenv init -)"

@@ -56,7 +56,7 @@ export TZ=America/Santiago
 
 # setup PATH variable
 export PATH=$PATH:~/bin
-. ~/bin/setup_path_variable.sh
+. ~/bin/setup_env_vars.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

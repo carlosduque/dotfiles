@@ -11,7 +11,7 @@ export LANG="es_ES.UTF-8"
 
 # setup PATH variable
 path+=($HOME/bin)
-source $HOME/bin/setup_path_variable.sh
+source $HOME/bin/setup_env_vars.sh
 
 ### Added by the Heroku Toolbelt, adapted to zsh
 path=('/usr/local/heroku/bin' $path)
