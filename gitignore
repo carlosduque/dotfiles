@@ -25,9 +25,11 @@ repository/
 ## application specific dirs
 .vagrant/
 
-## Logs and databases
+## Temps, logs and databases
+tmp/
 *.log
 *.sqlite
+*.sqlite3
 
 ## Packages
 *.7z
@@ -46,6 +48,9 @@ repository/
 .Trashes
 thumbs.db
 Thumbs.db
+
+#rails
+.bundle/
 
 # jekyll
 _site/
