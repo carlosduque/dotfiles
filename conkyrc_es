@@ -19,7 +19,7 @@ background yes
 use_xft yes
 
 # Xft font when Xft is enabled
-xftfont Bitstream Vera Sans Mono:size=7
+xftfont Bitstream Vera Sans Mono:size=8
 
 # Text alpha when using Xft
 xftalpha 0.8
@@ -332,7 +332,7 @@ ${if_mounted /mnt/auto/cdq}${color #F09000}/mnt/auto/cdq:${color }${fs_free /mnt
 ${fs_bar 3,180 /mnt/auto/cdq}${endif}
 
 ${color slate grey}RED:${offset 65}SENAL(${color #F09000}BAJ${color slate grey}/${color #F09000}SUB${color slate grey})
-${color #F09000} eth0${color slate grey}:${color white}${addr eth0}${color slate grey} ${wireless_link_qual_perc eth0}(${color white}${downspeed eth0}k${color slate grey}/${color white}${upspeed eth0}k${color slate grey})
+${color #F09000} em0${color slate grey}:${color white}${addr em0}${color slate grey} (${color white}${downspeed em0}k${color slate grey}/${color white}${upspeed em0}k${color slate grey})
 ${color #F09000} wlan0${color slate grey}: ${color white}${addr wlan0}${color slate grey} (${color white}${downspeed wlan0}k${color slate grey}/${color white}${upspeed wlan0}k${color slate grey})
 
 ${color slate grey}AUDIO:
@@ -341,7 +341,8 @@ ${color slate grey}AUDIO:
  ${color white}${mpd_elapsed}/${mpd_length}
 
 ${color slate grey}FORTUNA:
-${color white}${execi 120 fortune -s ~/docs/fortunes | fold -w30}
+#${color white}${execi 120 fortune -s ~/docs/fortunes | fold -w30}
+${color white}${execi 120 fortune -s | fold -w30}
 
 ${color slate grey}TWITTER:
 ${color white}
