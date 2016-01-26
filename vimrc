@@ -28,7 +28,7 @@ set clipboard=unnamed             "use the system clipboard
 set noruler                       "no mostrar info con posicion actual, esto se hara con statusbar
 set hidden                        "hide buffers when not displayed
 set number
-set relativenumber
+set norelativenumber
 set nolist
 
 " Searching and movement ---{{{
