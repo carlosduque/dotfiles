@@ -10,6 +10,7 @@ build.info
 ## Compiled sources
 build/
 dist/
+classes/
 #bin/
 target/
 *.class
