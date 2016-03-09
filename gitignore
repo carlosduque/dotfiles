@@ -26,6 +26,7 @@ tmp/
 *.log
 *.sqlite
 *.sqlite3
+<<<<<<< HEAD
 ## security
 *.key
 known_hosts
