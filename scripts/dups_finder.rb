@@ -34,9 +34,8 @@ end
 
 if __FILE__ == $0
   basedir = ARGV[0]
-  pattern = ARGV[1]
-  puts "Usage: ruby #{File.basename(__FILE__)} BASEDIR 'PATTERN'" unless not basedir.nil? and
-        not pattern.nil?
+  pattern = '*.*'
+  puts "Usage: ruby #{File.basename(__FILE__)} BASEDIR" unless not basedir.nil?
   $DEBUG = false
   finder = Utils::DuplicateFinder.new(basedir)
   finder.each_set_of_duplicates(pattern) do |sum, files|
