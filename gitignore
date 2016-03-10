@@ -1,12 +1,10 @@
 .gitignore
 build.info
-
 ## eclipse
 .settings/
 .metadata/
 .classpath
 .project
-
 ## Compiled sources
 build/
 dist/
@@ -18,20 +16,21 @@ target/
 *.com
 *.o
 *.so
-
 ## artifact repositories
 ivy-cache/
 repository/
-
 ## application specific dirs
 .vagrant/
-
 ## Temps, logs and databases
 tmp/
 *.log
 *.sqlite
 *.sqlite3
-
+<<<<<<< HEAD
+## security
+*.key
+known_hosts
+authorized_keys
 ## Packages
 *.7z
 *.dmg
