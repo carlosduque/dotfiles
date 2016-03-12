@@ -1,12 +1,12 @@
 Host gh github github.com
 HostName github.com
 IdentityFile ~/.ssh/id_rsa-macbook.key
-User carlosduque
+User git
 
 Host bitbucket bitbucket.org
 HostName bitbucket.org
 IdentityFile ~/.ssh/id_rsa-macbook.key
-User carlosduque
+User git
 
 Host stash stash.aln.experian.com
 HostName stash.aln.experian.com
