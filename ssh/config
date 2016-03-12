@@ -1,0 +1,14 @@
+Host gh github github.com
+HostName github.com
+IdentityFile ~/.ssh/id_rsa-macbook.key
+User carlosduque
+
+Host bitbucket bitbucket.org
+HostName bitbucket.org
+IdentityFile ~/.ssh/id_rsa-macbook.key
+User carlosduque
+
+Host stash stash.aln.experian.com
+HostName stash.aln.experian.com
+IdentityFile /home/a07942a/.ssh/id_rsa-w5136065.key
+User a07942a
