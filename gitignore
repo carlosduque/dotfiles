@@ -3,6 +3,7 @@ build.info
 ## eclipse
 .settings/
 .metadata/
+.externalToolBuilders/
 .classpath
 .project
 ## Compiled sources
