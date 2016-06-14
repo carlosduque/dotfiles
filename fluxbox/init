@@ -56,7 +56,7 @@ session.screen0.maxIgnoreIncrement:	true
 session.screen0.edgeSnapThreshold:	0
 session.screen0.desktopwheeling:	true
 session.screen0.tooltipDelay:	500
-session.screen0.defaultDeco:	NORMAL
+session.screen0.defaultDeco: TINY
 session.screen0.workspaces:	4
 session.screen0.focusLastWindow:	true
 session.screen0.decorateTransient:	false
