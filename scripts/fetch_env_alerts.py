@@ -21,7 +21,6 @@ def extract_date(text):
 
 def process(url = "http://www.uoct.cl/restriccion-vehicular/", plates_to_check = [5]):
     'find out if the certain license plates have restrictions'
-    global restricted
     req = None
     try:
         print "[==>] 'GET' %s" % (url)
@@ -46,6 +45,7 @@ def process(url = "http://www.uoct.cl/restriccion-vehicular/", plates_to_check =
     return restricted
 
 if __name__ == "__main__":
+    #import pudb; pudb.set_trace()
     restricted = []
     if len(sys.argv) > 2:
         plates_to_check = [int(num) for num in sys.argv[2:]]
@@ -53,5 +53,5 @@ if __name__ == "__main__":
     else:
         restricted = process()
 
-    print "[*] From your list, these are restricted: " % (restricted)
+    print "[*] From your list, these are restricted: %s" % (restricted)
 
