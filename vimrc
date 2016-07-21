@@ -5,7 +5,7 @@ call pathogen#helptags()          "generate helptags for everything in ‘runtim
 
 " Color scheme ---{{{
 set background=dark
-colorscheme vividchalk
+colorscheme xibalba
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
@@ -42,15 +42,16 @@ set showmatch           "set show matching parenthesis
 set foldmethod=manual   "el folding puede ser manual, indent, syntax, expr
 
 " Tabs, spaces and wrapping ---{{{
-set tabstop=2           "un tab de X espacios
-set softtabstop=2       "para que vim vea los X espacios seguidos del tabstop y funcione el backspace eliminando los 4
+set tabstop=4           "un tab de X espacios
+set softtabstop=4       "para que vim vea los X espacios seguidos del tabstop y funcione el backspace eliminando los 4
 set smarttab            "insert tabs on the start of a line according to shiftwidth, not tabstop
-set shiftwidth=2        "number of spaces to use for autoindent
+set shiftwidth=4        "number of spaces to use for autoindent
 set expandtab           "para que al presionar tab, inserte espacios y no \\t
 set nowrap              "don't activate wrapping
 set textwidth=120       "numero de columnas
 set colorcolumn=+1      "show when you are beyond textwidth
 hi ColorColumn cterm=NONE ctermbg=darkcyan ctermfg=white guibg=darkcyan guifg=white
+
 set list
 set listchars=eol:¬,tab:»·,trail:¤,nbsp:· "display tabs and trailing spaces
 
@@ -137,7 +138,7 @@ inoremap <right> <nop>
 " maximum size
 " <C-W>_
 
-inoremap jj <esc> " use jj in insert mode to go back to normal mode
+"inoremap jj <esc> " use jj in insert mode to go back to normal mode
 
 " vim's builtin explorer, useful for renaming current file
 map <leader>ex :Explore<CR>
