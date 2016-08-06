@@ -195,7 +195,7 @@ nnoremap <leader>rn :setlocal relativenumber!<cr>
 nnoremap <leader>c :set cursorline! cursorcolumn!<cr>
 
 " map Silver Searcher
-map <leader>a :Ag!<space>
+map <leader>ag :Ag!<space>
 
 " search for word under cursor with Silver Searcher
 map <leader>A :Ag! "<C-r>=expand('<cword>')<CR>"
