@@ -4,13 +4,8 @@
 import sys
 import re
 
-from bs4 import BeautifulSoup
 import requests
-
-MY_PLATES_LAST_NUM = 5
-
-url = "http://www.uoct.cl/restriccion-vehicular/"
-#url = "http://www.beastie.me/restrict.html"
+from bs4 import BeautifulSoup
 
 def extract_greens(text):
     'Extract restricted plates with green seals'
@@ -24,13 +19,14 @@ def extract_date(text):
     'Extract the date that this restriction applies to'
     return text.split(":")[0]
 
-def main():
+def process(url = "http://www.uoct.cl/restriccion-vehicular/", plates_to_check = [5]):
+    'find out if the certain license plates have restrictions'
     req = None
     try:
         print "[==>] 'GET' %s" % (url)
         req = requests.get(url)
         if req.status_code != 200:
-            print "[!!!] Received: %s" % (req.status_code)
+            print "[<==] Received: %s" % (req.status_code)
             sys.exit(-1)
         else:
             html = BeautifulSoup(req.text, "html.parser")
@@ -38,13 +34,24 @@ def main():
             #html.find_all(re.compile("^span"))
             alert_text = html.find("span", class_="preemergencia").text
             date = alert_text.split(":")[0]
-            restricted = extract_greens(alert_text.split(":")[1])
-            print "[***] Restrictions: %s" % (restricted)
+            all_restricted = extract_greens(alert_text.split(":")[1])
+            print "[*] Restrictions for %s: %s" % (date, all_restricted)
     except requests.ConnectionError as rce:
-        print "[!!!] Couldn't connect:%s:%s" % (rce.errno, rce.strerror)
+        print "[!!] Couldn't connect:%s:%s" % (rce.errno, rce.strerror)
     except requests.HTTPError as he:
-        print "[!!!] HTTP error:%s:%s" % (he.errno, he.strerror)
+        print "[!!] HTTP error:%s:%s" % (he.errno, he.strerror)
 
-    if MY_PLATES_LAST_NUM in restricted:
-        print "You may leave, but your car has to stay home on %s" % (date)
-main()
+    restricted = [plate for plate in plates_to_check if plate in all_restricted]
+    return restricted
+
+if __name__ == "__main__":
+    #import pudb; pudb.set_trace()
+    restricted = []
+    if len(sys.argv) > 2:
+        plates_to_check = [int(num) for num in sys.argv[2:]]
+        restricted = process(sys.argv[1], plates_to_check)
+    else:
+        restricted = process()
+
+    print "[*] From your list, these are restricted: %s" % (restricted)
+
