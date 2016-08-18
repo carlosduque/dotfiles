@@ -11,6 +11,7 @@ export LANG="es_ES.UTF-8"
 
 # setup PATH variable
 path+=($HOME/bin)
+source $HOME/bin/resty
 #source $HOME/binhsetup_env_vars.sh
 
 if [[ "$OSTYPE" == "darwin"* ]]; then

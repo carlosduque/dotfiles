@@ -31,7 +31,7 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # initializers
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 # Print a random, hopefully interesting, adage.
 print -P "\e[1;36m"
