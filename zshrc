@@ -20,6 +20,8 @@ if ! zgen saved; then
   # Load the theme.
   #antigen theme carlosduque/oh-my-zsh-themes chess
   zgen load carlosduque/oh-my-zsh-themes stealth
+  #zgen load carlosduque/oh-my-zsh-themes chess
+  #zgen load carlosduque/oh-my-zsh-themes ice 
 fi
 
 CASE_SENSITIVE="true"
