@@ -25,6 +25,7 @@ ivy-cache/
 repository/
 ## application specific dirs
 .vagrant/
+zgen/
 ## Temps, logs and databases
 tmp/
 *.log
@@ -42,7 +43,6 @@ authorized_keys
 *.rar
 *.tar
 *.zip
-
 ## OS generated files
 .DS_Store
 .DS_Store?
@@ -51,14 +51,11 @@ authorized_keys
 .Trashes
 thumbs.db
 Thumbs.db
-
 #rails
 .bundle/
-
 # jekyll
 _site/
 .sass-cache/
 .jekyll-metadata
-
 ## History files
 .netrwhist
