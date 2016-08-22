@@ -6,6 +6,9 @@ build.info
 .externalToolBuilders/
 .classpath
 .project
+## intellij idea
+.idea/
+.iml
 ## Compiled sources
 build/
 dist/
