@@ -7,6 +7,7 @@ build.info
 .classpath
 .project
 ## intellij idea
+out/
 .idea/
 .iml
 ## Compiled sources
