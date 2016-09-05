@@ -174,13 +174,22 @@ map <leader>tb :TagbarToggle<CR>
 map <leader>cp :CtrlP<CR>
 " or just plain ctrl+p :-)
 
+
+" >>> EasyMotion
+" <Leader>w   to trigger word motion
+" <Leader>t
+" <Leader>gE
+let g:EasyMotion_leader_key = '<Leader>' 
+
+
+
 " >>> bufexplorer
 " <leader>be (normal open)
 " <leader>bs (force horizontal split open)
 " <leader>bv (force vertical split open)
 
 " toggle line wrapping
-nnoremap <leader>w :set wrap!<cr>
+nnoremap <leader>wrp :set wrap!<cr>
 
 " toggle listchars
 nnoremap <leader>l :set list!<cr>
