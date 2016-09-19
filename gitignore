@@ -9,7 +9,7 @@ build.info
 ## intellij idea
 out/
 .idea/
-.iml
+*.iml
 ## Compiled sources
 build/
 dist/
