@@ -43,4 +43,4 @@
   lq = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 [http]
-  sslCAInfo = /home/a07942a/.ssh/experian-bitbucket.cer
+  #sslCAInfo = /home/a07942a/.ssh/experian-bitbucket.cer
