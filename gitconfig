@@ -38,6 +38,9 @@
   untracked = blue
 
 [alias]
-  ls = log --pretty='format:%C(cyan)%h%C(reset) %C(dim cyan)%ad%C(reset) %s %C(bold yellow)%d %C(magenta)%an,%C(reset) %C(dim magenta)%ar' --all --date=short
+  ls = log --pretty='format:%C(cyan)%h%C(reset) %C(dim cyan)%ad%C(reset) %s %C(bold yellow)%d %C(magenta)%an,%C(reset) %C(dim magenta)%ar' --date=short
   lg = log --oneline --decorate --graph
+  lq = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
+[http]
+  sslCAInfo = /home/a07942a/.ssh/experian-bitbucket.cer
