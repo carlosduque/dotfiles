@@ -1,5 +1,11 @@
 #!/bin/zsh
+# vim: set ft=zsh fenc=utf-8 noai ts=8 et sts=4 sw=0 tw=80 nowrap :
 local ZGEN_SOURCE="$(cd "$(dirname "${0}")" && pwd -P)"
+
+-zgputs() { printf %s\\n "$@" ;}
+-zgpute() { printf %s\\n "-- zgen: $*" >&2 ;}
+
+-zginit() { -zgputs "$*" >> "${ZGEN_INIT}" ;}
 
 
 if [[ -z "${ZGEN_DIR}" ]]; then
@@ -10,29 +16,82 @@ if [[ -z "${ZGEN_INIT}" ]]; then
     ZGEN_INIT="${ZGEN_DIR}/init.zsh"
 fi
 
+# The user can explicitly disable Zgen attempting to invoke `compinit`, or it
+# will be automatically disabled if `compinit` appears to have already been
+# invoked.
+if [[ -z "${ZGEN_AUTOLOAD_COMPINIT}" && -z "${(t)_comps}" ]]; then
+    ZGEN_AUTOLOAD_COMPINIT=1
+fi
+
+if [[ -n "${ZGEN_CUSTOM_COMPDUMP}" ]]; then
+    ZGEN_COMPINIT_DIR_FLAG="-d ${(q-)ZGEN_CUSTOM_COMPDUMP}"
+    ZGEN_COMPINIT_FLAGS="${ZGEN_COMPINIT_DIR_FLAG} ${ZGEN_COMPINIT_FLAGS}"
+fi
+
 if [[ -z "${ZGEN_LOADED}" ]]; then
     ZGEN_LOADED=()
+fi
+
+if [[ -z "${ZGEN_PREZTO_OPTIONS}" ]]; then
+    ZGEN_PREZTO_OPTIONS=()
+fi
+
+if [[ -z "${ZGEN_PREZTO_LOAD}" ]]; then
+    ZGEN_PREZTO_LOAD=()
 fi
 
 if [[ -z "${ZGEN_COMPLETIONS}" ]]; then
     ZGEN_COMPLETIONS=()
 fi
 
+if [[ -z "${ZGEN_USE_PREZTO}" ]]; then
+    ZGEN_USE_PREZTO=0
+fi
+
+if [[ -z "${ZGEN_PREZTO_LOAD_DEFAULT}" ]]; then
+    ZGEN_PREZTO_LOAD_DEFAULT=1
+fi
+
+if [[ -z "${ZGEN_OH_MY_ZSH_REPO}" ]]; then
+    ZGEN_OH_MY_ZSH_REPO=robbyrussell
+fi
+
+if [[ "${ZGEN_OH_MY_ZSH_REPO}" != */* ]]; then
+    ZGEN_OH_MY_ZSH_REPO="${ZGEN_OH_MY_ZSH_REPO}/oh-my-zsh"
+fi
+
+if [[ -z "${ZGEN_OH_MY_ZSH_BRANCH}" ]]; then
+    ZGEN_OH_MY_ZSH_BRANCH=master
+fi
+
+if [[ -z "${ZGEN_PREZTO_REPO}" ]]; then
+    ZGEN_PREZTO_REPO=sorin-ionescu
+fi
+
+if [[ "${ZGEN_PREZTO_REPO}" != */* ]]; then
+    ZGEN_PREZTO_REPO="${ZGEN_PREZTO_REPO}/prezto"
+fi
+
+if [[ -z "${ZGEN_PREZTO_BRANCH}" ]]; then
+    ZGEN_PREZTO_BRANCH=master
+fi
+
 -zgen-encode-url () {
     # Remove characters from a url that don't work well in a filename.
     # Inspired by -anti-get-clone-dir() method from antigen.
-    echo "$1" | sed \
-            -e 's./.-SLASH-.g' \
-            -e 's.:.-COLON-.g' \
-            -e 's.|.-PIPE-.g'
+    local url="${1}"
+    url=${url//\//-SLASH-}
+    url=${url//\:/-COLON-}
+    url=${url//\|/-PIPE-}
+    -zgputs "$url"
 }
 
 -zgen-get-clone-dir() {
     local repo="${1}"
     local branch="${2:-master}"
 
-    if [[ -d "${repo}/.git" ]]; then
-        echo "${ZGEN_DIR}/local/$(basename ${repo})-${branch}"
+    if [[ -e "${repo}/.git" ]]; then
+        -zgputs "${ZGEN_DIR}/local/$(basename ${repo})-${branch}"
     else
         # Repo directory will be location/reponame
         local reponame="$(basename ${repo})"
@@ -40,15 +99,15 @@ fi
         # work well in a filename.
         local location="$(-zgen-encode-url $(dirname ${repo}))"
         repo="${location}/${reponame}"
-        echo "${ZGEN_DIR}/${repo}-${branch}"
+        -zgputs "${ZGEN_DIR}/${repo}-${branch}"
     fi
 }
 
 -zgen-get-clone-url() {
     local repo="${1}"
 
-    if [[ -d "${repo}/.git" ]]; then
-        echo "${repo}"
+    if [[ -e "${repo}/.git" ]]; then
+        -zgputs "${repo}"
     else
         # Sourced from antigen url resolution logic.
         # https://github.com/zsh-users/antigen/blob/master/antigen.zsh
@@ -57,11 +116,11 @@ fi
               $repo != https://* &&
               $repo != http://* &&
               $repo != ssh://* &&
-              $repo != git@github.com:*/*
+              $repo != git@*:*/*
               ]]; then
             repo="https://github.com/${repo%.git}.git"
         fi
-        echo "${repo}"
+        -zgputs "${repo}"
     fi
 }
 
@@ -89,16 +148,52 @@ zgen-clone() {
 -zgen-source() {
     local file="${1}"
 
-    source "${file}"
-
-    # Add to ZGEN_LOADED array if not present
     if [[ ! "${ZGEN_LOADED[@]}" =~ "${file}" ]]; then
         ZGEN_LOADED+=("${file}")
+        source "${file}"
+
+        completion_path="$(dirname ${file})"
+
+        -zgen-add-to-fpath "${completion_path}"
     fi
+}
 
-    completion_path="$(dirname ${file})"
+-zgen-prezto-option(){
+    local module=${1}
+    shift
+    local option=${1}
+    shift
+    local params
+    params=${@}
+    if [[ ${module} =~ "^:" ]]; then
+        module=${module[1,]}
+    fi
+    if [[ ! $module =~ "^(\*|module|prezto:module):" ]]; then
+        module="module:$module"
+    fi
+    if [[ ! $module =~ "^(prezto):" ]]; then
+        module="prezto:$module"
+    fi
+    local cmd="zstyle ':${module}' $option ${params}"
 
-    -zgen-add-to-fpath "${completion_path}"
+    # execute in place
+    eval $cmd
+
+    if [[ ! "${ZGEN_PREZTO_OPTIONS[@]}" =~ "${cmd}" ]]; then
+        ZGEN_PREZTO_OPTIONS+=("${cmd}")
+    fi
+}
+
+-zgen-prezto-load(){
+    local params="$*"
+    local cmd="pmodload ${params[@]}"
+
+    # execute in place
+    eval $cmd
+
+    if [[ ! "${ZGEN_PREZTO[@]}" =~ "${cmd}" ]]; then
+        ZGEN_PREZTO_LOAD+=("${params[@]}")
+    fi
 }
 
 zgen-init() {
@@ -108,7 +203,7 @@ zgen-init() {
 }
 
 zgen-reset() {
-    echo "zgen: Deleting ${ZGEN_INIT}"
+    -zgpute 'Deleting `'"${ZGEN_INIT}"'` ...'
     if [[ -f "${ZGEN_INIT}" ]]; then
         rm "${ZGEN_INIT}"
     fi
@@ -116,7 +211,7 @@ zgen-reset() {
 
 zgen-update() {
     for repo in "${ZGEN_DIR}"/*/*; do
-        echo "Updating ${repo}"
+        -zgpute "Updating '${repo}' ..."
         (cd "${repo}" \
             && git pull \
             && git submodule update --recursive)
@@ -125,43 +220,121 @@ zgen-update() {
 }
 
 zgen-save() {
-    echo "zgen: Creating ${ZGEN_INIT}"
+    -zgpute 'Creating `'"${ZGEN_INIT}"'` ...'
 
-    echo "#" >! "${ZGEN_INIT}"
-    echo "# Generated by zgen." >> "${ZGEN_INIT}"
-    echo "# This file will be overwritten the next time you run zgen save" >> "${ZGEN_INIT}"
-    echo "#" >> "${ZGEN_INIT}"
+    -zgputs "# {{{" >! "${ZGEN_INIT}"
+    -zginit "# Generated by zgen."
+    -zginit "# This file will be overwritten the next time you run zgen save!"
+    -zginit ""
+    -zginit "ZSH=$(-zgen-get-zsh)"
+    if [[ ${ZGEN_USE_PREZTO} == 1 ]]; then
+        -zginit ""
+        -zginit "# ### Prezto initialization"
+        for option in "${ZGEN_PREZTO_OPTIONS[@]}"; do
+            -zginit "${option}"
+        done
+    fi
+
+    -zginit ""
+    -zginit "# ### General modules"
     for file in "${ZGEN_LOADED[@]}"; do
-        echo "source \"${(q)file}\"" >> "${ZGEN_INIT}"
+        -zginit 'source "'"${(q)file}"\"
     done
 
-    # Set up fpath
-    echo >> "${ZGEN_INIT}"
-    echo "#" >> "${ZGEN_INIT}"
-    echo "# Add our plugins and completions to fpath">> "${ZGEN_INIT}"
-    echo "#" >> "${ZGEN_INIT}"
-    echo "fpath=(${(q)ZGEN_COMPLETIONS[@]} \${fpath})" >> "${ZGEN_INIT}"
+    # Set up fpath, load completions
+    # NOTE: This *intentionally* doesn't use ${ZGEN_COMPINIT_FLAGS}; the only
+    #       available flags are meaningless in the presence of `-C`.
+    -zginit ""
+    -zginit "# ### Plugins & Completions"
+    -zginit 'fpath=('"${(@q)ZGEN_COMPLETIONS}"' ${fpath})'
+    if [[ ${ZGEN_AUTOLOAD_COMPINIT} == 1 ]]; then
+        -zginit ""
+        -zginit 'autoload -Uz compinit && \'
+        -zginit '   compinit -C '"${ZGEN_COMPINIT_DIR_FLAG}"
+    fi
 
-    echo "zgen: Creating ${ZGEN_DIR}/zcompdump"
-    compinit -d "${ZGEN_DIR}/zcompdump"
+    # Check for file changes
+    if [[ ! -z "${ZGEN_RESET_ON_CHANGE}" ]]; then
+        -zginit ""
+        -zginit "# ### Recompilation triggers"
+
+        local ages="$(stat -Lc "%Y" 2>/dev/null $ZGEN_RESET_ON_CHANGE || \
+                      stat -Lf "%m" 2>/dev/null $ZGEN_RESET_ON_CHANGE)"
+        local shas="$(shasum -a 256 ${ZGEN_RESET_ON_CHANGE})"
+
+        -zginit "read -rd '' ages <<AGES; read -rd '' shas <<SHAS"
+        -zginit "$ages"
+        -zginit "AGES"
+        -zginit "$shas"
+        -zginit "SHAS"
+
+        -zginit 'if [[ -n "$ZGEN_RESET_ON_CHANGE" \'
+        -zginit '   && "$(stat -Lc "%Y" 2>/dev/null $ZGEN_RESET_ON_CHANGE || \'
+        -zginit '         stat -Lf "%m"             $ZGEN_RESET_ON_CHANGE)" != "$ages" \'
+        -zginit '   && "$(shasum -a 256             $ZGEN_RESET_ON_CHANGE)" != "$shas" ]]; then'
+        -zginit '   printf %s\\n '\''-- zgen: Files in $ZGEN_RESET_ON_CHANGE changed; resetting `init.zsh`...'\'
+        -zginit '   zgen reset'
+        -zginit 'fi'
+    fi
+
+    # load prezto modules
+    if [[ ${ZGEN_USE_PREZTO} == 1 ]]; then
+        -zginit ""
+        -zginit "# ### Prezto modules"
+        printf %s "pmodload" >> "${ZGEN_INIT}"
+        for module in "${ZGEN_PREZTO_LOAD[@]}"; do
+            printf %s " ${module}" >> "${ZGEN_INIT}"
+        done
+    fi
+
+    -zginit ""
+    -zginit "# }}}"
+
+    zgen-apply
 }
 
-zgen-completions() {
-    echo "zgen: 'completions' is deprecated, please use 'load' instead"
+zgen-apply() {
+    fpath=(${(q-)ZGEN_COMPLETIONS[@]} ${fpath})
 
-    zgen-load "${@}"
+    if [[ ${ZGEN_AUTOLOAD_COMPINIT} == 1 ]]; then
+        -zgpute "Initializing completions ..."
+
+        autoload -Uz compinit && \
+            compinit $ZGEN_COMPINIT_FLAGS
+    fi
+}
+
+-zgen-path-contains() {
+    setopt localoptions nonomatch nocshnullglob nonullglob;
+    [ -e "$1"/*"$2"(.,@[1]) ]
+}
+
+-zgen-get-zsh(){
+    if [[ ${ZGEN_USE_PREZTO} == 1 ]]; then
+        -zgputs "$(-zgen-get-clone-dir "$ZGEN_PREZTO_REPO" "$ZGEN_PREZTO_BRANCH")"
+    else
+        -zgputs "$(-zgen-get-clone-dir "$ZGEN_OH_MY_ZSH_REPO" "$ZGEN_OH_MY_ZSH_BRANCH")"
+    fi
 }
 
 zgen-load() {
-    local repo="${1}"
-    local file="${2}"
-    local branch="${3:-master}"
-    local dir="$(-zgen-get-clone-dir ${repo} ${branch})"
-    local location="${dir}/${file}"
+    if [[ "$#" == 0 ]]; then
+        -zgpute '`load` requires at least one parameter:'
+        -zgpute '`zgen load <repo> [location] [branch]`'
+    elif [[ "$#" == 1 && ("${1[1]}" == '/' || "${1[1]}" == '.' ) ]]; then
+        local location="${1}"
+    else
+        local repo="${1}"
+        local file="${2}"
+        local branch="${3:-master}"
+        local dir="$(-zgen-get-clone-dir ${repo} ${branch})"
+        local location="${dir}/${file}"
+        location=${location%/}
 
-    # clone repo if not present
-    if [[ ! -d "${dir}" ]]; then
-        zgen-clone "${repo}" "${branch}"
+        # clone repo if not present
+        if [[ ! -d "${dir}" ]]; then
+            zgen-clone "${repo}" "${branch}"
+        fi
     fi
 
     # source the file
@@ -185,13 +358,13 @@ zgen-load() {
         -zgen-source "${location}.zsh.plugin"
 
     # Classic oh-my-zsh plugins have foo.plugin.zsh
-    elif ls "${location}" | grep -l "\.plugin\.zsh" &> /dev/null; then
+    elif -zgen-path-contains "${location}" ".plugin.zsh" ; then
         for script (${location}/*\.plugin\.zsh(N)) -zgen-source "${script}"
 
-    elif ls "${location}" | grep -l "\.zsh" &> /dev/null; then
+    elif -zgen-path-contains "${location}" ".zsh" ; then
         for script (${location}/*\.zsh(N)) -zgen-source "${script}"
 
-    elif ls "${location}" | grep -l "\.sh" &> /dev/null; then
+    elif -zgen-path-contains "${location}" ".sh" ; then
         for script (${location}/*\.sh(N)) -zgen-source "${script}"
 
     # Completions
@@ -199,8 +372,28 @@ zgen-load() {
         -zgen-add-to-fpath "${location}"
 
     else
-        echo "zgen: Failed to load ${dir}"
+      if [[ -d ${dir:-$location} ]]; then
+        -zgpute "Failed to load ${dir:-$location} -- ${file}"
+      else
+        -zgpute "Failed to load ${dir:-$location}"
+      fi
     fi
+}
+
+zgen-loadall() {
+    # shameless copy from antigen
+
+    # Bulk add many bundles at one go. Empty lines and lines starting with a `#`
+    # are ignored. Everything else is given to `zgen-load` as is, no
+    # quoting rules applied.
+
+    local line
+
+    grep '^[[:space:]]*[^[:space:]#]' | while read line; do
+        # Using `eval` so that we can use the shell-style quoting in each line
+        # piped to `antigen-bundles`.
+        eval "zgen-load $line"
+    done
 }
 
 zgen-saved() {
@@ -211,31 +404,89 @@ zgen-list() {
     if [[ -f "${ZGEN_INIT}" ]]; then
         cat "${ZGEN_INIT}"
     else
-        echo "Zgen init.zsh missing, please use zgen save and then restart your shell."
+        -zgpute '`init.zsh` missing, please use `zgen save` and then restart your shell.'
+        return 1
     fi
 }
 
 zgen-selfupdate() {
     if [[ -e "${ZGEN_SOURCE}/.git" ]]; then
         (cd "${ZGEN_SOURCE}" \
-            && git pull)
+            && git pull) \
+            && zgen reset
     else
-        echo "zgen is not running from a git repository, so it is not possible to selfupdate"
+        -zgpute "Not running from a git repository; cannot automatically update."
         return 1
     fi
 }
 
 zgen-oh-my-zsh() {
-    local repo="robbyrussell/oh-my-zsh"
+    local repo="$ZGEN_OH_MY_ZSH_REPO"
     local file="${1:-oh-my-zsh.sh}"
 
     zgen-load "${repo}" "${file}"
 }
 
+zgen-prezto() {
+    local repo="$ZGEN_PREZTO_REPO"
+    local file="${1:-init.zsh}"
+
+    # load prezto itself
+    if [[ $# == 0 ]]; then
+        ZGEN_USE_PREZTO=1
+        zgen-load "${repo}" "${file}"
+        if [[ ! -h ${ZDOTDIR:-$HOME}/.zprezto ]]; then
+            local dir="$(-zgen-get-clone-dir ${repo} ${ZGEN_PREZTO_BRANCH})"
+            ln -s "${dir}" "${ZDOTDIR:-$HOME}/.zprezto"
+        fi
+        if [[ ${ZGEN_PREZTO_LOAD_DEFAULT} != 0 ]]; then
+            -zgen-prezto-load "'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt'"
+        fi
+
+    # this is a prezto module
+    elif [[ $# == 1 ]]; then
+        local module=${file}
+        if [[ -z ${file} ]]; then
+            -zgpute 'Please specify which module to load using `zgen prezto <name of module>`'
+            return 1
+        fi
+        -zgen-prezto-load "'$module'"
+
+    # this is a prezto option
+    else
+        shift
+        -zgen-prezto-option ${file} ${(qq)@}
+    fi
+
+}
+
+zgen-pmodule() {
+    local repo="${1}"
+    local branch="${2:-master}"
+
+    local dir="$(-zgen-get-clone-dir ${repo} ${branch})"
+
+    # clone repo if not present
+    if [[ ! -d "${dir}" ]]; then
+        zgen-clone "${repo}" "${branch}"
+    fi
+
+    local module=$(basename ${repo})
+
+    local preztodir="${ZDOTDIR:-$HOME}/.zprezto/modules/${module}"
+    if [[ ! -h ${preztodir} ]]; then
+        ln -s $dir ${preztodir}
+    fi
+
+    -zgen-prezto-load "'${module}'"
+}
+
 zgen() {
     local cmd="${1}"
     if [[ -z "${cmd}" ]]; then
-        echo "usage: zgen [clone|completions|list|load|oh-my-zsh|reset|save|selfupdate|update]"
+        -zgputs 'usage: `zgen [command | instruction] [options]`'
+        -zgputs "    commands: list, saved, reset, clone, update, selfupdate"
+        -zgputs "    instructions: load, oh-my-zsh, pmodule, prezto, save, apply"
         return 1
     fi
 
@@ -244,13 +495,11 @@ zgen() {
     if functions "zgen-${cmd}" > /dev/null ; then
         "zgen-${cmd}" "${@}"
     else
-        echo "zgen: command not found: ${cmd}"
+        -zgpute 'Command not found: `'"${cmd}"\`
+        return 1
     fi
 }
 
-ZSH="$(-zgen-get-clone-dir robbyrussell/oh-my-zsh master)"
+ZSH=$(-zgen-get-zsh)
 zgen-init
 fpath=($ZGEN_SOURCE $fpath)
-
-autoload -U compinit
-compinit -d "${ZGEN_DIR}/zcompdump"
