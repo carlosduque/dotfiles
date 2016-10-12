@@ -181,12 +181,15 @@ map <leader>cp :CtrlP<CR>
 " <Leader>gE
 let g:EasyMotion_leader_key = '<Leader>' 
 
-
-
 " >>> bufexplorer
 " <leader>be (normal open)
 " <leader>bs (force horizontal split open)
 " <leader>bv (force vertical split open)
+
+" >>>  slimux (send line, selection or buffer to tmux pane with a REPL in it
+nnoremap <leader>sl :SlimuxREPLSendLine<cr>
+nnoremap <leader>ss :SlimuxREPLSendSelection<cr>
+nnoremap <leader>sb :SlimuxREPLSendBuffer<cr>
 
 " toggle line wrapping
 nnoremap <leader>wrp :set wrap!<cr>
@@ -198,7 +201,7 @@ nnoremap <leader>l :set list!<cr>
 nnoremap <leader>n :setlocal number!<cr>
 
 " toggle relative line numbers
-nnoremap <leader>rn :setlocal relativenumber!<cr>
+nnoremap <leader>nr :setlocal relativenumber!<cr>
 
 " toggle cursorline/cursorcolumn
 nnoremap <leader>c :set cursorline! cursorcolumn!<cr>
