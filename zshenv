@@ -15,7 +15,7 @@ source $HOME/bin/resty
 #source $HOME/binhsetup_env_vars.sh
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+    export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
     export OPENEJB_HOME="$HOME/srv/openejb/inst"
     export CATALINA_HOME="$HOME/srv/tomcat/inst"
     export MW_HOME="$HOME/srv/weblogic/wls1036"
