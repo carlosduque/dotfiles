@@ -10,12 +10,14 @@ build.info
 out/
 .idea/
 *.iml
+*.ipr
+*.iws
 ## Compiled sources
 build/
 dist/
 classes/
-#bin/
 target/
+#bin/
 *.class
 *.exe
 *.com
