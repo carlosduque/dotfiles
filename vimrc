@@ -177,6 +177,8 @@ map <leader>cp :CtrlP<CR>
 
 " >>> EasyMotion
 " <Leader>w   to trigger word motion
+" <Leader>fo  to trigger char motion, in this case 'o'
+" <Leader>so  to trigger char motion, in this case 'o'
 " <Leader>t
 " <Leader>gE
 let g:EasyMotion_leader_key = '<Leader>' 
@@ -187,9 +189,9 @@ let g:EasyMotion_leader_key = '<Leader>'
 " <leader>bv (force vertical split open)
 
 " >>>  slimux (send line, selection or buffer to tmux pane with a REPL in it
-nnoremap <leader>sl :SlimuxREPLSendLine<cr>
-nnoremap <leader>ss :SlimuxREPLSendSelection<cr>
-nnoremap <leader>sb :SlimuxREPLSendBuffer<cr>
+nnoremap <leader><space>l :SlimuxREPLSendLine<cr>
+vnoremap <leader><space>s :SlimuxREPLSendSelection<cr>
+nnoremap <leader><space>b :SlimuxREPLSendBuffer<cr>
 
 " toggle line wrapping
 nnoremap <leader>wrp :set wrap!<cr>
