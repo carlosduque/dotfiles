@@ -12,12 +12,12 @@ out/
 *.iml
 *.ipr
 *.iws
-## Compiled sources
+## compiled sources
 build/
 dist/
 classes/
 target/
-#bin/
+#bin/ #shouldn't ignore, it's needed in 'rails' code
 *.class
 *.exe
 *.com
@@ -29,7 +29,7 @@ repository/
 ## application specific dirs
 .vagrant/
 zgen/
-## Temps, logs and databases
+## temps, logs and databases
 tmp/
 *.log
 *.sqlite
@@ -38,7 +38,7 @@ tmp/
 *.key
 known_hosts
 authorized_keys
-## Packages
+## packages
 *.7z
 *.dmg
 *.gz
@@ -54,11 +54,11 @@ authorized_keys
 .Trashes
 thumbs.db
 Thumbs.db
-#rails
+# rails
 .bundle/
 # jekyll
 _site/
 .sass-cache/
 .jekyll-metadata
-## History files
+## history files
 .netrwhist
