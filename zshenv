@@ -11,6 +11,7 @@ export LANG="es_ES.UTF-8"
 
 # setup PATH variable
 path+=($HOME/bin)
+echo $PATH
 source $HOME/bin/resty
 #source $HOME/binhsetup_env_vars.sh
 
@@ -19,16 +20,18 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export OPENEJB_HOME="$HOME/srv/openejb/inst"
     export CATALINA_HOME="$HOME/srv/tomcat/inst"
     export MW_HOME="$HOME/srv/weblogic/wls1036"
-    export RBENV_ROOT="/usr/local/var/rbenv"
-    #export CUSTOM_PATH="$HOME/.rbenv/bin"
-    export CUSTOM_PATH=$CUSTOM_PATH:"$(/usr/local/bin/brew --prefix coreutils)/libexec/gnubin"
-    export CUSTOM_PATH=$CUSTOM_PATH:"/usr/local/git/bin:/usr/local/MacGPG2/bin"
-    export CUSTOM_PATH=$CUSTOM_PATH:"/Library/Frameworks/JRuby.framework/Versions/Current/bin"
-    export CUSTOM_PATH=$CUSTOM_PATH:"$OPENEJB_HOME/bin"
-    export CUSTOM_PATH=$CUSTOM_PATH:"$CATALINA_HOME/bin"
-    export CUSTOM_PATH=$CUSTOM_PATH:"$MW_HOME/bin"
-    #elif [[ "$OSTYPE" == "freebsd"* ]]; then
-    #    export CUSTOM_PATH="~/bin"
+    #export JRUBY_HOME="/Library/Frameworks/JRuby.framework/Versions/Current"
+    #export CUSTOM_PATH=$CUSTOM_PATH:"$(/usr/local/bin/brew --prefix coreutils)/libexec/gnubin"
+    export BREW_BINARIES_HOME="$(/usr/local/bin/brew --prefix coreutils)"
+
+    path=($HOME/.rbenv/bin $path)
+    path=($BREW_BINARIES_HOME/libexec/gnubin $path)
+    path+=(/usr/local/git/bin)
+    path+=(/usr/local/MacGPG2/bin)
+    #path+=($JRUBY_HOME/bin)
+    path+=($OPENEJB_HOME/bin)
+    path+=($CATALINA_HOME/bin)
+    path+=($MW_HOME/bin)
 elif [[ "$OSTYPE" == "cygwin" ]]; then
     export WINAPPS_HOME="C:\\apps"
     export JAVA_HOME="$WINAPPS_HOME\\Java\\jdk1.7.0_71"
@@ -40,23 +43,27 @@ elif [[ "$OSTYPE" == "cygwin" ]]; then
     export CUSTOM_PATH="$CUSTOM_PATH:$WINAPPS_HOME\\HashiCorp\\Vagrant\\bin"
 else
     #"freebsd"* || "linux-gnu"*
-    export CUSTOM_PATH="$CUSTOM_PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-    #export CUSTOM_PATH="$HOME/.rbenv/bin"
+    #export CUSTOM_PATH="$CUSTOM_PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+    echo "RUNNING ELSE PART"
     export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
     export ANT_HOME=/usr/share/ant
     export MAVEN_HOME=/usr/share/maven
     export OPENEJB_HOME=/srv/openejb/inst
     export CATALINA_HOME=/srv/tomcat/inst
     export MW_HOME=/srv/weblogic/inst
-    export CUSTOM_PATH="$JAVA_HOME/bin:$ANT_HOME/bin:$MAVEN_HOME/bin:$OPENEJB_HOME/bin"
-    export CUSTOM_PATH="$CUSTOM_PATH:$CATALINA_HOME/bin:$MW_HOME/bin"
+    path=($HOME/.rbenv/bin $path)
+    path+=($JAVA_HOME/bin)
+    path+=($ANT_HOME/bin)
+    path+=($MAVEN_HOME/bin)
+    path+=($OPENEJB_HOME/bin)
+    path+=($CATALINA_HOME/bin)
+    path+=($MW_HOME/bin)
 fi
 
-# export PATH=$PATH:$BASE_PATH:$CUSTOM_PATH
-export PATH=$PATH:$CUSTOM_PATH
 ### Added by the Heroku Toolbelt, adapted to zsh
 path=('/usr/local/heroku/bin' $path)
 export PATH
+echo $PATH
 
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
