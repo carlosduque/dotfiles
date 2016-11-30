@@ -11,7 +11,6 @@ export LANG="es_ES.UTF-8"
 
 # setup PATH variable
 path+=($HOME/bin)
-echo $PATH
 source $HOME/bin/resty
 #source $HOME/binhsetup_env_vars.sh
 
@@ -44,7 +43,6 @@ elif [[ "$OSTYPE" == "cygwin" ]]; then
 else
     #"freebsd"* || "linux-gnu"*
     #export CUSTOM_PATH="$CUSTOM_PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-    echo "RUNNING ELSE PART"
     export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
     export ANT_HOME=/usr/share/ant
     export MAVEN_HOME=/usr/share/maven
@@ -63,7 +61,6 @@ fi
 ### Added by the Heroku Toolbelt, adapted to zsh
 path=('/usr/local/heroku/bin' $path)
 export PATH
-echo $PATH
 
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
