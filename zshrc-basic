@@ -1,12 +1,31 @@
 #file: zshrc-basic
 
-#setopt no_beep
-setopt auto_cd
-setopt multios
-setopt cdablevarS
+setopt no_beep
+setopt auto_cd # why would you type 'cd dir' if you could just type 'dir'?
+setopt cd_able_vars # if the arg to a cd command is not a dir, try to expand the expr as if it were preceded by a ‘~’
+setopt multios # Now we can pipe to multiple outputs eg.: echo foo >file1 >file2 | sed 's/foo/bar/'
+setopt correct # Spell check commands!  (Sometimes annoying)
+setopt auto_pushd # This makes cd=pushd, use 'popd' to pop the next dir in the stack or 'dirs' to show the stack
+# setopt auto_name_dirs # This will use named dirs when possible
+# setopt glob_complete # If we have a glob this will expand it
+# setopt pushd_minus # No more annoying pushd messages...
+# setopt rm_star_wait # 10 second wait if you do something that will delete everything.  I wish I'd had this before...
 
 autoload -U colors && colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
+
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.history
+
+#setopt append_history
+#setopt extended_history
+#setopt hist_expire_dups_first
+#setopt hist_ignore_dups # ignore duplication command history list
+#setopt hist_ignore_space
+#setopt hist_verify
+#setopt inc_append_history
+#setopt share_history # share command history data
 
 #source $HOME/bin/git.zsh
 
@@ -17,6 +36,7 @@ RPROMPT="%{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[yellow]%}%m%{$reset_color%}"
 # aliases
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
+alias history='fc -il 1' #to read the $HISTFILE showing the dates
 
 # Always work in a tmux session if tmux is installed
 #if which tmux 2>&1 >/dev/null; then
