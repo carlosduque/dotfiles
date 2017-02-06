@@ -1,18 +1,16 @@
 # file: zshrc-servers
 
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE=~/.history
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory autocd beep extendedglob nomatch notify
-bindkey -v
-# End of lines configured by zsh-newuser-install
+#bindkey -v  #vim mode
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/a07942a/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
 autoload -U colors && colors
 # PROMPT="%{$fg_bold[green]%}%c %{$fg_bold[yellow]%}♪ %{$reset_color%}"

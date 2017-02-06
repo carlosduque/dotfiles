@@ -31,5 +31,9 @@ alias vimconfig="vim ~/.vimrc"
 alias history='fc -il 1' #to read the $HISTFILE showing the dates
 alias ls='ls --color --indicator-style=slash --group-directories-first' #--sort=time|size
 
+# history substr search keys
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
 #zprof  #zsh profiling
 
