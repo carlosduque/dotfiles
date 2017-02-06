@@ -1,3 +1,5 @@
+#file: zshrc-basic
+
 #setopt no_beep
 setopt auto_cd
 setopt multios
