@@ -12,20 +12,6 @@ PROMPT="%{$fg_bold[cyan]%}§ %{$fg_bold[green]%}%c %{$fg_bold[yellow]%}» %{$res
 RPROMPT="%{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[yellow]%}%m%{$reset_color%}"
 #RPROMPT='%{$fg[magenta]%}$(git_prompt_info)%{$reset_color%} $(git_prompt_status)%{$reset_color%} %{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[yellow]%}%m%{$reset_color%}'
 
-# User configuration
-export EDITOR=vim
-#export BROWSER=$(which google-chrome chromium-browser firefox w3m links2 links lynx | grep -Pm1 '^/')
-export TZ=America/Santiago
-
-# setup PATH variable
-export PATH=$PATH:$HOME/bin
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-export LC_ALL="es_ES.UTF-8"
-export LC_COLLATE="C"
-export LANG="es_ES.UTF-8"
-
 # aliases
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
