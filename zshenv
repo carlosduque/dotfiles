@@ -11,23 +11,18 @@ export LANG="es_ES.UTF-8"
 
 # setup PATH variable
 path+=($HOME/bin)
-source $HOME/bin/resty
-#source $HOME/binhsetup_env_vars.sh
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
     export OPENEJB_HOME="$HOME/srv/openejb/inst"
     export CATALINA_HOME="$HOME/srv/tomcat/inst"
     export MW_HOME="$HOME/srv/weblogic/wls1036"
-    #export JRUBY_HOME="/Library/Frameworks/JRuby.framework/Versions/Current"
-    #export CUSTOM_PATH=$CUSTOM_PATH:"$(/usr/local/bin/brew --prefix coreutils)/libexec/gnubin"
     export BREW_BINARIES_HOME="$(/usr/local/bin/brew --prefix coreutils)"
 
     path=($HOME/.rbenv/bin $path)
     path=($BREW_BINARIES_HOME/libexec/gnubin $path)
     path+=(/usr/local/git/bin)
     path+=(/usr/local/MacGPG2/bin)
-    #path+=($JRUBY_HOME/bin)
     path+=($OPENEJB_HOME/bin)
     path+=($CATALINA_HOME/bin)
     path+=($MW_HOME/bin)
@@ -61,8 +56,6 @@ fi
 ### Added by the Heroku Toolbelt, adapted to zsh
 path=('/usr/local/heroku/bin' $path)
 export PATH
-
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # aliases
 alias zshconfig="vim $HOME/.zshrc"
