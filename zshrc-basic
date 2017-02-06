@@ -37,6 +37,7 @@ RPROMPT="%{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[yellow]%}%m%{$reset_color%}"
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
 alias history='fc -il 1' #to read the $HISTFILE showing the dates
+alias ls='ls --color --indicator-style=slash --group-directories-first' #--sort=time|size
 
 # Always work in a tmux session if tmux is installed
 #if which tmux 2>&1 >/dev/null; then
