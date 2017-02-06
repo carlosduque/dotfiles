@@ -1,5 +1,6 @@
 #file: zshrc-basic
 
+#zmodload zsh/zprof  # load zprof module
 setopt no_beep
 setopt auto_cd # why would you type 'cd dir' if you could just type 'dir'?
 setopt cd_able_vars # if the arg to a cd command is not a dir, try to expand the expr as if it were preceded by a ‘~’
@@ -46,3 +47,4 @@ alias ls='ls --color --indicator-style=slash --group-directories-first' #--sort=
 #  fi
 #fi
 
+#zprof  #zsh profiling

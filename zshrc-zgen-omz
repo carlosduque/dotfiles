@@ -6,10 +6,10 @@ source $HOME/dotfiles/zgen/zgen.zsh
 if ! zgen saved; then
   zgen oh-my-zsh
 
-  ### ZSH port of Fish shell's history search feature.
-  zgen load zsh-users/zsh-history-substring-search
   ### Syntax highlighting bundle.
   zgen load zsh-users/zsh-syntax-highlighting
+  ### ZSH port of Fish shell's history search feature.
+  zgen load zsh-users/zsh-history-substring-search
   # zgen load catimg
   # zgen load encode64
   # zgen load jsontools

@@ -3,11 +3,14 @@
 #zmodload zsh/zprof  # load zprof module
 source $HOME/dotfiles/zgen/zgen.zsh
 
+autoload -U colors && colors
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
+
 if ! zgen saved; then
-  ### ZSH port of Fish shell's history search feature.
-  zgen load zsh-users/zsh-history-substring-search
   ### Syntax highlighting bundle.
   zgen load zsh-users/zsh-syntax-highlighting
+  ### ZSH port of Fish shell's history search feature.
+  zgen load zsh-users/zsh-history-substring-search
   # zgen load catimg
   # zgen load encode64
   # zgen load jsontools
@@ -15,19 +18,18 @@ if ! zgen saved; then
 
 fi
 
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.history
+
 PROMPT="%{$fg_bold[cyan]%}§ %{$fg_bold[green]%}%c %{$fg_bold[yellow]%}» %{$reset_color%}"
 RPROMPT="%{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[yellow]%}%m%{$reset_color%}"
 
-CASE_SENSITIVE="true"
-COMPLETION_WAITING_DOTS="false"
-
-# auto-update oh-my-zsh
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="yyyy-mm-dd"
+# aliases
+alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.vimrc"
+alias history='fc -il 1' #to read the $HISTFILE showing the dates
+alias ls='ls --color --indicator-style=slash --group-directories-first' #--sort=time|size
 
 #zprof  #zsh profiling
 
