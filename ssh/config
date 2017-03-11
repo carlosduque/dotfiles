@@ -8,6 +8,11 @@ HostName bitbucket.org
 IdentityFile ~/.ssh/id_rsa-ynefel.key
 User git
 
+Host bbkt-webpay
+HostName bitbucket.org
+IdentityFile ~/.ssh/id_rsa-vm.key
+User git
+
 Host stash stash.aln.experian.com
 HostName stash.aln.experian.com
 IdentityFile /home/a07942a/.ssh/id_rsa-w5136065.key
