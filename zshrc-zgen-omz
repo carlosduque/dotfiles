@@ -28,11 +28,28 @@ fi
 
 CASE_SENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
-
+DISABLE_AUTO_UPDATE=true # update omzsh?
+DISABLE_UPDATE_PROMPT=true # ask me to update?
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="yyyy-mm-dd"
+
+# aliases
+alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.vimrc"
+
+alias t='tree'
+alias t2='tree -L 2'
+alias t3='tree -L 3'
+alias td='tree -d'
+alias td2='tree -L 2 -d'
+alias td3='tree -L 3 -d'
+
+if [[ "$OSTYPE" != "darwin"* ]]; then
+    alias ls='ls --color --indicator-style=slash --group-directories-first' #--sort=time|size
+    alias history='fc -il 1' #to read the $HISTFILE showing the dates
+fi
 
 # initializers
 eval "$(rbenv init -)"

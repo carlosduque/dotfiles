@@ -37,8 +37,18 @@ RPROMPT="%{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[yellow]%}%m%{$reset_color%}"
 # aliases
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
-alias history='fc -il 1' #to read the $HISTFILE showing the dates
-alias ls='ls --color --indicator-style=slash --group-directories-first' #--sort=time|size
+
+alias t='tree'
+alias t2='tree -L 2'
+alias t3='tree -L 3'
+alias td='tree -d'
+alias td2='tree -L 2 -d'
+alias td3='tree -L 3 -d'
+
+if [[ "$OSTYPE" != "darwin"* ]]; then
+    alias ls='ls --color --indicator-style=slash --group-directories-first' #--sort=time|size
+    alias history='fc -il 1' #to read the $HISTFILE showing the dates
+fi
 
 # Always work in a tmux session if tmux is installed
 #if which tmux 2>&1 >/dev/null; then
