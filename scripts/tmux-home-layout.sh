@@ -1,43 +1,39 @@
 #!/bin/zsh
-#tmux attach -t hack || tmux new -s hack
 
-SANDBOX_DIR="/Users/carlos/Codigo/java/sandbox"
-COURSES_DIR="/Users/carlos/Codigo/code-for-courses"
+SESSION=wp
+PRJ_DIR="$HOME/dev/projects"
+tmux has-session -t $SESSION
 
-# dev 
-tmux new-window -n "dev"
-tmux split-window -h
-tmux split-window -v
+if [ $? != 0 ]
+then
+    echo "starting ssh-agent..."
+    eval $(ssh-agent -s)
+    ssh-add $HOME/.ssh/*.key
 
-tmux send-keys -t hack:2.1 "cd $SANDBOX_DIR/fortune-ejb" C-m
-tmux send-keys -t hack:2.1 "ls -lah" C-m
-tmux send-keys -t hack:2.2 "mc" C-m
-tmux send-keys -t hack:2.3 "cd $SANDBOX_DIR/fortune-ejb" C-m
-tmux send-keys -t hack:2.3 "javac -version" C-m
-tmux select-pane -t 1
+    tmux new -s $SESSION -n home -d
 
-# algorithms
-tmux new-window -t hack:3 -n "algorithms"
-tmux split-window -h
-tmux split-window -v
+    # open a window where the code is
+    tmux rename-window -t $SESSION:1 "dev"
+    tmux send-keys -t $SESSION:1  "cd $HOME" C-m
 
-tmux send-keys -t hack:3.1 "cd $COURSES_DIR/algorithms" C-m
-tmux send-keys -t hack:3.1 "ls -R src/" C-m
-tmux send-keys -t hack:3.2 "cd $COURSES_DIR/algorithms" C-m
-tmux send-keys -t hack:3.2 "vim excercises.md" C-m
-tmux select-pane -t 1
+    # docker
+    tmux new-window -n "docker"
+    tmux send-keys -t $SESSION:2 "clear" C-m
+    tmux send-keys -t $SESSION:2 "tail -f $PRJ_DIR/webpay/woocommerce/env/wp/wc-logs/oraqus-wc-transbank-*.log" C-m
+    tmux split-window -v -p 30 -t $SESSION:2.1
+    tmux split-window -h -p 50 -t $SESSION:2.2
+    tmux send-keys -t $SESSION:2.2 "cd $PRJ_DIR/webpay/woocommerce" C-m
+    tmux send-keys -t $SESSION:2.2 "git log --oneline --decorate --graph" C-m
+    tmux send-keys -t $SESSION:2.3  "cd $PRJ_DIR/webpay/woocommerce/env" C-m
+    tmux send-keys -t $SESSION:2.3  "docker-compose up -d" C-m
+    tmux select-pane -t $SESSION:2.3
 
-# remote 
-tmux new-window -t hack:4 -n "remote"
-tmux send-keys "ssh beastie" C-m
-tmux split-window -v
-tmux select-pane -t 1
+    # remote 
+    tmux new-window -t $SESSION:3 -n "remote"
+    tmux send-keys "ssh carlos@pulhapanzak" C-m
 
-tmux rename-window -t hack:1 "terminal"
-tmux rename-window -t hack:2 "dev"
-tmux rename-window -t hack:3 "algorithms"
-tmux rename-window -t hack:4 "remote"
+    tmux select-window -t $SESSION:1
+fi
 
-# go back to window 1
-tmux select-window -t hack:1
+tmux attach -t $SESSION
 
