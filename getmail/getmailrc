@@ -1,8 +1,11 @@
+# MRA: Mail retrieval agent
+# A Mail Retrieval Agent makes connections to a remote mailbox and fetches mail for local use.
+
 [retriever]
 type = SimpleIMAPSSLRetriever
 server = imap.gmail.com
 username = carlosduque.hn@gmail.com
-password = s3cr3t
+password = $PASSWORD
 port = 993
 mailboxes = ('INBOX', '[Gmail]/All Mail')
 
@@ -12,6 +15,6 @@ mailboxes = ('INBOX', '[Gmail]/All Mail')
 
 [destination]
 type = MDA_external
-path = /usr/bin/procmail
-arguments = ("-f", "%(sender)", "-m", "/Users/carlos/.procmailrc")
+path = /usr/local/bin/procmail
+arguments = ("-f", "%(sender)", "-m", "$HOME/.procmailrc")
 
