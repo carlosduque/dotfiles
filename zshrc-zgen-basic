@@ -48,6 +48,8 @@ bindkey -v
 bindkey '^?' backward-delete-char #backspace key
 bindkey '^h' backward-delete-char #backspace key
 bindkey '^[[3~' delete-char #delete key
+bindkey '\e[1~' beginning-of-line #home key
+bindkey '\e[4~' end-of-line #end key
 
 # ctrl-w removed word backwards
 #bindkey '^w' backward-kill-word
