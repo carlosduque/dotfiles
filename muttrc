@@ -72,7 +72,22 @@ message-hook '~s "Linux Magazine"'               'set pager="w3m"'
 #default mbox to (s)ave mail is =keep
 #save-hook .* =read
 
-set sidebar_visible = yes
+# set up the sidebar, default not visible
+#set sidebar_width=12
+set sidebar_visible=no
+
+# color of folders with new mail
+color sidebar_new yellow default
+macro index b "<sidebar-toggle-visible<enter><refresh>"
+macro pager b "sidebar-toggle-visible<enter><redraw-screen>"
+# ctrl-n, ctrl-p to select next, prev folder
+# # ctrl-o to open selected folder
+bind index CP sidebar-prev
+bind index CN sidebar-next
+bind index CO sidebar-open
+bind pager CP sidebar-prev
+bind pager CN sidebar-next
+bind pager CO sidebar-open
 
 #COLORS
 color header  yellow   black  "^(From:|Sender:|Return-Path:)"
