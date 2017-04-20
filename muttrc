@@ -3,12 +3,12 @@
 # * se esta usando procmail para llevar los correos a los folders necesarios
 # * se esta usando mutt solo para ver los correos
 
-set realname="Carlos"
+set realname = "Carlos"
 set mbox_type = Maildir
 
 # donde se va a guardar todo (maiboxes =XXX) en otras definiciones esta ref
 # se abrevia con '+'
-set folder=$HOME/mail
+set folder = $HOME/mail
 
 # incomming mail: de donde leer el correo (inbox)
 set spoolfile = +inbox
@@ -33,17 +33,9 @@ set forward_format="Fw: %s"
 # set editor = "vim +':set textwidth=77' +':set wrap ' +\`awk '/^$/ {print i+2; exit} {i++} %s\'` %s'"
 set editor = "vim +':set textwidth=77' +':set wrap' +\`awk '/^$/ {print i+2; exit} {i++}' %s\` %s"
 
-# set pop_host="pop.gmail.com"
-# My email address
-# set pop_user="alcros@gmail.com"
-# My email account password
-# set pop_pass="secret"
-# set pop_delete=no
-
-set sendmail = /usr/sbin/sendmail
+#set sendmail = /usr/sbin/sendmail
 #smtp_url =  smtp[s]://[user[:pass]@]host[:port]/
-set smtp_url =  "smtp://carlosduque.hn@gmail.com:s3cr3t@smtp.gmail.com:587"
-#set smtp_pass = 
+set smtp_pass =
 
 # lines for the index, everything else is the mail's body
 #set pager_index_lines = 10
@@ -53,13 +45,12 @@ ignore *
 unignore From: To: Cc: Subject: Date: #Only these are shown in the header
 hdr_order From: Date: To: Cc: Subject: #Order to display headers
 mailboxes =inbox
-mailboxes =alcros
-mailboxes =carlosduque.hn
+mailboxes =carlosduque.hn@gmail.com
 mailboxes =read
 
 # Asiga la tecla 'g' para ejecutar fetchmail y recolectar el correo
-# macro index g "!fetchmail -k<enter>"  'run fetchmail -k'
-macro index g "!getmail --dont-delete -n<enter>"  'run getmail'
+macro index g "!fetchmail -k<enter>"  'run fetchmail -k'
+#macro index g "!getmail --dont-delete -n<enter>"  'run getmail'
 
 # Para utilizar w3m en mutt
 macro index \cB |w3m\n "call w3m to extract URLs out of a message"
@@ -80,6 +71,23 @@ message-hook '~s "Linux Magazine"'               'set pager="w3m"'
 
 #default mbox to (s)ave mail is =keep
 #save-hook .* =read
+
+# set up the sidebar, default not visible
+#set sidebar_width=12
+set sidebar_visible=no
+
+# color of folders with new mail
+color sidebar_new yellow default
+macro index b "<sidebar-toggle-visible<enter><refresh>"
+macro pager b "sidebar-toggle-visible<enter><redraw-screen>"
+# ctrl-n, ctrl-p to select next, prev folder
+# # ctrl-o to open selected folder
+bind index CP sidebar-prev
+bind index CN sidebar-next
+bind index CO sidebar-open
+bind pager CP sidebar-prev
+bind pager CN sidebar-next
+bind pager CO sidebar-open
 
 #COLORS
 color header  yellow   black  "^(From:|Sender:|Return-Path:)"

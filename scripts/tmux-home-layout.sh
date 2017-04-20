@@ -28,8 +28,12 @@ then
     tmux send-keys -t $SESSION:2.3  "docker-compose up -d" C-m
     tmux select-pane -t $SESSION:2.3
 
+    # mail
+    tmux new-window -t $SESSION:3 -n "mail"
+    tmux send-keys "mutt" C-m
+
     # remote 
-    tmux new-window -t $SESSION:3 -n "remote"
+    tmux new-window -t $SESSION:4 -n "remote"
     tmux send-keys "ssh carlos@pulhapanzak" C-m
 
     tmux select-window -t $SESSION:1
