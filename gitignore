@@ -26,6 +26,9 @@ target/
 ## artifact repositories
 ivy-cache/
 repository/
+.ivy2/
+.m2/
+.sbt/
 ## application specific dirs
 .vagrant/
 zgen/
