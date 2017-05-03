@@ -32,15 +32,24 @@ then
 
     # project
     tmux new-window -t $SESSION:2 -n "dev"
-    tmux send-keys "cd $PRJ_DIR" C-m
+    tmux send-keys "cd $APP_DIR" C-m
 
     # docker
     tmux new-window -n "docker"
     #top pane
     tmux send-keys -t $SESSION:3 "clear" C-m
     tmux send-keys -t $SESSION:3 "cd $APP_DIR" C-m
+
     tmux split-window -v -p 30 -t $SESSION:3.1
     tmux split-window -h -p 50 -t $SESSION:3.2
+
+    #top pane
+    if [ -d "$APP_DIR/env" ]
+    then
+        echo "switching to 'env'"
+        tmux send-keys -t $SESSION:3.1 "cd $APP_DIR/env" C-m
+        tmux send-keys -t $SESSION:3.1 "tree -L 2 ." C-m
+    fi
     #left pane
     tmux send-keys -t $SESSION:3.2 "cd $APP_DIR" C-m
     tmux send-keys -t $SESSION:3.2 "git log --oneline --decorate --graph" C-m
