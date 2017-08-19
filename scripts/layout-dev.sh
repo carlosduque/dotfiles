@@ -35,8 +35,8 @@ then
 
     # open a window where the frontend code is
     tmux new-window -n "webpack"
-    tmux send-keys -t $SESSION:2.1  "cd $APP_DIR" C-m
-    tmux send-keys -t $SESSION:2.1  "tree -L 2 ." C-m
+    tmux send-keys -t $SESSION:2.1  "cd $APP_DIR/$PRJ_NAME-fe" C-m
+    tmux send-keys -t $SESSION:2.1  "tree -L 1 ." C-m
     tmux split-window -v -p 30 -t $SESSION:2.1
     #start a python session
     tmux send-keys -t $SESSION:2.2  "cd $APP_DIR/$PRJ_NAME-fe" C-m
