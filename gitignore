@@ -13,8 +13,8 @@ out/
 *.ipr
 *.iws
 ## compiled sources
-build/
-dist/
+#build/
+#dist/
 classes/
 target/
 #bin/ #shouldn't ignore, it's needed in 'rails' code

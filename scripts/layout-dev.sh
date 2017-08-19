@@ -23,40 +23,37 @@ then
     tmux new -s $SESSION -n home -d
 
     # open a window where the code is
-    tmux rename-window -t $SESSION:1 "cmd"
-    tmux send-keys -t $SESSION:1.1  "cd $HOME" C-m
+    tmux rename-window -t $SESSION:1 "dev"
+    tmux send-keys -t $SESSION:1.1  "cd $APP_DIR" C-m
+    tmux send-keys -t $SESSION:1.1  "git ls --graph" C-m
     tmux split-window -v -p 30 -t $SESSION:1.1
     #start a python session
     tmux send-keys -t $SESSION:1.2  "python" C-m
     tmux select-pane -t $SESSION:1.1
 
-    # project
-    tmux new-window -t $SESSION:2 -n "dev"
-    tmux send-keys "cd $APP_DIR" C-m
-
     # docker
     tmux new-window -n "docker"
     #top pane
-    tmux send-keys -t $SESSION:3 "clear" C-m
-    tmux send-keys -t $SESSION:3 "cd $APP_DIR" C-m
+    tmux send-keys -t $SESSION:2 "clear" C-m
+    tmux send-keys -t $SESSION:2 "cd $APP_DIR" C-m
 
-    tmux split-window -v -p 30 -t $SESSION:3.1
-    tmux split-window -h -p 50 -t $SESSION:3.2
+    tmux split-window -v -p 30 -t $SESSION:2.1
+    #tmux split-window -h -p 50 -t $SESSION:2.2
 
     #top pane
     if [ -d "$APP_DIR/env" ]
     then
         echo "switching to 'env'"
-        tmux send-keys -t $SESSION:3.1 "cd $APP_DIR/env" C-m
-        tmux send-keys -t $SESSION:3.1 "tree -L 2 ." C-m
+        tmux send-keys -t $SESSION:2.1 "cd $APP_DIR/env" C-m
+        tmux send-keys -t $SESSION:2.1 "tree -L 2 ." C-m
     fi
     #left pane
-    tmux send-keys -t $SESSION:3.2 "cd $APP_DIR" C-m
-    tmux send-keys -t $SESSION:3.2 "git log --oneline --decorate --graph" C-m
+    tmux send-keys -t $SESSION:2.2 "cd $APP_DIR" C-m
+    tmux send-keys -t $SESSION:2.2 "docker images" C-m
     #right pane
-    tmux send-keys -t $SESSION:3.3  "cd $APP_DIR/env" C-m
-    tmux send-keys -t $SESSION:3.3  "docker-compose up" C-m
-    tmux select-pane -t $SESSION:3.1
+    #tmux send-keys -t $SESSION:2.3  "cd $APP_DIR/env" C-m
+    #tmux send-keys -t $SESSION:2.3  "docker-compose up" C-m
+    tmux select-pane -t $SESSION:2.1
 
     # mail
     tmux new-window -t $SESSION:4 -n "mail"
