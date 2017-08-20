@@ -25,7 +25,7 @@ then
     tmux send-keys -t $SESSION:2.2 "cd $PRJ_DIR/webpay/woocommerce" C-m
     tmux send-keys -t $SESSION:2.2 "git log --oneline --decorate --graph" C-m
     tmux send-keys -t $SESSION:2.3  "cd $PRJ_DIR/webpay/woocommerce/env" C-m
-    tmux send-keys -t $SESSION:2.3  "docker-compose up -d" C-m
+    tmux send-keys -t $SESSION:2.3  "docker-compose up" C-m
     tmux select-pane -t $SESSION:2.3
 
     # mail

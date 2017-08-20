@@ -53,6 +53,7 @@ macro index g "!fetchmail -k<enter>"  'run fetchmail -k'
 #macro index g "!getmail --dont-delete -n<enter>"  'run getmail'
 
 # Para utilizar w3m en mutt
+auto_view text/html
 macro index \cB |w3m\n "call w3m to extract URLs out of a message"
 macro pager \cB |w3m\n "call w3m to extract URLs out of a message"
 
