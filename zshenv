@@ -38,7 +38,8 @@ elif [[ "$OSTYPE" == "cygwin" ]]; then
 else
     #"freebsd"* || "linux-gnu"*
     #export CUSTOM_PATH="$CUSTOM_PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-    export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+    #export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+    export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
     export ANT_HOME=/usr/share/ant
     export MAVEN_HOME=/usr/share/maven
     export OPENEJB_HOME=/srv/openejb/inst
