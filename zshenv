@@ -19,8 +19,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export MW_HOME="$HOME/srv/weblogic/wls1036"
     export BREW_BINARIES_HOME="$(/usr/local/bin/brew --prefix coreutils)"
 
-    path=($HOME/.rbenv/bin $path)
-    path=($BREW_BINARIES_HOME/libexec/gnubin $path)
+    path+=($HOME/.rbenv/bin $path)
+    path+=($HOME/.rbenv/shims $path)
+    path+=($BREW_BINARIES_HOME/libexec/gnubin $path)
     path+=(/usr/local/git/bin)
     path+=(/usr/local/MacGPG2/bin)
     path+=($OPENEJB_HOME/bin)
@@ -61,4 +62,3 @@ export PATH
 # aliases
 alias zshconfig="vim $HOME/.zshrc"
 alias vimconfig="vim $HOME/.vimrc"
-
