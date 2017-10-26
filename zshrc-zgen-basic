@@ -41,6 +41,9 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
     alias history='fc -il 1' #to read the $HISTFILE showing the dates
 fi
 
+# initializers
+eval "$(rbenv init -)"
+
 # bindkey style emacs (-e) or vi (-v)
 bindkey -v
 
@@ -62,4 +65,3 @@ bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
 #zprof  #zsh profiling
-
