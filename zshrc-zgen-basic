@@ -15,7 +15,7 @@ if ! zgen saved; then
   # zgen load encode64
   # zgen load jsontools
   # zgen load urltools
-
+  zgen save
 fi
 
 HISTSIZE=10000

@@ -24,6 +24,7 @@ if ! zgen saved; then
   zgen load carlosduque/oh-my-zsh-themes stealth
   #zgen load carlosduque/oh-my-zsh-themes chess
   #zgen load carlosduque/oh-my-zsh-themes ice 
+  zgen save
 fi
 
 CASE_SENSITIVE="true"
