@@ -60,7 +60,6 @@ Thumbs.db
 # rails
 .bundle/
 # jekyll
-_site/
 .sass-cache/
 .jekyll-metadata
 ## history files
