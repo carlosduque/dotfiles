@@ -1,6 +1,6 @@
 [user]
-  name = Carlos Duque
-  email = carlosduque.hn@gmail.com
+  name = Carlos Duque [a07942a]
+  email = carlos.duque@experian.com
 
 [core]
   whitespace = trailing-space,space-before-tab
@@ -42,3 +42,5 @@
   lg = log --oneline --decorate --graph
   lq = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
+[http]
+  sslCAInfo = /home/a07942a/.ssh/experian-bitbucket.cer
