@@ -3,12 +3,9 @@ export EDITOR=vim
 #export BROWSER=$(which google-chrome chromium-browser firefox w3m links2 links lynx | grep -Pm1 '^/')
 export TZ=America/Santiago
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
 export LC_ALL="es_ES.UTF-8"
 export LC_COLLATE="C"
 export LANG="es_ES.UTF-8"
-
 # setup PATH variable
 path+=($HOME/bin)
 
@@ -38,8 +35,6 @@ elif [[ "$OSTYPE" == "cygwin" ]]; then
     export CUSTOM_PATH="$CUSTOM_PATH:$WINAPPS_HOME\\HashiCorp\\Vagrant\\bin"
 else
     #"freebsd"* || "linux-gnu"*
-    #export CUSTOM_PATH="$CUSTOM_PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-    #export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
     export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
     export ANT_HOME=/usr/share/ant
     export MAVEN_HOME=/usr/share/maven
@@ -59,6 +54,5 @@ fi
 path=('/usr/local/heroku/bin' $path)
 export PATH
 
-# aliases
 alias zshconfig="vim $HOME/.zshrc"
 alias vimconfig="vim $HOME/.vimrc"
