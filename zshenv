@@ -26,9 +26,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     path+=($MW_HOME/bin)
 elif [[ "$OSTYPE" == "cygwin" ]]; then
     export WINAPPS_HOME="C:\\apps"
-    export JAVA_HOME="$WINAPPS_HOME\\Java\\jdk1.7.0_71"
-    export ANT_HOME="$WINAPPS_HOME\\Java\\apache-ant-1.9.4"
-    export MAVEN_HOME="$WINAPPS_HOME\\Java\\apache-maven-3.2.3"
+    #export JAVA_HOME="$WINAPPS_HOME\\java\\zulu7.21.0.3-jdk7.0.161-win_x64"
+    export JAVA_HOME="C:\\Program Files\\Java\\jdk1.8.0_152"
+    export ANT_HOME="$WINAPPS_HOME\\java\\apache-ant-1.9.9"
+    export MAVEN_HOME="$WINAPPS_HOME\\Java\\apache-maven-3.5.2"
     export CUSTOM_PATH="$JAVA_HOME\\bin:$ANT_HOME\\bin:$MAVEN_HOME\\bin"
     export CUSTOM_PATH="$CUSTOM_PATH:C:\\WINDOWS:C:\\WINDOWS\\System32"
     export CUSTOM_PATH="$CUSTOM_PATH:C:\\WINDOWS\\System32\\WBEM:C:\\WINDOWS\\SYSTEM32\\WINDOWSPOWERSHELL\\V1.0\\"
