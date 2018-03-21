@@ -13,7 +13,6 @@ then
 
     tmux rename-window -t $SESSION:1 "dev"
     tmux send-keys -t $SESSION:1.1  "cd $HOME" C-m
-    tmux send-keys -t $SESSION:1.1  "figlet -k $HOME" C-m
     tmux split-window -v -p 30 -t $SESSION:1.1
 
     tmux send-keys -t $SESSION:1.2  "cd $HOME" C-m
@@ -39,12 +38,12 @@ then
     tmux select-pane -t $SESSION:3.1
 
     # mail
-    tmux new-window -t $SESSION:4 -n "mail"
-    tmux send-keys "mutt" C-m
+    #tmux new-window -t $SESSION:4 -n "mail"
+    #tmux send-keys "mutt" C-m
 
     # navigator
-    tmux new-window -t $SESSION:5 -n "explorer"
-    tmux send-keys "mc" C-m
+    #tmux new-window -t $SESSION:5 -n "explorer"
+    #tmux send-keys "mc" C-m
 
     # remote 
     #tmux new-window -t $SESSION:6 -n "remote"

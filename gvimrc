@@ -1,3 +1,7 @@
+" ******************************************
+" GVIM WARNING: for gvim, copy gvimrc as _gvimrc to VIM_HOME
+" ******************************************
+
 "set mousehide            "hide the mouse when typing text
 colorscheme molokai
 

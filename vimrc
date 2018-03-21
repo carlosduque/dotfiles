@@ -1,4 +1,7 @@
-
+" ******************************************
+" GVIM WARNING: for gvim, copy gvimrc as _gvimrc to VIM_HOME
+" ******************************************
+"
 " Basics ---{{{
 execute pathogen#infect()
 call pathogen#helptags()          "generate helptags for everything in ‘runtimepath’
