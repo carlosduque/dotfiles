@@ -145,9 +145,6 @@ map <leader>ex :Explore<CR>
 " set current files dir, as vim's ccd
 map <leader>mkhome :cd %:p:h<CR>
 
-" >>> easymotion
-" <leader><leader>w (<plug>(easymotion-w)) to trigger the word motion w
-
 " para usar 'aspell' usando ctrl+t
 " map ^T :w!<CR>:!aspell check %<CR>:e! %<CR>
 
@@ -174,6 +171,8 @@ map <leader>tb :TagbarToggle<CR>
 map <leader>cp :CtrlP<CR>
 " or just plain ctrl+p :-)
 
+" >>> easymotion
+" <leader><leader>w (<plug>(easymotion-w)) to trigger the word motion w
 
 " >>> EasyMotion
 " <Leader>w   to trigger word motion
@@ -181,6 +180,7 @@ map <leader>cp :CtrlP<CR>
 " <Leader>so  to trigger char motion, in this case 'o'
 " <Leader>t
 " <Leader>gE
+
 let g:EasyMotion_leader_key = '<Leader>' 
 
 " >>> bufexplorer
@@ -192,6 +192,9 @@ let g:EasyMotion_leader_key = '<Leader>'
 nnoremap <leader><space>l :SlimuxREPLSendLine<cr>
 vnoremap <leader><space>s :SlimuxREPLSendSelection<cr>
 nnoremap <leader><space>b :SlimuxREPLSendBuffer<cr>
+
+" >>> rainbow parentheses
+map <leader>rb :RainbowParentheses!!<CR>
 
 " toggle line wrapping
 nnoremap <leader>wrp :set wrap!<cr>
@@ -276,4 +279,9 @@ augroup END
 
 " Autosave files when losing focus
 au FocusLost * :wa
+
+augroup rainbow_lisp
+    autocmd!
+    autocmd FileType lisp,clojure,scheme RainbowParentheses
+augroup END
 
