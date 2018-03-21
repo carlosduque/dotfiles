@@ -62,19 +62,9 @@ then
     #top pane
     tmux send-keys -t $SESSION:5 "clear" C-m
 
-    tmux split-window -v -p 50 -t $SESSION:5.1
-    tmux split-window -h -p 50 -t $SESSION:5.2
-
     #top pane
     tmux send-keys -t $SESSION:5.1 "cd $APP_DIR" C-m
     tmux send-keys -t $SESSION:5.1 "docker ps -a" C-m
-    #left pane
-    tmux send-keys -t $SESSION:5.2 "cd $APP_DIR" C-m
-    tmux send-keys -t $SESSION:5.2 "docker images" C-m
-    #right pane
-    tmux send-keys -t $SESSION:5.3  "cd $APP_DIR" C-m
-    tmux send-keys -t $SESSION:5.3  "docker-compose start mongo-db-srv" C-m
-    tmux send-keys -t $SESSION:5.3  "docker-compose start redis-cache-srv" C-m
     tmux select-pane -t $SESSION:5.1
 
     # navigator
