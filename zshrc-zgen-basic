@@ -42,7 +42,7 @@ if [[ "$OSTYPE" == "cygwin"* ]]; then
 fi
 
 # initializers
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 # bindkey style emacs (-e) or vi (-v)
 bindkey -v
