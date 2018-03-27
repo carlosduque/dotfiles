@@ -36,6 +36,9 @@ alias td='tree -d'
 alias td2='tree -L 2 -d'
 alias td3='tree -L 3 -d'
 
+alias urlencode='python -c "import sys, urllib as ul; \ print ul.quote_plus(sys.argv[1])"'
+alias urldecode='python -c "import sys, urllib as ul; \ print ul.unquote_plus(sys.argv[1])"'
+
 if [[ "$OSTYPE" == "cygwin"* ]]; then
     alias ls='ls --color --indicator-style=slash --group-directories-first' #--sort=time|size
     alias history='fc -il 1' #to read the $HISTFILE showing the dates
