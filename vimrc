@@ -13,6 +13,8 @@ let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
 
+let g:solarized_termcolors=256
+
 filetype plugin indent on         "enable filetype detection:
 syntax on                         "activar el highlight
 
