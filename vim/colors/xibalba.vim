@@ -33,7 +33,7 @@ hi LineNr             ctermfg=241                                               
 "hi Normal                                                                                             guifg=#ffffff   guibg=#000000
 hi Number             ctermfg=Yellow                                                                       guifg=#0000ff
 "hi Operator           ctermfg=117
-hi PreProc            ctermfg=DarkCyan                                                                      guifg=#00ff00
+hi PreProc            ctermfg=Cyan                                                                      guifg=#00ff00
 hi Special            ctermfg=Cyan                                                                 guifg=#0000ff
 hi SpecialKey         ctermfg=Yellow                                                                 guifg=#0000ff
 hi Statement          ctermfg=DarkRed                           cterm=none                            guifg=#c0c000                   gui=bold
