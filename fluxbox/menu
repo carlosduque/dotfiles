@@ -16,19 +16,17 @@
 #     session.menuFile: ~/.fluxbox/my-menu
 [begin] (Fluxbox)
 [encoding] {ISO-8859-15}
-      [exec] (urxvt) {urxvt -bg black -fg white -sl 1000 -vb -sb -fade 80 -tr -sh 15 -geometry 137x30+215+80}
-      [exec] (firefox) {firefox} 
+      [exec] (urxvt) {urxvt} 
+      [exec] (chrome) {chrome} 
       [exec]   (Ejecutar) {fbrun} 
 [submenu] (Terminales)
       [exec]   (xterm) {xterm} 
-      [exec]   (urxvt) {urxvt -bg black -fg white -sl 1000 -vb -sb -fade 80 -tr -sh 15 -geometry 137x30+215+80}
+      [exec]   (urxvt) {urxvt} 
       [exec]   (urxvtc) {urxvtc} 
-      [exec]   (aterm) {aterm} 
 [end]
 [submenu] (Red)
 [submenu] (Navegadores)
       [exec]   (chrome) {chrome} 
-      [exec]   (firefox) {firefox} 
       [exec]   (w3m) {urxvt -e w3m fluxbox.org} 
 [end]
 [submenu] (FTP)
@@ -37,6 +35,7 @@
 [end]
 [end]
 [submenu] (Editores)
+      [exec]   (gvim) {gvim} 
       [exec]   (evim) {evim} 
       [exec]   (vim) {urxvt -e vim} 
       [exec]   (vi) {urxvt -e vi} 
@@ -80,8 +79,6 @@
       [workspaces] (Lista de Escritorios) 
 [submenu] (Herramienta)
       [exec] (Nombre de Ventana) {xprop WM_CLASS|cut -d \" -f 2|xmessage -file - -center} 
-      [exec] (Captura de Pantalla - JPG) {import screenshot.jpg && display -resize 50% screenshot.jpg} 
-      [exec] (Captura de Pantalla - PNG) {import screenshot.png && display -resize 50% screenshot.png} 
       [exec] (Ejecutar) {fbrun} 
       [exec] (Regenerar Menú) {fluxbox-generate_menu} 
 [end]
