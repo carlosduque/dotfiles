@@ -21,16 +21,18 @@ hi CursorColumn       ctermfg=White         ctermbg=DarkMagenta   cterm=none    
 hi Directory          ctermfg=2                                                                       guifg=#00c000
 hi Error                                    ctermbg=9                                                                 guibg=#ff0000
 hi Float              ctermfg=3
-hi Function           ctermfg=Cyan
+"hi Function           ctermfg=LightMagenta
+"hi Function           ctermfg=Magenta
+hi Function           ctermfg=Red
 hi Identifier         ctermfg=6                                                                       guifg=#00c0c0
 "hi Label              ctermfg=229                       cterm=none
 "hi LineNr             ctermfg=Yellow                                                                  guifg=#0000ff
 hi LineNr             ctermfg=241                                                                     guifg=#0000ff
 "hi Normal                                                                                             guifg=#ffffff   guibg=#000000
-hi Number             ctermfg=3                                                                       guifg=#0000ff
+hi Number             ctermfg=DarkYellow                                                                       guifg=#0000ff
 "hi Operator           ctermfg=117
 hi PreProc            ctermfg=10                                                                      guifg=#00ff00
-hi Special            ctermfg=Magenta                                                                 guifg=#0000ff
+hi Special            ctermfg=Cyan                                                                 guifg=#0000ff
 hi SpecialKey         ctermfg=Yellow                                                                 guifg=#0000ff
 hi Statement          ctermfg=3                                 cterm=bold                            guifg=#c0c000                   gui=bold
 hi StatusLine         ctermfg=11            ctermbg=12          cterm=none                            guifg=#ffff00   guibg=#0000ff   gui=none
