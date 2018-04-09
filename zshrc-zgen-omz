@@ -53,7 +53,7 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
 fi
 
 # initializers
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 # Print a random, hopefully interesting, adage.
 print -P "\e[1;36m"

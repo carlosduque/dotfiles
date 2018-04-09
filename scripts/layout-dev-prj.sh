@@ -9,6 +9,7 @@ then
 fi
 
 SESSION=hack-$PRJ_NAME
+#SESSION=hack-x
 PRJ_DIR="$HOME/dev/projects"
 APP_DIR="$PRJ_DIR/$PRJ_NAME"
 BE_DIR="$PRJ_NAME-be"
@@ -25,14 +26,13 @@ then
 
     tmux new -s $SESSION -n home -d
 
-    # open a window where the project is
+    tmux split-window -v -p 30 -t $SESSION:1
     tmux rename-window -t $SESSION:1 "dev"
-    tmux send-keys -t $SESSION:1.1  "cd $APP_DIR" C-m
-    tmux send-keys -t $SESSION:1.1  "git ls --graph" C-m
-    tmux split-window -v -p 30 -t $SESSION:1.1
-    #start a python session
+    tmux send-keys -t $SESSION:1 "cd $APP_DIR" C-m
+    tmux send-keys -t $SESSION:1 "git ls --graph" C-m
+    #start a clojure session
     tmux send-keys -t $SESSION:1.2  "clear" C-m
-    tmux send-keys -t $SESSION:1.2  "python" C-m
+    tmux send-keys -t $SESSION:1.2  "clojure" C-m
     tmux select-pane -t $SESSION:1.1
 
     # open a window where the backend code is
@@ -72,17 +72,18 @@ then
     tmux send-keys -t $SESSION:6.1 "cd $APP_DIR" C-m
     tmux send-keys -t $SESSION:6.1 "mc --nosubshell . $FE_BUILD_DIR" C-m
 
-    # mail
-    #tmux new-window -t $SESSION:4 -n "mail"
-    #tmux send-keys "mutt" C-m
 
     # navigator
-    #tmux new-window -t $SESSION:5 -n "explorer"
-    #tmux send-keys "mc" C-m
+    tmux new-window -t $SESSION:4 -n "explorer"
+    tmux send-keys "mc" C-m
 
     # remote 
-    #tmux new-window -t $SESSION:6 -n "remote"
+    #tmux new-window -t $SESSION:5 -n "remote"
     #tmux send-keys "ssh carlos@pulhapanzak" C-m
+
+    # mail
+    #tmux new-window -t $SESSION:6 -n "mail"
+    #tmux send-keys "mutt" C-m
 
     #go back to first window
     tmux select-window -t $SESSION:1
