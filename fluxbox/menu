@@ -16,13 +16,12 @@
 #     session.menuFile: ~/.fluxbox/my-menu
 [begin] (Fluxbox)
 [encoding] {ISO-8859-15}
-      [exec] (urxvt) {urxvt} 
+      [exec]   (xterm) {xterm -bg black -fg white -en utf8 -lc -ls -vb -aw} 
       [exec] (chrome) {chrome} 
       [exec]   (Ejecutar) {fbrun} 
 [submenu] (Terminales)
-      [exec]   (xterm) {xterm} 
-      [exec]   (urxvt) {urxvt} 
-      [exec]   (urxvtc) {urxvtc} 
+      [exec]   (xterm) {xterm -bg black -fg white -en utf8 -lc -ls -vb -aw} 
+      [exec]   (urxvt) {urxvt -bg black -fg white -sl 1000 -vb -sb -fade 80 -tr -sh 15 -geometry 137x30+215+80}
 [end]
 [submenu] (Red)
 [submenu] (Navegadores)
@@ -36,9 +35,7 @@
 [end]
 [submenu] (Editores)
       [exec]   (gvim) {gvim} 
-      [exec]   (evim) {evim} 
       [exec]   (vim) {urxvt -e vim} 
-      [exec]   (vi) {urxvt -e vi} 
 [end]
 [submenu] (Educación)
 [end]
