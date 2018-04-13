@@ -44,7 +44,8 @@ xset +fp "$HOME/.fonts"
 # adesklets &
 # fbpager &
 #aterm -bg black -fg white -sl 1000 -vb -sb -fade 80 -tr -sh 15 -fn Terminus -fb Terminus -geometry 137x30+215+80 -e screen &
-urxvt -bg black -fg white -sl 1000 -vb -sb -fade 80 -tr -sh 15 -geometry 137x30+215+80 &
+#xterm -bg black -fg white -en utf8 -lc -ls -vb -aw -fn Terminus -fb Terminus -geometry 137x30+215+80
+#urxvt -bg black -fg white -sl 1000 -vb -sb -fade 80 -tr -sh 15 -geometry 137x30+215+80 &
 
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.

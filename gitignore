@@ -57,8 +57,6 @@ authorized_keys
 .Trashes
 thumbs.db
 Thumbs.db
-# rails
-.bundle/
 # jekyll
 .sass-cache/
 .jekyll-metadata
