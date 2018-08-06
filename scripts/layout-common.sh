@@ -17,7 +17,7 @@ then
 
     tmux send-keys -t $SESSION:1.2  "cd $HOME" C-m
     tmux send-keys -t $SESSION:1.2  "clear" C-m
-    tmux send-keys -t $SESSION:1.2  "python" C-m
+    tmux send-keys -t $SESSION:1.2  "lein repl" C-m
     tmux select-pane -t $SESSION:1.1
 
     # command
