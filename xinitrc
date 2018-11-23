@@ -1,12 +1,13 @@
 # run: xinit <window manager> or startx ~/.xinitrc <wm>
 # default: fluxbox
 
-session=${1:-fluxbox}
+session=${1:-i3wm}
 
 case $session in
-    fluxbox           ) exec startfluxbox;;
-    mate              ) exec mate-session;;
-    cinnamon          ) exec cinnamon-session;;
+    i3wm              ) exec i3;;
+#    fluxbox           ) exec startfluxbox;;
+#    mate              ) exec mate-session;;
+#    cinnamon          ) exec cinnamon-session;;
 #    enlightenment     ) exec enlightenment_start;;
 #    gnome             ) exec gnome-session;;
 #    gnome-classic     ) exec gnome-session --session=gnome-classic;;
