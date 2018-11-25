@@ -61,3 +61,4 @@ URxvt*boldItalicFont: xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pix
 URxvt*saveLines: 0
 URxvt*buffered: true
 URxvt*hold: false
+
