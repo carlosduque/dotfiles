@@ -38,7 +38,7 @@ DESTDIR="/Volumes/BIGVAULT/carlos"
 #         These side-effects change the default state of rsync, so the position of the --files-from option on the command-line
 #         has no bearing on how other options are parsed (e.g. -a works the same before or after --files-from, as does --no-R
 #         and all other options).
-FILES="$HOME/.dobackup.files"
+FILES="/Users/carlos/.dobackup.files"
 
 # Options.
 # --human-readable (-h) output numbers in a human-readable format

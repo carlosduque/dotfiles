@@ -13,12 +13,12 @@ then
 
     tmux rename-window -t $SESSION:1 "dev"
     tmux send-keys -t $SESSION:1.1  "cd $HOME" C-m
-    tmux split-window -v -p 30 -t $SESSION:1.1
+    #tmux split-window -v -p 30 -t $SESSION:1.1
 
-    tmux send-keys -t $SESSION:1.2  "cd $HOME" C-m
-    tmux send-keys -t $SESSION:1.2  "clear" C-m
-    tmux send-keys -t $SESSION:1.2  "lein repl" C-m
-    tmux select-pane -t $SESSION:1.1
+    #tmux send-keys -t $SESSION:1.2  "cd $HOME" C-m
+    #tmux send-keys -t $SESSION:1.2  "clear" C-m
+    #tmux send-keys -t $SESSION:1.2  "lein repl" C-m
+    #tmux select-pane -t $SESSION:1.1
 
     # command
     tmux new-window -n "cmd"
