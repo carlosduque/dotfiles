@@ -17,48 +17,48 @@
 *color14:    rgb:71/be/be
 *color15:    rgb:ff/ff/ff
 
-XTerm*utf8: 1
-XTerm*font: -*-terminus-medium-*-*-*-18-*-*-*-*-*-iso10646-1
-XTerm*font1: -*-terminus-medium-*-*-*-12-*-*-*-*-*-iso10646-1
-XTerm*font2: -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso10646-1
-XTerm*font3: -*-terminus-medium-*-*-*-16-*-*-*-*-*-iso10646-1
-XTerm*font4: -*-terminus-medium-*-*-*-22-*-*-*-*-*-iso10646-1
-XTerm*font5: -*-terminus-medium-*-*-*-24-*-*-*-*-*-iso10646-1
-XTerm*font6: -*-terminus-medium-*-*-*-32-*-*-*-*-*-iso10646-1
-XTerm*selectToClipboard: true
-XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-XTerm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
-*VT100*translations: #override Shift <Btn1Up>: exec-formatted("google-chrome '%t'", PRIMARY)
+!XTerm*utf8: 1
+!XTerm*font: -*-terminus-medium-*-*-*-18-*-*-*-*-*-iso10646-1
+!XTerm*font1: -*-terminus-medium-*-*-*-12-*-*-*-*-*-iso10646-1
+!XTerm*font2: -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso10646-1
+!XTerm*font3: -*-terminus-medium-*-*-*-16-*-*-*-*-*-iso10646-1
+!XTerm*font4: -*-terminus-medium-*-*-*-22-*-*-*-*-*-iso10646-1
+!XTerm*font5: -*-terminus-medium-*-*-*-24-*-*-*-*-*-iso10646-1
+!XTerm*font6: -*-terminus-medium-*-*-*-32-*-*-*-*-*-iso10646-1
+!XTerm*selectToClipboard: true
+!XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+!XTerm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
+!*VT100*translations: #override Shift <Btn1Up>: exec-formatted("google-chrome '%t'", PRIMARY)
 
-URxvt*termName: screen-256color
-URxvt*geometry: 240x84
-URxvt*loginShell: true
-URxvt*scrollColor: #777777
-URxvt*scrollstyle: plain
-URxvt*scrollTtyKeypress: true
-URxvt*scrollTtyOutput: false
-URxvt*scrollWithBuffer: false
-URxvt*secondaryScreen: true
-URxvt*secondaryScroll: true
-URxvt*skipScroll: true
-URxvt*scrollBar: false
-URxvt*scrollBar_right: false
-URxvt*scrollBar_floating: false
-URxvt*fading: 30
-URxvt*utmpInhibit: false
-URxvt*urgentOnBell: false
-URxvt*visualBell: true
-URxvt*mapAlert: true
-URxvt*mouseWheelScrollPage: false
-URxvt*background: Black
-URxvt*foreground: White
-URxvt*colorUL: yellow
-URxvt*underlineColor: yellow
-URxvt*font: -xos4-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:pixelsize:12
-URxvt*boldFont: -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
-URxvt*italicFont: xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
-URxvt*boldItalicFont: xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
-URxvt*saveLines: 0
-URxvt*buffered: true
-URxvt*hold: false
+!URxvt*termName: screen-256color
+!URxvt*geometry: 240x84
+!URxvt*loginShell: true
+!URxvt*scrollColor: #777777
+!URxvt*scrollstyle: plain
+!URxvt*scrollTtyKeypress: true
+!URxvt*scrollTtyOutput: false
+!URxvt*scrollWithBuffer: false
+!URxvt*secondaryScreen: true
+!URxvt*secondaryScroll: true
+!URxvt*skipScroll: true
+Rxvt*scrollBar: false
+!URxvt*scrollBar_right: false
+!URxvt*scrollBar_floating: false
+!URxvt*fading: 30
+!URxvt*utmpInhibit: false
+!URxvt*urgentOnBell: false
+!URxvt*visualBell: true
+!URxvt*mapAlert: true
+!URxvt*mouseWheelScrollPage: false
+!URxvt*background: Black
+!URxvt*foreground: White
+!URxvt*colorUL: yellow
+!URxvt*underlineColor: yellow
+!URxvt*font: -xos4-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:pixelsize:12
+!URxvt*boldFont: -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
+!URxvt*italicFont: xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
+!URxvt*boldItalicFont: xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
+!URxvt*saveLines: 0
+!URxvt*buffered: true
+!URxvt*hold: false
 
