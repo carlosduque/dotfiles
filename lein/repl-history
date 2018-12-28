@@ -1,0 +1,63 @@
+(+ 1 1)
+(dotimes [i 3]
+  (println (rand-nth ["Fabulous!", "Marvelous!", "Inconceivable!"])
+    i))
+exit
+(reduce + [1 2 3 4])
+(def person (create-struct :name :age :sex))
+(reduce + [1 2 3 4])
+(def person (create-struct :name :age :sex))
+(struct person "Carlos" 39 "Male")
+(struct person "Melissa" 36 "Female")
+(def c (struct person "Carlos" 39 "Male"))
+(def m (struct person "Melissa" 36 "Female"))
+c
+m
+(:age c)
+(:name m)
+(take 10 (range))
+(take 10 (range 34))
+(def ls
+  (lazy-seq
+      (do
+          (prn "body executed")
+          (lazy-seq (do (prn "next body executed") [:a :b :c])))))
+ls
+(take 1 ls)
+(take 2 ls)
+(take 3 ls)
+(take 5 ls)
+(into {} [a b c])
+(into {} [[a 34] [c 29])
+(doc into)
+(into {} [[:a :b :c] [34 56 87]]
+)
+(into {} [[:a :b :c]])
+(into {} [:a :b :c])
+(into {} {:a 23 :b 43 :c 63})
+(into {} {:a 23 :b 43 :c 63} {:z 45})
+(into {} {:a 23 :b 43 :c 63} {:z 45 :x 23 :y 87})
+(into {} {:a 23 :b 43 :c 63} [z 34])
+(doc into)
+(into {} {:a 23 :b 43 :c 63} {:z 45 :x 23 :y 87})
+(into {:a 23 :b 43 :c 63} {:z 45 :x 23 :y 87})
+(into {} [:a 23 :b 43 :c 63])
+(into {} '(:a 23 :b 43 :c 63))
+(into {} '([:a 23] [:b 43] [:c 63]))
+(conj [a b c] [1 4 5])
+(doc conj)
+m
+(def x {:a alfa :b beta :g gamma :d delta})
+(def x {:a "alfa" :b "beta" :g "gamma" :d "delta"})
+x
+(assoc x {:o omega})
+(assoc x {:o "omega"})
+(doc assoc)
+(assoc x :o "omega")
+(def x (assoc x :o "omega"))
+x
+exit
+(+ 3 4 3 2)
+(apply + 9 3 4 5)
+(apply + '(9 3 4 5))
+exit
