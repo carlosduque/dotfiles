@@ -8,7 +8,7 @@ set mbox_type = Maildir
 
 # donde se va a guardar todo (maiboxes =XXX) en otras definiciones esta ref
 # se abrevia con '+'
-set folder = $HOME/mail
+set folder = $HOME/.mail
 
 # incomming mail: de donde leer el correo (inbox)
 set spoolfile = +inbox
