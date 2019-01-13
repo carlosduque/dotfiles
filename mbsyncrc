@@ -1,0 +1,71 @@
+
+IMAPAccount gmail
+  User carlosduque.hn@gmail.com
+  #Pass yourpassword
+  PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.msmtp-gmail.gpg"
+  Host imap.gmail.com
+  SSLType IMAPS
+  CertificateFile /usr/local/etc/ssl/cert.pem
+ 
+IMAPStore gmail-remote
+  Account gmail
+
+MaildirStore gmail-local
+    Path  ~/.mail/carlosduque.hn@gmail.com/
+    Inbox ~/.mail/carlosduque.hn@gmail.com/inbox
+
+Channel gmail
+    Master :gmail-remote:
+    Slave  :gmail-local:
+    Create Both
+    SyncState *
+    Patterns *
+
+#######
+# TAD #
+#######
+#
+#IMAPAccount tad
+#    Host imap.gmail.com
+#    User phogg@tripleaughtdesign.com
+#    SSLType IMAPS
+#    CertificateFile /etc/ssl/certs/ca-certificates.crt
+#    PassCmd "keyring get mail-tad imap"
+#
+#IMAPStore tad-remote
+#    Account tad
+#
+#MaildirStore tad-local
+#    Path ~/mail/TAD/
+#    Inbox ~/mail/TAD/INBOX
+#
+#Channel tad-inbox
+#    Master ":tad-remote:INBOX"
+#    Slave ":tad-local:INBOX"
+#    Create Both
+#    SyncState *
+#
+#Channel tad-drafts
+#    Master ":tad-remote:[Gmail]/Drafts"
+#    Slave ":tad-local:drafts"
+#    Create Both
+#    SyncState *
+#
+#Channel tad-sent
+#    Master ":tad-remote:[Gmail]/Sent Mail"
+#    Slave ":tad-local:sent"
+#    Create Both
+#    SyncState *
+#
+#Channel tad-flagged
+#    Master ":tad-remote:[Gmail]/Starred"
+#    Slave ":tad-local:flagged"
+#    Create Both
+#    SyncState *
+#
+#
+#Group tad
+#    Channel tad-inbox
+#    Channel tad-drafts
+#    Channel tad-sent
+#    Channel tad-flagged
