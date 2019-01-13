@@ -2,7 +2,7 @@
 # The MDA accepts a piece of mail from an MTA and performs the actual delivery (including processing aka "filtering") to
 # the user's mail folders.
 
-MAILDIR = $HOME/mail # Asegurarse de que existe!!
+MAILDIR = $HOME/.mail # Asegurarse de que existe!!
 DEFAULT = $MAILDIR/inbox
 LOGFILE = $MAILDIR/log
 VERBOSE=on
