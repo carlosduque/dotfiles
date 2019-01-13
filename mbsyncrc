@@ -1,3 +1,4 @@
+#usage: mbsync --verbose --all|<channel>
 
 IMAPAccount gmail
   User carlosduque.hn@gmail.com
