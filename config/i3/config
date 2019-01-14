@@ -9,6 +9,11 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+for_window [class="^.*"] border pixel 2
+gaps inner 5
+gaps outer 5
+#set $term --no-startup-id
+
 set $mod Mod4
 set $base00 #101218
 set $base01 #1f222d
@@ -123,8 +128,8 @@ set $ws5 "5:Music "
 set $ws6 "6:Monitor "
 set $ws7 "7:Remote "
 set $ws8 "8:Files "
-set $ws9 "9: "
-set $ws10 "10: "
+set $ws9 "9:X "
+set $ws10 "10:X "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -198,16 +203,20 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 
 # Widow Colours
-#                         border  background text    indicator
+#                       border  background text    indicator
 client.focused          $base01 $base01    $base07 $base0F
 client.focused_inactive $base02 $base02    $base03 $base0F
 client.unfocused        $base02 $base02    $base03 $base0F
 client.urgent           $base02 $base08    $base00 $base0F
 
 bar {
-        status_command i3status
+        #status_command i3status
+        status_command i3blocks
+        mode dock
+        modifier None
         #status_command i3blocks -c ~/.config/i3blocks/config
         #font pango: System San Francisco Display, FontAwesome 12
+        font pango:mono 10
         position top
         strip_workspace_numbers yes
         #bindsym button4 nop
