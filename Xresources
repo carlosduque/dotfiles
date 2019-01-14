@@ -3,4 +3,6 @@ URxvt*scrollBar: false
 URxvt*fading: 30
 URxvt*background: Black
 URxvt*foreground: White
+!URxvt*font: -*-clean-medium-r-*--12-*-*-*-*-*-*-*
+!URxvt*font: xft: Dina ttf 10px-10
 URxvt*underlineColor: yellow
