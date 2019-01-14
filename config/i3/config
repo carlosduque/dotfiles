@@ -115,15 +115,15 @@ exec --no-startup-id dunst
 #exec --no-startup-id dropbox
 #exec_always --no-startup-id feh --bg-scale ~/.wallpaper.png
 
-set $ws1 "1: Editor "
-set $ws2 "2: Terminal "
+set $ws1 "1: Editor "
+set $ws2 "2: Terminal "
 set $ws3 "3: Browser "
-set $ws4 "4: E-mail  "
+set $ws4 "4: E-mail "
 set $ws5 "5: Navigator "
-set $ws6 "6: Monitor "
-set $ws7 "7: Remote "
-set $ws8 "8: "
-set $ws9 "9: "
+set $ws6 "6: Monitor "
+set $ws7 "7: Remote "
+set $ws8 "8: "
+set $ws9 "9: "
 set $ws10 "10: "
 
 # switch to workspace
