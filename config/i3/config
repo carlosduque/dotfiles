@@ -117,14 +117,14 @@ exec --no-startup-id dunst
 
 set $ws1 "1:Editor "
 set $ws2 "2:Term "
-set $ws3 "3:Web "
+set $ws3 "3:Browser "
 set $ws4 "4:Email "
 set $ws5 "5:Music "
 set $ws6 "6:Monitor "
 set $ws7 "7:Remote "
-set $ws8 "8:Nav "
-set $ws9 "9:"
-set $ws10 "10:"
+set $ws8 "8:Files "
+set $ws9 "9: "
+set $ws10 "10: "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
