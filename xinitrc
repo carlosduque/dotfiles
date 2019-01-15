@@ -1,5 +1,7 @@
 # run: xinit <window manager> or startx ~/.xinitrc <wm>
-# default: fluxbox
+
+[ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 
 session=${1:-i3wm}
 
