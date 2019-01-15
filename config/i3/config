@@ -3,8 +3,8 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 set $mod Mod4
 
-gaps inner 5
-gaps outer 5
+gaps inner 7
+gaps outer 7
 set $term --no-startup-id urxvt
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
@@ -270,6 +270,6 @@ exec firefox
 
 exec_always                     feh --bg-scale ~/.wallpapers/dragon_red_black-1920x1080.jpg
 # Set display mode
-#exec_always                     xrandr --output VGA-0 --mode 800x600
-exec_always                     xrandr --output VGA-0 --mode 1024x768
+exec_always                     xrandr --output VGA-0 --mode 800x600
+#exec_always                     xrandr --output VGA-0 --mode 1024x768
 
