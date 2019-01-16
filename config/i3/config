@@ -1,16 +1,27 @@
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# Initial settings ---{{{
 set $mod Mod4
 
 gaps inner 7
 gaps outer 7
-set $term --no-startup-id urxvt
+
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 #set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 #set $hibernate sudo -A systemctl suspend
 
+# Font ---{{{
+#font pango:DejaVu Sans Mono 8
+#font pango:System San Francisco Display 10
+font pango:monospace 8
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Colors ---{{{
 # Set Xresources colors:
 set_from_resource $darkblack   color0  #000000
 set_from_resource $darkred     color1  #000000
@@ -30,13 +41,14 @@ set_from_resource $cyan        color14 #000000
 set_from_resource $white       color15 #000000
 set $transparent  #00000000
 
-#  Widow Colours        BORDER        BACKGROUND  TEXT      INDICATOR    CHILD_BORDER
+#  Window Colours        BORDER        BACKGROUND  TEXT      INDICATOR    CHILD_BORDER
 client.focused          $red          $red        $magenta  $darkmagenta $darkblue
 client.unfocused        $transparent  $blue       $white    $darkblue    $darkblack
 client.focused_inactive $transparent  $blue       $white    $darkblue    $darkblack
 client.urgent           $darkred      $darkred    $black    $darkred     $darkred
 client.background       $black
 
+# Bar ---{{{
 bar {
     #status_command i3status
     font pango:mono 10
@@ -57,13 +69,7 @@ bar {
     strip_workspace_numbers yes
 }
 
-#font pango:DejaVu Sans Mono 8
-#font pango:System San Francisco Display 10
-font pango:monospace 8
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
+# Workspaces ---{{{
 set $ws1 "1:Editor "
 set $ws2 "2:Term "
 set $ws3 "3:Browser "
@@ -99,52 +105,75 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# #---Basic Bindings---# #
-bindsym $mod+Return             exec i3-sensible-terminal
-bindsym $mod+Shift+Return       exec --no-startup-id samedir
-#bindsym $mod+Shift+space        floating toggle
-bindsym $mod+Escape             workspace prev
-#bindsym $mod+Shift+Escape       exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
-bindsym $mod+Shift+BackSpace    exec --no-startup-id prompt "Reboot computer?" "$reboot"
-bindsym $mod+grave              exec --no-startup-id dmenuunicode
-#STOP/HIDE EVERYTHING:
-#bindsym $mod+Shift+Delete       exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; exec --no-startup-id pauseallmpv; workspace 0; exec $term -e htop ; exec $term -e $FILE
 
-# Show selection:
-#bindsym $mod+Insert             exec --no-startup-id showclip
-#bindsym $mod+Pause              exec --no-startup-id xcqr
+# System Lifecyle ---{{{
+# shutdown
+bindsym $mod+Control+Escape       exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
+# reboot
+bindsym $mod+Control+BackSpace    exec --no-startup-id prompt "Reboot computer?" "$reboot"
+# hibernate
+#bindsym $mod+?                  exec --no-startup-id prompt "Hibernate computer?" "$hibernate"
 
-bindsym $mod+Shift+q             kill
+# i3 Bindings ---{{{
+# exit i3
+bindsym $mod+Shift+Escape       exec "i3-nagbar -t warning -m 'Exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# restart i3 inplace (preserves your layout/session
+bindsym $mod+Shift+BackSpace    restart
+# lock i3
+#bindsym $mod+Shift+l            exec i3lock --color "$yellow"
+# reload i3 configuration file
+bindsym $mod+Shift+c            reload
 
-bindsym $mod+d                   exec --no-startup-id dmenu_run
-bindsym $mod+f                   fullscreen toggle
-#apps
-#bindsym $mod+Shift+w             exec --no-startup-id $BROWSER
-bindsym $mod+w                   exec --no-startup-id firefox
-bindsym $mod+e                   exec $term -e neomutt && pkill -RTMIN+12 i3blocks
-bindsym $mod+m                   exec $term -e ncmpcpp
+#bindsym $mod+Shift+?             mode "$freeze" ;; exec --no-startup-id notify-send "<b>Distraction-free mode activated.</b> Press Super+Shift+f to return."
+#Stop/Hide everything
+#bindsym $mod+Shift+Delete       exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; exec --no-startup-id pauseallmpv; workspace 0; exec i3-sensible-terminal -e htop ; exec i3-sensible-terminal -e $FILE
 
-#bindsym $mod+t                   split toggle
-bindsym $mod+Shift+t             gaps inner current set 15; gaps outer current set 15
-
+# resize
 bindsym $mod+Shift+y             exec --no-startup-id i3resize left
 bindsym $mod+Shift+u             exec --no-startup-id i3resize down
 bindsym $mod+Shift+i             exec --no-startup-id i3resize up
 bindsym $mod+Shift+o             exec --no-startup-id i3resize right
 
-bindsym $mod+s                   gaps inner current plus 5
-bindsym $mod+Shift+s             gaps inner current minus 5
-bindsym $mod+Shift+d             gaps inner current set 0; gaps outer current set 0
+# kill window
+bindsym $mod+Shift+q             kill
+bindsym $mod+q                   kill
 
-#bindsym $mod+Shift+f        mode "$freeze" ;; exec --no-startup-id notify-send "<b>Distraction-free mode activated.</b> Press Super+Shift+f to return."
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+?                  layout stacking
+#bindsym $mod+?                  layout tabbed
+bindsym $mod+slash               layout toggle split
 
-bindsym $mod+g                   workspace prev
-bindsym $mod+Shift+g             exec --no-startup-id gimp; workspace $ws6
+# toggle floating / tiling
+bindsym $mod+Shift+space         floating toggle
+bindsym $mod+f                   fullscreen toggle
+bindsym $mod+b                   bar mode toggle
+
+# i3 Split ---{{{
+bindsym $mod+i                   split h
+bindsym $mod+v                   split v
+bindsym $mod+t                   split toggle
+bindsym $mod+apostrophe          split horizontal ;; exec i3-sensible-terminal
+bindsym $mod+equal               split vertical ;; exec i3-sensible-terminal
+
+# i3 Focus ---{{{
+# change focus between tiling / floating windows
+#bindsym $mod+?              focus mode_toggle
+# focus the parent container
+#bindsym $mod+?                  focus parent
+# focus the child container
+#bindsym $mod+?                  focus child
+
 # change focus
 bindsym $mod+h                   focus left
 bindsym $mod+j                   focus down
 bindsym $mod+k                   focus up
 bindsym $mod+l                   focus right
+
+# change focus with cursor keys
+bindsym $mod+Left                focus left
+bindsym $mod+Down                focus down
+bindsym $mod+Up                  focus up
+bindsym $mod+Right               focus right
 
 # move focused window
 bindsym $mod+Shift+h             move left 30
@@ -152,71 +181,35 @@ bindsym $mod+Shift+j             move down 30
 bindsym $mod+Shift+k             move up 30
 bindsym $mod+Shift+l             move right 30
 
+# move focused window with cursor keys
+bindsym $mod+Shift+Left          move left
+bindsym $mod+Shift+Down          move down
+bindsym $mod+Shift+Up            move up
+bindsym $mod+Shift+Right         move right
+
+#bindsym $mod+?                   workspace prev
+#bindsym $mod+?                   workspace next
+bindsym $mod+backslash           workspace back_and_forth
+
+# i3 Gaps ---{{{
+bindsym $mod+s                   gaps inner current plus 5
+bindsym $mod+Shift+s             gaps inner current minus 5
+bindsym $mod+g                   gaps inner current set 0; gaps outer current set 0
+bindsym $mod+Shift+g             gaps inner current set 15; gaps outer current set 15
 bindsym $mod+z                   gaps outer current plus 5
 bindsym $mod+Shift+z             gaps outer current minus 5
 
-#bindsym $mod+x                   exec --no-startup-id lockscreen
-#bindsym $mod+Shift+x             exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left               focus left
-bindsym $mod+Down               focus down
-bindsym $mod+Up                 focus up
-bindsym $mod+Right              focus right
-
-bindsym $mod+b                  bar mode toggle
-#bindsym $mod+Shift+b            floating toggle; sticky toggle; exec --no-startup-id bottomleft
-
-# cursor keys:
-bindsym $mod+Shift+Left         move left
-bindsym $mod+Shift+Down         move down
-bindsym $mod+Shift+Up           move up
-bindsym $mod+Shift+Right        move right
-#bindsym $mod+Shift+b            floating toggle; sticky toggle; exec --no-startup-id bottomleft
-#bindsym $mod+Shift+n            floating toggle; sticky toggle; exec --no-startup-id bottomright
-
-bindsym $mod+semicolon          workspace next
-bindsym $mod+apostrophe         split horizontal ;; exec $term
-bindsym $mod+slash              split vertical ;; exec $term
-bindsym $mod+Shift+slash        kill
-bindsym $mod+backslash          workspace back_and_forth
+# Apps ---{{{
+bindsym $mod+Return              exec i3-sensible-terminal
+bindsym $mod+space               exec --no-startup-id dmenu_run
+bindsym $mod+e                   exec --no-startup-id emacs
+bindsym $mod+m                   exec i3-sensible-terminal -e neomutt && pkill -RTMIN+12 i3blocks
+bindsym $mod+g                   exec --no-startup-id gimp
+bindsym $mod+a                   exec i3-sensible-terminal -e ncmpcpp
+bindsym $mod+w                   exec --no-startup-id firefox
 
 
-bindsym $mod+F2                 restart
-#bindsym $mod+F4                 exec --no-startup-id prompt "Hibernate computer?" "$hibernate"
-#bindsym $mod+F5                 exec --no-startup-id $netrefresh
-bindsym $mod+F9                 exec --no-startup-id dmenumount
-bindsym $mod+F10                exec --no-startup-id dmenuumount
-
-#bindsym $mod+t                  exec $term -e htop
-bindsym $mod+i                  split h
-bindsym $mod+v                  split v
-
-# change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s                  layout stacking
-#bindsym $mod+w                  layout tabbed
-#bindsym $mod+e                  layout toggle split
-
-# toggle tiling / floating
-#bindsym $mod+Shift+space        floating toggle
-
-# change focus between tiling / floating windows
-#bindsym $mod+space              focus mode_toggle
-
-# focus the parent container
-#bindsym $mod+a                  focus parent
-
-# focus the child container
-#bindsym $mod+d                  focus child
-
-# reload the configuration file
-bindsym $mod+Shift+c            reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r            restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e            exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-#bindsym $mod+Shift+x            exec i3lock --color "$base01"
-
+# Special Modes ---{{{
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -241,8 +234,9 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r                  mode "resize"
+bindsym $mod+Shift+r                  mode "resize"
 
+# X keys ---{{{
 # Pulse Audio controls
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 #bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
@@ -258,18 +252,32 @@ bindsym $mod+r                  mode "resize"
 #bindsym XF86AudioNext exec playerctl next
 #bindsym XF86AudioPrev exec playerctl previous
 
-for_window [class="^.*"]        border pixel 2
-for_window [instance="dropdown_*"] move position center
-for_window [class="Emacs"]      move workspace $ws1
-for_window [class="Firefox"]    move workspace $ws3
+# Startup ---{{{
+for_window [class="^.*"]            border pixel 2
+for_window [instance="dropdown_*"]  move position center
+for_window [class="Emacs"]          move workspace $ws1
+for_window [class="Firefox"]        move workspace $ws3
 
-# Startup Programs
+# Programs
 exec --no-startup-id dunst
-exec emacs
-exec firefox
+exec --no-startup-id firefox
+exec --no-startup-id i3-msg 'workspace 1; exec emacs; workspace 2'
 
 exec_always                     feh --bg-scale ~/.wallpapers/dragon_red_black-1920x1080.jpg
 # Set display mode
-exec_always                     xrandr --output VGA-0 --mode 800x600
-#exec_always                     xrandr --output VGA-0 --mode 1024x768
+#exec_always                     xrandr --output VGA-0 --mode 800x600
+exec_always                     xrandr --output VGA-0 --mode 1024x768
+
+
+# Show selection:
+#bindsym $mod+Insert              exec --no-startup-id showclip
+#bindsym $mod+Pause               exec --no-startup-id xcqr
+#bindsym $mod+grave               exec --no-startup-id dmenuunicode
+
+#bindsym $mod+F5                  exec --no-startup-id $netrefresh
+#bindsym $mod+F9                  exec --no-startup-id dmenumount
+#bindsym $mod+F10                 exec --no-startup-id dmenuumount
+
+
+
 
