@@ -3,17 +3,18 @@
 IMAPAccount gmail
   User carlosduque.hn@gmail.com
   #Pass yourpassword
+  # or to use encrypted passwords: gpg --gen-key && gpg --encrypt -o ~/.msmtp-<account>.gpg -r <keyring id> -
   PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.msmtp-gmail.gpg"
   Host imap.gmail.com
   SSLType IMAPS
+  #CertificateFile /usr/local/etc/openssl/cert.pem
   CertificateFile /usr/local/etc/ssl/cert.pem
- 
 IMAPStore gmail-remote
   Account gmail
 
 MaildirStore gmail-local
-    Path  ~/.mail/carlosduque.hn@gmail.com/
-    Inbox ~/.mail/carlosduque.hn@gmail.com/inbox
+    Path  ~/.mail/gmail/
+    Inbox ~/.mail/gmail/inbox
 
 Channel gmail
     Master :gmail-remote:

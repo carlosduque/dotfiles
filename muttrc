@@ -75,7 +75,7 @@ ignore *
 unignore From: To: Cc: Subject: Date: #Only these are shown in the header
 hdr_order From: Date: To: Cc: Subject: #Order to display headers
 mailboxes =inbox
-mailboxes =carlosduque.hn@gmail.com
+mailboxes =gmail
 mailboxes =read
 
 # Asiga la tecla 'g' para ejecutar fetchmail y recolectar el correo
