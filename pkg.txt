@@ -1,0 +1,95 @@
+# Basics
+* freebsd-update upgrade -r 10.1-RELEASE
+* freebsd-update fetch install
+* portsnap fetch extract #portsnap fetch update  ##just for updates
+
+##  pkg add (if local) / pkg install || make install clean:
+* pkg
+* vim-lite || make config WITH_GTK2=on
+* zsh #% chsh -s /usr/local/bin/zsh {user} ##to change the shell to bash
+* bash #some scripts need it, e.g.: solr startup scripts
+** fdesc /dev/fd fdescfs rw 0 0   # to /etc/fstab
+* tmux 
+* rxvt-unicode/st/xterm
+* ack/the_silver_searcher (ag)
+* sudo
+* lsof
+* tree
+* htop
+* netcat
+* curl
+* gnupg
+* ca_root_nss
+* git
+* openjdk
+* clojure
+* virtualbox-ose-additions #when vm
+** vboxguest_enable="YES" ## to /etc/rc.conf
+** vboxservice_enable="YES" ## to /etc/rc.conf
+** vboxservice_flags="--disable-timesync" ## to /etc/rc.conf
+** dbus_enable="YES" ## to /etc/rc.conf
+** hald_enable="YES" ## to /etc/rc.conf
+
+# Extras
+* neomutt
+* isync (to get mbsync)
+* msmtp
+* musicpd+mpc/ncmpc/ncmpcpp
+* ffmpeg
+* ImageMagick7-nox11 / graphicsmagick
+* py27-ranger/mc
+* w3m/elinks/uzbl/surf/midori/firefox
+* sc-im (ncurses spreadsheet)
+* mpv (video player)
+* sxiv (image viewer)
+* urlview/urlscan
+* emacs/emacs-nox
+
+# X
+• xorg-minimal
+• xrandr + arandr?
+• xrdb
+• xprop
+• xorg-fonts-truetype
+• setxkbmap
+• xfontsel
+• xclip
+• i3/i3-gaps)
+• i3blocks
+• i3status
+• i3lock
+• dmenu
+• feh
+• dunst (notification daemon)
+• zathura + zahura-pdf-poppler (pdf viewer)
+• ?: emacs-nox
+
+# Optional
+* R
+* slim
+** slim_enable="YES" to /etc/rc.conf
+* pcmanfm
+* ruby22
+** rbenv
+** ruby-build
+* node
+** npm
+* bind-tools
+* if you want "dig", but after 10.0 it has been replaced by 'host' and 'drill'
+* fluxbox
+** idesk
+** conky
+
+* cinnamon
+** perm devstat 0444 ## to /etc/devfs.conf
+* gnome3
+** hald_enable="YES"' ## to /etc/rc.conf
+** dbus_enable="YES"' ## to /etc/rc.conf
+** gnome_enable="YES"' ## to /etc/rc.conf
+** gdm_enable="YES"' ## to /etc/rc.conf
+** proc /proc procfs rw 0 0   # to /etc/fstab (Needed by GNOME)
+* postgresql96-server
+** postgresql_enable="YES"' # to /etc/rc.conf
+* postgresql96-client
+* tomcat60
+** tomcat60_enable="YES"' # to /etc/rc.conf
