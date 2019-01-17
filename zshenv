@@ -1,6 +1,8 @@
 # User configuration
+export TERMINAL=urxvt
 export EDITOR=vim
-#export BROWSER=$(which google-chrome chromium-browser firefox w3m links2 links lynx | grep -Pm1 '^/')
+#export BROWSER=firefox
+export BROWSER=surf
 export TZ=America/Santiago
 
 export LC_ALL="es_ES.UTF-8"
@@ -13,17 +15,17 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
     export OPENEJB_HOME="$HOME/srv/openejb/inst"
     export CATALINA_HOME="$HOME/srv/tomcat/inst"
-    export MW_HOME="$HOME/srv/weblogic/wls1036"
+    #export MW_HOME="$HOME/srv/weblogic/wls1036"
     export BREW_BINARIES_HOME="$(/usr/local/bin/brew --prefix coreutils)"
 
-    path+=($HOME/.rbenv/bin $path)
-    path+=($HOME/.rbenv/shims $path)
+    #path+=($HOME/.rbenv/bin $path)
+    #path+=($HOME/.rbenv/shims $path)
     path+=($BREW_BINARIES_HOME/libexec/gnubin $path)
     path+=(/usr/local/git/bin)
     path+=(/usr/local/MacGPG2/bin)
     path+=($OPENEJB_HOME/bin)
     path+=($CATALINA_HOME/bin)
-    path+=($MW_HOME/bin)
+    #path+=($MW_HOME/bin)
 elif [[ "$OSTYPE" == "cygwin" ]]; then
     export WINAPPS_HOME="C:\\apps"
     export JAVA_HOME="$WINAPPS_HOME\\java\\zulu7.21.0.3-jdk7.0.161-win_x64"
@@ -33,7 +35,7 @@ elif [[ "$OSTYPE" == "cygwin" ]]; then
     export CUSTOM_PATH="$JAVA_HOME\\bin:$ANT_HOME\\bin:$MAVEN_HOME\\bin"
     export CUSTOM_PATH="$CUSTOM_PATH:C:\\WINDOWS:C:\\WINDOWS\\System32"
     export CUSTOM_PATH="$CUSTOM_PATH:C:\\WINDOWS\\System32\\WBEM:C:\\WINDOWS\\SYSTEM32\\WINDOWSPOWERSHELL\\V1.0\\"
-    export CUSTOM_PATH="$CUSTOM_PATH:$WINAPPS_HOME\\HashiCorp\\Vagrant\\bin"
+    #export CUSTOM_PATH="$CUSTOM_PATH:$WINAPPS_HOME\\HashiCorp\\Vagrant\\bin"
 else
     #"freebsd"* || "linux-gnu"*
     export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
@@ -41,19 +43,19 @@ else
     export MAVEN_HOME=/usr/share/maven
     export OPENEJB_HOME=/srv/openejb/inst
     export CATALINA_HOME=/srv/tomcat/inst
-    export MW_HOME=/srv/weblogic/inst
+    #export MW_HOME=/srv/weblogic/inst
     path=($HOME/.rbenv/bin $path)
     path+=($JAVA_HOME/bin)
     path+=($ANT_HOME/bin)
     path+=($MAVEN_HOME/bin)
     path+=($OPENEJB_HOME/bin)
     path+=($CATALINA_HOME/bin)
-    path+=($MW_HOME/bin)
+    #path+=($MW_HOME/bin)
 fi
 
 ### Added by the Heroku Toolbelt, adapted to zsh
 path=('/usr/local/heroku/bin' $path)
 export PATH
 
-alias zshconfig="vim $HOME/.zshrc"
-alias vimconfig="vim $HOME/.vimrc"
+alias zcfg="vim $HOME/.zshrc"
+alias vcfg="vim $HOME/.vimrc"
