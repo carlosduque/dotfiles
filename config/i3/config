@@ -5,6 +5,11 @@
 # Initial settings ---{{{
 set $mod Mod4
 
+set $left  d
+set $down  r
+set $up    t
+set $right n
+
 gaps inner 7
 gaps outer 7
 
@@ -41,7 +46,7 @@ set_from_resource $cyan        color14 #000000
 set_from_resource $white       color15 #000000
 set $transparent  #00000000
 
-#  Window Colours        BORDER        BACKGROUND  TEXT      INDICATOR    CHILD_BORDER
+# Window Colours        BORDER        BACKGROUND  TEXT      INDICATOR    CHILD_BORDER
 client.focused          $red          $red        $magenta  $darkmagenta $darkblue
 client.unfocused        $transparent  $blue       $white    $darkblue    $darkblack
 client.focused_inactive $transparent  $blue       $white    $darkblue    $darkblack
@@ -79,7 +84,7 @@ set $ws6 "6:Utils "
 set $ws7 "7:Remote "
 set $ws8 "8:Files "
 set $ws9 "9:X "
-set $ws10 "10:X "
+set $ws10 "10:Y "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -105,7 +110,6 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-
 # System Lifecyle ---{{{
 # shutdown
 bindsym $mod+Control+Escape       exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
@@ -120,7 +124,7 @@ bindsym $mod+Shift+Escape       exec "i3-nagbar -t warning -m 'Exit i3? This wil
 # restart i3 inplace (preserves your layout/session
 bindsym $mod+Shift+BackSpace    restart
 # lock i3
-#bindsym $mod+Shift+l            exec i3lock --color "$yellow"
+bindsym $mod+Shift+l            exec i3lock --color "$darkblack" --image ~/.wallpapers/lock.png
 # reload i3 configuration file
 bindsym $mod+Shift+c            reload
 
@@ -128,15 +132,9 @@ bindsym $mod+Shift+c            reload
 #Stop/Hide everything
 #bindsym $mod+Shift+Delete       exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; exec --no-startup-id pauseallmpv; workspace 0; exec i3-sensible-terminal -e htop ; exec i3-sensible-terminal -e $FILE
 
-# resize
-bindsym $mod+Shift+y             exec --no-startup-id i3resize left
-bindsym $mod+Shift+u             exec --no-startup-id i3resize down
-bindsym $mod+Shift+i             exec --no-startup-id i3resize up
-bindsym $mod+Shift+o             exec --no-startup-id i3resize right
-
 # kill window
-bindsym $mod+Shift+q             kill
-bindsym $mod+q                   kill
+bindsym $mod+x             kill
+#bindsym $mod+x                   kill
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+?                  layout stacking
@@ -149,11 +147,11 @@ bindsym $mod+f                   fullscreen toggle
 bindsym $mod+b                   bar mode toggle
 
 # i3 Split ---{{{
-bindsym $mod+i                   split h
+bindsym $mod+h                   split h
 bindsym $mod+v                   split v
-bindsym $mod+t                   split toggle
-bindsym $mod+apostrophe          split horizontal ;; exec i3-sensible-terminal
-bindsym $mod+equal               split vertical ;; exec i3-sensible-terminal
+#bindsym $mod+g                   split toggle
+#bindsym $mod+apostrophe          split horizontal ;; exec i3-sensible-terminal
+#bindsym $mod+equal               split vertical ;; exec i3-sensible-terminal
 
 # i3 Focus ---{{{
 # change focus between tiling / floating windows
@@ -164,10 +162,10 @@ bindsym $mod+equal               split vertical ;; exec i3-sensible-terminal
 #bindsym $mod+?                  focus child
 
 # change focus
-bindsym $mod+h                   focus left
-bindsym $mod+j                   focus down
-bindsym $mod+k                   focus up
-bindsym $mod+l                   focus right
+bindsym $mod+$left               focus left
+bindsym $mod+$down               focus down
+bindsym $mod+$up                 focus up
+bindsym $mod+$right              focus right
 
 # change focus with cursor keys
 bindsym $mod+Left                focus left
@@ -176,10 +174,10 @@ bindsym $mod+Up                  focus up
 bindsym $mod+Right               focus right
 
 # move focused window
-bindsym $mod+Shift+h             move left 30
-bindsym $mod+Shift+j             move down 30
-bindsym $mod+Shift+k             move up 30
-bindsym $mod+Shift+l             move right 30
+bindsym $mod+Shift+$left         move left 30
+bindsym $mod+Shift+$down         move down 30
+bindsym $mod+Shift+$up           move up 30
+bindsym $mod+Shift+$right        move right 30
 
 # move focused window with cursor keys
 bindsym $mod+Shift+Left          move left
@@ -187,6 +185,8 @@ bindsym $mod+Shift+Down          move down
 bindsym $mod+Shift+Up            move up
 bindsym $mod+Shift+Right         move right
 
+bindsym $mod+Shift+minus         move scratchpad
+bindsym $mod+minus               scratchpad show
 #bindsym $mod+?                   workspace prev
 #bindsym $mod+?                   workspace next
 bindsym $mod+backslash           workspace back_and_forth
@@ -194,8 +194,6 @@ bindsym $mod+backslash           workspace back_and_forth
 # i3 Gaps ---{{{
 bindsym $mod+s                   gaps inner current plus 5
 bindsym $mod+Shift+s             gaps inner current minus 5
-#bindsym $mod+g                   gaps inner current set 0; gaps outer current set 0
-#bindsym $mod+Shift+i             gaps inner current set 15; gaps outer current set 15
 bindsym $mod+z                   gaps outer current plus 5
 bindsym $mod+Shift+z             gaps outer current minus 5
 
@@ -204,11 +202,10 @@ bindsym $mod+Return              exec i3-sensible-terminal
 bindsym $mod+space               exec --no-startup-id dmenu_run
 bindsym $mod+e                   exec --no-startup-id emacs
 bindsym $mod+m                   exec i3-sensible-terminal -e neomutt && pkill -RTMIN+12 i3blocks
-bindsym $mod+g                   exec --no-startup-id gimp
+#bindsym $mod+g                   exec --no-startup-id gimp
 bindsym $mod+a                   exec i3-sensible-terminal -e ncmpcpp
 bindsym $mod+w                   exec --no-startup-id surf https://duckduckgo.com
 #bindsym $mod+w                   exec --no-startup-id firefox
-
 
 # Special Modes ---{{{
 # resize window (you can also use the mouse for that)
@@ -219,23 +216,23 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym $right resize shrink width 10 px or 10 ppt
+        bindsym $down  resize grow height 10 px or 10 ppt
+        bindsym $up    resize shrink height 10 px or 10 ppt
+        bindsym $left  resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Right  resize shrink width 10 px or 10 ppt
+        bindsym Down   resize grow height 10 px or 10 ppt
+        bindsym Up     resize shrink height 10 px or 10 ppt
+        bindsym Left   resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+r                  mode "resize"
+bindsym $mod+Shift+b                  mode "resize"
 
 # X keys ---{{{
 # Pulse Audio controls
@@ -287,7 +284,4 @@ exec_always                     feh --bg-scale ~/.wallpapers/dragon_red_black-19
 #bindsym $mod+F5                  exec --no-startup-id $netrefresh
 #bindsym $mod+F9                  exec --no-startup-id dmenumount
 #bindsym $mod+F10                 exec --no-startup-id dmenuumount
-
-
-
 
