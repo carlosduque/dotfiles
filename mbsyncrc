@@ -9,6 +9,7 @@ IMAPAccount gmail
   SSLType IMAPS
   #CertificateFile /usr/local/etc/openssl/cert.pem
   CertificateFile /usr/local/etc/ssl/cert.pem
+
 IMAPStore gmail-remote
   Account gmail
 
