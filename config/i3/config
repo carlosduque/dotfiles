@@ -66,8 +66,8 @@ bar {
         inactive_workspace $darkblack $darkblack $white
         urgent_workspace   $darkblack $darkblack $white
     }
-    #status_command i3blocks
-    status_command i3status
+    status_command i3blocks
+    #status_command i3status
     position top
     mode dock
     modifier None
