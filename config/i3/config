@@ -55,7 +55,6 @@ client.background       $black
 
 # Bar ---{{{
 bar {
-    #status_command i3status
     font pango:mono 10
     colors {
         background $darkblack
@@ -71,6 +70,7 @@ bar {
     position top
     mode dock
     modifier None
+    separator_symbol "|"
     strip_workspace_numbers yes
 }
 
