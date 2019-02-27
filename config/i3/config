@@ -274,6 +274,10 @@ exec --no-startup-id i3-msg 'workspace $ws3; exec surf https://duckduckgo.com; w
 # Set display mode
 #exec_always                     xrandr --output VGA-0 --mode 800x600
 exec_always                     xrandr --output VGA-0 --mode 1024x768
+#exec_always                     xrandr --output VGA-0 --mode 1280x1024
+#exec_always                     xrandr --output VGA-0 --mode 1600x1200
+#exec_always                     xrandr --output VGA-0 --mode 1920x1280
+
 exec_always                     feh --bg-scale ~/.wallpapers/dragon_red_black-1920x1080.jpg
 
 
