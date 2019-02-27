@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 echo "mounting shared folders"
-#sudo mount -t vboxsf -o rw,gid=1000,uid=1000 dev ~/dev
-#sudo mount -t vboxsf -o rw,gid=1000,uid=1000 refs ~/refs
-#sudo mount -t vboxsf -o rw,gid=1000,uid=1000 documents ~/documents
-#sudo mount -t vboxsf -o rw,gid=1000,uid=1000 downloads ~/Downloads
-sudo mount -t vboxsf -o rw,gid=1001,uid=1001 vmshare $HOME/vmshare
+sudo mount -t vboxvfs -o rw,gid=1001,uid=1001 dev ~/dev
+sudo mount -t vboxvfs -o rw,gid=1001,uid=1001 refs ~/refs
+sudo mount -t vboxvfs -o rw,gid=1001,uid=1001 Documents ~/docs
+#sudo mount -t vboxvfs -o rw,gid=1001,uid=1001 downloads ~/Downloads
+#sudo mount -t vboxvfs -o rw,gid=1001,uid=1001 vmshare $HOME/vmshare
 echo "shared folders mounted"
 

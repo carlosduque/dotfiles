@@ -2,24 +2,44 @@ command=~/scripts/statusbar/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
-[click]
-full_text=Click me!
-command=echo "Got clicked with button $button"
-color=#F79494
+#[click]
+#full_text=Click me!
+#command=echo "Got clicked $button"
+#color=#F79494
 
 [weather]
 command=curl -Ss 'https://wttr.in/Santiago?format=1'
 interval=3600
 color=#A4C2F4
 
+[mailbox]
+label=
+command=echo "$(du -a ~/.mail/*/inbox/new/* 2>/dev/null | sed -n '$=')"
+interval=180
+signal=12
+
+
 [time]
-command=date +%T
+label=
+command=date "+%Y-%m-%d %T"
 interval=5
 
-[ip]
-command=ifconfig em0 | grep 'inet ' | awk '{print $2}'
-interval=once
-color=#91E78B
+#[funky]
+#full_text=<span foreground="red" size="x-large">R</span> and <i><span color="#EE37B8">v</span></i>!
+#markup=pango
+
+#[ip]
+#command=ifconfig em0 | grep 'inet ' | awk '{print $2}'
+#interval=once
+#color=#91E78B
+
+#[separator]
+
+#[hostname]
+#interval=once
+#full_text=c
+#full_text=echo '<span foreground="red" size="x-large">R</span> and <i><span color="#EE37B8">' $(hostname) '</span></i>'
+#markup=pango
 
 #[record]
 #command=cat /tmp/recordingicon
