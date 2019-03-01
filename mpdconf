@@ -1,0 +1,42 @@
+db_file            "~/.mpd/database"
+log_file           "~/.mpd/log"
+music_directory    "~/data/audio/music"
+playlist_directory "~/.mpd/playlists"
+pid_file           "~/.mpd/pid"
+state_file         "~/.mpd/state"
+sticker_file       "~/.mpd/sticker.sql"
+
+auto_update "yes"
+
+#bind_to_address "~/.mpd/socket"
+bind_to_address "127.0.0.1"
+port "6600"
+
+restore_paused "yes"
+max_output_buffer_size "16384"
+
+filesystem_charset		"UTF-8"
+
+input {
+        plugin "curl"
+#       proxy "proxy.isp.com:8080"
+#       proxy_user "user"
+#       proxy_password "password"
+}
+
+audio_output {
+	type		"oss"
+	name		"My OSS Device"
+#	device		"/dev/dsp"	# optional
+#	mixer_type      "hardware"	# optional
+#	mixer_device	"/dev/mixer"	# optional
+#	mixer_control	"PCM"		# optional
+}
+
+audio_output {
+  type               "fifo"
+  name               "toggle_visualizer"
+  path               "/tmp/mpd.fifo"
+  format             "44100:16:2"
+}
+
