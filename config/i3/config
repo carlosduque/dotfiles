@@ -264,9 +264,13 @@ bindsym $mod+Shift+b                  mode "resize"
 #bindsym XF86Calculator      exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
 # Startup ---{{{
 for_window [class="^.*"]                        border pixel 2
-for_window [instance="dropdown_*"]              move position center
+for_window [instance="dropdown_*"]              floating enable
+for_window [instance="dropdown_*"]              move scratchpad
+for_window [instance="dropdown_*"]              sticky enable
+for_window [instance="dropdown_*"]              scratchpad show
 for_window [instance="dropdown_dropdowncalc"]   resize set 800 300
 for_window [instance="dropdown_dropdowncalc"]   border pixel 2
+for_window [instance="dropdown_*"]              move position center
 for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
 #for_window [class="Emacs"]                      move workspace $ws1
 #for_window [class="GVim"]                      move workspace $ws1
@@ -278,7 +282,9 @@ for_window [class="Gimp"]                       move workspace $ws6
 #assign [class="Surf"]                      $ws3
 
 # Programs
+exec --no-startup-id musicpd
 exec --no-startup-id dunst
+
 #exec --no-startup-id compton
 exec --no-startup-id i3-msg 'workspace $ws1; exec emacs'
 exec --no-startup-id i3-msg 'workspace $ws2; exec urxvt'
