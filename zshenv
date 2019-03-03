@@ -1,7 +1,6 @@
 # User configuration
 export TERMINAL=urxvt
 export EDITOR=vim
-#export BROWSER=firefox
 export BROWSER=surf
 export TZ=America/Santiago
 
@@ -9,7 +8,8 @@ export LC_ALL="es_ES.UTF-8"
 export LC_COLLATE="C"
 export LANG="es_ES.UTF-8"
 # setup PATH variable
-path+=($HOME/bin)
+#path+=($HOME/bin)
+path+=($(du "$HOME/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//'))
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
@@ -54,8 +54,6 @@ else
 fi
 
 ### Added by the Heroku Toolbelt, adapted to zsh
-path=('/usr/local/heroku/bin' $path)
+#path=('/usr/local/heroku/bin' $path)
 export PATH
 
-alias zcfg="vim $HOME/.zshrc"
-alias vcfg="vim $HOME/.vimrc"
