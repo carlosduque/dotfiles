@@ -48,7 +48,10 @@
 * xprop
 * setxkbmap
 * xorg-fonts-truetype
-* proggy_fonts
+* proggy_fonts-ttf
+* sourcecodepro-ttf
+* dina
+* font-awesome
 * xfontsel
 * xclip
 * i3 / i3-gaps
