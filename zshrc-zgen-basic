@@ -26,8 +26,8 @@ PROMPT="%{$fg_bold[cyan]%}§ %{$fg_bold[green]%}%c %{$fg_bold[yellow]%}» %{$res
 RPROMPT="%{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[yellow]%}%m%{$reset_color%}"
 
 # aliases
-alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vimrc"
+alias zcfg="vim $HOME/.zshrc"
+alias vcfg="vim $HOME/.vimrc"
 
 alias t='tree'
 alias t2='tree -L 2'
