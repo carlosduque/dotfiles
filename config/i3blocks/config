@@ -18,6 +18,9 @@ command=echo "$(du -a ~/.mail/*/inbox/new/* 2>/dev/null | sed -n '$=')"
 interval=180
 signal=12
 
+[battery]
+command=battery
+interval=5
 
 [time]
 label=
@@ -95,12 +98,12 @@ interval=5
 #command=disk /home 🏠
 
 #[battery]
-#command=battery BAT0
+#command=battery
 #interval=5
-
-[clock]
-label=📅
-interval=30
+#
+#[clock]
+#label=📅
+#interval=30
 
 #[internet]
 #interval=10
