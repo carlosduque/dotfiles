@@ -1,20 +1,15 @@
-command=~/scripts/statusbar/$BLOCK_NAME
+command=~/bin/statusbar/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
-#[click]
-#full_text=Click me!
-#command=echo "Got clicked $button"
-#color=#F79494
-
 [weather]
 command=curl -Ss 'https://wttr.in/Santiago?format=1'
-interval=3600
+interval=3600$=
 color=#A4C2F4
 
 [mailbox]
 label=
-command=echo "$(du -a ~/.mail/*/inbox/new/* 2>/dev/null | sed -n '$=')"
+command=mailbox
 interval=180
 signal=12
 
@@ -31,10 +26,10 @@ interval=5
 #full_text=<span foreground="red" size="x-large">R</span> and <i><span color="#EE37B8">v</span></i>!
 #markup=pango
 
-#[ip]
-#command=ifconfig em0 | grep 'inet ' | awk '{print $2}'
-#interval=once
-#color=#91E78B
+[ip]
+command=ifconfig wlan0 inet | grep 'inet' | awk '{print $2}'
+interval=once
+color=#91E78B
 
 #[separator]
 
