@@ -8,28 +8,45 @@ interval=3600$=
 color=#A4C2F4
 
 [mailbox]
-label=
+#label=
 command=mailbox
+markup=pango
 interval=180
 signal=12
 
+[volume]
+command=volume
+interval=once
+signal=10
+
+[music]
+label=🎼
+interval=once
+signal=11
+
+[cpu]
+interval=15
+label=💻
+
 [battery]
 command=battery
+markup=pango
 interval=5
 
 [time]
-label=
-command=date "+%Y-%m-%d %T"
+#label=
+command=clock
 interval=5
+markup=pango
 
 #[funky]
 #full_text=<span foreground="red" size="x-large">R</span> and <i><span color="#EE37B8">v</span></i>!
 #markup=pango
 
-[ip]
-command=ifconfig wlan0 inet | grep 'inet' | awk '{print $2}'
-interval=once
-color=#91E78B
+#[ip]
+#command=ifconfig wlan0 inet | grep 'inet' | awk '{print $2}'
+#interval=once
+#color=#91E78B
 
 #[separator]
 

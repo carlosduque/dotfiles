@@ -1,2 +1,10 @@
-date '+%Y-%m-%d %H:%m'
+#!/bin/sh
 
+case $BLOCK_BUTTON in
+  3) grep -x dunst > /dev/null && notify-send "<b>$(date '+%Y-%M-%d %H:%m')</b>" ;;
+esac
+
+color="#e29462"
+symbol=""
+
+printf "<span color='%s'>%s%s</span>" "$color" "$symbol" "$(date '+%H:%m')"
