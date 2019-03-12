@@ -16,13 +16,13 @@ signal=12
 
 [volume]
 command=volume
-interval=once
+interval=15
 signal=10
 
-[music]
-label=🎼
-interval=once
-signal=11
+#[music]
+#label=🎼
+#interval=once
+#signal=11
 
 [cpu]
 interval=15
@@ -39,55 +39,12 @@ command=clock
 interval=5
 markup=pango
 
-#[funky]
-#full_text=<span foreground="red" size="x-large">R</span> and <i><span color="#EE37B8">v</span></i>!
-#markup=pango
-
 #[ip]
 #command=ifconfig wlan0 inet | grep 'inet' | awk '{print $2}'
 #interval=once
 #color=#91E78B
 
 #[separator]
-
-#[hostname]
-#interval=once
-#full_text=c
-#full_text=echo '<span foreground="red" size="x-large">R</span> and <i><span color="#EE37B8">' $(hostname) '</span></i>'
-#markup=pango
-
-#[record]
-#command=cat /tmp/recordingicon
-#interval=once
-#signal=9
-
-#[music]
-#label=🎼
-#interval=once
-#signal=11
-
-#[news]
-#label=📰
-#interval=once
-#signal=6
-
-#[pacpackages]
-#label=📦
-#interval=once
-#signal=8
-
-#[torrent]
-#interval=20
-#signal=7
-
-#[weather]
-#interval=3600
-#signal=5
-
-#[mailbox]
-#label=📬
-#interval=180
-#signal=12
 
 #[memory]
 #interval=30
@@ -97,28 +54,6 @@ markup=pango
 #interval=15
 #label=💻
 
-#[volume]
-#interval=once
-#signal=10
-
-#[disk]
-#interval=60
-#command=disk /
-
-#[disk]
-#interval=60
-#command=disk /home 🏠
-
-#[battery]
-#command=battery
-#interval=5
-#
-#[clock]
-#label=📅
-#interval=30
-
 #[internet]
 #interval=10
 
-#[help]
-#interval=once
