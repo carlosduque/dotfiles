@@ -36,7 +36,7 @@ interval=5
 [time]
 #label=
 command=clock
-interval=5
+interval=1
 markup=pango
 
 #[ip]
