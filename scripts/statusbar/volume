@@ -1,0 +1,26 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+    1) setsid "$TERMINAL" -e mixer & ;;
+    2) mixer vol 0 ;;
+    4) mixer vol +5 ;;
+    5) mixer vol -5 ;;
+    3) pgrep -x dunst >/dev/null && notify-send "<b>📢 Volume module:</b>
+- Shows volume 🔊, 🔇 if muted.
+- Middle click to mute.
+- Scroll to change."
+esac
+
+[ "$(mixer -s vol | awk '{print $2}' | cut -d : -f 1)" = "1" ] && printf "🔇\\n" && exit
+
+vol=$(mixer -s vol | awk '{print $2}' | cut -d : -f 1)
+
+if [ "$vol" -gt "70" ]; then
+    icon="🔊"
+elif [ "$vol" -lt "30" ]; then
+    icon="🔈"
+else
+    icon="🔉"
+fi
+
+printf "%s%s%%" "$icon" "$vol"

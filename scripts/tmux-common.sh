@@ -24,14 +24,14 @@ then
     tmux new-window -n "cmd"
     tmux send-keys -t $SESSION:2 "clear" C-m
 
-    # docker
-    tmux new-window -n "docker"
+    # docker/jails
+    tmux new-window -n "jails"
     tmux send-keys -t $SESSION:3 "clear" C-m
     tmux split-window -v -p 50 -t $SESSION:3.1
     #top pane
-    tmux send-keys -t $SESSION:3.1 "docker ps -a" C-m
+    tmux send-keys -t $SESSION:3.1 "jls" C-m
     #left pane
-    tmux send-keys -t $SESSION:3.2 "docker images" C-m
+    tmux send-keys -t $SESSION:3.2 "htop" C-m
     #right pane
     #tmux send-keys -t $SESSION:3.3  "cd $APP_DIR" C-m
     #tmux send-keys -t $SESSION:3.3  "docker-compose up" C-m

@@ -11,6 +11,9 @@
 * git
 * netcat
 * curl
+* nmap
+* tcpdump
+* rsync
 * wget
 * tmux 
 * lsof
@@ -40,6 +43,8 @@
 * libqrencode
 * maim (screenshot utility)
 * calcurse (calendar and scheduling)
+* ledger
+* irssi
 
 # X
 * xorg-minimal
@@ -47,6 +52,7 @@
 * xrdb
 * xprop
 * setxkbmap
+* xev
 * xorg-fonts-truetype
 * proggy_fonts-ttf
 * sourcecodepro-ttf
