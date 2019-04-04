@@ -1,39 +1,50 @@
-command=~/.scripts/statusbar/$BLOCK_NAME
+command=~/bin/statusbar/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
-[record]
-command=cat /tmp/recordingicon
-interval=once
-signal=9
-
-[music]
-label=🎼
-interval=once
-signal=11
-
-[news]
-label=📰
-interval=once
-signal=6
-
-[pacpackages]
-label=📦
-interval=once
-signal=8
-
-[torrent]
-interval=20
-signal=7
-
 [weather]
-interval=3600
-signal=5
+command=curl -Ss 'https://wttr.in/Santiago?format=1'
+interval=3600$=
+color=#A4C2F4
 
 [mailbox]
-label=📬
+#label=
+command=mailbox
+markup=pango
 interval=180
 signal=12
+
+[volume]
+command=volume
+interval=15
+signal=10
+
+#[music]
+#label=🎼
+#interval=once
+#signal=11
+
+[cpu]
+interval=15
+label=💻
+
+[battery]
+command=battery
+markup=pango
+interval=5
+
+[time]
+#label=
+command=clock
+interval=1
+markup=pango
+
+#[ip]
+#command=ifconfig wlan0 inet | grep 'inet' | awk '{print $2}'
+#interval=once
+#color=#91E78B
+
+#[separator]
 
 #[memory]
 #interval=30
@@ -43,28 +54,6 @@ signal=12
 #interval=15
 #label=💻
 
-[volume]
-interval=once
-signal=10
+#[internet]
+#interval=10
 
-#[disk]
-#interval=60
-#command=disk /
-
-#[disk]
-#interval=60
-#command=disk /home 🏠
-
-[battery]
-command=battery BAT0
-interval=5
-
-[clock]
-label=📅
-interval=30
-
-[internet]
-interval=10
-
-[help]
-interval=once

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+  1) "$TERMINAL" -e neomutt ;;
+  2) setsid mbsync --all ;;
+  3) grep -x dunst > /dev/null && notify-send "<b>📬Mail module:</b>
+  - Shows unread mail
+  - Shows X if syncing mail
+  - Left click opens neomutt
+  - Middle click syncs mail" ;;
+esac
+
+#echo "$(du -a ~/.mail/*/inbox/new/* 2>/dev/null | sed -n '$=')"
+
+color="#ffffff"
+symbol=""
+
+printf "<span color='%s'>%s%s</span>" "$color" "$symbol" "$(du -a ~/.mail/*/inbox/new/* 2>/dev/null | sed -n '$=')"

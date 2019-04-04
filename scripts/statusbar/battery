@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+case $BLOCK_BUTTON in
+    3) pgrep -x dunst >/dev/null && notify-send "<b>🔋 Battery module:</b>
+: charging
+: full battery
+: high battery
+: half battery
+: low battery
+
+: minimum battery
+❗: very low battery!
+- Text color reflects charge left" ;;
+esac
+
+declare -a options
+options[0]="high"
+options[1]="low"
+options[2]="critical"
+options[3]="charging"
+
+capacity=$(apm -l) || exit
+symbol=""
+status=${options[$(apm -b)]}
+
+if [ "$capacity" -ge 90 ]; then
+    color="#00ff00"
+    symbol=""
+elif [ "$capacity" -ge 75 ]; then
+    color="#ffffff"
+    symbol=""
+elif [ "$capacity" -ge 50 ]; then
+    color="#ffff00"
+    symbol=""
+elif [ "$capacity" -ge 25 ]; then
+    color="#ffff00"
+    symbol=""
+elif [ "$capacity" -ge 10 ]; then
+    color="#ffff00"
+    symbol=""
+else
+    color="#ff0000"
+    symbol="❗"
+fi
+
+[ "$status" = "charging" ] && symbol="" && color="#ffffff"
+
+printf "<span color='%s'>%s%s%s</span>" "$color" "$(echo "$symbol")" "$(echo "$capacity" | sed -e 's/$/%/')"
+
+
+# 

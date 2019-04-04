@@ -55,7 +55,6 @@ client.background       $black
 
 # Bar ---{{{
 bar {
-    #status_command i3status
     font pango:mono 10
     colors {
         background $darkblack
@@ -66,11 +65,12 @@ bar {
         inactive_workspace $darkblack $darkblack $white
         urgent_workspace   $darkblack $darkblack $white
     }
-    #status_command i3blocks
-    status_command i3status
+    status_command i3blocks
+    #status_command i3status
     position top
     mode dock
     modifier None
+    separator_symbol "|"
     strip_workspace_numbers yes
 }
 
@@ -80,9 +80,9 @@ set $ws2 "2:Term "
 set $ws3 "3:Browser "
 set $ws4 "4:Email "
 set $ws5 "5:Music "
-set $ws6 "6:Utils "
-set $ws7 "7:Remote "
-set $ws8 "8:Files "
+set $ws6 "6:Files "
+set $ws7 "7:Utils "
+set $ws8 "8:Remote "
 set $ws9 "9:X "
 set $ws10 "10:Y "
 
@@ -133,8 +133,7 @@ bindsym $mod+Shift+c            reload
 #bindsym $mod+Shift+Delete       exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; exec --no-startup-id pauseallmpv; workspace 0; exec i3-sensible-terminal -e htop ; exec i3-sensible-terminal -e $FILE
 
 # kill window
-bindsym $mod+x             kill
-#bindsym $mod+x                   kill
+bindsym $mod+x                   kill
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+?                  layout stacking
@@ -199,13 +198,26 @@ bindsym $mod+Shift+z             gaps outer current minus 5
 
 # Apps ---{{{
 bindsym $mod+Return              exec i3-sensible-terminal
-bindsym $mod+space               exec --no-startup-id dmenu_run
-bindsym $mod+e                   exec --no-startup-id emacs
-bindsym $mod+m                   exec i3-sensible-terminal -e neomutt && pkill -RTMIN+12 i3blocks
-#bindsym $mod+g                   exec --no-startup-id gimp
+bindsym $mod+space               exec --no-startup-id         dmenu_run
 bindsym $mod+a                   exec i3-sensible-terminal -e ncmpcpp
-bindsym $mod+w                   exec --no-startup-id surf https://duckduckgo.com
-#bindsym $mod+w                   exec --no-startup-id firefox
+bindsym $mod+c                   exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
+bindsym $mod+g                   exec --no-startup-id         gvim
+#bindsym $mod+g                   exec --no-startup-id gimp
+bindsym $mod+e                   exec --no-startup-id         emacs
+bindsym $mod+k                   exec i3-sensible-terminal -e ranger && pkill -RTMIN+12 i3blocks
+bindsym $mod+m                   exec i3-sensible-terminal -e neomutt && pkill -RTMIN+12 i3blocks
+bindsym $mod+w                   exec --no-startup-id         surf https://duckduckgo.com
+
+# Show selection:
+bindsym $mod+Insert              exec --no-startup-id showclip
+bindsym $mod+Pause               exec --no-startup-id xcqr
+bindsym $mod+grave               exec --no-startup-id dmenuunicode
+bindsym $mod+Shift+Print         exec --no-startup-id maimpick
+
+bindsym $mod+F11                 exec --no-startup-id ducksearch
+#bindsym $mod+F5                  exec --no-startup-id $netrefresh
+#bindsym $mod+F9                  exec --no-startup-id dmenumount
+#bindsym $mod+F10                 exec --no-startup-id dmenuumount
 
 # Special Modes ---{{{
 # resize window (you can also use the mouse for that)
@@ -231,13 +243,12 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+Shift+b                  mode "resize"
 
 # X keys ---{{{
-# Pulse Audio controls
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+# Mixer controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id mixer vol +10
+bindsym XF86AudioLowerVolume exec --no-startup-id mixer vol -10
 #bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
@@ -250,8 +261,15 @@ bindsym $mod+Shift+b                  mode "resize"
 #bindsym XF86AudioNext exec playerctl next
 #bindsym XF86AudioPrev exec playerctl previous
 
+#bindsym XF86Calculator      exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
 # Startup ---{{{
 for_window [class="^.*"]                        border pixel 2
+for_window [instance="dropdown_*"]              floating enable
+for_window [instance="dropdown_*"]              move scratchpad
+for_window [instance="dropdown_*"]              sticky enable
+for_window [instance="dropdown_*"]              scratchpad show
+for_window [instance="dropdown_dropdowncalc"]   resize set 800 300
+for_window [instance="dropdown_dropdowncalc"]   border pixel 2
 for_window [instance="dropdown_*"]              move position center
 for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
 #for_window [class="Emacs"]                      move workspace $ws1
@@ -264,24 +282,19 @@ for_window [class="Gimp"]                       move workspace $ws6
 #assign [class="Surf"]                      $ws3
 
 # Programs
+exec --no-startup-id musicpd
 exec --no-startup-id dunst
-exec --no-startup-id compton
+
+#exec --no-startup-id compton
 exec --no-startup-id i3-msg 'workspace $ws1; exec emacs'
-exec --no-startup-id i3-msg 'workspace $ws2; exec urxvt'
-exec --no-startup-id i3-msg 'workspace $ws3; exec surf https://duckduckgo.com; workspace $ws2'
+exec --no-startup-id i3-msg 'workspace $ws2; exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'workspace $ws3; exec surf https://duckduckgo.com'
+#exec --no-startup-id i3-msg 'workspace $ws4; exec i3-sensible-terminal -e neomutt'
+#exec --no-startup-id i3-msg 'workspace $ws5; exec i3-sensible-terminal -e ncmpcpp'
+#exec --no-startup-id i3-msg 'workspace $ws6; exec i3-sensible-terminal -e ranger'
 
 # Set display mode
-exec_always                     xrandr --output VGA-0 --mode 800x600
-#exec_always                     xrandr --output VGA-0 --mode 1024x768
+#exec_always                     xrandr --output VGA-0 --mode 800x600
+exec_always                     xrandr --output VGA-0 --mode 1024x768
 exec_always                     feh --bg-scale ~/.wallpapers/dragon_red_black-1920x1080.jpg
-
-
-# Show selection:
-#bindsym $mod+Insert              exec --no-startup-id showclip
-#bindsym $mod+Pause               exec --no-startup-id xcqr
-#bindsym $mod+grave               exec --no-startup-id dmenuunicode
-
-#bindsym $mod+F5                  exec --no-startup-id $netrefresh
-#bindsym $mod+F9                  exec --no-startup-id dmenumount
-#bindsym $mod+F10                 exec --no-startup-id dmenuumount
 

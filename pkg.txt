@@ -11,6 +11,9 @@
 * git
 * netcat
 * curl
+* nmap
+* tcpdump
+* rsync
 * wget
 * tmux 
 * lsof
@@ -37,6 +40,11 @@
 * ImageMagick7-nox11 / graphicsmagick
 * py27-ranger/mc
 * sc-im (ncurses spreadsheet)
+* libqrencode
+* maim (screenshot utility)
+* calcurse (calendar and scheduling)
+* ledger
+* irssi
 
 # X
 * xorg-minimal
@@ -44,8 +52,12 @@
 * xrdb
 * xprop
 * setxkbmap
+* xev
 * xorg-fonts-truetype
-* proggy_fonts
+* proggy_fonts-ttf
+* sourcecodepro-ttf
+* dina
+* font-awesome
 * xfontsel
 * xclip
 * i3 / i3-gaps
@@ -66,6 +78,8 @@
 * linuxlibertine
 * inconsolata-ttf
 * ImageMagick7
+* fortune
+* cowsay
 * R
 * slim
 * pcmanfm
