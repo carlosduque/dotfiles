@@ -204,7 +204,8 @@ bindsym $mod+c                   exec --no-startup-id ddspawn dropdowncalc -f mo
 bindsym $mod+g                   exec --no-startup-id         gvim
 #bindsym $mod+g                   exec --no-startup-id gimp
 bindsym $mod+e                   exec --no-startup-id         emacs
-bindsym $mod+k                   exec i3-sensible-terminal -e ranger && pkill -RTMIN+12 i3blocks
+#bindsym $mod+k                   exec i3-sensible-terminal -e ranger && pkill -RTMIN+12 i3blocks
+bindsym $mod+k                   exec i3-sensible-terminal -e nnn && pkill -RTMIN+12 i3blocks
 bindsym $mod+m                   exec i3-sensible-terminal -e neomutt && pkill -RTMIN+12 i3blocks
 bindsym $mod+w                   exec --no-startup-id         surf https://duckduckgo.com
 
@@ -286,7 +287,8 @@ exec --no-startup-id musicpd
 exec --no-startup-id dunst
 
 #exec --no-startup-id compton
-exec --no-startup-id i3-msg 'workspace $ws1; exec emacs'
+#exec --no-startup-id i3-msg 'workspace $ws1; exec emacs'
+exec --no-startup-id i3-msg 'workspace $ws1; exec gvim'
 exec --no-startup-id i3-msg 'workspace $ws2; exec i3-sensible-terminal'
 exec --no-startup-id i3-msg 'workspace $ws3; exec surf https://duckduckgo.com'
 #exec --no-startup-id i3-msg 'workspace $ws4; exec i3-sensible-terminal -e neomutt'
