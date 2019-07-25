@@ -58,6 +58,7 @@
 * sourcecodepro-ttf
 * dina
 * font-awesome
+* firacode
 * xfontsel
 * xclip
 * i3 / i3-gaps
