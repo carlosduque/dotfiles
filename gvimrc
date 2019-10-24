@@ -11,7 +11,7 @@ if has('gui_win32')
 elseif has("gui_gtk2")
   "set guifont=ProggyCleanTTSZBP:h12:cDEFAULT
   "set guifont=Dina-medium:h16
-  set guifont=Dina\ ttf\ 10px\ 12
+  set guifont=Dina\ ttf\ 10px\ 9
 elseif has("x11")
   set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
 elseif has("mac")
