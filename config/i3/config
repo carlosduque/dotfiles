@@ -207,7 +207,7 @@ bindsym $mod+e                   exec --no-startup-id         emacs
 #bindsym $mod+k                   exec i3-sensible-terminal -e ranger && pkill -RTMIN+12 i3blocks
 bindsym $mod+k                   exec i3-sensible-terminal -e nnn && pkill -RTMIN+12 i3blocks
 bindsym $mod+m                   exec i3-sensible-terminal -e neomutt && pkill -RTMIN+12 i3blocks
-bindsym $mod+w                   exec --no-startup-id         surf https://duckduckgo.com
+bindsym $mod+w                   exec --no-startup-id         tabbed -c surf https://duckduckgo.com
 
 # Show selection:
 bindsym $mod+Insert              exec --no-startup-id showclip
