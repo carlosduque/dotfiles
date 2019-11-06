@@ -75,16 +75,16 @@ bar {
 }
 
 # Workspaces ---{{{
-set $ws1 "1:Editor "
-set $ws2 "2:Term "
-set $ws3 "3:Browser "
-set $ws4 "4:Email "
-set $ws5 "5:Music "
-set $ws6 "6:Files "
-set $ws7 "7:Utils "
-set $ws8 "8:Remote "
-set $ws9 "9:X "
-set $ws10 "10:Y "
+set $ws1 "1:Oz "
+set $ws2 "2:Hyrule "
+set $ws3 "3:Winterfell "
+set $ws4 "4:Hogwarts "
+set $ws5 "5:Narnia "
+set $ws6 "6:MiddleEarth "
+set $ws7 "7:Earthsea "
+set $ws8 "8:Neverland "
+set $ws9 "9:Arendelle "
+set $ws10 "10:Wonderland "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
