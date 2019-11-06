@@ -75,16 +75,16 @@ bar {
 }
 
 # Workspaces ---{{{
-set $ws1 "1:Oz "
-set $ws2 "2:Hyrule "
-set $ws3 "3:Winterfell "
-set $ws4 "4:Hogwarts "
-set $ws5 "5:Narnia "
-set $ws6 "6:MiddleEarth "
-set $ws7 "7:Earthsea "
-set $ws8 "8:Neverland "
-set $ws9 "9:Arendelle "
-set $ws10 "10:Wonderland "
+set $ws1 "1:Oz "
+set $ws2 "2:Hyrule "
+set $ws3 "3:Winterfell "
+set $ws4 "4:Hogwarts "
+set $ws5 "5:Narnia "
+set $ws6 "6:MiddleEarth "
+set $ws7 "7:Earthsea "
+set $ws8 "8:Neverland "
+set $ws9 "9:DeathStar "
+set $ws10 "10:Wonderland "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -290,7 +290,7 @@ exec --no-startup-id dunst
 #exec --no-startup-id i3-msg 'workspace $ws1; exec emacs'
 exec --no-startup-id i3-msg 'workspace $ws1; exec gvim'
 exec --no-startup-id i3-msg 'workspace $ws2; exec i3-sensible-terminal'
-exec --no-startup-id i3-msg 'workspace $ws3; exec surf https://duckduckgo.com'
+#exec --no-startup-id i3-msg 'workspace $ws3; exec surf https://duckduckgo.com'
 #exec --no-startup-id i3-msg 'workspace $ws4; exec i3-sensible-terminal -e neomutt'
 #exec --no-startup-id i3-msg 'workspace $ws5; exec i3-sensible-terminal -e ncmpcpp'
 #exec --no-startup-id i3-msg 'workspace $ws6; exec i3-sensible-terminal -e ranger'
