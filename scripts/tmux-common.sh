@@ -5,10 +5,6 @@ tmux has-session -t $SESSION
 
 if [ $? != 0 ]
 then
-    echo "starting ssh-agent..."
-    eval $(ssh-agent -s)
-    ssh-add $HOME/.ssh/*.key
-
     tmux new -s $SESSION -n home -d
 
     tmux rename-window -t $SESSION:1 "dev"
