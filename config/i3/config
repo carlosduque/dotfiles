@@ -146,9 +146,9 @@ bindsym $mod+f                   fullscreen toggle
 bindsym $mod+b                   bar mode toggle
 
 # i3 Split ---{{{
-bindsym $mod+h                   split h
-bindsym $mod+v                   split v
-#bindsym $mod+g                   split toggle
+bindsym $mod+quotedbl            split h
+bindsym $mod+percent             split v
+bindsym $mod+numbersign          split toggle
 #bindsym $mod+apostrophe          split horizontal ;; exec i3-sensible-terminal
 #bindsym $mod+equal               split vertical ;; exec i3-sensible-terminal
 
