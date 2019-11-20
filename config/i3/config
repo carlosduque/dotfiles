@@ -75,16 +75,16 @@ bar {
 }
 
 # Workspaces ---{{{
-set $ws1 "1:Editor "
-set $ws2 "2:Term "
-set $ws3 "3:Browser "
-set $ws4 "4:Email "
-set $ws5 "5:Music "
-set $ws6 "6:Files "
-set $ws7 "7:Utils "
-set $ws8 "8:Remote "
-set $ws9 "9:X "
-set $ws10 "10:Y "
+set $ws1 "1:Oz "
+set $ws2 "2:Hyrule "
+set $ws3 "3:Winterfell "
+set $ws4 "4:Hogwarts "
+set $ws5 "5:Narnia "
+set $ws6 "6:MiddleEarth "
+set $ws7 "7:Earthsea "
+set $ws8 "8:Neverland "
+set $ws9 "9:DeathStar "
+set $ws10 "10:Wonderland "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -146,9 +146,9 @@ bindsym $mod+f                   fullscreen toggle
 bindsym $mod+b                   bar mode toggle
 
 # i3 Split ---{{{
-bindsym $mod+h                   split h
-bindsym $mod+v                   split v
-#bindsym $mod+g                   split toggle
+bindsym $mod+quotedbl            split h
+bindsym $mod+percent             split v
+bindsym $mod+numbersign          split toggle
 #bindsym $mod+apostrophe          split horizontal ;; exec i3-sensible-terminal
 #bindsym $mod+equal               split vertical ;; exec i3-sensible-terminal
 
@@ -207,7 +207,7 @@ bindsym $mod+e                   exec --no-startup-id         emacs
 #bindsym $mod+k                   exec i3-sensible-terminal -e ranger && pkill -RTMIN+12 i3blocks
 bindsym $mod+k                   exec i3-sensible-terminal -e nnn && pkill -RTMIN+12 i3blocks
 bindsym $mod+m                   exec i3-sensible-terminal -e neomutt && pkill -RTMIN+12 i3blocks
-bindsym $mod+w                   exec --no-startup-id         surf https://duckduckgo.com
+bindsym $mod+w                   exec --no-startup-id         tabbed -c surf https://duckduckgo.com
 
 # Show selection:
 bindsym $mod+Insert              exec --no-startup-id showclip
@@ -290,7 +290,7 @@ exec --no-startup-id dunst
 #exec --no-startup-id i3-msg 'workspace $ws1; exec emacs'
 exec --no-startup-id i3-msg 'workspace $ws1; exec gvim'
 exec --no-startup-id i3-msg 'workspace $ws2; exec i3-sensible-terminal'
-exec --no-startup-id i3-msg 'workspace $ws3; exec surf https://duckduckgo.com'
+#exec --no-startup-id i3-msg 'workspace $ws3; exec surf https://duckduckgo.com'
 #exec --no-startup-id i3-msg 'workspace $ws4; exec i3-sensible-terminal -e neomutt'
 #exec --no-startup-id i3-msg 'workspace $ws5; exec i3-sensible-terminal -e ncmpcpp'
 #exec --no-startup-id i3-msg 'workspace $ws6; exec i3-sensible-terminal -e ranger'

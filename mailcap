@@ -1,0 +1,8 @@
+text/html; w3m -T text/html '%s'; needsterminal;
+text/html; w3m -T text/html -dump '%s'; copiousoutput
+
+application/pdf; gv '%s'; test=test -n "$DISPLAY"
+application/pdf;pdfcat '%s'; copiousoutput
+
+text/*; gview -Mf '%s'; edit=gvim -f '%s'; compose=gvim -f '%s'; test=test -n "$DISPLAY"
+text/*; view -Mf '%s'; edit=vim -f '%s'; compose=vim -f '%s' ; needsterminal
