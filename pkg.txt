@@ -20,6 +20,7 @@
 * tree
 * htop
 * gnupg
+* w3m
 * ca_root_nss
 * the_silver_searcher / ack
 * openjdk
@@ -32,7 +33,7 @@
 * neomutt
 * isync (to get mbsync)
 * msmtp
-* w3m + surf-browser / midori / firefox
+* surf-browser / iridium / midori / firefox
 * mpv (video player)
 * sxiv (image viewer)
 * urlview / urlscan
@@ -51,6 +52,7 @@
 * fzf (fuzzy search)
 * tabbed
 * newsboat
+* unison-nox11
 * xmlstarlet
 * jq
 * figlet
