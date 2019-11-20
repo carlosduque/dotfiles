@@ -38,8 +38,10 @@
 * urlview / urlscan
 * ffmpeg
 * ImageMagick7-nox11 / graphicsmagick
-* nnn / py27-ranger/mc
+* lf-13 / nnn / py27-ranger / mc (file explorer)
 * sc-im (ncurses spreadsheet)
+* sent-1 (presentations)
+* hs-pandoc-2.7.2_1 (markdown to pdfs)
 * libqrencode
 * maim (screenshot utility)
 * calcurse (calendar and scheduling)
@@ -48,6 +50,7 @@
 * youtube_dl
 * fzf (fuzzy search)
 * tabbed
+* newsboat
 * xmlstarlet
 * jq
 * figlet
