@@ -207,7 +207,7 @@ bindsym $mod+e                   exec --no-startup-id         emacs
 #bindsym $mod+k                   exec i3-sensible-terminal -e ranger && pkill -RTMIN+12 i3blocks
 bindsym $mod+k                   exec i3-sensible-terminal -e nnn && pkill -RTMIN+12 i3blocks
 bindsym $mod+m                   exec i3-sensible-terminal -e neomutt && pkill -RTMIN+12 i3blocks
-bindsym $mod+w                   exec --no-startup-id         tabbed -c surf https://duckduckgo.com
+bindsym $mod+w                   exec --no-startup-id         tabbed -c -r 2  surf -pe x https://duckduckgo.com
 
 # Show selection:
 bindsym $mod+Insert              exec --no-startup-id showclip
@@ -299,6 +299,7 @@ exec --no-startup-id i3-msg 'workspace $ws2; exec i3-sensible-terminal'
 #exec_always                     xrandr --output VGA-0 --mode 800x600
 exec_always                     xrandr --output VGA-0 --mode 1024x768
 #exec_always                     xrandr --output VGA-0 --mode 1280x1024
+#exec_always                     xrandr --output VGA-0 --mode 1680x1050 #meant for the imac at fullscreen
 #exec_always                     xrandr --output VGA-0 --mode 1600x1200
 #exec_always                     xrandr --output VGA-0 --mode 1920x1280
 
