@@ -45,6 +45,9 @@
 * calcurse (calendar and scheduling)
 * ledger
 * irssi
+* youtube_dl
+* fzf
+* tabbed
 
 # X
 * xorg-minimal
@@ -70,6 +73,7 @@
 * dunst (notification daemon)
 * zathura + zahura-pdf-poppler / mupdf
 * wifimgr (wifi gtk2)
+* xmodmap
 
 # Optional
 * vim
@@ -77,8 +81,9 @@
 * musicpd + mpc / ncmpc / ncmpcpp
 * compton (window composition: transparency, fade, blur, shadows, etc)
 * linuxlibertine
-* inconsolata-ttf
+* inconsolata-ttf  #for good emojis
 * ImageMagick7
+* figlet
 * fortune
 * cowsay
 * R
