@@ -35,10 +35,10 @@
 * w3m + surf-browser / midori / firefox
 * mpv (video player)
 * sxiv (image viewer)
-* urlview/urlscan
+* urlview / urlscan
 * ffmpeg
 * ImageMagick7-nox11 / graphicsmagick
-* py27-ranger/mc
+* nnn / py27-ranger/mc
 * sc-im (ncurses spreadsheet)
 * libqrencode
 * maim (screenshot utility)
@@ -46,8 +46,13 @@
 * ledger
 * irssi
 * youtube_dl
-* fzf
+* fzf (fuzzy search)
 * tabbed
+* xmlstarlet
+* jq
+* figlet
+* fortune
+* cowsay
 
 # X
 * xorg-minimal
@@ -83,9 +88,6 @@
 * linuxlibertine
 * inconsolata-ttf  #for good emojis
 * ImageMagick7
-* figlet
-* fortune
-* cowsay
 * R
 * slim
 * pcmanfm
