@@ -39,7 +39,7 @@
 * urlview / urlscan
 * ffmpeg
 * ImageMagick7-nox11 / graphicsmagick
-* lf-13 / nnn / py27-ranger / mc (file explorer)
+* vifm / nnn/ mc / py27-ranger / lf-13
 * sc-im (ncurses spreadsheet)
 * sent-1 (presentations)
 * hs-pandoc-2.7.2_1 (markdown to pdfs)
@@ -48,6 +48,7 @@
 * calcurse (calendar and scheduling)
 * ledger
 * irssi
+* telegram (telegram-cli)
 * youtube_dl
 * fzf (fuzzy search)
 * tabbed

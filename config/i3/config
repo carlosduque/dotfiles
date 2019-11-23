@@ -331,9 +331,9 @@ exec --no-startup-id i3-msg 'workspace $ws1; exec i3-sensible-terminal'
 
 # Set display mode
 #exec_always                     xrandr --output VGA-0 --mode 800x600
-exec_always                     xrandr --output VGA-0 --mode 1024x768
+#exec_always                     xrandr --output VGA-0 --mode 1024x768
 #exec_always                     xrandr --output VGA-0 --mode 1280x1024
-#exec_always                     xrandr --output VGA-0 --mode 1680x1050 #meant for the imac at fullscreen
+exec_always                     xrandr --output VGA-0 --mode 1680x1050 #meant for the imac at fullscreen
 #exec_always                     xrandr --output VGA-0 --mode 1600x1200
 #exec_always                     xrandr --output VGA-0 --mode 1920x1280
 
