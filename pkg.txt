@@ -20,6 +20,7 @@
 * tree
 * htop
 * gnupg
+* w3m
 * ca_root_nss
 * the_silver_searcher / ack
 * openjdk
@@ -32,19 +33,32 @@
 * neomutt
 * isync (to get mbsync)
 * msmtp
-* w3m + surf-browser / midori / firefox
+* surf-browser / iridium / midori / firefox
 * mpv (video player)
 * sxiv (image viewer)
-* urlview/urlscan
+* urlview / urlscan
 * ffmpeg
 * ImageMagick7-nox11 / graphicsmagick
-* py27-ranger/mc
+* vifm / nnn/ mc / py27-ranger / lf-13
 * sc-im (ncurses spreadsheet)
+* sent-1 (presentations)
+* hs-pandoc-2.7.2_1 (markdown to pdfs)
 * libqrencode
 * maim (screenshot utility)
 * calcurse (calendar and scheduling)
 * ledger
 * irssi
+* telegram (telegram-cli)
+* youtube_dl
+* fzf (fuzzy search)
+* tabbed
+* newsboat
+* unison-nox11
+* xmlstarlet
+* jq
+* figlet
+* fortune
+* cowsay
 
 # X
 * xorg-minimal
@@ -70,6 +84,7 @@
 * dunst (notification daemon)
 * zathura + zahura-pdf-poppler / mupdf
 * wifimgr (wifi gtk2)
+* xmodmap
 
 # Optional
 * vim
@@ -77,10 +92,8 @@
 * musicpd + mpc / ncmpc / ncmpcpp
 * compton (window composition: transparency, fade, blur, shadows, etc)
 * linuxlibertine
-* inconsolata-ttf
+* inconsolata-ttf  #for good emojis
 * ImageMagick7
-* fortune
-* cowsay
 * R
 * slim
 * pcmanfm

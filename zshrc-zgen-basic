@@ -67,6 +67,11 @@ bindkey '^r' history-incremental-search-backward
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
+if [ -n "$SSH_AUTH_SOCK" ]
+then
+    ssh-add -q $HOME/.ssh/*.key > /dev/null
+fi
+
 # Print a random, hopefully interesting, adage.
 print -P "\e[1;36m"
 $(type fortune &> /dev/null) && $(type cowsay &> /dev/null) && fortune -s | cowsay

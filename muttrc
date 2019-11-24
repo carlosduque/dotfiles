@@ -66,8 +66,8 @@ bind index \005 next-undeleted # Mouse wheel
 bind pager \031 previous-line # Mouse wheel
 bind pager \005 next-line # Mouse wheel
 macro index,pager S <sync-mailbox>
-macro index,pager \Cu |urlscan\n
-macro index,pager ,, |urlscan\n
+macro index,pager \Cu |urlview\n
+macro index,pager ,, |urlview\n
 
 #Ctrl-R to mark all as read
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
