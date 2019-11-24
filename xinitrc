@@ -7,7 +7,7 @@ session=${1:-i3wm}
 
 case $session in
     i3wm              ) exec ssh-agent -t 7200 i3;;
-#    dwm               ) exec dwm;;
+    dwm               ) exec dwm;;
 #    fluxbox           ) exec startfluxbox;;
 #    mate              ) exec mate-session;;
 #    cinnamon          ) exec cinnamon-session;;
