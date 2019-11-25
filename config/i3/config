@@ -12,11 +12,11 @@ set $right n
 
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
+set $netrefresh --no-startup-id sudo -A service netif restart
 
 gaps inner 7
 gaps outer 7
 
-#set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 #set $hibernate sudo -A systemctl suspend
 
 # Font ---{{{
@@ -207,6 +207,7 @@ set $image          i
 set $fileexplorer   k
 set $mail           m
 set $net            n
+set $r              r
 set $spreadsheet    s
 set $text           t
 set $video          v
@@ -215,7 +216,9 @@ set $web            w
 bindsym $mod+Return              exec i3-sensible-terminal
 bindsym $mod+space               exec --no-startup-id         dmenu_run
 bindsym $mod+$audio              exec i3-sensible-terminal -e ncmpcpp
-bindsym $mod+c                   exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
+#bindsym $mod+Shift+c             exec --no-startup-id ddspawn ddcalc -f mono:pixelsize=18
+bindsym $mod+dead_acute          exec --no-startup-id ddspawn ddrepl -f mono:pixelsize=14
+bindsym $mod+ccedilla            exec --no-startup-id ddspawn ddr -f mono:pixelsize=14
 bindsym $mod+$editor             exec --no-startup-id         gvim
 bindsym $mod+$fileexplorer       exec i3-sensible-terminal -e nnn && pkill -RTMIN+12 i3blocks
 bindsym $mod+$mail               exec i3-sensible-terminal -e neomutt && pkill -RTMIN+12 i3blocks
@@ -224,11 +227,11 @@ bindsym $mod+$web                exec --no-startup-id         tabbed -c -r 2  su
 # Show selection:
 bindsym $mod+Insert              exec --no-startup-id showclip
 bindsym $mod+Pause               exec --no-startup-id xcqr
-bindsym $mod+grave               exec --no-startup-id dmenuunicode
+bindsym $mod+dead_grave          exec --no-startup-id dmenuunicode
 bindsym $mod+Shift+Print         exec --no-startup-id maimpick
 
 bindsym $mod+F11                 exec --no-startup-id ducksearch
-#bindsym $mod+F5                  exec --no-startup-id $netrefresh
+bindsym $mod+F5                  exec --no-startup-id $netrefresh
 #bindsym $mod+F9                  exec --no-startup-id dmenumount
 #bindsym $mod+F10                 exec --no-startup-id dmenuumount
 
@@ -240,16 +243,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym $right resize shrink width 10 px or 10 ppt
-        bindsym $down  resize grow height 10 px or 10 ppt
+        bindsym $right resize shrink width  10 px or 10 ppt
+        bindsym $down  resize grow   height 10 px or 10 ppt
         bindsym $up    resize shrink height 10 px or 10 ppt
-        bindsym $left  resize grow width 10 px or 10 ppt
+        bindsym $left  resize grow   width  10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Right  resize shrink width 10 px or 10 ppt
-        bindsym Down   resize grow height 10 px or 10 ppt
+        bindsym Right  resize shrink width  10 px or 10 ppt
+        bindsym Down   resize grow   height 10 px or 10 ppt
         bindsym Up     resize shrink height 10 px or 10 ppt
-        bindsym Left   resize grow width 10 px or 10 ppt
+        bindsym Left   resize grow   width  10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -267,6 +270,7 @@ mode "launch" {
         bindsym $fileexplorer   exec i3-sensible-terminal -e nnn
         bindsym $mail           exec i3-sensible-terminal -e neomutt
         bindsym $net            exec                         wifimgr
+        bindsym $r              exec i3-sensible-terminal -e R
         bindsym $spreadsheet    exec i3-sensible-terminal -e sc-im
         bindsym $text           exec --no-startup-id         emacs
         bindsym $video          exec i3-sensible-terminal -e mpv
@@ -304,6 +308,10 @@ for_window [instance="dropdown_*"]              sticky enable
 for_window [instance="dropdown_*"]              scratchpad show
 for_window [instance="dropdown_dropdowncalc"]   resize set 625 450
 for_window [instance="dropdown_dropdowncalc"]   border pixel 2
+for_window [instance="dropdown_ddrepl"]         resize set 625 450
+for_window [instance="dropdown_ddrepl"]         border pixel 2
+for_window [instance="dropdown_ddr"]            resize set 625 450
+for_window [instance="dropdown_ddr"]            border pixel 2
 for_window [instance="dropdown_*"]              move position center
 
 for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
@@ -321,13 +329,7 @@ exec --no-startup-id musicpd
 exec --no-startup-id dunst
 
 #exec --no-startup-id compton
-#exec --no-startup-id i3-msg 'workspace $ws1; exec emacs'
 exec --no-startup-id i3-msg 'workspace $ws1; exec i3-sensible-terminal'
-#exec --no-startup-id i3-msg 'workspace $ws2; exec gvim'
-#exec --no-startup-id i3-msg 'workspace $ws3; exec surf https://duckduckgo.com'
-#exec --no-startup-id i3-msg 'workspace $ws4; exec i3-sensible-terminal -e neomutt'
-#exec --no-startup-id i3-msg 'workspace $ws5; exec i3-sensible-terminal -e ncmpcpp'
-#exec --no-startup-id i3-msg 'workspace $ws6; exec i3-sensible-terminal -e ranger'
 
 # Set display mode
 #exec_always                     xrandr --output VGA-0 --mode 800x600
@@ -337,5 +339,5 @@ exec_always                     xrandr --output VGA-0 --mode 1680x1050 #meant fo
 #exec_always                     xrandr --output VGA-0 --mode 1600x1200
 #exec_always                     xrandr --output VGA-0 --mode 1920x1280
 
-exec_always                     feh --bg-scale ~/.wallpapers/dragon_red_black-1920x1080.jpg
+exec_always                     feh --bg-scale ~/.wallpapers/current.jpg
 

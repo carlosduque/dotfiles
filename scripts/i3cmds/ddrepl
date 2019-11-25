@@ -1,0 +1,2 @@
+#!/bin/sh
+ifinstalled clj && echo "Clojure REPl" && clj
