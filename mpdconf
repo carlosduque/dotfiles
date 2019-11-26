@@ -15,7 +15,7 @@ port "6600"
 restore_paused "yes"
 max_output_buffer_size "16384"
 
-filesystem_charset		"UTF-8"
+filesystem_charset        "UTF-8"
 
 input {
         plugin "curl"
@@ -25,12 +25,12 @@ input {
 }
 
 audio_output {
-	type		"oss"
-	name		"My OSS Device"
-#	device		"/dev/dsp"	# optional
-#	mixer_type      "hardware"	# optional
-#	mixer_device	"/dev/mixer"	# optional
-#	mixer_control	"PCM"		# optional
+    type        "oss"
+    name        "My OSS Device"
+#    device        "/dev/dsp"    # optional
+#    mixer_type      "hardware"    # optional
+#    mixer_device    "/dev/mixer"    # optional
+#    mixer_control    "PCM"        # optional
 }
 
 audio_output {
