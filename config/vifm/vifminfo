@@ -1,0 +1,312 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/carlos/
+	..
+1574472027
+'b
+	/home/carlos/bin/
+	..
+1574472027
+'h
+	/home/carlos/
+	..
+1574472027
+
+# Bookmarks:
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/usr/home/carlos
+	data
+5
+d/usr/home/carlos/data
+	audio
+1
+d/usr/home/carlos/data/audio
+	..
+0
+d/usr/home/carlos/data
+	refs
+2
+d/usr/home/carlos/data/refs
+	..
+0
+d/usr/home/carlos/data
+	video
+3
+d/usr/home/carlos/data/video
+	series
+4
+d/usr/home/carlos/data/video/series
+	..
+0
+d/usr/home/carlos/data/video
+	movies
+2
+d/usr/home/carlos/data/video/movies
+	..
+0
+d/usr/home/carlos/data/video
+	..
+0
+d/usr/home/carlos/data
+	audio
+1
+d/usr/home/carlos/data/audio
+	..
+0
+d/usr/home/carlos/data
+	..
+0
+d/usr/home/carlos
+	bin
+3
+d/usr/home/carlos/bin
+	statusbar
+2
+d/usr/home/carlos/bin/statusbar
+	..
+0
+d/usr/home/carlos/bin
+	..
+0
+d/usr/home/carlos
+	bin
+3
+d/usr/home/carlos/bin
+	..
+0
+d/usr/home/carlos
+	bin
+3
+d/usr/home/carlos/bin
+	..
+0
+d/usr/home/carlos
+	dev
+6
+d/usr/home/carlos/dev
+	..
+0
+d/usr/home/carlos
+	go.pdf
+20
+d
+
+# Right window history (oldest to newest):
+D/usr/home/carlos
+	..
+0
+D/usr/home
+	carlos
+1
+D/usr/home/carlos
+	data
+5
+D/usr/home/carlos/data
+	video
+3
+D/usr/home/carlos/data/video
+	concerts
+1
+D/usr/home/carlos/data/video/concerts
+	..
+0
+D/usr/home/carlos/data/video
+	movies
+2
+D/usr/home/carlos/data/video/movies
+	..
+0
+D/usr/home/carlos/data/video
+	personal
+3
+D/usr/home/carlos/data/video/personal
+	..
+0
+D/usr/home/carlos/data/video
+	series
+4
+D/usr/home/carlos/data/video/series
+	..
+0
+D/usr/home/carlos/data/video
+	talks
+5
+D/usr/home/carlos/data/video/talks
+	..
+0
+D/usr/home/carlos/data/video
+	..
+0
+D/usr/home/carlos/data
+	..
+0
+D/usr/home/carlos
+	tmp
+11
+D/usr/home/carlos/tmp
+	vids
+9
+D/usr/home/carlos/tmp/vids
+	..
+0
+D/usr/home/carlos/tmp
+	vids
+9
+D/usr/home/carlos/tmp/vids
+	parle_à_ta_tête-indila.mp3
+32
+D/usr/home/carlos/tmp
+	..
+0
+D/usr/home/carlos
+	..
+0
+D/usr/home
+	..
+0
+D/usr
+	jail
+4
+D/usr/jail
+	..
+0
+D/usr
+	jails
+5
+D/usr/jails
+	..
+0
+D/usr
+	..
+0
+D/
+	dev
+2
+D/dev
+	fd
+1
+D/dev/fd
+	..
+0
+D/dev
+	..
+0
+D/
+	dev
+2
+D/dev
+	usb
+4
+D/dev/usb
+	..
+0
+D/dev
+	..
+0
+D/
+	rescue
+11
+D/rescue
+	..
+0
+D/
+	media
+7
+D/media
+	..
+0
+D/
+	dev
+2
+D/dev
+	reroot
+3
+D/dev/reroot
+	..
+0
+D/dev
+	pts
+2
+D/dev/pts
+	..
+0
+D/dev
+	..
+0
+D/
+	home
+4
+D/home
+	carlos
+1
+D/home/carlos
+	dev
+6
+D/home/carlos/dev
+	..
+0
+D/home/carlos
+	tmp
+11
+D/home/carlos/tmp
+	..
+0
+D/home/carlos
+	BSDMagazine101.pdf
+13
+D
+
+# Command line history (oldest to newest):
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+pbeliever_-_imagine_dragons.mp3
+pcomme_un_bateau-indila.mp3
+pego-willy_william-2.mp3
+ppapaoutai-stromae.mp3
+plieblingsmensch-namika.mp3
+pmi_gente-j_balvin.mp3
+psing-ed_sheeran.mp3
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/carlos/.local/share/vifm/Trash/000_Disturbed 'The Sound Of Silence' 03_28_16.mp3
+""/home/carlos/.local/share/vifm/Trash/000_Ed Sheeran - Shape of You [Official Video].mp3
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/carlos/.local/share/vifm/Trash/000_Adele - Rolling in the Deep.mp3
+	/usr/home/carlos/tmp/vids/Adele - Rolling in the Deep.mp3
+t/home/carlos/.local/share/vifm/Trash/000_Daddy Yankee & Snow - Con Calma Dance _ Rick Torri & Larissa Secco _ Brazilian Zouk Dance - ZoukTime.mp3
+	/usr/home/carlos/tmp/vids/Daddy Yankee & Snow - Con Calma Dance _ Rick Torri & Larissa Secco _ Brazilian Zouk Dance - ZoukTime.mp3
+t/home/carlos/.local/share/vifm/Trash/000_Disturbed 'The Sound Of Silence' 03_28_16.mp3
+	/usr/home/carlos/tmp/vids/Disturbed 'The Sound Of Silence' 03_28_16.mp3
+t/home/carlos/.local/share/vifm/Trash/000_Ed Sheeran - Shape of You [Official Video].mp3
+	/usr/home/carlos/tmp/vids/Ed Sheeran - Shape of You [Official Video].mp3
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0
