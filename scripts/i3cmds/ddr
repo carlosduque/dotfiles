@@ -1,2 +1,0 @@
-#!/bin/sh
-ifinstalled R && echo "Welcome to R." && R --quiet

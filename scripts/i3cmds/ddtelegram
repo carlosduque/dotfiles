@@ -1,0 +1,3 @@
+#!/bin/sh
+ifinstalled telegram-cli && echo "Telegram" && telegram-cli
+

@@ -216,9 +216,9 @@ set $web            w
 bindsym $mod+Return              exec i3-sensible-terminal
 bindsym $mod+space               exec --no-startup-id         dmenu_run
 bindsym $mod+$audio              exec i3-sensible-terminal -e ncmpcpp
-#bindsym $mod+Shift+c             exec --no-startup-id ddspawn ddcalc -f mono:pixelsize=18
+bindsym $mod+plus                exec --no-startup-id ddspawn ddcalcurse -f mono:pixelsize=10
 bindsym $mod+dead_acute          exec --no-startup-id ddspawn ddrepl -f mono:pixelsize=14
-bindsym $mod+ccedilla            exec --no-startup-id ddspawn ddr -f mono:pixelsize=14
+bindsym $mod+ccedilla            exec --no-startup-id ddspawn ddtelegram
 bindsym $mod+$editor             exec --no-startup-id         gvim
 bindsym $mod+$fileexplorer       exec i3-sensible-terminal -e nnn && pkill -RTMIN+12 i3blocks
 bindsym $mod+$mail               exec i3-sensible-terminal -e neomutt && pkill -RTMIN+12 i3blocks
@@ -306,12 +306,12 @@ for_window [instance="dropdown_*"]              floating enable
 for_window [instance="dropdown_*"]              move scratchpad
 for_window [instance="dropdown_*"]              sticky enable
 for_window [instance="dropdown_*"]              scratchpad show
-for_window [instance="dropdown_ddcalc"]         resize set 625 450
-for_window [instance="dropdown_ddcalc"]         border pixel 2
+for_window [instance="dropdown_ddcalcurse"]     resize set 625 450
+for_window [instance="dropdown_ddcalcurse"]     border pixel 2
 for_window [instance="dropdown_ddrepl"]         resize set 625 450
 for_window [instance="dropdown_ddrepl"]         border pixel 2
-for_window [instance="dropdown_ddr"]            resize set 625 450
-for_window [instance="dropdown_ddr"]            border pixel 2
+for_window [instance="dropdown_ddtelegram"]     resize set 625 450
+for_window [instance="dropdown_ddtelegram"] t   border pixel 2
 for_window [instance="dropdown_*"]              move position center
 
 for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px

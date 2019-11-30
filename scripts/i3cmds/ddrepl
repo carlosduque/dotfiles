@@ -1,2 +1,2 @@
 #!/bin/sh
-ifinstalled clj && echo "Clojure REPl" && clj
+ifinstalled chez-scheme && echo "Chez Scheme REPL" && chez-scheme
