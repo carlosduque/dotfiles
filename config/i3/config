@@ -220,7 +220,7 @@ bindsym $mod+plus                exec --no-startup-id ddspawn ddcalcurse -f mono
 bindsym $mod+dead_acute          exec --no-startup-id ddspawn ddrepl -f mono:pixelsize=14
 bindsym $mod+ccedilla            exec --no-startup-id ddspawn ddtelegram
 bindsym $mod+$editor             exec --no-startup-id         gvim
-bindsym $mod+$fileexplorer       exec i3-sensible-terminal -e nnn && pkill -RTMIN+12 i3blocks
+bindsym $mod+$fileexplorer       exec i3-sensible-terminal -e vifm && pkill -RTMIN+12 i3blocks
 bindsym $mod+$mail               exec i3-sensible-terminal -e neomutt && pkill -RTMIN+12 i3blocks
 bindsym $mod+$web                exec --no-startup-id         tabbed -c -r 2  surf -pe x https://duckduckgo.com
 

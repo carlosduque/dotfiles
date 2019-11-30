@@ -320,75 +320,6 @@ d/usr/home/carlos
 d
 
 # Right window history (oldest to newest):
-D/usr/home/carlos
-	..
-0
-D/usr/home
-	carlos
-1
-D/usr/home/carlos
-	data
-5
-D/usr/home/carlos/data
-	video
-3
-D/usr/home/carlos/data/video
-	concerts
-1
-D/usr/home/carlos/data/video/concerts
-	..
-0
-D/usr/home/carlos/data/video
-	movies
-2
-D/usr/home/carlos/data/video/movies
-	..
-0
-D/usr/home/carlos/data/video
-	personal
-3
-D/usr/home/carlos/data/video/personal
-	..
-0
-D/usr/home/carlos/data/video
-	series
-4
-D/usr/home/carlos/data/video/series
-	..
-0
-D/usr/home/carlos/data/video
-	talks
-5
-D/usr/home/carlos/data/video/talks
-	..
-0
-D/usr/home/carlos/data/video
-	..
-0
-D/usr/home/carlos/data
-	..
-0
-D/usr/home/carlos
-	tmp
-11
-D/usr/home/carlos/tmp
-	vids
-9
-D/usr/home/carlos/tmp/vids
-	..
-0
-D/usr/home/carlos/tmp
-	vids
-9
-D/usr/home/carlos/tmp/vids
-	parle_à_ta_tête-indila.mp3
-32
-D/usr/home/carlos/tmp
-	..
-0
-D/usr/home/carlos
-	..
-0
 D/usr/home
 	..
 0
@@ -600,21 +531,109 @@ D/home/carlos/dotfiles/config/vifm
 	colors
 1
 D/home/carlos/dotfiles/config/vifm/colors
-	near-default.vifm
-6
+	..
+0
+D/home/carlos/dotfiles/config/vifm
+	..
+0
+D/home/carlos/dotfiles/config
+	..
+0
+D/home/carlos/dotfiles
+	..
+0
+D/home/carlos
+	dotfiles
+7
+D/home/carlos/dotfiles
+	config
+1
+D/home/carlos/dotfiles/config
+	i3
+3
+D/home/carlos/dotfiles/config/i3
+	..
+0
+D/home/carlos/dotfiles/config
+	..
+0
+D/home/carlos/dotfiles
+	config
+1
+D/home/carlos/dotfiles/config
+	vifm
+11
+D/home/carlos/dotfiles/config/vifm
+	..
+0
+D/home/carlos/dotfiles/config
+	i3
+3
+D/home/carlos/dotfiles/config/i3
+	..
+0
+D/home/carlos/dotfiles/config
+	calcurse
+1
+D/home/carlos/dotfiles/config/calcurse
+	..
+0
+D/home/carlos/dotfiles/config
+	vifm
+11
+D/home/carlos/dotfiles/config/vifm
+	colors
+1
+D/home/carlos/dotfiles/config/vifm/colors
+	..
+0
+D/home/carlos/dotfiles/config/vifm
+	..
+0
+D/home/carlos/dotfiles/config
+	i3
+3
+D/home/carlos/dotfiles/config/i3
+	..
+0
+D/home/carlos/dotfiles/config
+	calcurse
+1
+D/home/carlos/dotfiles/config/calcurse
+	..
+0
+D/home/carlos/dotfiles/config
+	calcurse
+1
+D/home/carlos/dotfiles/config/calcurse
+	..
+0
+D/home/carlos/dotfiles/config
+	calcurse
+1
+D/home/carlos/dotfiles/config/calcurse
+	..
+0
+D/home/carlos/dotfiles/config
+	calcurse
+1
+D/home/carlos/dotfiles/config/calcurse
+	..
+0
 D
 
 # Command line history (oldest to newest):
-:q
 :mkdir unclassified
 :mkdir magazines
-:colorscheme darkdesert
-:colorscheme ph
-:colorscheme zenburn_1
 :colorscheme solarized-dark
 :colorscheme near-default
 :colorscheme lucius
+:colorscheme ph
+:colorscheme zenburn_1
+:colorscheme darkdesert
+:colorscheme mycustom
 :colorscheme iceberg
+:q
 
 # Search history (oldest to newest):
 
