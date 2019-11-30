@@ -26,9 +26,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/usr/home/carlos
-	data
-5
 d/usr/home/carlos/data
 	audio
 1
@@ -315,80 +312,23 @@ d/usr/home/carlos/data
 	..
 0
 d/usr/home/carlos
+	..
+0
+d/usr/home
+	..
+0
+d/usr
+	..
+0
+d/
 	dev
-6
+2
+d/dev
+	bpsm0
+17
 d
 
 # Right window history (oldest to newest):
-D/usr/home
-	..
-0
-D/usr
-	jail
-4
-D/usr/jail
-	..
-0
-D/usr
-	jails
-5
-D/usr/jails
-	..
-0
-D/usr
-	..
-0
-D/
-	dev
-2
-D/dev
-	fd
-1
-D/dev/fd
-	..
-0
-D/dev
-	..
-0
-D/
-	dev
-2
-D/dev
-	usb
-4
-D/dev/usb
-	..
-0
-D/dev
-	..
-0
-D/
-	rescue
-11
-D/rescue
-	..
-0
-D/
-	media
-7
-D/media
-	..
-0
-D/
-	dev
-2
-D/dev
-	reroot
-3
-D/dev/reroot
-	..
-0
-D/dev
-	pts
-2
-D/dev/pts
-	..
-0
 D/dev
 	..
 0
@@ -620,6 +560,75 @@ D/home/carlos/dotfiles/config
 D/home/carlos/dotfiles/config/calcurse
 	..
 0
+D/home/carlos/dotfiles/config
+	..
+0
+D/home/carlos/dotfiles
+	..
+0
+D/home/carlos
+	dev
+6
+D/home/carlos/dev
+	..
+0
+D/home/carlos
+	..
+0
+D/home
+	..
+0
+D/
+	dev
+2
+D/dev
+	..
+0
+D/
+	dev
+2
+D/dev
+	..
+0
+D/
+	home
+4
+D/home
+	carlos
+1
+D/home/carlos
+	data
+5
+D/home/carlos/data
+	..
+0
+D/home/carlos
+	..
+0
+D/home
+	carlos
+1
+D/home/carlos
+	dotfiles
+7
+D/home/carlos/dotfiles
+	calcurse
+1
+D/home/carlos/dotfiles/calcurse
+	..
+0
+D/home/carlos/dotfiles
+	config
+2
+D/home/carlos/dotfiles/config
+	vifm
+10
+D/home/carlos/dotfiles/config/vifm
+	colors
+1
+D/home/carlos/dotfiles/config/vifm/colors
+	Default.vifm
+1
 D
 
 # Command line history (oldest to newest):
