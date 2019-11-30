@@ -17,7 +17,7 @@
 # Bookmarks:
 
 # TUI:
-al
+ar
 q0
 v2
 ov
@@ -99,8 +99,224 @@ d/usr/home/carlos/dev
 	..
 0
 d/usr/home/carlos
-	go.pdf
-20
+	Desktop
+1
+d/usr/home/carlos/Desktop
+	..
+0
+d/usr/home/carlos
+	Downloads
+2
+d/usr/home/carlos/Downloads
+	..
+0
+d/usr/home/carlos
+	cfgs
+4
+d/usr/home/carlos/cfgs
+	..
+0
+d/usr/home/carlos
+	data
+5
+d/usr/home/carlos/data
+	video
+3
+d/usr/home/carlos/data/video
+	..
+0
+d/usr/home/carlos/data
+	..
+0
+d/usr/home/carlos
+	dev
+6
+d/usr/home/carlos/dev
+	..
+0
+d/usr/home/carlos
+	dev-old
+7
+d/usr/home/carlos/dev-old
+	..
+0
+d/usr/home/carlos
+	dev
+6
+d/usr/home/carlos/dev
+	..
+0
+d/usr/home/carlos
+	dev-old
+7
+d/usr/home/carlos/dev-old
+	..
+0
+d/usr/home/carlos
+	tmp
+10
+d/usr/home/carlos/tmp
+	..
+0
+d/usr/home/carlos
+	dotfiles
+8
+d/usr/home/carlos/dotfiles
+	..
+0
+d/usr/home/carlos
+	docs-old
+7
+d/usr/home/carlos/docs-old
+	priv
+1
+d/usr/home/carlos/docs-old/priv
+	finanzas
+1
+d/usr/home/carlos/docs-old/priv/finanzas
+	..
+0
+d/usr/home/carlos/docs-old/priv
+	..
+0
+d/usr/home/carlos/docs-old
+	..
+0
+d/usr/home/carlos
+	Desktop
+1
+d/usr/home/carlos/Desktop
+	..
+0
+d/usr/home/carlos
+	Downloads
+2
+d/usr/home/carlos/Downloads
+	..
+0
+d/usr/home/carlos
+	bin
+3
+d/usr/home/carlos/bin
+	..
+0
+d/usr/home/carlos
+	cfgs
+4
+d/usr/home/carlos/cfgs
+	freebsd
+1
+d/usr/home/carlos/cfgs/freebsd
+	..
+0
+d/usr/home/carlos/cfgs
+	..
+0
+d/usr/home/carlos
+	data
+5
+d/usr/home/carlos/data
+	..
+0
+d/usr/home/carlos
+	dev
+6
+d/usr/home/carlos/dev
+	..
+0
+d/usr/home/carlos
+	go
+8
+d/usr/home/carlos/go
+	src
+1
+d/usr/home/carlos/go/src
+	..
+0
+d/usr/home/carlos/go
+	..
+0
+d/usr/home/carlos
+	tmp
+9
+d/usr/home/carlos/tmp
+	..
+0
+d/usr/home/carlos
+	tmp
+9
+d/usr/home/carlos/tmp
+	..
+0
+d/usr/home/carlos
+	go
+8
+d/usr/home/carlos/go
+	..
+0
+d/usr/home/carlos
+	data
+5
+d/usr/home/carlos/data
+	..
+0
+d/usr/home/carlos
+	data
+5
+d/usr/home/carlos/data
+	audio
+1
+d/usr/home/carlos/data/audio
+	music
+1
+d/usr/home/carlos/data/audio/music
+	..
+0
+d/usr/home/carlos/data/audio
+	..
+0
+d/usr/home/carlos/data
+	video
+3
+d/usr/home/carlos/data/video
+	talks
+5
+d/usr/home/carlos/data/video/talks
+	..
+0
+d/usr/home/carlos/data/video
+	series
+4
+d/usr/home/carlos/data/video/series
+	..
+0
+d/usr/home/carlos/data/video
+	personal
+3
+d/usr/home/carlos/data/video/personal
+	..
+0
+d/usr/home/carlos/data/video
+	movies
+2
+d/usr/home/carlos/data/video/movies
+	..
+0
+d/usr/home/carlos/data/video
+	concerts
+1
+d/usr/home/carlos/data/video/concerts
+	..
+0
+d/usr/home/carlos/data/video
+	..
+0
+d/usr/home/carlos/data
+	..
+0
+d/usr/home/carlos
+	dev
+6
 d
 
 # Right window history (oldest to newest):
@@ -264,12 +480,141 @@ D/home/carlos/tmp
 	..
 0
 D/home/carlos
-	BSDMagazine101.pdf
-13
+	data
+5
+D/home/carlos/data
+	refs
+2
+D/home/carlos/data/refs
+	unclassified
+7
+D/home/carlos/data/refs/unclassified
+	magazines
+1
+D/home/carlos/data/refs/unclassified/magazines
+	docs-old
+1
+D/home/carlos/data/refs/unclassified/magazines/docs-old
+	..
+0
+D/home/carlos/data/refs/unclassified/magazines
+	..
+0
+D/home/carlos/data/refs/unclassified
+	magazines
+1
+D/home/carlos/data/refs/unclassified/magazines
+	..
+0
+D/home/carlos/data/refs/unclassified
+	magazines
+1
+D/home/carlos/data/refs/unclassified/magazines
+	..
+0
+D/home/carlos/data/refs/unclassified
+	magazines
+1
+D/home/carlos/data/refs/unclassified/magazines
+	..
+0
+D/home/carlos/data/refs/unclassified
+	magazines
+1
+D/home/carlos/data/refs/unclassified/magazines
+	..
+0
+D/home/carlos/data/refs/unclassified
+	magazines
+1
+D/home/carlos/data/refs/unclassified/magazines
+	..
+0
+D/home/carlos/data/refs/unclassified
+	..
+0
+D/home/carlos/data/refs
+	unclassified
+7
+D/home/carlos/data/refs/unclassified
+	..
+0
+D/home/carlos/data/refs
+	unclassified
+7
+D/home/carlos/data/refs/unclassified
+	magazines
+1
+D/home/carlos/data/refs/unclassified/magazines
+	..
+0
+D/home/carlos/data/refs/unclassified
+	..
+0
+D/home/carlos/data/refs
+	unclassified
+7
+D/home/carlos/data/refs/unclassified
+	..
+0
+D/home/carlos/data/refs
+	science
+6
+D/home/carlos/data/refs/science
+	..
+0
+D/home/carlos/data/refs
+	..
+0
+D/home/carlos/data
+	..
+0
+D/home/carlos
+	dotfiles
+7
+D/home/carlos/dotfiles
+	config
+1
+D/home/carlos/dotfiles/config
+	vifm
+11
+D/home/carlos/dotfiles/config/vifm
+	colors
+1
+D/home/carlos/dotfiles/config/vifm/colors
+	..
+0
+D/home/carlos/dotfiles/config/vifm
+	scripts
+2
+D/home/carlos/dotfiles/config/vifm/scripts
+	..
+0
+D/home/carlos/dotfiles/config/vifm
+	colors
+1
+D/home/carlos/dotfiles/config/vifm/colors
+	..
+0
+D/home/carlos/dotfiles/config/vifm
+	colors
+1
+D/home/carlos/dotfiles/config/vifm/colors
+	near-default.vifm
+6
 D
 
 # Command line history (oldest to newest):
 :q
+:mkdir unclassified
+:mkdir magazines
+:colorscheme darkdesert
+:colorscheme ph
+:colorscheme zenburn_1
+:colorscheme solarized-dark
+:colorscheme near-default
+:colorscheme lucius
+:colorscheme iceberg
 
 # Search history (oldest to newest):
 
@@ -281,12 +626,14 @@ ppapaoutai-stromae.mp3
 plieblingsmensch-namika.mp3
 pmi_gente-j_balvin.mp3
 psing-ed_sheeran.mp3
+pfreebsd-handbook.pdf
+pfreebsd-handbook.epub
+pmycustom.vifm
 
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/carlos/.local/share/vifm/Trash/000_Disturbed 'The Sound Of Silence' 03_28_16.mp3
-""/home/carlos/.local/share/vifm/Trash/000_Ed Sheeran - Shape of You [Official Video].mp3
+""/home/carlos/dotfiles/config/vifm/colors/Default.vifm
 
 # Directory stack (oldest to newest):
 
@@ -299,6 +646,44 @@ t/home/carlos/.local/share/vifm/Trash/000_Disturbed 'The Sound Of Silence' 03_28
 	/usr/home/carlos/tmp/vids/Disturbed 'The Sound Of Silence' 03_28_16.mp3
 t/home/carlos/.local/share/vifm/Trash/000_Ed Sheeran - Shape of You [Official Video].mp3
 	/usr/home/carlos/tmp/vids/Ed Sheeran - Shape of You [Official Video].mp3
+t/home/carlos/.local/share/vifm/Trash/000_PayPal_files
+	/usr/home/carlos/Downloads/PayPal_files
+t/home/carlos/.local/share/vifm/Trash/000_PayPal
+	/usr/home/carlos/Downloads/PayPal
+t/home/carlos/.local/share/vifm/Trash/000_spacewar-master.zip
+	/usr/home/carlos/Downloads/spacewar-master.zip
+t/home/carlos/.local/share/vifm/Trash/000_chessmaster-1200x802.jpg
+	/usr/home/carlos/data/chessmaster-1200x802.jpg
+t/home/carlos/.local/share/vifm/Trash/000_dev-old
+	/usr/home/carlos/dev-old
+t/home/carlos/.local/share/vifm/Trash/000_docs-old
+	/home/carlos/data/refs/unclassified/magazines/docs-old
+t/home/carlos/.local/share/vifm/Trash/000_BSDMagazine100.pdf
+	/home/carlos/data/refs/unclassified/BSDMagazine100.pdf
+t/home/carlos/.local/share/vifm/Trash/000_BSDMagazine101.pdf
+	/home/carlos/data/refs/unclassified/BSDMagazine101.pdf
+t/home/carlos/.local/share/vifm/Trash/000_BSDMagazine_11_2017_99.pdf
+	/home/carlos/data/refs/unclassified/BSDMagazine_11_2017_99.pdf
+t/home/carlos/.local/share/vifm/Trash/000_BSDMagazine_102.pdf
+	/home/carlos/data/refs/unclassified/BSDMagazine_102.pdf
+t/home/carlos/.local/share/vifm/Trash/000_BSDMagazine_106.pdf
+	/home/carlos/data/refs/unclassified/BSDMagazine_106.pdf
+t/home/carlos/.local/share/vifm/Trash/000_WebKitWebProcess.core
+	/home/carlos/data/refs/unclassified/WebKitWebProcess.core
+t/home/carlos/.local/share/vifm/Trash/000_midori.core
+	/home/carlos/data/refs/unclassified/midori.core
+t/home/carlos/.local/share/vifm/Trash/000_neomutt.core
+	/home/carlos/data/refs/unclassified/neomutt.core
+t/home/carlos/.local/share/vifm/Trash/000_tmux.core
+	/home/carlos/data/refs/unclassified/tmux.core
+t/home/carlos/.local/share/vifm/Trash/000_go.pdf
+	/usr/home/carlos/go.pdf
+t/home/carlos/.local/share/vifm/Trash/000_gobook.pdf
+	/usr/home/carlos/gobook.pdf
+t/home/carlos/.local/share/vifm/Trash/000_ezjail-admin.8.pdf
+	/usr/home/carlos/ezjail-admin.8.pdf
+t/home/carlos/.local/share/vifm/Trash/000_ezjail.7.pdf
+	/usr/home/carlos/ezjail.7.pdf
 
 # State:
 f
