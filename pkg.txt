@@ -46,6 +46,7 @@
 * libqrencode
 * maim (screenshot utility)
 * calcurse (calendar and scheduling)
+* sdcv (dictionary client for stardict dictionaries)
 * ledger
 * irssi
 * telegram (telegram-cli)
@@ -89,7 +90,7 @@
 # Optional
 * vim
 * emacs
-* musicpd + mpc / ncmpc / ncmpcpp
+* musicpd + musicpc (mpc) / ncmpc / ncmpcpp / vimpc / gmpc
 * compton (window composition: transparency, fade, blur, shadows, etc)
 * linuxlibertine
 * inconsolata-ttf  #for good emojis
