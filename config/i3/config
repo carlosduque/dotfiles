@@ -340,5 +340,5 @@ exec_always                     xrandr --output VGA-0 --mode 1024x768
 #exec_always                     xrandr --output VGA-0 --mode 1600x1200
 #exec_always                     xrandr --output VGA-0 --mode 1920x1280
 
-exec_always                     feh --bg-scale ~/.wallpapers/current.jpg
-
+#exec_always                     feh --bg-scale ~/.wallpapers/current.jpg
+exec_always                     feh --image-bg black --bg-center ~/.wallpapers/current.jpg
