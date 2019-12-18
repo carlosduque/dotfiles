@@ -6,6 +6,11 @@
 session=${1:-i3wm}
 
 sxhkd -m -1 &
+musicpd &
+dunst &
+#compton &
+##xrandr --output VGA-0 --mode 1024x768
+feh --bg-scale ~/.wallpapers/current.jpg
 
 case $session in
     i3wm              ) exec ssh-agent -t 7200 i3;;

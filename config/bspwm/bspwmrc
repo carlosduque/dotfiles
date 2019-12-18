@@ -1,11 +1,5 @@
 #! /bin/sh
 
-#sxhkd &
-#musicpd &
-#dunst &
-##xrandr --output VGA-0 --mode 1024x768
-#feh --bg-scale ~/.wallpapers/current.jpg
-polybar mybar &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
