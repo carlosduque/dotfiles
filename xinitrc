@@ -5,9 +5,12 @@
 
 session=${1:-i3wm}
 
+sxhkd -m -1 &
+
 case $session in
     i3wm              ) exec ssh-agent -t 7200 i3;;
     dwm               ) exec dwm;;
+    bspwm             ) exec ssh-agent -t 7200 bspwm;;
 #    fluxbox           ) exec startfluxbox;;
 #    mate              ) exec mate-session;;
 #    cinnamon          ) exec cinnamon-session;;
