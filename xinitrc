@@ -5,7 +5,7 @@
 
 session=${1:-i3wm}
 
-sxhkd -m -1 &
+#sxhkd -m -1 &
 musicpd &
 dunst &
 #compton &
