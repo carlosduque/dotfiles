@@ -5,7 +5,7 @@ mpd_music_dir = "~/data/audio/music"
 mpd_connection_timeout = "5"
 
 ncmpcpp_directory = ~/.config/ncmpcpp
-lyrics_directory = ~/.config/lyrics
+lyrics_directory = ~/.lyrics
 
 # visualizer
 visualizer_fifo_path = "/tmp/mpd.fifo"
