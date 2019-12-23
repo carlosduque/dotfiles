@@ -22,6 +22,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.history
 
+source $HOME/dotfiles/scripts/tools/gitinfo
 #PROMPT="%{$fg_bold[cyan]%}§ %{$fg_bold[green]%}%c %{$fg_bold[yellow]%}» %{$reset_color%}"
 #RPROMPT="%{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[yellow]%}%m%{$reset_color%}"
 #ice
@@ -60,9 +61,10 @@ fi
 
 local return_code="%(?..%F{red}%? ↵%f)"
 local user_host="${PR_USER}%F{cyan}@${PR_HOST}"
+local git_branch="%F{yellow}$(git_current_branch)"
 local current_dir="%B%F{cyan}%~%f%b"
 
-PROMPT="╭─(${user_host} ${current_dir})
+PROMPT="╭─(${user_host} ${current_dir} ${git_branch}%{$reset_color%})
 ╰─$PR_PROMPT "
 RPROMPT="${return_code}"
 
