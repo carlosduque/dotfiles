@@ -3,8 +3,25 @@
 #zmodload zsh/zprof  # load zprof module
 source $HOME/dotfiles/zgen/zgen.zsh
 
+#ZSH specific
 autoload -U colors && colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
+setopt auto_cd
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushdminus
+setopt multios
+setopt prompt_subst
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+## History command configuration
+#setopt extended_history       # record timestamp of command in HISTFILE
+#setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+#setopt hist_ignore_dups       # ignore duplicated commands history list
+#setopt hist_ignore_space      # ignore commands that start with space
+#setopt hist_verify            # show command with history expansion to user before running it
+#setopt inc_append_history     # add commands to HISTFILE in order of execution
+#setopt share_history          # share command history data
 
 if ! zgen saved; then
   ### Syntax highlighting bundle.
@@ -23,6 +40,8 @@ SAVEHIST=10000
 HISTFILE=~/.history
 
 source $HOME/dotfiles/scripts/tools/gitinfo
+
+
 #PROMPT="%{$fg_bold[cyan]%}§ %{$fg_bold[green]%}%c %{$fg_bold[yellow]%}» %{$reset_color%}"
 #RPROMPT="%{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[yellow]%}%m%{$reset_color%}"
 #ice
@@ -61,10 +80,9 @@ fi
 
 local return_code="%(?..%F{red}%? ↵%f)"
 local user_host="${PR_USER}%F{cyan}@${PR_HOST}"
-local git_branch="%F{yellow}$(git_current_branch)"
 local current_dir="%B%F{cyan}%~%f%b"
 
-PROMPT="╭─(${user_host} ${current_dir} ${git_branch}%{$reset_color%})
+PROMPT="╭─(${user_host} ${current_dir} $(git_current_branch)%{$reset_color%})
 ╰─$PR_PROMPT "
 RPROMPT="${return_code}"
 
@@ -78,17 +96,24 @@ alias t3='tree -L 3'
 alias td='tree -d'
 alias td2='tree -L 2 -d'
 alias td3='tree -L 3 -d'
+alias ls='ls -AGF'
+alias ll='ls -lah'
+alias lst='ls -lTr'
+alias lss='ls -lTr'
 
 alias urlencode='python -c "import sys, urllib as ul; \ print ul.quote_plus(sys.argv[1])"'
 alias urldecode='python -c "import sys, urllib as ul; \ print ul.unquote_plus(sys.argv[1])"'
 
-if [[ "$OSTYPE" == "cygwin"* ]]; then
-    alias ls='ls --color --indicator-style=slash --group-directories-first' #--sort=time|size
+#if [ "$OSTYPE" = (darwin|freebsd)* ]; then
+if [[ "$OSTYPE" = (darwin|freebsd)* ]]; then
+    alias ls='ls -AGF'
     alias history='fc -il 1' #to read the $HISTFILE showing the dates
 fi
 
-# initializers
-#eval "$(rbenv init -)"
+if [[ "$OSTYPE" = "cygwin"* ]]; then
+    alias ls='ls --color --indicator-style=slash --group-directories-first' #--sort=time|size
+    alias history='fc -il 1' #to read the $HISTFILE showing the dates
+fi
 
 # bindkey style emacs (-e) or vi (-v)
 bindkey -v
