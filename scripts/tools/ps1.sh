@@ -17,9 +17,11 @@ zstyle ':vcs_info:git:*' formats "%F{white}[%s%F{yellow}%b%c%u%F{red}%a%{$reset_
 zstyle ':vcs_info:*' check-for-changes true
 #zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
 
-#source $HOME/bin/tools/gitinfo
-if [ "$UID" = "0" ]; then # normal user
-   PR_COLOR="%{$fg_bold[red]%}"
+# Check if we are on SSH or not
+if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then
+  PR_HOST='@%M' # SSH
+else
+  PR_HOST='' # no SSH
 fi
 
 theme=$1
@@ -56,7 +58,7 @@ case $theme in
     lambda)
         export PROMPT="%{$fg_bold[white]%}λ %{$reset_color%}"
         #export RPROMPT="${vcs_info_msg_0_}%{$fg_bold[cyan]%}%T %{$reset_color%}"
-        export RPROMPT="%{$fg_bold[green]%}%C %{$fg_bold[yellow]%}%T %{$reset_color%}"
+        export RPROMPT="%{$fg_bold[white]%}$PR_HOST %{$fg[green]%}%C%{$fg[white]%}|%{$fg[yellow]%}%T %{$reset_color%}"
         ;;
     *)
         PR_PROMPT="%f$ %f"
