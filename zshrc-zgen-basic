@@ -4,7 +4,27 @@
 source $HOME/dotfiles/zgen/zgen.zsh
 
 #ZSH specific
+autoload -Uz vcs_info
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*:prompt:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr '%F{green}●'
+zstyle ':vcs_info:*' unstagedstr '%F{yellow}●'
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
+theme_precmd () {
+    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
+        zstyle ':vcs_info:*' formats ' [%b%c%u%B%F{green}]'
+    } else {
+        zstyle ':vcs_info:*' formats ' [%b%c%u%B%F{red}●%F{green}]'
+    }
+
+    vcs_info
+}
+
 autoload -U colors && colors
+autoload -U add-zsh-hook
+add-zsh-hook precmd  theme_precmd
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 setopt auto_cd
 setopt auto_pushd
@@ -12,7 +32,6 @@ setopt pushd_ignore_dups
 setopt pushdminus
 setopt multios
 setopt prompt_subst
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 ## History command configuration
 #setopt extended_history       # record timestamp of command in HISTFILE
@@ -41,36 +60,6 @@ HISTFILE=~/.history
 
 source $HOME/dotfiles/scripts/tools/gitinfo
 
-
-#PROMPT="%{$fg_bold[cyan]%}§ %{$fg_bold[green]%}%c %{$fg_bold[yellow]%}» %{$reset_color%}"
-#RPROMPT="%{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[yellow]%}%m%{$reset_color%}"
-#ice
-#PROMPT="%{$fg_bold[cyan]%}%n%{$fg_bold[blue]%}@%{$fg[cyan]%}%m %{$reset_color%}%{$fg[blue]%}%c %(?,%{$fg_bold[white]%},%{$fg_bold[blue]%})» %{$reset_color%}"
-#RPROMPT="%{$fg[magenta]%}$(git_prompt_info)%{$reset_color%} $(git_prompt_status)%{$reset_color%}"
-
-#stealth
-#PROMPT="%{$fg_bold[cyan]%}§ %{$fg_bold[green]%}%c %(?,%{$fg_bold[yellow]%},%{$fg[red]%})» %{$reset_color%}"
-#RPROMPT="%{$fg[magenta]%}$(git_prompt_info)%{$reset_color%} $(git_prompt_status)%{$reset_color%}"
-
-#local user="%{$fg[magenta]%}%n@%{$fg[magenta]%}%m%{$reset_color%}"
-#local pwd="%{$fg[blue]%}%~%{$reset_color%}"
-#local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
-#local git_branch="$(git_prompt_status)%{$reset_color%}$(git_prompt_info)%{$reset_color%}"
-
-#PROMPT="${user} ${pwd}$ "
-#RPROMPT="${return_code} ${git_branch} \$(ruby_prompt_info)"
-
-#gnzh
-# Check the UID
-if [[ $UID -ne 0 ]]; then # normal user
-   PR_USER="%{$fg_bold[blue]%}%n%f"
-   PR_USER_OP="%{$fg[blue]%}#%f"
-   PR_PROMPT="%f➤ %f"
-else # root
-   PR_USER="%{$fg_bold[red]%} %n%f"
-   PR_USER_OP='%F{yellow}%#%f'
-   PR_PROMPT='%F{red}➤ %f'
-fi
 # Check if we are on SSH or not
 if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then
   PR_HOST='%F{gray}%M%f' # SSH
@@ -92,10 +81,8 @@ alias vcfg="vim $HOME/.vimrc"
 
 alias t='tree'
 alias t2='tree -L 2'
-alias t3='tree -L 3'
 alias td='tree -d'
 alias td2='tree -L 2 -d'
-alias td3='tree -L 3 -d'
 alias ls='ls -AGF'
 alias ll='ls -lah'
 alias lst='ls -lTr'
@@ -104,7 +91,6 @@ alias lss='ls -lTr'
 alias urlencode='python -c "import sys, urllib as ul; \ print ul.quote_plus(sys.argv[1])"'
 alias urldecode='python -c "import sys, urllib as ul; \ print ul.unquote_plus(sys.argv[1])"'
 
-#if [ "$OSTYPE" = (darwin|freebsd)* ]; then
 if [[ "$OSTYPE" = (darwin|freebsd)* ]]; then
     alias ls='ls -AGF'
     alias history='fc -il 1' #to read the $HISTFILE showing the dates
