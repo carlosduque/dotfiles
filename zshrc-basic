@@ -35,15 +35,13 @@ RPROMPT="%{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[yellow]%}%m%{$reset_color%}"
 #RPROMPT='%{$fg[magenta]%}$(git_prompt_info)%{$reset_color%} $(git_prompt_status)%{$reset_color%} %{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[yellow]%}%m%{$reset_color%}'
 
 # aliases
-alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vimrc"
+alias zshcfg="vim ~/.zshrc"
+alias vimcfg="vim ~/.vimrc"
 
 alias t='tree'
 alias t2='tree -L 2'
-alias t3='tree -L 3'
 alias td='tree -d'
 alias td2='tree -L 2 -d'
-alias td3='tree -L 3 -d'
 
 if [[ "$OSTYPE" != "darwin"* ]]; then
     alias ls='ls --color --indicator-style=slash --group-directories-first' #--sort=time|size

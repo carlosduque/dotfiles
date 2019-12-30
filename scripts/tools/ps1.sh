@@ -1,22 +1,37 @@
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
 
-source $HOME/bin/tools/gitinfo
-if [ "$UID" != "0" ]; then # normal user
-   PR_PROMPT="%{$fg_bold[red]%}%f➤ %f"
-else # root
-   PR_PROMPT='%F{red}# %f'
+setopt prompt_subst
+
+autoload -U add-zsh-hook
+autoload -Uz vcs_info
+
+add-zsh-hook precmd vcs_info
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*:prompt:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr '%F{green}●' # %c
+zstyle ':vcs_info:*' unstagedstr '%F{yellow}●' #u
+#zstyle ':vcs_info:*:*' actionformats "%S" "%r/%s/%b %u%c (%a)"
+#zstyle ':vcs_info:*:*' formats "%S" "%r/%s/%b %u%c"
+zstyle ':vcs_info:git:*' formats "%F{white}[%s%F{yellow}%b%c%u%F{red}%a%{$reset_color%}]"
+zstyle ':vcs_info:*' check-for-changes true
+#zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
+
+#source $HOME/bin/tools/gitinfo
+if [ "$UID" = "0" ]; then # normal user
+   PR_COLOR="%{$fg_bold[red]%}"
 fi
 
 theme=$1
 case $theme in
     stealth)
-        PR_PROMPT="%{$fg_bold[white]%}%f➤ %f"
-        export PROMPT="%{$fg_bold[cyan]%}§ %{$fg_bold[green]%}%c %{$fg_bold[yellow]%}» %{$reset_color%}"
+        PR_PROMPT="%{$fg_bold[cyan]%}§"
+        export PROMPT="$PR_PROMPT %{$fg_bold[green]%}%c %{$fg_bold[yellow]%}» %{$reset_color%}"
         export RPROMPT="%{$fg[cyan]%}%n%{$fg[white]%}@%{$fg[yellow]%}%m%{$reset_color%}"
         ;;
     music)
-        PR_PROMPT="%{$fg_bold[yellow]%}♪ %{$reset_color%}"
-        export PROMPT="%{$fg_bold[green]%}%c ${PR_PROMPT}"
+        PR_PROMPT="%{$fg_bold[yellow]%}♪"
+        export PROMPT="%{$fg_bold[green]%}%c ${PR_PROMPT} "
         export RPROMPT="%{$fg[white]%}%n%{$fg[cyan]%} ♫ %{$fg[blue]%}%m %{$reset_color%}"
         ;;
     pipe)
@@ -32,15 +47,16 @@ case $theme in
         ;;
     slim)
         export PROMPT="%{$fg[magenta]%}%n%{$fg_bold[cyan]%}@%{$fg[yellow]%}%m%{$fg_bold[green]%}[%c] %{$reset_color%}"
-        export RPROMPT="%t"
+        export RPROMPT="%T"
         ;;
     ice)
-        export PROMPT="%{$fg_bold[cyan]%}%n%{$fg_bold[blue]%}@%{$fg[cyan]%}%m %{$reset_color%}%{$fg[blue]%}%c %(?,%{$fg_bold[white]%},%{$fg_bold[blue]%})» %{$reset_color%}"
-        export RPROMPT="%{$fg[magenta]%}$(git_prompt_info)%{$reset_color%} $(git_prompt_status)%{$reset_color%}"
+        export PROMPT="%{$fg_bold[cyan]%}%n%{$fg_bold[white]%}@%{$fg[blue]%}%m %{$reset_color%}%{$fg[blue]%}%c %(?,%{$fg_bold[white]%},%{$fg_bold[blue]%})» %{$reset_color%}"
+        export RPROMPT="%{$fg_bold[white]%}%T"
         ;;
     lambda)
         export PROMPT="%{$fg_bold[white]%}λ %{$reset_color%}"
-        export RPROMPT="%{$fg_bold[green]%}%T %{$reset_color%}"
+        #export RPROMPT="${vcs_info_msg_0_}%{$fg_bold[cyan]%}%T %{$reset_color%}"
+        export RPROMPT="%{$fg_bold[green]%}%C %{$fg_bold[yellow]%}%T %{$reset_color%}"
         ;;
     *)
         PR_PROMPT="%f$ %f"
