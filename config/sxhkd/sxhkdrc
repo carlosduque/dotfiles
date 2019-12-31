@@ -17,21 +17,17 @@ super + e
     gvim
 super + f
     firefox
-super + shift + f
-    bspc node -t fullscreen
 super + g
     gimp
 super + i
     $TERMINAL -e htop
-super + shift + l
-    bspc desktop -l next
 super + k
     $TERMINAL -e vifm
 super + m
     $TERMINAL -e neomutt
 super + r
     $TERMINAL -e chez-scheme
-super + shift + r
+super + alt + r
     $TERMINAL -e R
 super + s
     $TERMINAL -e sc-im
@@ -41,10 +37,75 @@ super + n
     wifimgr
 super + w
     tabbed -c -r 2 surf -pe x https://duckduckgo.com
-super + shift + x
-    bspc node -c
-super + shift + z
-    bspc node -s biggest
+
+# bspwm controls
+super + ctrl + 1
+    bspc desktop Oz --focus
+super + ctrl + 2
+    bspc desktop Hyrule --focus
+super + ctrl + 3
+    bspc desktop Winterfell --focus
+super + ctrl + 4
+    bspc desktop Hogwarts --focus
+super + ctrl + 5
+    bspc desktop Narnia --focus
+super + ctrl + 6
+    bspc desktop MiddleEarth --focus
+super + ctrl + 7
+    bspc desktop Earthsea --focus
+super + ctrl + 8
+    bspc desktop Neverland --focus
+super + ctrl + 9
+    bspc desktop Wonderland --focus
+
+super + shift + 1
+    bspc node --to-desktop Oz
+super + shift + 2
+    bspc node --to-desktop Hyrule
+super + shift + 3
+    bspc node --to-desktop Winterfell
+super + shift + 4
+    bspc node --to-desktop Hogwarts
+super + shift + 5
+    bspc node --to-desktop Narnia
+super + shift + 6
+    bspc node --to-desktop MiddleEarth
+super + shift + 7
+    bspc node --to-desktop Earthsea
+super + shift + 8
+    bspc node --to-desktop Neverland
+super + shift + 9
+    bspc node --to-desktop Wonderland
+
+#left=d, down=r, up=t, right=n
+super + ctrl + {d, Left}
+    bspc node prev --focus
+super + ctrl + {r, Down}
+    bspc desktop prev --focus
+super + ctrl + {t, Up}
+    bspc desktop next --focus
+super + ctrl + {n, Right}
+    bspc node next --focus
+
+super + ctrl + space
+    bspc node --state fullscreen
+super + ctrl + l
+    bspc desktop --layout next #monocle|tiled
+super + ctrl + t
+    bspc node --state tiled
+super + ctrl + x
+    bspc node --close
+
+super + ctrl + z
+    bspc node --swap biggest
+super + ctrl + period
+    bspc node --swap last
+super + ctrl + comma
+    bspc node --swap next
+super + ctrl + Escape
+    bspc quit
+super + ctrl + BackSpace
+    bspc wm -r
 
 # Et cetera...
 super + dead_grave
@@ -55,17 +116,13 @@ super + Insert
     showclip
 super + Pause
     xcqr
-super + shift + Escape
-    bspc quit
-ctrl + shift + {h,j,k,l}
-    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-ctrl + alt + {h,j,k,l}
-    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-super + control + Escape
+#ctrl + shift + {h,j,k,l}
+#    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+#ctrl + alt + {h,j,k,l}
+#    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+super + alt + Escape
     prompt "Shutdown computer?" "sudo -A shutdown -h now"
-super + shift + BackSpace
-    bspc wm -r
-super + control + BackSpace
+super + alt + BackSpace
     prompt "Reboot computer?" "sudo -A reboot"
 #super + x
 #    mpc pause; pauseallmpv; i3lock -e -f -c 1d2021; xset dpms force off
@@ -104,7 +161,7 @@ XF86AudioRaiseVolume
 Print
     maim pic-full-$(date '+%y%m%d-%H%M-%S').png
 ## Pick screenshot type
-super + shift + Print
+super + Print
     maimpick
 ## Record audio or video
 #super + Print
