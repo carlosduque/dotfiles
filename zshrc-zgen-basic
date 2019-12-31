@@ -41,7 +41,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.history
 
-source $HOME/dotfiles/scripts/tools/ps1.sh lambda
+source $HOME/bin/tools/ps1.sh lambda
 
 # aliases
 alias zcfg="vim $HOME/.zshrc"

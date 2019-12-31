@@ -26,11 +26,11 @@ super + i
 super + shift + l
     bspc desktop -l next
 super + k
-    vifm
+    $TERMINAL -e vifm
 super + m
     $TERMINAL -e neomutt
 super + r
-    chez-scheme
+    $TERMINAL -e chez-scheme
 super + shift + r
     $TERMINAL -e R
 super + s
