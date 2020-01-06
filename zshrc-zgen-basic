@@ -91,7 +91,7 @@ bindkey "^[[B" history-beginning-search-forward
 
 if [ -n "$SSH_AUTH_SOCK" ]
 then
-    ssh-add $HOME/.ssh/*.key > /dev/null
+    ssh-add $HOME/.ssh/*.key &> /dev/null
 fi
 
 # Print a random, hopefully interesting, adage.
