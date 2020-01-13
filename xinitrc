@@ -10,6 +10,7 @@ musicpd &
 dunst &
 #compton &
 ##xrandr --output VGA-0 --mode 1024x768
+##xrandr --output VGA-0 --mode 1680x1050
 feh --bg-scale ~/.wallpapers/current.jpg
 
 case $session in
