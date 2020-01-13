@@ -89,19 +89,27 @@ super + ctrl + {n, Right}
 
 super + ctrl + space
     bspc node --state fullscreen
-super + ctrl + l
+super + ctrl + m
     bspc desktop --layout next #monocle|tiled
 super + ctrl + t
     bspc node --state tiled
 super + ctrl + x
     bspc node --close
 
-super + ctrl + z
+super + ctrl + plus
     bspc node --swap biggest
-super + ctrl + period
-    bspc node --swap last
-super + ctrl + comma
-    bspc node --swap next
+super + ctrl + minus
+    bspc node --swap smallest
+
+super + ctrl + g
+    bspc node --swap west
+super + ctrl + c
+    bspc node --swap south
+super + ctrl + h
+    bspc node --swap north
+super + ctrl + l
+    bspc node --swap east
+
 super + ctrl + Escape
     bspc quit
 super + ctrl + BackSpace
