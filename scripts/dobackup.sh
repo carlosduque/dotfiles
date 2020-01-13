@@ -1,24 +1,17 @@
 #!/bin/sh
 
-# User that rsync will connect as
-# Are you sure that you want to run as root, though?
-USER="carlos"
-# Destination host machine name
-DEST="althalen"
-
 # Base directory to copy from on the source machine.
 SRCDIR=$1
-if [ -z "$SRCDIR" ]
+FILELIST=$2
+DSTDIR=$3
+if [ -z "$SRCDIR" -o -z "$FILELIST" -o -z "$DSTDIR" ]
 then
-    echo "usage: sh $0 <SRCDIR>"
+    echo "usage: sh $0 <SRCDIR> <FILELIST> <DSTDIR>"
     exit
 fi
 
 # Log file
-LOGFILE="/tmp/dobackup.log"
-
-# Directory to copy to on the destination machine.
-DESTDIR="/Volumes/BIGVAULT/carlos"
+#LOGFILE="dobackup.log"
 
 # excludes file - Contains wildcard patterns of files to exclude.
 # i.e., *~, *.bak, etc.  One "pattern" per line.
@@ -38,7 +31,7 @@ DESTDIR="/Volumes/BIGVAULT/carlos"
 #         These side-effects change the default state of rsync, so the position of the --files-from option on the command-line
 #         has no bearing on how other options are parsed (e.g. -a works the same before or after --files-from, as does --no-R
 #         and all other options).
-FILES="/Users/carlos/.dobackup.files"
+#FILELIST="/Users/carlos/.dobackup.files"
 
 # Options.
 # --human-readable (-h) output numbers in a human-readable format
@@ -54,7 +47,7 @@ FILES="/Users/carlos/.dobackup.files"
 # --exclude-from=FILE read exclude patterns from FILE
 # --include-from=FILE read include patterns from FILE (patterns that will not be excluded)
 # --progress show progress during transfer
-# --log-file=FILE log what we're doing to the specidifed FILE
+# --log-file=FILE log what we're doing to the specified FILE
 # --whole-file copy files whole (w/o delta-xfer algorithm)
 # See man rsync for other options.
 
@@ -66,17 +59,23 @@ FILES="/Users/carlos/.dobackup.files"
 #OPTS="--archive --update --rsh=ssh --exclude-from=$EXCLUDES --quiet"
 # Copies and does no display at all.
 #OPTS="--human-readable --archive --verbose --compress --update --exclude-from=$EXCLUDES"
-OPTS="--archive --recursive --progress --compress --delete --human-readable --update --quiet --files-from=$FILES --log-file=$LOGFILE"
+#OPTS="--archive --recursive --progress --compress --delete --human-readable --update --quiet --files-from=$FILELIST --log-file=$LOGFILE"
+OPTS="--archive --recursive --progress --compress --delete --human-readable --update --quiet --files-from=$FILELIST"
 
 # May be needed if run by cron?
 export PATH=$PATH:/bin:/usr/bin:/usr/local/bin:/media/data/bin:$HOME/bin
 
 # Only run rsync if $DEST responds.
-VAR=`ping -s 1 -c 1 $DEST > /dev/null; echo $?`
-if [ $VAR -eq 0 ]; then
-    echo "`date` :backup process initialized" >> $LOGFILE
-    rsync $OPTS $SRCDIR $USER@$DEST:$DESTDIR
-    echo "`date` :backup process done" >> $LOGFILE
-else
-    echo "`date` :$DEST does not respond" >> $LOGFILE
-fi
+#VAR=`ping -s 1 -c 1 $DEST > /dev/null; echo $?`
+#if [ $VAR -eq 0 ]; then
+#    echo "`date` :backup process initialized" >> $LOGFILE
+#    rsync $OPTS $SRCDIR $DSTDIR
+#    echo "`date` :backup process done" >> $LOGFILE
+#else
+#    echo "`date` :$DEST does not respond" >> $LOGFILE
+#fi
+
+echo "`date` :backup process initialized"
+rsync $OPTS $SRCDIR $DSTDIR
+echo "`date` :backup process done"
+

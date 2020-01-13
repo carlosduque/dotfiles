@@ -1,0 +1,231 @@
+# Basic binds
+super + Escape
+    pkill -USR1 -x sxhkd
+super + Return
+    $TERMINAL
+super + space
+    dmenu_run
+#super + r
+#    $TERMINAL -e $FILE
+super + a
+    $TERMINAL -e ncmpcpp
+super + b
+    $TERMINAL -e zathura
+super + c
+    $TERMINAL -e calcurse
+super + e
+    gvim
+super + f
+    firefox
+super + g
+    gimp
+super + i
+    $TERMINAL -e htop
+super + k
+    $TERMINAL -e vifm
+super + m
+    $TERMINAL -e neomutt
+super + r
+    $TERMINAL -e chez-scheme
+super + alt + r
+    $TERMINAL -e R
+super + s
+    $TERMINAL -e sc-im
+super + t
+    $TERMINAL -e telegram-cli
+super + n
+    wifimgr
+super + w
+    tabbed -c -r 2 surf -pe x https://duckduckgo.com
+
+# bspwm controls
+super + ctrl + 1
+    bspc desktop Oz --focus
+super + ctrl + 2
+    bspc desktop Hyrule --focus
+super + ctrl + 3
+    bspc desktop Winterfell --focus
+super + ctrl + 4
+    bspc desktop Hogwarts --focus
+super + ctrl + 5
+    bspc desktop Narnia --focus
+super + ctrl + 6
+    bspc desktop MiddleEarth --focus
+super + ctrl + 7
+    bspc desktop Earthsea --focus
+super + ctrl + 8
+    bspc desktop Neverland --focus
+super + ctrl + 9
+    bspc desktop Wonderland --focus
+
+super + shift + 1
+    bspc node --to-desktop Oz
+super + shift + 2
+    bspc node --to-desktop Hyrule
+super + shift + 3
+    bspc node --to-desktop Winterfell
+super + shift + 4
+    bspc node --to-desktop Hogwarts
+super + shift + 5
+    bspc node --to-desktop Narnia
+super + shift + 6
+    bspc node --to-desktop MiddleEarth
+super + shift + 7
+    bspc node --to-desktop Earthsea
+super + shift + 8
+    bspc node --to-desktop Neverland
+super + shift + 9
+    bspc node --to-desktop Wonderland
+
+#left=d, down=r, up=t, right=n
+super + ctrl + {d, Left}
+    bspc node prev --focus
+super + ctrl + {r, Down}
+    bspc desktop prev --focus
+super + ctrl + {t, Up}
+    bspc desktop next --focus
+super + ctrl + {n, Right}
+    bspc node next --focus
+
+super + ctrl + space
+    bspc node --state fullscreen
+super + ctrl + l
+    bspc desktop --layout next #monocle|tiled
+super + ctrl + t
+    bspc node --state tiled
+super + ctrl + x
+    bspc node --close
+
+super + ctrl + z
+    bspc node --swap biggest
+super + ctrl + period
+    bspc node --swap last
+super + ctrl + comma
+    bspc node --swap next
+super + ctrl + Escape
+    bspc quit
+super + ctrl + BackSpace
+    bspc wm -r
+
+# Et cetera...
+super + dead_grave
+    dmenuunicode
+#super + Scroll_Lock
+#    killall screenkey || screenkey
+super + Insert
+    showclip
+super + Pause
+    xcqr
+#ctrl + shift + {h,j,k,l}
+#    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+#ctrl + alt + {h,j,k,l}
+#    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+super + alt + Escape
+    prompt "Shutdown computer?" "sudo -A shutdown -h now"
+super + alt + BackSpace
+    prompt "Reboot computer?" "sudo -A reboot"
+#super + x
+#    mpc pause; pauseallmpv; i3lock -e -f -c 1d2021; xset dpms force off
+#XF86Launch1
+#    xset dpms force off
+XF86AudioMute
+    mixer vol 0
+XF86AudioLowerVolume
+    mixer vol -10
+#shift+XF86AudioLowerVolume
+#    lmc down 10
+#control+XF86AudioLowerVolume
+#    lmc down 1
+XF86AudioRaiseVolume
+    mixer vol +10
+#shift+XF86AudioRaiseVolume
+#    lmc up 10
+#control+XF86AudioRaiseVolume
+#    lmc up 1
+#XF86AudioNext
+#    lmc next
+#XF86AudioPlay
+#    lmc toggle
+#XF86AudioPrev
+#    lmc prev
+#XF86AudioStop
+#    lmc toggle
+#XF86MonBrightnessDown
+#    xbacklight -dec 15
+#XF86MonBrightnessUp
+#    xbacklight -inc 15
+
+
+# Recording
+# Take screenshot
+Print
+    maim pic-full-$(date '+%y%m%d-%H%M-%S').png
+## Pick screenshot type
+super + Print
+    maimpick
+## Record audio or video
+#super + Print
+#    dmenurecord
+## kill active recording
+#super + Delete
+#    dmenurecord kill
+#
+## Pause audio
+#super + {_,shift +} p
+#    lmc {toggle,pause}
+## Changes to next/previous tracks
+#super + {comma,period}
+#    lmc {prev,next}
+## Restart track
+#super + shift + less
+#    lmc replay
+## Increase volume
+#super + {equal,plus}
+#    lmc up {5,15}
+## Decrease volume
+#super {_,shift +} + minus
+#    lmc down {5,15}
+## Seek foward in song
+#super + {_,shift +} bracketright
+#    lmc forward {10,120}
+## Seek backward in song
+#super + {_,shift +} bracketleft
+#    lmc back {10,120}
+
+# Function keys
+# Show readme
+#super + F1
+#    groff -mom $HOME/.local/share/larbs/readme.mom -Tpdf | zathura -
+## F2 is restart in i3 right now.
+## Change display
+#super + F3
+#    displayselect
+## Hibernate
+#super + F4
+#    prompt 'Hibernate computer?' 'sudo systemctl suspend'
+# Restart/rescan wifi/eth networks
+super + F5
+    sudo service netif restart
+## Start torrent daemon/open interface
+#super + F6
+#    torwrap
+## toggle torrent daemon
+#super + F7
+#    td-toggle
+## sync email
+#super + F8
+#    mailsync
+## Mount a USB drive or Android device
+#super + F9
+#    dmenumount
+## Unmount a USB drive or Android device
+#super + F10
+#    dmenuumount
+## Search with Duckduckgo
+super + F11
+    ducksearch
+## Network Manager interface
+#super + F12
+#    $TERMINAL -e sudo -A nmtui
+
+

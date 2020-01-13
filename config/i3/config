@@ -325,8 +325,8 @@ for_window [class="Gimp"]                       move workspace $ws6
 #assign [class="Surf"]                      $ws3
 
 # Programs
-exec --no-startup-id musicpd
-exec --no-startup-id dunst
+#exec --no-startup-id musicpd
+#exec --no-startup-id dunst
 
 #exec --no-startup-id compton
 exec --no-startup-id i3-msg 'workspace $ws1; exec i3-sensible-terminal'
