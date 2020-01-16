@@ -13,18 +13,18 @@ super + b
     $TERMINAL -e zathura
 super + c
     $TERMINAL -e calcurse
-super + e
-    gvim
 super + f
     firefox
 super + g
-    gimp
+    gvim
 super + i
     $TERMINAL -e htop
 super + k
     $TERMINAL -e vifm
 super + m
     $TERMINAL -e neomutt
+super + p
+    gimp
 super + r
     $TERMINAL -e chez-scheme
 super + alt + r
@@ -78,21 +78,30 @@ super + shift + 9
     bspc node --to-desktop Wonderland
 
 #left=d, down=r, up=t, right=n
-super + ctrl + {d, Left}
+super + ctrl + d
+    bspc node --focus west
+super + ctrl + r
+    bspc node --focus south
+super + ctrl + t
+    bspc node --focus north
+super + ctrl + n
+    bspc node --focus east
+
+super + ctrl + Left
     bspc node prev --focus
-super + ctrl + {r, Down}
+super + ctrl + Down
     bspc desktop prev --focus
-super + ctrl + {t, Up}
+super + ctrl + Up
     bspc desktop next --focus
-super + ctrl + {n, Right}
+super + ctrl + Right
     bspc node next --focus
 
-super + ctrl + space
-    bspc node --state fullscreen
-super + ctrl + m
+#super + ctrl + space
+#    bspc node --state fullscreen
+super + ctrl + dead_acute
     bspc desktop --layout next #monocle|tiled
-super + ctrl + t
-    bspc node --state tiled
+#super + ctrl + ccedilla
+#    bspc node --state tiled
 super + ctrl + x
     bspc node --close
 
