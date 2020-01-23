@@ -61,7 +61,7 @@ alias urlencode='python -c "import sys, urllib as ul; \ print ul.quote_plus(sys.
 alias urldecode='python -c "import sys, urllib as ul; \ print ul.unquote_plus(sys.argv[1])"'
 
 if [[ "$OSTYPE" = (darwin|freebsd)* ]]; then
-    alias ls='ls -AGF'
+    alias ls='ls -FG'
     alias history='fc -il 1' #to read the $HISTFILE showing the dates
 fi
 
