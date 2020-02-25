@@ -9,8 +9,9 @@ sxhkd -m -1 &
 musicpd &
 dunst &
 #compton &
-##xrandr --output VGA-0 --mode 1024x768
-##xrandr --output VGA-0 --mode 1680x1050
+##xrandr --output VGA-0 --mode 1024x768  #acerone
+##xrandr --output VGA-0 --mode 1680x1050 #imac
+##xrandr --output VGA-0 --mode 1680x964  #dell
 feh --bg-scale ~/.wallpapers/current.jpg
 
 case $session in
