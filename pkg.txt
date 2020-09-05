@@ -6,7 +6,7 @@
 ##  pkg add (if local) / pkg install || make install clean:
 * pkg
 * vim-console
-* rxvt-unicode / st / xterm
+* rxvt-unicode / sterm / xterm
 * sudo
 * git
 * netcat
@@ -39,9 +39,9 @@
 * urlview / urlscan
 * ffmpeg
 * ImageMagick7-nox11 / graphicsmagick
-* vifm / nnn/ mc / py27-ranger / lf-13
+* vifm / nnn/ mc / py27-ranger / lf
 * sc-im (ncurses spreadsheet)
-* sent-1 (presentations)
+* sent (presentations)
 * hs-pandoc-2.7.2_1 (markdown to pdfs)
 * libqrencode
 * maim (screenshot utility)
