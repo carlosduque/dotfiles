@@ -7,57 +7,106 @@ super + space
     dmenu_run
 #super + r
 #    $TERMINAL -e $FILE
-super + a
+ctrl + a
     $TERMINAL -e ncmpcpp
-super + b
+ctrl + b
     $TERMINAL -e zathura
-super + c
+ctrl + c
     $TERMINAL -e calcurse
-super + f
+ctrl + f
     firefox
-super + g
+ctrl + g
     gvim
-super + i
+ctrl + i
     $TERMINAL -e htop
-super + k
+ctrl + k
     $TERMINAL -e vifm
-super + m
+ctrl + m
     $TERMINAL -e neomutt
-super + p
+ctrl + p
     gimp
-super + r
+ctrl + r
     $TERMINAL -e chez-scheme
-super + alt + r
+ctrl + alt + r
     $TERMINAL -e R
-super + s
+ctrl + s
     $TERMINAL -e sc-im
-super + t
+ctrl + t
     $TERMINAL -e telegram-cli
-super + n
+ctrl + n
     wifimgr
-super + w
+ctrl + w
     tabbed -c -r 2 surf -pe x https://duckduckgo.com
 
-# bspwm controls
-super + ctrl + 1
+# desktop:switching:by-numbers
+super + 1
     bspc desktop Oz --focus
-super + ctrl + 2
+super + 2
     bspc desktop Hyrule --focus
-super + ctrl + 3
+super + 3
     bspc desktop Winterfell --focus
-super + ctrl + 4
+super + 4
     bspc desktop Hogwarts --focus
-super + ctrl + 5
+super + 5
     bspc desktop Narnia --focus
-super + ctrl + 6
+super + 6
     bspc desktop MiddleEarth --focus
-super + ctrl + 7
+super + 7
     bspc desktop Earthsea --focus
-super + ctrl + 8
+super + 8
     bspc desktop Neverland --focus
-super + ctrl + 9
+super + 9
     bspc desktop Wonderland --focus
 
+# desktop:switching:by-keys
+# left=d, down=r, up=t, right=n (dvorak)
+super + shift + d
+    bspc desktop prev --focus
+super + shift + r
+    bspc desktop prev --focus
+super + shift + t
+    bspc desktop next --focus
+super + shift + n
+    bspc desktop next --focus
+
+# node:switching:by-keys
+# left=d, down=r, up=t, right=n (dvorak)
+super + d
+    bspc node --focus west
+super + r
+    bspc node --focus south
+super + t
+    bspc node --focus north
+super + n
+    bspc node --focus east
+
+# node:switching:by-arrows
+super + ctrl + Left
+    bspc node prev --focus
+super + ctrl + Down
+    bspc desktop prev --focus
+super + ctrl + Up
+    bspc desktop next --focus
+super + ctrl + Right
+    bspc node next --focus
+
+# node:swapping:by-size
+super + ctrl + plus
+    bspc node --swap biggest
+super + ctrl + minus
+    bspc node --swap smallest
+
+# node:swapping:by-keys (dvorak)
+super + ctrl + g
+    bspc node --swap west
+super + ctrl + c
+    bspc node --swap south
+super + ctrl + h
+    bspc node --swap north
+super + ctrl + l
+    bspc node --swap east
+
+# node:moving:by-numbers
 super + shift + 1
     bspc node --to-desktop Oz
 super + shift + 2
@@ -77,52 +126,34 @@ super + shift + 8
 super + shift + 9
     bspc node --to-desktop Wonderland
 
-#left=d, down=r, up=t, right=n
-super + ctrl + d
-    bspc node --focus west
-super + ctrl + r
-    bspc node --focus south
-super + ctrl + t
-    bspc node --focus north
-super + ctrl + n
-    bspc node --focus east
-
-super + ctrl + Left
-    bspc node prev --focus
-super + ctrl + Down
-    bspc desktop prev --focus
-super + ctrl + Up
-    bspc desktop next --focus
-super + ctrl + Right
-    bspc node next --focus
-
-#super + ctrl + space
-#    bspc node --state fullscreen
-super + ctrl + dead_acute
-    bspc desktop --layout next #monocle|tiled
-#super + ctrl + ccedilla
-#    bspc node --state tiled
-super + ctrl + x
-    bspc node --close
-
-super + ctrl + plus
-    bspc node --swap biggest
-super + ctrl + minus
-    bspc node --swap smallest
-
-super + ctrl + g
-    bspc node --swap west
-super + ctrl + c
-    bspc node --swap south
-super + ctrl + h
-    bspc node --swap north
-super + ctrl + l
-    bspc node --swap east
-
+# wm:controls
 super + ctrl + Escape
     bspc quit
 super + ctrl + BackSpace
     bspc wm -r
+
+super + ctrl + x
+    bspc node --close
+super + ctrl + space
+    bspc node --state fullscreen
+super + ctrl + dead_acute
+    bspc desktop --layout next #monocle|tiled
+#super + ctrl + ccedilla
+#    bspc node --state tiled
+
+# node:resize:by-keys
+#ctrl + shift + {h,j,k,l}
+ctrl + shift + {d,r,t,n}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+#ctrl + alt + {h,j,k,l}
+ctrl + alt + {d,r,t,n}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# system:controls
+super + alt + Escape
+    prompt "Shutdown computer?" "sudo -A shutdown -h now"
+super + alt + BackSpace
+    prompt "Reboot computer?" "sudo -A reboot"
 
 # Et cetera...
 super + dead_grave
@@ -133,14 +164,6 @@ super + Insert
     showclip
 super + Pause
     xcqr
-#ctrl + shift + {h,j,k,l}
-#    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-#ctrl + alt + {h,j,k,l}
-#    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-super + alt + Escape
-    prompt "Shutdown computer?" "sudo -A shutdown -h now"
-super + alt + BackSpace
-    prompt "Reboot computer?" "sudo -A reboot"
 #super + x
 #    mpc pause; pauseallmpv; i3lock -e -f -c 1d2021; xset dpms force off
 #XF86Launch1
