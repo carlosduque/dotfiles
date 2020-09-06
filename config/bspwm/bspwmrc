@@ -19,4 +19,8 @@ bspc rule -a Zathura state=tiled
 #bspc rule -a Screenkey manage=off
 
 bspc rule --add scratchpad sticky=on center=on state=floating hidden=on
-st -c scratchpad -e telegram-cli &
+#st -c scratchpad -e telegram-cli &
+[ "$(ps -x | grep -c 'scratchpad')" -eq "1" ] && st -c scratchpad
+
+bspc rule --add mon sticky=on center=on state=floating hidden=on
+[ "$(ps -x | grep -c 'mon')" -eq "1" ] && st -c mon -e monitor &
