@@ -68,6 +68,7 @@
 * xprop
 * setxkbmap
 * xev
+* xdotool
 * xorg-fonts-truetype
 * proggy_fonts-ttf
 * sourcecodepro-ttf
