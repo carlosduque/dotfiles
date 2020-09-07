@@ -37,8 +37,11 @@ elif [[ "$OSTYPE" == "cygwin" ]]; then
     export CUSTOM_PATH="$CUSTOM_PATH:C:\\WINDOWS:C:\\WINDOWS\\System32"
     export CUSTOM_PATH="$CUSTOM_PATH:C:\\WINDOWS\\System32\\WBEM:C:\\WINDOWS\\SYSTEM32\\WINDOWSPOWERSHELL\\V1.0\\"
     #export CUSTOM_PATH="$CUSTOM_PATH:$WINAPPS_HOME\\HashiCorp\\Vagrant\\bin"
+elif [[ "$OSTYPE" == "freebsd*" ]]; then
+    export JAVA_HOME=/usr/local/openjdk8
+    path+=($JAVA_HOME/bin)
 else
-    #"freebsd"* || "linux-gnu"*
+    #"linux-gnu"*
     export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
     export ANT_HOME=/usr/share/ant
     export MAVEN_HOME=/usr/share/maven
