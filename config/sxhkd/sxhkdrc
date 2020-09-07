@@ -1,6 +1,6 @@
 # wm:controls
 super + Escape
-    pkill -USR1 -x sxhkd
+    pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'reloaded config file'
 super + Return
     $TERMINAL
 super + space
@@ -166,6 +166,10 @@ super + ctrl + n
     wifimgr
 super + ctrl + w
     tabbed -c -r 2 surf -pe x https://duckduckgo.com
+super + ctrl + 0
+    scratchpad
+super + ctrl + 9
+    mon
 
 # Et cetera...
 #super + Scroll_Lock
