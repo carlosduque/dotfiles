@@ -1,6 +1,20 @@
 # Con esta configuracion se asume lo siguiente:
 # * se esta usando mbsync para traer los archivos del servidor
-# * se esta usando mutt solo para ver los correos
+# * se esta usando neo/mutt solo para ver los correos
+# * maildir format, e.g.:
+# .mail
+# ├── gmail
+# │   ├── cur
+# │   ├── new
+# │   └── tmp
+# ├── inbox
+# │   ├── cur
+# │   ├── new
+# │   └── tmp
+# └── read
+#     ├── cur
+#     ├── new
+#     └── tmp
 
 set realname = "Carlos"
 set mbox_type = Maildir
@@ -8,7 +22,7 @@ set mbox_type = Maildir
 # donde se va a guardar todo (maiboxes =XXX) en otras definiciones esta ref se abrevia con '+'
 set folder = $HOME/.mail
 
-# incomming mail: de donde leer el correo (inbox)
+# incomng mail: de donde leer el correo (inbox)
 set spoolfile = +inbox
 
 # donde guardar los leidos ('+' indica lo seteado en 'set folder =')
@@ -29,7 +43,7 @@ set forward_format="Fw: %s"
 
 # setear vim como editor
 # set editor = "vim +':set textwidth=77' +':set wrap ' +\`awk '/^$/ {print i+2; exit} {i++} %s\'` %s'"
-set editor = "vim +':set textwidth=77' +':set wrap' +\`awk '/^$/ {print i+2; exit} {i++}' %s\` %s"
+set editor = "nvim +':set textwidth=77' +':set wrap' +\`awk '/^$/ {print i+2; exit} {i++}' %s\` %s"
 
 #set sendmail = /usr/sbin/sendmail
 set sendmail = /usr/local/bin/msmtp
@@ -44,34 +58,6 @@ set sort = 'reverse-date'
 auto_view  text/html
 set mailcap_path="~/.mailcap"
 
-# General remappings
-bind index,pager i noop
-bind index,pager g noop
-bind index \Cf noop
-bind editor <space> noop
-bind index G last-entry
-bind index gg first-entry
-bind pager j next-line
-bind pager k previous-line
-bind pager gg top
-bind pager G bottom
-bind index d half-down
-bind index u half-up
-bind index D delete-message
-bind index U undelete-message
-bind index F search
-bind index,pager R group-reply
-bind index \031 previous-undeleted # Mouse wheel
-bind index \005 next-undeleted # Mouse wheel
-bind pager \031 previous-line # Mouse wheel
-bind pager \005 next-line # Mouse wheel
-macro index,pager S <sync-mailbox>
-macro index,pager \Cu |urlview\n
-macro index,pager ,, |urlview\n
-
-#Ctrl-R to mark all as read
-macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
-
 # too many email headers make reading a message difficult
 ignore *
 unignore From: To: Cc: Subject: Date: #Only these are shown in the header
@@ -80,9 +66,41 @@ mailboxes =inbox
 mailboxes =gmail
 mailboxes =read
 
-# Asiga la tecla 'g' para ejecutar fetchmail y recolectar el correo
-#macro index g "!fetchmail -k<enter>"  'run fetchmail -k'
-#macro index g "!getmail --dont-delete -n<enter>"  'run getmail'
+# General remappings
+bind editor <space> noop
+
+bind index,pager i noop
+bind index,pager g noop
+bind index,pager R group-reply
+
+bind index \Cf noop
+bind index \031 previous-undeleted # Mouse wheel
+bind index \005 next-undeleted # Mouse wheel
+bind index d half-down
+bind index D delete-message
+bind index F search
+bind index gg first-entry
+bind index G last-entry
+bind index u half-up
+bind index U undelete-message
+
+bind pager \031 previous-line # Mouse wheel
+bind pager \005 next-line # Mouse wheel
+bind pager gg top
+bind pager G bottom
+bind pager j next-line
+bind pager k previous-line
+
+macro index,pager \Cu |urlview\n
+macro index,pager ,, |urlview\n
+macro index,pager S <sync-mailbox>
+
+#Ctrl-R to mark all as read
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+
+# Asigna la tecla 'O' para ejecutar fetchmail y recolectar el correo
+#macro index O "!fetchmail -k<enter>"  'run fetchmail -k'
+#macro index O "!getmail --dont-delete -n<enter>"  'run getmail'
 macro index O "!mbsync --all<enter>"  'run mbsync'
 
 #copy/move dialogs
