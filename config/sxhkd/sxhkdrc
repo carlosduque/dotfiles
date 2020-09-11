@@ -62,14 +62,8 @@ super + alt + 9
 
 # node:switching:by-keys
 # left=d, down=r, up=t, right=n (dvorak)
-super + d
-    bspc node --focus west
-super + r
-    bspc node --focus south
-super + t
-    bspc node --focus north
-super + n
-    bspc node --focus east
+super + {d,r,t,n}
+    bspc node --focus {west,south,north,east}
 
 # node:switching:by-arrows
 super + Left
@@ -82,16 +76,16 @@ super + Right
     bspc node next --focus
 
 # node:resize:by-keys
-super + ctrl + {d,r,t,n}
-    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-super + ctrl + {d,r,t,n}
+super + ctrl + {g,c,h,l}
     bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
+# node:pre-select:by-keys
+super + ctrl + {d,r,t,n}
+    bspc node -p {west,south,north,east}
+
 # node:swapping:by-size
-super + plus
-    bspc node --swap biggest
-super + minus
-    bspc node --swap smallest
+super + {plus, minus}
+    bspc node --swap {biggest,smallest}
 
 # node:swapping:by-keys (dvorak)
 super + g
@@ -133,14 +127,6 @@ super + shift + 8
 super + shift + 9
     bspc node --to-desktop Wonderland
 
-super + ctrl + g
-    bspc node -p west
-super + ctrl + c
-    bspc node -p south
-super + ctrl + h
-    bspc node -p north
-super + ctrl + l
-    bspc node -p east
 
 # app:shortcuts
 #super + r
