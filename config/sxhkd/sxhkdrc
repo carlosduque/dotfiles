@@ -133,6 +133,15 @@ super + shift + 8
 super + shift + 9
     bspc node --to-desktop Wonderland
 
+super + ctrl + g
+    bspc node -p west
+super + ctrl + c
+    bspc node -p south
+super + ctrl + h
+    bspc node -p north
+super + ctrl + l
+    bspc node -p east
+
 # app:shortcuts
 #super + r
 #    $TERMINAL -e $FILE
@@ -140,8 +149,8 @@ super + ctrl + a
     $TERMINAL -e ncmpcpp
 super + ctrl + b
     $TERMINAL -e zathura
-super + ctrl + c
-    $TERMINAL -e calcurse
+#super + ctrl + c
+#    $TERMINAL -e calcurse
 super + ctrl + f
     firefox
 super + ctrl + g
