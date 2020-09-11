@@ -14,14 +14,11 @@ super + ctrl + Escape
     bspc quit
 super + ctrl + BackSpace
     bspc wm -r
-super + ctrl + space
-    bspc node --state fullscreen
-super + ctrl + Return
-    bspc node --state tiled
+
+super + ctrl + {space,Return,ccedilla}
+    bspc node --state {fullscreen,tiled,ccedilla}
 super + ctrl + dead_acute
     bspc desktop --layout next #monocle|tiled
-super + ctrl + ccedilla
-    bspc node --state tiled
 
 # system:controls
 super + alt + Escape
@@ -88,24 +85,12 @@ super + {plus, minus}
     bspc node --swap {biggest,smallest}
 
 # node:swapping:by-keys (dvorak)
-super + g
-    bspc node --swap west
-super + c
-    bspc node --swap south
-super + h
-    bspc node --swap north
-super + l
-    bspc node --swap east
+super + {g,c,h,l}
+    bspc node --swap {west,south,north,east}
 
 # node:moving:by-keys
-super + shift + d
-    bspc node --to-desktop prev
-super + shift + r
-    bspc node --to-desktop newest
-super + shift + t
-    bspc node --to-desktop oldest
-super + shift + n
-    bspc node --to-desktop next
+super + alt + {g,c,h,l}
+    bspc node --to-desktop {prev,newest,oldest,next}
 
 # node:moving:by-numbers
 super + shift + 1
@@ -127,44 +112,26 @@ super + shift + 8
 super + shift + 9
     bspc node --to-desktop Wonderland
 
-
 # app:shortcuts
+# high row
+super + shift + {f,g,c,h,l}
+    $TERMINAL -e {vifm,gimp,calcurse,htop,chez-scheme}
+# mid row
+super + shift + {d,r,t,n,s}
+    $TERMINAL -e {inkscape,R,telegram-cli,neomutt,sc-im}
+# low row
+super + shift + {x,b,m,v,z}
+    $TERMINAL -e {wifimgr,zathura,ncmpcpp,vscode,scratchpad}
+super + shift + w
+    tabbed -c -r 2 surf -pe x https://duckduckgo.com
 #super + r
 #    $TERMINAL -e $FILE
-super + ctrl + a
-    $TERMINAL -e ncmpcpp
-super + ctrl + b
-    $TERMINAL -e zathura
-#super + ctrl + c
-#    $TERMINAL -e calcurse
-super + ctrl + f
-    firefox
-super + ctrl + g
-    gvim
-super + ctrl + i
-    $TERMINAL -e htop
-super + ctrl + k
-    $TERMINAL -e vifm
-super + ctrl + m
-    $TERMINAL -e neomutt
-super + ctrl + p
-    gimp
-super + ctrl + r
-    $TERMINAL -e chez-scheme
-super + ctrl + alt + r
-    $TERMINAL -e R
-super + ctrl + s
-    $TERMINAL -e sc-im
-super + ctrl + t
-    $TERMINAL -e telegram-cli
-super + ctrl + n
-    wifimgr
-super + ctrl + w
-    tabbed -c -r 2 surf -pe x https://duckduckgo.com
-super + ctrl + 0
-    scratchpad
-super + ctrl + 9
-    mon
+#super + shift + g
+#    gvim
+#super + shift + 0
+#    scratchpad
+#super + shift + 9
+#    mon
 
 # Et cetera...
 #super + Scroll_Lock
@@ -276,5 +243,4 @@ super + F11
 ## Network Manager interface
 #super + F12
 #    $TERMINAL -e sudo -A nmtui
-
 
