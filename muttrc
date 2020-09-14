@@ -42,8 +42,7 @@ set include = yes
 set forward_format="Fw: %s"
 
 # setear vim como editor
-# set editor = "vim +':set textwidth=77' +':set wrap ' +\`awk '/^$/ {print i+2; exit} {i++} %s\'` %s'"
-set editor = "nvim +':set textwidth=77' +':set wrap' +\`awk '/^$/ {print i+2; exit} {i++}' %s\` %s"
+set editor = "vim +':set textwidth=77' +':set wrap' +\`awk '/^$/ {print i+2; exit} {i++}' %s\` %s"
 
 #set sendmail = /usr/sbin/sendmail
 set sendmail = /usr/local/bin/msmtp

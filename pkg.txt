@@ -113,3 +113,4 @@
 * gnome3
 * tomcat60
 ** tomcat60_enable="YES"' # to /etc/rc.conf
+xfd

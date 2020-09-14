@@ -47,7 +47,6 @@ source $HOME/bin/tools/ps1.sh lambda
 # aliases
 alias zcfg="vim $HOME/.zshrc"
 alias vcfg="vim $HOME/.vimrc"
-alias vim="nvim"
 
 alias t='tree'
 alias t2='tree -L 2'

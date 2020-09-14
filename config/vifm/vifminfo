@@ -26,393 +26,309 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/usr/home/carlos/data
-	audio
-1
-d/usr/home/carlos/data/audio
-	..
-0
-d/usr/home/carlos/data
-	refs
+d/home/carlos/dev/lab
+	myapp
 2
-d/usr/home/carlos/data/refs
-	..
-0
-d/usr/home/carlos/data
-	video
-3
-d/usr/home/carlos/data/video
-	series
-4
-d/usr/home/carlos/data/video/series
-	..
-0
-d/usr/home/carlos/data/video
-	movies
-2
-d/usr/home/carlos/data/video/movies
-	..
-0
-d/usr/home/carlos/data/video
-	..
-0
-d/usr/home/carlos/data
-	audio
-1
-d/usr/home/carlos/data/audio
-	..
-0
-d/usr/home/carlos/data
-	..
-0
-d/usr/home/carlos
-	bin
-3
-d/usr/home/carlos/bin
-	statusbar
-2
-d/usr/home/carlos/bin/statusbar
-	..
-0
-d/usr/home/carlos/bin
-	..
-0
-d/usr/home/carlos
-	bin
-3
-d/usr/home/carlos/bin
-	..
-0
-d/usr/home/carlos
-	bin
-3
-d/usr/home/carlos/bin
-	..
-0
-d/usr/home/carlos
-	dev
+d/home/carlos/dev/lab/myapp
+	target
 6
-d/usr/home/carlos/dev
-	..
-0
-d/usr/home/carlos
-	Desktop
-1
-d/usr/home/carlos/Desktop
-	..
-0
-d/usr/home/carlos
-	Downloads
+d/home/carlos/dev/lab/myapp/target
+	uberjar
 2
-d/usr/home/carlos/Downloads
+d/home/carlos/dev/lab/myapp/target/uberjar
 	..
 0
-d/usr/home/carlos
-	cfgs
-4
-d/usr/home/carlos/cfgs
+d/home/carlos/dev/lab/myapp/target
 	..
 0
-d/usr/home/carlos
-	data
+d/home/carlos/dev/lab/myapp
+	..
+0
+d/home/carlos/dev/lab
+	myapp
+2
+d/home/carlos/dev
+	src
+3
+d/home/carlos/dev/src
+	..
+0
+d/home/carlos/dev
+	biz
+1
+d/home/carlos/dev/biz
+	atschool
+1
+d/home/carlos/dev/biz/atschool
+	target
 5
-d/usr/home/carlos/data
-	video
-3
-d/usr/home/carlos/data/video
+d/home/carlos/dev/biz/atschool/target
+	uberjar
+1
+d/home/carlos/dev/biz/atschool/target/uberjar
 	..
 0
-d/usr/home/carlos/data
-	..
-0
-d/usr/home/carlos
-	dev
-6
-d/usr/home/carlos/dev
-	..
-0
-d/usr/home/carlos
-	dev-old
-7
-d/usr/home/carlos/dev-old
-	..
-0
-d/usr/home/carlos
-	dev
-6
-d/usr/home/carlos/dev
-	..
-0
-d/usr/home/carlos
-	dev-old
-7
-d/usr/home/carlos/dev-old
-	..
-0
-d/usr/home/carlos
+d/home/carlos/dev/biz/atschool/target
+	uberjar
+1
+d/home/carlos/dev/biz/atschool/target/uberjar
 	tmp
 10
-d/usr/home/carlos/tmp
-	..
-0
-d/usr/home/carlos
-	dotfiles
-8
-d/usr/home/carlos/dotfiles
-	..
-0
-d/usr/home/carlos
-	docs-old
+d/home/carlos/dev/biz/atschool/target/uberjar/tmp
+	atschool
+4
+d/home/carlos/dev/biz/atschool/target/uberjar/tmp/atschool
+	app$app.class
+2
+d/home/carlos/dev/biz/atschool/target/uberjar/tmp
+	META-INF
+1
+d/home/carlos/dev/biz/atschool/target/uberjar/tmp/META-INF
+	wunderboss-languages
 7
-d/usr/home/carlos/docs-old
-	priv
-1
-d/usr/home/carlos/docs-old/priv
-	finanzas
-1
-d/usr/home/carlos/docs-old/priv/finanzas
-	..
-0
-d/usr/home/carlos/docs-old/priv
-	..
-0
-d/usr/home/carlos/docs-old
-	..
-0
-d/usr/home/carlos
-	Desktop
-1
-d/usr/home/carlos/Desktop
-	..
-0
-d/usr/home/carlos
-	Downloads
-2
-d/usr/home/carlos/Downloads
-	..
-0
-d/usr/home/carlos
-	bin
-3
-d/usr/home/carlos/bin
-	..
-0
-d/usr/home/carlos
-	cfgs
+d/home/carlos/dev/biz/atschool/target/uberjar/tmp
+	swagger-ui
 4
-d/usr/home/carlos/cfgs
-	freebsd
+d/home/carlos/dev/biz/atschool/target/uberjar
+	tmp
+10
+d/home/carlos/dev/biz/atschool/target
+	uberjar
 1
-d/usr/home/carlos/cfgs/freebsd
+d/home/carlos/dev/biz/atschool
+	resources
+3
+d/home/carlos/dev/biz/atschool/resources
+	public
+1
+d/home/carlos/dev/biz/atschool/resources/public
 	..
 0
-d/usr/home/carlos/cfgs
+d/home/carlos/dev/biz/atschool/resources
 	..
 0
-d/usr/home/carlos
-	data
-5
-d/usr/home/carlos/data
+d/home/carlos/dev/biz/atschool
 	..
 0
-d/usr/home/carlos
+d/home/carlos/dev/biz
+	atschool
+1
+d/home/carlos/dev/biz/atschool
 	dev
-6
-d/usr/home/carlos/dev
+1
+d/home/carlos/dev/biz/atschool/dev
+	cljs
+1
+d/home/carlos/dev/biz/atschool/dev/cljs
 	..
 0
-d/usr/home/carlos
-	go
-8
-d/usr/home/carlos/go
+d/home/carlos/dev/biz/atschool/dev
+	..
+0
+d/home/carlos/dev/biz/atschool
+	resources
+3
+d/home/carlos/dev/biz/atschool/resources
+	public
+1
+d/home/carlos/dev/biz/atschool/resources/public
+	js
+1
+d/home/carlos/dev/biz/atschool/resources/public/js
+	..
+0
+d/home/carlos/dev/biz/atschool/resources/public
+	..
+0
+d/home/carlos/dev/biz/atschool/resources
+	..
+0
+d/home/carlos/dev/biz/atschool
 	src
-1
-d/usr/home/carlos/go/src
-	..
-0
-d/usr/home/carlos/go
-	..
-0
-d/usr/home/carlos
-	tmp
-9
-d/usr/home/carlos/tmp
-	..
-0
-d/usr/home/carlos
-	tmp
-9
-d/usr/home/carlos/tmp
-	..
-0
-d/usr/home/carlos
-	go
-8
-d/usr/home/carlos/go
-	..
-0
-d/usr/home/carlos
-	data
-5
-d/usr/home/carlos/data
-	..
-0
-d/usr/home/carlos
-	data
-5
-d/usr/home/carlos/data
-	audio
-1
-d/usr/home/carlos/data/audio
-	music
-1
-d/usr/home/carlos/data/audio/music
-	..
-0
-d/usr/home/carlos/data/audio
-	..
-0
-d/usr/home/carlos/data
-	video
-3
-d/usr/home/carlos/data/video
-	talks
-5
-d/usr/home/carlos/data/video/talks
-	..
-0
-d/usr/home/carlos/data/video
-	series
 4
-d/usr/home/carlos/data/video/series
-	..
-0
-d/usr/home/carlos/data/video
-	personal
+d/home/carlos/dev/biz/atschool/src
+	scss
 3
-d/usr/home/carlos/data/video/personal
+d/home/carlos/dev/biz/atschool/src/scss
 	..
 0
-d/usr/home/carlos/data/video
-	movies
+d/home/carlos/dev/biz/atschool/src
+	cljs
 2
-d/usr/home/carlos/data/video/movies
-	..
-0
-d/usr/home/carlos/data/video
-	concerts
+d/home/carlos/dev/biz/atschool/src/cljs
+	atschool
 1
-d/usr/home/carlos/data/video/concerts
+d/home/carlos/dev/biz/atschool/src/cljs/atschool
 	..
 0
-d/usr/home/carlos/data/video
+d/home/carlos/dev/biz/atschool/src/cljs
 	..
 0
-d/usr/home/carlos/data
+d/home/carlos/dev/biz/atschool/src
+	clj
+1
+d/home/carlos/dev/biz/atschool/src/clj
+	atschool
+1
+d/home/carlos/dev/biz/atschool/src/clj/atschool
 	..
 0
-d/usr/home/carlos
+d/home/carlos/dev/biz/atschool/src/clj
 	..
 0
-d/usr/home
+d/home/carlos/dev/biz/atschool/src
 	..
 0
-d/usr
-	..
-0
-d/
+d/home/carlos/dev/biz/atschool
 	dev
+1
+d/home/carlos/dev/biz/atschool/dev
+	cljs
+1
+d/home/carlos/dev/biz/atschool/dev/cljs
+	..
+0
+d/home/carlos/dev/biz/atschool/dev
+	..
+0
+d/home/carlos/dev/biz/atschool
+	node_modules
 2
-d/dev
-	bpsm0
-17
+d/home/carlos/dev/biz/atschool/node_modules
+	..
+0
+d/home/carlos/dev/biz/atschool
+	resources
+3
+d/home/carlos/dev/biz/atschool/resources
+	public
+1
+d/home/carlos/dev/biz/atschool/resources/public
+	js
+1
+d/home/carlos/dev/biz/atschool/resources/public/js
+	..
+0
+d/home/carlos/dev/biz/atschool/resources/public
+	..
+0
+d/home/carlos/dev/biz/atschool/resources
+	..
+0
+d/home/carlos/dev/biz/atschool
+	target
+5
+d/home/carlos/dev/biz/atschool/target
+	uberjar
+1
+d/home/carlos/dev/biz/atschool/target/uberjar
+	classes
+1
+d/home/carlos/dev/biz/atschool/target/uberjar/classes
+	..
+0
+d/home/carlos/dev/biz/atschool/target/uberjar
+	stale
+2
+d/home/carlos/dev/biz/atschool/target/uberjar/stale
+	..
+0
+d/home/carlos/dev/biz/atschool/target/uberjar
+	classes
+1
+d/home/carlos/dev/biz/atschool/target/uberjar/classes
+	atschool
+2
+d/home/carlos/dev/biz/atschool/target/uberjar/classes/atschool
+	..
+0
+d/home/carlos/dev/biz/atschool/target/uberjar/classes
+	clojure
+3
+d/home/carlos/dev/biz/atschool/target/uberjar/classes/clojure
+	java
+1
+d/home/carlos/dev/biz/atschool/target/uberjar/classes/clojure/java
+	..
+0
+d/home/carlos/dev/biz/atschool/target/uberjar/classes/clojure
+	..
+0
+d/home/carlos/dev/biz/atschool/target/uberjar/classes
+	ring
+6
+d/home/carlos/dev/biz/atschool/target/uberjar/classes/ring
+	middleware
+1
+d/home/carlos/dev/biz/atschool/target/uberjar/classes/ring/middleware
+	..
+0
+d/home/carlos/dev/biz/atschool/target/uberjar/classes/ring
+	util
+2
+d/home/carlos/dev/biz/atschool/target/uberjar/classes/ring/util
+	..
+0
+d/home/carlos/dev/biz/atschool/target/uberjar/classes/ring
+	..
+0
+d/home/carlos/dev/biz/atschool/target/uberjar/classes
+	META-INF
+1
+d/home/carlos/dev/biz/atschool/target/uberjar/classes/META-INF
+	..
+0
+d/home/carlos/dev/biz/atschool/target/uberjar/classes
+	..
+0
+d/home/carlos/dev/biz/atschool/target/uberjar
+	..
+0
+d/home/carlos/dev/biz/atschool/target
+	..
+0
+d/home/carlos/dev/biz/atschool
+	tmp
+6
+d/home/carlos/dev/biz/atschool/tmp
+	..
+0
+d/home/carlos/dev/biz/atschool
+	dev
+1
+d/home/carlos/dev/biz/atschool/dev
+	cljs
+1
+d/home/carlos/dev/biz/atschool/dev/cljs
+	..
+0
+d/home/carlos/dev/biz/atschool/dev
+	..
+0
+d/home/carlos/dev/biz/atschool
+	..
+0
+d/home/carlos/dev/biz
+	atschool
+1
+d/home/carlos/dev/biz/atschool
+	resources
+3
+d/home/carlos/dev/biz/atschool/resources
+	public
+1
+d/home/carlos/dev/biz/atschool/resources/public
+	..
+0
+d/home/carlos/dev/biz/atschool/resources
+	..
+0
+d/home/carlos/dev/biz/atschool
+	project.clj
+14
 d
 
 # Right window history (oldest to newest):
-D/dev
-	..
-0
-D/
-	home
-4
-D/home
-	carlos
-1
-D/home/carlos
-	dev
-6
-D/home/carlos/dev
-	..
-0
-D/home/carlos
-	tmp
-11
-D/home/carlos/tmp
-	..
-0
-D/home/carlos
-	data
-5
-D/home/carlos/data
-	refs
-2
-D/home/carlos/data/refs
-	unclassified
-7
-D/home/carlos/data/refs/unclassified
-	magazines
-1
-D/home/carlos/data/refs/unclassified/magazines
-	docs-old
-1
-D/home/carlos/data/refs/unclassified/magazines/docs-old
-	..
-0
-D/home/carlos/data/refs/unclassified/magazines
-	..
-0
-D/home/carlos/data/refs/unclassified
-	magazines
-1
-D/home/carlos/data/refs/unclassified/magazines
-	..
-0
-D/home/carlos/data/refs/unclassified
-	magazines
-1
-D/home/carlos/data/refs/unclassified/magazines
-	..
-0
-D/home/carlos/data/refs/unclassified
-	magazines
-1
-D/home/carlos/data/refs/unclassified/magazines
-	..
-0
-D/home/carlos/data/refs/unclassified
-	magazines
-1
-D/home/carlos/data/refs/unclassified/magazines
-	..
-0
-D/home/carlos/data/refs/unclassified
-	magazines
-1
-D/home/carlos/data/refs/unclassified/magazines
-	..
-0
-D/home/carlos/data/refs/unclassified
-	..
-0
-D/home/carlos/data/refs
-	unclassified
-7
-D/home/carlos/data/refs/unclassified
-	..
-0
-D/home/carlos/data/refs
-	unclassified
-7
 D/home/carlos/data/refs/unclassified
 	magazines
 1
@@ -627,8 +543,92 @@ D/home/carlos/dotfiles/config/vifm
 	colors
 1
 D/home/carlos/dotfiles/config/vifm/colors
-	Default.vifm
+	..
+0
+D/home/carlos/dotfiles/config/vifm
+	..
+0
+D/home/carlos/dotfiles/config
+	..
+0
+D/home/carlos/dotfiles
+	vim
+10
+D/home/carlos/dotfiles/vim
+	colors
+3
+D/home/carlos/dotfiles/vim/colors
+	..
+0
+D/home/carlos/dotfiles/vim
+	..
+0
+D/home/carlos/dotfiles
+	config
+2
+D/home/carlos/dotfiles/config
+	vifm
+15
+D/home/carlos/dotfiles/config/vifm
+	colors
 1
+D/home/carlos/dotfiles/config/vifm/colors
+	..
+0
+D/home/carlos/dotfiles/config/vifm
+	colors
+1
+D/home/carlos/dotfiles/config/vifm/colors
+	..
+0
+D/home/carlos/dotfiles/config/vifm
+	..
+0
+D/home/carlos/dotfiles/config
+	..
+0
+D/home/carlos/dotfiles
+	..
+0
+D/home/carlos
+	..
+0
+D/home
+	carlos
+1
+D/home/carlos
+	dev
+4
+D/home/carlos/dev
+	lab
+2
+D/home/carlos/dev/lab
+	myapp
+2
+D/home/carlos/dev/lab/myapp
+	project.clj
+16
+D/home/carlos/dev
+	..
+0
+D/home/carlos
+	dev
+4
+D/home/carlos/dev
+	src
+2
+D/home/carlos/dev/src
+	lab
+1
+D/home/carlos/dev/src/lab
+	lumishadowspa
+2
+D/home/carlos/dev/src/lab/lumishadowspa
+	log
+2
+D/home/carlos/dev/src/lab/lumishadowspa/log
+	..
+0
 D
 
 # Command line history (oldest to newest):
@@ -645,6 +645,7 @@ D
 :q
 
 # Search history (oldest to newest):
+/kkkjjjj
 
 # Prompt history (oldest to newest):
 pbeliever_-_imagine_dragons.mp3
