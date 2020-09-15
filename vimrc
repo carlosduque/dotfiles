@@ -8,7 +8,9 @@ call pathogen#helptags()          "generate helptags for everything in ‘runtim
 
 " Color scheme ---{{{
 set background=dark
-colorscheme xibalba
+"colorscheme xibalba
+colorscheme iceberg
+
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
