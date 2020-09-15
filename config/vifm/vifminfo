@@ -17,7 +17,7 @@
 # Bookmarks:
 
 # TUI:
-ar
+al
 q0
 v2
 ov
@@ -324,8 +324,8 @@ d/home/carlos/dev/biz/atschool/resources
 	..
 0
 d/home/carlos/dev/biz/atschool
-	project.clj
-14
+	Dockerfile
+6
 d
 
 # Right window history (oldest to newest):
@@ -662,7 +662,7 @@ pmycustom.vifm
 # Local filter history (oldest to newest):
 
 # Registers:
-""/home/carlos/dotfiles/config/vifm/colors/Default.vifm
+""/home/carlos/.local/share/vifm/Trash/000_---
 
 # Directory stack (oldest to newest):
 
@@ -713,6 +713,8 @@ t/home/carlos/.local/share/vifm/Trash/000_ezjail-admin.8.pdf
 	/usr/home/carlos/ezjail-admin.8.pdf
 t/home/carlos/.local/share/vifm/Trash/000_ezjail.7.pdf
 	/usr/home/carlos/ezjail.7.pdf
+t/home/carlos/.local/share/vifm/Trash/000_---
+	/home/carlos/dev/biz/atschool/---
 
 # State:
 f
