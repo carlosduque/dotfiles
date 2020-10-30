@@ -26,45 +26,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/carlos/dev/lab
-	myapp
-2
-d/home/carlos/dev/lab/myapp
-	target
-6
-d/home/carlos/dev/lab/myapp/target
-	uberjar
-2
-d/home/carlos/dev/lab/myapp/target/uberjar
-	..
-0
-d/home/carlos/dev/lab/myapp/target
-	..
-0
-d/home/carlos/dev/lab/myapp
-	..
-0
-d/home/carlos/dev/lab
-	myapp
-2
-d/home/carlos/dev
-	src
-3
-d/home/carlos/dev/src
-	..
-0
-d/home/carlos/dev
-	biz
-1
-d/home/carlos/dev/biz
-	atschool
-1
-d/home/carlos/dev/biz/atschool
-	target
-5
-d/home/carlos/dev/biz/atschool/target
-	uberjar
-1
 d/home/carlos/dev/biz/atschool/target/uberjar
 	..
 0
@@ -324,62 +285,50 @@ d/home/carlos/dev/biz/atschool/resources
 	..
 0
 d/home/carlos/dev/biz/atschool
-	Dockerfile
+	..
+0
+d/home/carlos/dev/biz
+	..
+0
+d/home/carlos/dev
+	..
+0
+d/home/carlos
+	dotfiles
+5
+d/home/carlos/dotfiles
+	config
+2
+d/home/carlos/dotfiles/config
+	sxhkd
+13
+d/home/carlos/dotfiles/config/sxhkd
+	..
+0
+d/home/carlos/dotfiles/config
+	..
+0
+d/home/carlos/dotfiles
+	..
+0
+d/home/carlos
+	tmp
 6
+d/home/carlos/tmp
+	..
+0
+d/home/carlos
+	cfgs
+3
+d/home/carlos/cfgs
+	..
+0
+d/home/carlos
+	clojure-programming.pdf
+7
 d
 
 # Right window history (oldest to newest):
-D/home/carlos/data/refs/unclassified
-	magazines
-1
-D/home/carlos/data/refs/unclassified/magazines
-	..
-0
-D/home/carlos/data/refs/unclassified
-	..
-0
-D/home/carlos/data/refs
-	unclassified
-7
-D/home/carlos/data/refs/unclassified
-	..
-0
-D/home/carlos/data/refs
-	science
-6
-D/home/carlos/data/refs/science
-	..
-0
-D/home/carlos/data/refs
-	..
-0
-D/home/carlos/data
-	..
-0
-D/home/carlos
-	dotfiles
-7
-D/home/carlos/dotfiles
-	config
-1
-D/home/carlos/dotfiles/config
-	vifm
-11
-D/home/carlos/dotfiles/config/vifm
-	colors
-1
-D/home/carlos/dotfiles/config/vifm/colors
-	..
-0
-D/home/carlos/dotfiles/config/vifm
-	scripts
-2
-D/home/carlos/dotfiles/config/vifm/scripts
-	..
-0
-D/home/carlos/dotfiles/config/vifm
-	colors
-1
 D/home/carlos/dotfiles/config/vifm/colors
 	..
 0
@@ -629,20 +578,75 @@ D/home/carlos/dev/src/lab/lumishadowspa
 D/home/carlos/dev/src/lab/lumishadowspa/log
 	..
 0
+D/home/carlos/dev/src/lab/lumishadowspa
+	..
+0
+D/home/carlos/dev/src/lab
+	..
+0
+D/home/carlos/dev/src
+	..
+0
+D/home/carlos/dev
+	src
+2
+D/home/carlos/dev/src
+	lab
+1
+D/home/carlos/dev/src/lab
+	..
+0
+D/home/carlos/dev/src
+	poc-clj
+2
+D/home/carlos/dev/src/poc-clj
+	..
+0
+D/home/carlos/dev/src
+	lab
+1
+D/home/carlos/dev/src/lab
+	..
+0
+D/home/carlos/dev/src
+	..
+0
+D/home/carlos/dev
+	biz
+1
+D/home/carlos/dev/biz
+	atschool
+1
+D/home/carlos/dev/biz/atschool
+	..
+0
+D/home/carlos/dev/biz
+	..
+0
+D/home/carlos/dev
+	..
+0
+D/home/carlos
+	surf.core
+8
 D
 
 # Command line history (oldest to newest):
 :mkdir unclassified
 :mkdir magazines
-:colorscheme solarized-dark
-:colorscheme near-default
-:colorscheme lucius
-:colorscheme ph
-:colorscheme zenburn_1
-:colorscheme darkdesert
-:colorscheme mycustom
+:colorscheme mycustom.vifm
 :colorscheme iceberg
 :q
+:colorscheme vividchalk
+:colorscheme mycustom
+:colorscheme near-default
+:colorscheme Default
+:colorscheme solarized-dark
+:colorscheme zenburn_1
+:colorscheme ph
+:colorscheme lucius
+:colorscheme desert
+:colorscheme darkdesert
 
 # Search history (oldest to newest):
 /kkkjjjj

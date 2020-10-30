@@ -42,3 +42,5 @@
   lg = log --oneline --decorate --graph
   lq = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
+[pull]
+	rebase = true
