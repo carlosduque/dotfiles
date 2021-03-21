@@ -1,0 +1,126 @@
+TAG,APP,CATEGORY,DESCRIPTION
+R,vim-tiny,editors,
+R,sterm,terminal,
+R,pfetch,sysutils,shows system information
+O,rxvt-unicode,terminal,
+O,xterm,terminal,
+R,sudo,sec,
+R,git,dev,
+R,netcat,net,
+R,curl,net,
+R,bc,math,
+R,nmap,sec,
+R,tcpdump,net,
+R,rsync,net,
+R,wget,ftp,
+R,tmux,sysutils ,
+R,lsof,sysutils ,
+R,tree,sysutils,
+R,htop,sysutils,
+R,gnupg,sec,
+R,w3m,www,
+R,ca_root_nss,sec,
+R,the_silver_searcher,textproc,
+R,openjdk11,dev,
+R,clojure,dev,
+R,zsh,shells,
+R,bash,shells,
+o,emacs-nox,editor,
+U,exfat-utils,sysutils,work with ExFAT filesystems
+o,minidlna,sysutils,Media server
+U,unrar,sysutils,
+U,abook,mail,
+U,neomutt,mail,
+U,isync,mail,to get mbsync
+U,msmtp,mail,
+X,surf-browser,www,
+O,iridium,www,
+O,midori,www,
+D,firefox,www,
+U,mpv,multimedia,video player
+X,sxiv,graphics,image viewer
+U,urlview,textproc,
+O,urlscan,textproc,
+U,mediainfo,multimedia,show info for media
+U,ffmpeg,multimedia,
+U,ImageMagick7-nox11,graphics,
+O,GraphicsMagick,graphics,
+U,vifm,filemanager,
+o,nnn,filemanager,
+U,mc,filemanager,
+o,py37-ranger,filemanager,
+U,lf,filemanager,
+U,sc-im,office,ncurses spreadsheet
+U,sent,office,presentations
+o,hs-pandoc-2.11.4,textproc,markdown to pdfs
+X,libqrencode,graphics,QR code creator
+X,maim,graphics,screenshot utility
+U,calcurse,office,calendar and scheduling
+U,R,math,statistical analysis
+U,gnuchess,games,
+o,sdcv,edu,dictionary client for stardict
+U,ledger,office,
+U,irssi,net,IM chat
+U,telegram,net,
+U,youtube_dl,www,
+U,fzf,textproc,fuzzy search
+X,tabbed,utils,
+o,newsboat,news,
+U,unison-nox11,net,
+U,xmlstarlet,textproc,tool for working with xml
+U,jq,textproc,tool for working with json
+U,figlet,games,
+U,fortune,games,
+U,cowsay,games,
+o,musicpd,audio,
+U,musicpc,audio,
+U,ncmpcpp,audio,
+X,gmpc,audio,
+X,xorg-minimal,x11,
+X,xrandr,x11,
+O,arandr,x11,
+X,xrdb,x11,
+X,xprop,x11,
+X,setxkbmap,x11,
+X,xev,x11,
+X,xdotool,x11,
+O,slock,x11,
+X,xorg-fonts-truetype,fonts,
+X,proggy_fonts-ttf,fonts,
+X,sourcecodepro-ttf,fonts,
+X,dina,fonts,
+X,font-awesome,fonts,
+X,firacode,fonts,
+X,xfontsel,x11,
+O,fluxbox,wm,
+X,bspwm,wm,
+X,xclip,x11,
+O,i3,x11,
+O,i3-gaps,x11,
+O,i3blocks,x11,
+O,i3status,x11,
+O,i3lock,x11,
+X,dmenu,x11,
+X,feh,graphics,
+X,dunst,sysutils,notification daemon
+X,zathura,graphics,
+X,zahura-pdf-poppler,graphics,
+O,mupdf,graphics,
+O,wifimgr,net,wifi gtk2
+X,xmodmap,x11,
+X,vim,editors,
+X,compton,x11,window composition: transparency
+O,xfd,x11,font display
+O,linuxlibertine,fonts,
+X,inconsolata-ttf,fonts,good for emojis
+D,slim,x11,
+D,pcmanfm,x11,
+o,postgresql96-server,db,
+U,postgresql96-client,db,
+o,node,dev,
+o,npm,dev,
+X,conky,sysutils,
+O,idesk,x11,
+D,cinnamon,wm,
+D,mate,wm,
+o,tomcat60,www,
