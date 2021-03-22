@@ -1,21 +1,7 @@
 #!/bin/sh
 
-
 error() {
   clear; printf "ERROR:\\n%s\\n" "$1" >&2; exit 1;
-}
-
-welcome() {
-  dialog --title "Bienvenido!" --msgbox "Este script te permitira inicializar un sistema FreeBSD!\\n\\nEsta basado en los gustos y preferencias del autor y esto significa muchas opiniones personales en la configuracion.\\n\\n-Carlos" 10 60
-  dialog --colors --title "Nota Importante!" --yes-label "OK, Sigamos!" --no-label "No, hasta aqui llego..." --yesno "Asegurate de que tu usuario pueda instalar paquetes en el sistema usando \"sudo\". Las aplicaciones mas llamativas de este sistema son: 1) Servidor X. 2) bspwm como window manager. 3) Aplicaciones de uso desde la terminal \\n\\nEste script esta basado en las utilidades de Luke Smith (LARBS) para sistemas Arch Linux." 8 70
-}
-
-preinstall_msg() { \
-  dialog --title "Empezamos?" --yes-label "Si!" --no-label "No, mejor no!" --yesno "Yo me encargo del resto asi que puedes sentarte, disfrutar de un buen cafe y relajarte mientras instalo y configuro todo.\\n\\nLlevara algo de tiempo dependiendo de tu velocidad de conexion. Ahora solo tienes que presionar <Si!> y me pongo a trabajar!" 13 60 || { clear; exit 1; }
-}
-
-finalize(){
-  dialog --title "Hecho!" --msgbox "Felicidades! No parece haber fallado nada asi que el script finalizo exitosamente y todos los paquetes y archivos de configuracion deben estar en su lugar!\\n\\nPara arrancar el ambiente grafico ejecuta el comando \"xinit\".\\n\\n--Carlos" 12 80
 }
 
 create_links_msg() { \
@@ -90,22 +76,8 @@ create_links() {
   ln -sf $PWD/config/zathura $HOME/.config/zathura
 }
 
-# Welcome 
-welcome || error "User exited."
-
-#role_msg || error "User exited."
-
-# Last chance for user to back out before install.
-preinstall_msg || error "User exited."
-
-dialog --title "Instalacion" --infobox "Sincronizando la hora del sistema, por si las moscas..." 4 70
-sudo ntpdate 0.us.pool.ntp.org >/dev/null 2>&1
-
 # Create soft links to config files in dotfiles dir
 create_links_msg || error "User exited."
 
 create_links
-
-# Last message! Install complete!
-finalize
 

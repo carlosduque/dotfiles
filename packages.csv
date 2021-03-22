@@ -1,29 +1,28 @@
-TAG,APP,CATEGORY,DESCRIPTION
-R,vim-tiny,editors,
-R,sterm,terminal,
+R,vim-tiny,editors,small editor for everyday work
+R,sterm,terminal,my preferred terminal
 R,pfetch,sysutils,shows system information
 O,rxvt-unicode,terminal,
 O,xterm,terminal,
 R,sudo,sec,
 R,git,dev,
-R,netcat,net,
-R,curl,net,
-R,bc,math,
-R,nmap,sec,
+R,netcat,net,swiss army knife for network things
+R,curl,net,work with things on the net
+R,bc,math,small calculator
+R,nmap,sec,probe open ports
 R,tcpdump,net,
 R,rsync,net,
 R,wget,ftp,
-R,tmux,sysutils ,
-R,lsof,sysutils ,
+R,tmux,sysutils,multiple panes in the terminal
+R,lsof,sysutils,
 R,tree,sysutils,
 R,htop,sysutils,
 R,gnupg,sec,
-R,w3m,www,
+R,w3m,www,terminal-based web browser
 R,ca_root_nss,sec,
 R,the_silver_searcher,textproc,
 R,openjdk11,dev,
 R,clojure,dev,
-R,zsh,shells,
+R,zsh,shells,superior shell
 R,bash,shells,
 o,emacs-nox,editor,
 U,exfat-utils,sysutils,work with ExFAT filesystems
