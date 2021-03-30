@@ -67,6 +67,7 @@ create_links() {
   ln -svhf $(readlink -f config/i3blocks) $HOME/.config/i3blocks
   ln -svhf $(readlink -f config/lf) $HOME/.config/lf
   ln -svhf $(readlink -f config/mc) $HOME/.config/mc
+  ln -svhf $(readlink -f config/sc-im) $HOME/.config/sc-im
   ln -svhf $(readlink -f config/minidlna) $HOME/.config/minidlna
   ln -svhf $(readlink -f config/mpv) $HOME/.config/mpv
   ln -svhf $(readlink -f config/ncmpcpp) $HOME/.config/ncmpcpp
