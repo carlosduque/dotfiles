@@ -4,7 +4,8 @@ R,pfetch,sysutils,shows system information
 O,rxvt-unicode,terminal,
 O,xterm,terminal,
 R,sudo,sec,
-R,git,dev,
+R,git-tiny,dev,
+U,git,dev,
 R,netcat,net,swiss army knife for network things
 R,curl,net,work with things on the net
 R,bc,math,small calculator
@@ -20,8 +21,8 @@ R,gnupg,sec,
 R,w3m,www,terminal-based web browser
 R,ca_root_nss,sec,
 R,the_silver_searcher,textproc,
-R,openjdk11,dev,
-R,clojure,dev,
+U,openjdk8,dev,
+U,clojure,dev,
 R,zsh,shells,superior shell
 R,bash,shells,
 o,emacs-nox,editor,
@@ -35,8 +36,7 @@ U,msmtp,mail,
 X,surf-browser,www,
 O,iridium,www,
 O,midori,www,
-D,firefox,www,
-U,mpv,multimedia,video player
+X,mpv,multimedia,video player
 X,sxiv,graphics,image viewer
 U,urlview,textproc,
 O,urlscan,textproc,
@@ -46,11 +46,10 @@ U,ImageMagick7-nox11,graphics,
 O,GraphicsMagick,graphics,
 U,vifm,filemanager,
 o,nnn,filemanager,
-U,mc,filemanager,
-o,py37-ranger,filemanager,
-U,lf,filemanager,
-U,sc-im,office,ncurses spreadsheet
-U,sent,office,presentations
+R,mc,filemanager,
+R,lf,filemanager,
+R,sc-im,office,ncurses spreadsheet
+X,sent,office,presentations
 o,hs-pandoc-2.11.4,textproc,markdown to pdfs
 X,libqrencode,graphics,QR code creator
 X,maim,graphics,screenshot utility
@@ -64,13 +63,13 @@ U,telegram,net,
 U,youtube_dl,www,
 U,fzf,textproc,fuzzy search
 X,tabbed,utils,
-o,newsboat,news,
-U,unison-nox11,net,
-U,xmlstarlet,textproc,tool for working with xml
-U,jq,textproc,tool for working with json
+U,newsboat,news,
+o,unison-nox11,net,
+R,xmlstarlet,textproc,tool for working with xml
+R,jq,textproc,tool for working with json
 U,figlet,games,
 U,fortune,games,
-U,cowsay,games,
+R,cowsay,games,
 o,musicpd,audio,
 U,musicpc,audio,
 U,ncmpcpp,audio,

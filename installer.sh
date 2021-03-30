@@ -18,11 +18,13 @@ error() {
 
 welcome() {
   dialog --title "Bienvenido!" --msgbox "Este script te permitira inicializar un sistema FreeBSD!\\n\\nEsta basado en los gustos y preferencias del autor. \\n\\n-Carlos" 10 60
-  dialog --colors --title "Nota Importante!" --yes-label "OK, Sigamos!" --no-label "No, hasta aqui llego..." --yesno "Asegurate de que tu usuario pueda instalar paquetes en el sistema usando \"sudo\". \\n\\nEste script esta basado en las utilidades de Luke Smith (LARBS) para sistemas Arch Linux." 8 70
+  dialog --colors --title "Nota Importante!" --yes-label "OK, Sigamos!" --no-label "No, hasta aqui llego..." --yesno
+  "Asegurate de que tu usuario pueda instalar paquetes en el sistema usando \"sudo\" sin necesidad de introducir tu
+  password (passwordless). \\n\\nEste script esta basado en las utilidades de Luke Smith (LARBS) para sistemas Arch Linux." 8 70
 }
 
 preinstall_msg() { \
-  dialog --title "Empezamos?" --yes-label "Si!" --no-label "No, mejor no!" --yesno "Yo me encargo del resto asi que puedes sentarte, disfrutar de un buen cafe y relajarte mientras instalo y configuro todo.\\n\\nLlevara algo de tiempo dependiendo de tu velocidad de conexion. Ahora solo tienes que presionar <Si!> y me pongo a trabajar!" 13 60 || { clear; exit 1; }
+  dialog --title "Empezamos?" --yes-label "Si!" --no-label "No, mejor no!" --yesno "Yo me encargo del resto asi que puedes sentarte, disfrutar de un buen cafe y relajarte mientras instalo todo.\\n\\nLlevara algo de tiempo dependiendo de tu velocidad de conexion. Ahora solo tienes que presionar <Si!> y me pongo a trabajar!" 13 60 || { clear; exit 1; }
 }
 
 role_msg() {
@@ -43,7 +45,7 @@ main_install() {
 }
 
 install_required() {
-  for x in vim-tidy pfetch curl git ntp zsh; do
+  for x in vim-tiny git-tiny; do
     dialog --title "..:: Instalacion ::.." --infobox "Instalando \`$x\` que es requerido para instalar el resto." 5 70
     install_pkg "$x"
   done
@@ -67,7 +69,9 @@ install_from_list() { \
   done < /tmp/progs.csv ;}
 
 finalize() {
-  dialog --title "..:: Hecho! ::.." --msgbox "Felicidades! No parece haber fallado nada asi que el script finalizo exitosamente y todos los paquetes y archivos de configuracion deben estar en su lugar!\\n\\nPara arrancar el ambiente grafico ejecuta el comando \"xinit\".\\n\\n--Carlos" 12 80
+  dialog --title "..:: Hecho! ::.." --msgbox "Felicidades! El script finalizo exitosamente y todos los paquetes y
+  archivos de configuracion deben estar en su lugar!\\n\\nSi instalaste X.org para arrancar el ambiente grafico ejecuta
+  el comando \"xinit\".\\n\\nPara crear links a la configuracion corre \`linker.sh\`!\\n\\n--Carlos" 12 80
 }
 
 tuning_it() {
