@@ -1,74 +1,83 @@
 #usage: mbsync --verbose --all|<channel>
+#
+#NOTES: or to use encrypted passwords: gpg --gen-key && gpg --encrypt -o ~/.msmtp-<account>.gpg -r <keyring id> -
+#PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.mail-user@domain.xyz.gpg"
 
-IMAPAccount gmail
+## carlosduque.hn@gmail.com
+IMAPAccount carlosduque.hn@gmail.com-account
   User carlosduque.hn@gmail.com
-  #Pass yourpassword
-  # or to use encrypted passwords: gpg --gen-key && gpg --encrypt -o ~/.msmtp-<account>.gpg -r <keyring id> -
-  PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.msmtp-gmail.gpg"
+  Pass s3cr3t
   Host imap.gmail.com
+  SSLType STARTTLS
+  SSLVersions TLSv1.2
+  #CertificateFile /usr/local/etc/openssl/cert.pem
+  CertificateFile /usr/local/etc/ssl/cert.pem
+
+IMAPStore carlosduque.hn@gmail.com-remote
+  Account carlosduque.hn@gmail.com-account
+
+MaildirStore carlosduque.hn@gmail.com-local
+    Path  ~/.mail/carlosduque.hn@gmail.com/
+    Inbox ~/.mail/carlosduque.hn@gmail.com/inbox
+
+Channel carlosduque.hn@gmail.com
+    Master :carlosduque.hn@gmail.com-remote:
+    Slave  :carlosduque.hn@gmail.com-local:
+    Create Both
+    Expunge Both
+    SyncState *
+    Patterns *
+
+## devnull4u@mail.com
+IMAPAccount devnull4u@mail.com-account
+  User devnull4u@mail.com
+  PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.mail-devnull4u@mail.com.gpg"
+  Host imap.mail.com
+  Port 993
+  AuthMechs LOGIN
   SSLType IMAPS
   #CertificateFile /usr/local/etc/openssl/cert.pem
   CertificateFile /usr/local/etc/ssl/cert.pem
 
-IMAPStore gmail-remote
-  Account gmail
+IMAPStore devnull4u@mail.com-remote
+  Account devnull4u@mail.com-account
 
-MaildirStore gmail-local
-    Path  ~/.mail/gmail/
-    Inbox ~/.mail/gmail/inbox
+MaildirStore devnull4u@mail.com-local
+    SubFolders Verbatim
+    Path  ~/.mail/devnull4u@mail.com/
+    Inbox ~/.mail/devnull4u@mail.com/inbox
 
-Channel gmail
-    Master :gmail-remote:
-    Slave  :gmail-local:
+Channel devnull4u@mail.com
+    Master :devnull4u@mail.com-remote:
+    Slave  :devnull4u@mail.com-local:
     Create Both
     SyncState *
     Patterns *
 
-#######
-# TAD #
-#######
-#
-#IMAPAccount tad
-#    Host imap.gmail.com
-#    User phogg@tripleaughtdesign.com
-#    SSLType IMAPS
-#    CertificateFile /etc/ssl/certs/ca-certificates.crt
-#    PassCmd "keyring get mail-tad imap"
-#
-#IMAPStore tad-remote
-#    Account tad
-#
-#MaildirStore tad-local
-#    Path ~/mail/TAD/
-#    Inbox ~/mail/TAD/INBOX
-#
-#Channel tad-inbox
-#    Master ":tad-remote:INBOX"
-#    Slave ":tad-local:INBOX"
-#    Create Both
-#    SyncState *
-#
-#Channel tad-drafts
-#    Master ":tad-remote:[Gmail]/Drafts"
-#    Slave ":tad-local:drafts"
-#    Create Both
-#    SyncState *
-#
-#Channel tad-sent
-#    Master ":tad-remote:[Gmail]/Sent Mail"
-#    Slave ":tad-local:sent"
-#    Create Both
-#    SyncState *
-#
-#Channel tad-flagged
-#    Master ":tad-remote:[Gmail]/Starred"
-#    Slave ":tad-local:flagged"
-#    Create Both
-#    SyncState *
-#
-#
-#Group tad
-#    Channel tad-inbox
-#    Channel tad-drafts
-#    Channel tad-sent
-#    Channel tad-flagged
+## devnull4u@yahoo.com
+IMAPAccount devnull4u@yahoo.com-account
+  User devnull4u@yahoo.com
+  Pass s3cr3t
+  Host imap.mail.yahoo.com
+  Port 993
+  AuthMechs LOGIN
+  SSLType IMAPS
+  #SystemCertificates no
+  #CertificateFile /usr/local/etc/openssl/cert.pem
+  CertificateFile /usr/local/etc/ssl/cert.pem
+
+IMAPStore devnull4u@yahoo.com-remote
+  Account devnull4u@yahoo.com-account
+
+MaildirStore devnull4u@yahoo.com-local
+    SubFolders Verbatim
+    Path  ~/.mail/devnull4u@yahoo.com/
+    Inbox ~/.mail/devnull4u@yahoo.com/inbox
+
+Channel devnull4u@yahoo.com
+    Master :devnull4u@yahoo.com-remote:
+    Slave  :devnull4u@yahoo.com-local:
+    Create Both
+    SyncState *
+    Patterns *
+
