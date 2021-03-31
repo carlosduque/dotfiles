@@ -69,9 +69,7 @@ install_from_list() { \
   done < /tmp/progs.csv ;}
 
 finalize() {
-  dialog --title "..:: Hecho! ::.." --msgbox "Felicidades! El script finalizo exitosamente y todos los paquetes y
-  archivos de configuracion deben estar en su lugar!\\n\\nSi instalaste X.org para arrancar el ambiente grafico ejecuta
-  el comando \"xinit\".\\n\\nPara crear links a la configuracion corre \`linker.sh\`!\\n\\n--Carlos" 12 80
+  dialog --title "..:: Hecho! ::.." --msgbox "Felicidades! No parece haber fallado nada asi que el script finalizo exitosamente y todos los paquetes y archivos de configuracion deben estar en su lugar!\\n\\nPara arrancar el ambiente grafico ejecuta el comando \"xinit\".\\n\\n--Carlos" 12 80
 }
 
 tuning_it() {
@@ -80,15 +78,17 @@ tuning_it() {
   # make zsh the default shell for the user.
   dialog --title "..:: Instalacion ::.." --infobox "Cambiando a un shell superior" 5 70
   chsh -s /usr/local/bin/zsh `whoami` >/dev/null 2>&1
-  # keyboard layout: Spanish Dvorak
-  dialog --title "..:: Instalacion ::.." --infobox "Cambiando el teclado a Dvorak en español, porque también es superior" 5 70
-  [ ! -f /usr/local/etc/X11/xorg.conf.d/kbd-layout.conf ] && printf 'Section "InputClass"
-      Identifier "KeyboardDefaults"
-      Driver "keyboard"
-      MatchIsKeyboard "on"
-      Option "XkbLayout" "es"
-      Option "XkbVariant" "dvorak"
-  EndSection\\n' | sudo tee -a /usr/local/etc/X11/xorg.conf.d/kbd-layout.conf
+  if [ $role == "X" -o $role == "D" ]; then
+    # keyboard layout: Spanish Dvorak
+    dialog --title "..:: Instalacion ::.." --infobox "Cambiando el teclado en Xorg a Dvorak en español, porque también es superior" 5 70
+    [ ! -f /usr/local/etc/X11/xorg.conf.d/kbd-layout.conf ] && printf 'Section "InputClass"
+        Identifier "KeyboardDefaults"
+        Driver "keyboard"
+        MatchIsKeyboard "on"
+        Option "XkbLayout" "es"
+        Option "XkbVariant" "dvorak"
+    EndSection\\n' | sudo tee -a /usr/local/etc/X11/xorg.conf.d/kbd-layout.conf
+  fi
 
   dialog --title "..:: Instalacion ::.." --infobox "Sincronizando la hora del sistema, por si las moscas..." 4 70
   sudo ntpdate 0.us.pool.ntp.org >/dev/null 2>&1
