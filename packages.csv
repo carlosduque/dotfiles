@@ -21,6 +21,7 @@ R,gnupg,sec,
 R,w3m,www,terminal-based web browser
 R,ca_root_nss,sec,
 R,the_silver_searcher,textproc,
+R,chez-scheme,dev,a scheme implementation
 U,openjdk8,dev,
 U,clojure,dev,
 R,zsh,shells,superior shell
