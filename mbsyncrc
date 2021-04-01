@@ -5,7 +5,7 @@
 # * read with:
 #   - PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.mail-user@domain.xyz.gpg"
 # * Gmail accounts need 2 factor authentication (2FA) and you have to generate an App Password from them, your normal
-#   password will not work.
+#   password will not work (for Yahoo too).
 
 ## carlosduque.hn@gmail.com
 IMAPAccount carlosduque.hn@gmail.com-account
@@ -60,9 +60,9 @@ Channel devnull4u@mail.com
     Patterns *
 
 ## devnull4u@yahoo.com
-IMAPAccount devnull4u@yahoo.com-account
-  User devnull4u@yahoo.com
-  Pass s3cr3t
+IMAPAccount carlosduque_hn@yahoo.com-account
+  User carlosduque_hn@yahoo.com
+  PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.mail-carlosduque_hn@yahoo.com.gpg"
   Host imap.mail.yahoo.com
   Port 993
   AuthMechs LOGIN
@@ -72,17 +72,17 @@ IMAPAccount devnull4u@yahoo.com-account
   #CertificateFile /usr/local/etc/openssl/cert.pem
   CertificateFile /usr/local/etc/ssl/cert.pem
 
-IMAPStore devnull4u@yahoo.com-remote
-  Account devnull4u@yahoo.com-account
+IMAPStore carlosduque_hn@yahoo.com-remote
+  Account carlosduque_hn@yahoo.com-account
 
-MaildirStore devnull4u@yahoo.com-local
+MaildirStore carlosduque_hn@yahoo.com-local
     SubFolders Verbatim
-    Path  ~/.mail/devnull4u@yahoo.com/
-    Inbox ~/.mail/devnull4u@yahoo.com/inbox
+    Path  ~/.mail/carlosduque_hn@yahoo.com/
+    Inbox ~/.mail/carlosduque_hn@yahoo.com/inbox
 
-Channel devnull4u@yahoo.com
-    Master :devnull4u@yahoo.com-remote:
-    Slave  :devnull4u@yahoo.com-local:
+Channel carlosduque_hn@yahoo.com
+    Master :carlosduque_hn@yahoo.com-remote:
+    Slave  :carlosduque_hn@yahoo.com-local:
     Create Both
     SyncState *
     Patterns *
