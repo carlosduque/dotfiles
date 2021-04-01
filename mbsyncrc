@@ -1,15 +1,19 @@
 #usage: mbsync --verbose --all|<channel>
 #
-#NOTES: or to use encrypted passwords: gpg --gen-key && gpg --encrypt -o ~/.msmtp-<account>.gpg -r <keyring id> -
-#PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.mail-user@domain.xyz.gpg"
+#NOTES:
+# * to use encrypted passwords: gpg --gen-key && gpg --encrypt -o ~/.mail-<account>.gpg -r <keyring_id> -
+# * read with:
+#   - PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.mail-user@domain.xyz.gpg"
+# * Gmail accounts need 2 factor authentication (2FA) and you have to generate an App Password from them, your normal
+#   password will not work.
 
 ## carlosduque.hn@gmail.com
 IMAPAccount carlosduque.hn@gmail.com-account
   User carlosduque.hn@gmail.com
-  Pass s3cr3t
+  PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.mail-carlosduque.hn@gmail.com.gpg"
   Host imap.gmail.com
-  SSLType STARTTLS
-  SSLVersions TLSv1.2
+  SSLType IMAPS
+  AuthMechs LOGIN
   #CertificateFile /usr/local/etc/openssl/cert.pem
   CertificateFile /usr/local/etc/ssl/cert.pem
 
@@ -17,6 +21,7 @@ IMAPStore carlosduque.hn@gmail.com-remote
   Account carlosduque.hn@gmail.com-account
 
 MaildirStore carlosduque.hn@gmail.com-local
+    Subfolders Verbatim
     Path  ~/.mail/carlosduque.hn@gmail.com/
     Inbox ~/.mail/carlosduque.hn@gmail.com/inbox
 
@@ -25,8 +30,8 @@ Channel carlosduque.hn@gmail.com
     Slave  :carlosduque.hn@gmail.com-local:
     Create Both
     Expunge Both
+    Patterns * !"[Gmail]/All Mail" !"[Gmail]/Important" !"[Gmail]/Starred" !"[Gmail]/Bin"
     SyncState *
-    Patterns *
 
 ## devnull4u@mail.com
 IMAPAccount devnull4u@mail.com-account
@@ -62,6 +67,7 @@ IMAPAccount devnull4u@yahoo.com-account
   Port 993
   AuthMechs LOGIN
   SSLType IMAPS
+  #SSLVersions TLSv1.2
   #SystemCertificates no
   #CertificateFile /usr/local/etc/openssl/cert.pem
   CertificateFile /usr/local/etc/ssl/cert.pem
