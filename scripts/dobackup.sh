@@ -1,12 +1,12 @@
 #!/bin/sh
 
 # Base directory to copy from on the source machine.
-SRCDIR=$1
-FILELIST=$2
+FILELIST=$1
+SRCDIR=$2
 DSTDIR=$3
 if [ -z "$SRCDIR" -o -z "$FILELIST" -o -z "$DSTDIR" ]
 then
-    echo "usage: sh $0 <SRCDIR> <FILELIST> <DSTDIR>"
+    echo "usage: sh $0 <FILELIST> <SRCDIR> <DSTDIR>"
     exit
 fi
 
@@ -16,11 +16,11 @@ fi
 # excludes file - Contains wildcard patterns of files to exclude.
 # i.e., *~, *.bak, etc.  One "pattern" per line.
 # You must create this file.
-#EXCLUDES="$BIN_HOME/respaldar.excludes"
+#EXCLUDES="$BIN_HOME/dobackup.excludes"
 
 # includes file - Contains wildcard patterns of files to include.
 # i.e., *~, *.bak, etc.  One "pattern" per line.
-#INCLUDES="$BIN_HOME/respaldar.includes"
+#INCLUDES="$BIN_HOME/dobackup.includes"
 
 # files - Contains exact list of files to transfer.
 #         The --relative (-R) option is implied, which preserves the path information that is specified for each item
