@@ -3,6 +3,9 @@
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 
+#set dvorak en español as kbd layout
+setxkbmap -rules evdev -model pc105 -layout es -variant dvorak
+
 session=${1:-bspwm}
 
 sxhkd -m -1 &
