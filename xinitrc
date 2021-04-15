@@ -1,6 +1,8 @@
 # run: xinit <window manager> or startx ~/.xinitrc <wm>
 
+# maps
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
+# colors
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 
 #set dvorak en español as kbd layout
@@ -21,16 +23,16 @@ case $session in
     i3wm              ) pkill sxhkd; exec ssh-agent -t 7200 i3;;
 #    dwm               ) exec dwm;;
     bspwm             ) exec ssh-agent -t 7200 bspwm;;
-#    fluxbox           ) exec startfluxbox;;
-#    mate              ) exec mate-session;;
-#    cinnamon          ) exec cinnamon-session;;
+    fluxbox           ) exec startfluxbox;;
+    mate              ) exec mate-session;;
+    cinnamon          ) exec cinnamon-session;;
 #    enlightenment     ) exec enlightenment_start;;
 #    gnome             ) exec gnome-session;;
 #    gnome-classic     ) exec gnome-session --session=gnome-classic;;
 #    icewm             ) exec icewm-session;;
 #    kde               ) exec startkde;;
 #    unity             ) exec unity;;
-#    xfce|xfce4        ) exec startxfce4;;
+    xfce|xfce4        ) exec startxfce4;;
 #    # No known session, try to run it as command
     *) exec $1;;
 esac
