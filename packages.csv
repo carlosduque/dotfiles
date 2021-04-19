@@ -94,6 +94,7 @@ X,xfontsel,x11,
 O,fluxbox,wm,
 X,bspwm,wm,
 X,xclip,x11,
+O,drm-kmod,x11,for enhanced graphics for intel/amd GPU processors
 O,i3,x11,
 O,i3-gaps,x11,
 O,i3blocks,x11,
