@@ -20,9 +20,9 @@ dunst &
 feh --bg-scale ~/.wallpapers/current.jpg
 
 case $session in
-    i3wm              ) pkill sxhkd; exec ssh-agent -t 7200 i3;;
-#    dwm               ) exec dwm;;
     bspwm             ) exec ssh-agent -t 7200 bspwm;;
+    i3wm              ) pkill sxhkd; exec ssh-agent -t 7200 i3;;
+    dwm               ) exec dwm;;
     fluxbox           ) exec startfluxbox;;
     mate              ) exec mate-session;;
     cinnamon          ) exec cinnamon-session;;
