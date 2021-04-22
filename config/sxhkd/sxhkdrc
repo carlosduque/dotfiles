@@ -4,6 +4,8 @@ super + Escape
 super + Return
     $TERMINAL
 super + space
+    rofi -show drun
+alt + space
     dmenu_run
 super + dead_grave
     dmenuunicode
@@ -132,6 +134,8 @@ super + shift + w
 #    scratchpad
 #super + shift + 9
 #    mon
+super + shift + 0
+    conky-toggle
 
 # Et cetera...
 #super + Scroll_Lock
