@@ -13,7 +13,8 @@ session=${1:-bspwm}
 sxhkd -m -1 &
 musicpd &
 dunst &
-#compton &
+picom &
+##xrandr --output VGA-0 --mode 1366x768  #acerone
 ##xrandr --output VGA-0 --mode 1024x768  #acerone
 ##xrandr --output VGA-0 --mode 1680x1050 #imac
 ##xrandr --output VGA-0 --mode 1680x964  #dell
