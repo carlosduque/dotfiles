@@ -16,6 +16,16 @@ dunst &
 conky &
 picom &
 
+#count=$(xrandr --query | grep " connected" | cut -d" " -f1 | wc -l)
+#if type "xrandr" > /dev/null; then
+#  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+#    MONITOR=$m polybar --reload mainbar -c ~/.config/polybar/config &
+#  done
+#else
+#fi
+
+polybar --reload mainbar-bspwm -c ~/.config/polybar/config &
+
 ##xrandr --output VGA-0 --mode 1366x768  #acerone
 ##xrandr --output VGA-0 --mode 1024x768  #acerone
 ##xrandr --output VGA-0 --mode 1680x1050 #imac
