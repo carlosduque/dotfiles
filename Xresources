@@ -20,13 +20,13 @@
 !! Set a default font and font size as below:
 !! *.font: Monospace-14;
 
-!background Black with 90 opacity, with i3 you need compton :-/
+!background Black with 90 opacity, with bspwm/i3 you need picom :-/
 URxvt*background: [90]#000000
 URxvt*foreground: White
 URxvt*termName: screen-256color
 !URxvt*font: -*-clean-medium-r-*--12-*-*-*-*-*-*-*
 !URxvt*font: xft:monospace:size=10
-!URxvt*font: xft: Dina ttf 10px-10
+URxvt*font: xft: Dina ttf 10px-10
 URxvt*scrollBar: false
 URxvt*fading: 30
 URxvt*underlineColor: yellow
