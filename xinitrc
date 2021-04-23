@@ -24,7 +24,8 @@ picom &
 #else
 #fi
 
-polybar --reload mainbar-bspwm -c ~/.config/polybar/config &
+polybar --reload topbar -c ~/.config/polybar/config &
+polybar --reload bottombar -c ~/.config/polybar/config &
 
 ##xrandr --output VGA-0 --mode 1366x768  #acerone
 ##xrandr --output VGA-0 --mode 1024x768  #acerone
