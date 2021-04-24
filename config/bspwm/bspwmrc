@@ -14,7 +14,7 @@ feh --bg-scale ~/.wallpapers/current.jpg
 #bspc monitor -d Oz Hyrule Winterfell Hogwarts Narnia MiddleEarth Earthsea Neverland Wonderland Gotham
 #bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc monitor -d I II III IV V
+bspc monitor -d Hyrule Winterfell Earthsea Hogwarts Narnia
 
 bspc config border_width         2
 bspc config window_gap          12

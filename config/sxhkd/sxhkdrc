@@ -41,23 +41,15 @@ super + alt + n
 
 # desktop:switching:by-numbers
 super + alt + 1
-    bspc desktop Oz --focus
-super + alt + 2
     bspc desktop Hyrule --focus
-super + alt + 3
+super + alt + 2
     bspc desktop Winterfell --focus
+super + alt + 3
+    bspc desktop Earthsea --focus
 super + alt + 4
     bspc desktop Hogwarts --focus
 super + alt + 5
     bspc desktop Narnia --focus
-super + alt + 6
-    bspc desktop MiddleEarth --focus
-super + alt + 7
-    bspc desktop Earthsea --focus
-super + alt + 8
-    bspc desktop Neverland --focus
-super + alt + 9
-    bspc desktop Wonderland --focus
 
 # node:switching:by-keys
 # left=d, down=r, up=t, right=n (dvorak)
