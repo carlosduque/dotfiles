@@ -174,7 +174,9 @@ XF86AudioRaiseVolume
 #    xbacklight -dec 15
 #XF86MonBrightnessUp
 #    xbacklight -inc 15
-
+# control screen brightness (require xbacklight. Run only in laptops)
+#XF86MonBrightness{Down, Up}
+#	xbacklight {-dec 15, -inc 15}
 
 # Recording
 # Take screenshot

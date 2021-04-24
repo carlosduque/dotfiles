@@ -10,19 +10,13 @@ setxkbmap -rules evdev -model pc105 -layout es -variant dvorak
 
 session=${1:-bspwm}
 
-sxhkd -m -1 &
-musicpd &
-dunst &
-conky &
+#sxhkd -m -1 &
+#musicpd &
+#dunst &
+#conky &
 picom &
 
-#count=$(xrandr --query | grep " connected" | cut -d" " -f1 | wc -l)
-#if type "xrandr" > /dev/null; then
-#  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-#    MONITOR=$m polybar --reload mainbar -c ~/.config/polybar/config &
-#  done
-#else
-#fi
+#feh --bg-scale ~/.wallpapers/current.jpg
 
 polybar --reload topbar -c ~/.config/polybar/config &
 polybar --reload bottombar -c ~/.config/polybar/config &
@@ -30,8 +24,6 @@ polybar --reload bottombar -c ~/.config/polybar/config &
 ##xrandr --output VGA-0 --mode 1366x768  #acerone
 ##xrandr --output VGA-0 --mode 1024x768  #acerone
 ##xrandr --output VGA-0 --mode 1680x1050 #imac
-##xrandr --output VGA-0 --mode 1680x964  #dell
-feh --bg-scale ~/.wallpapers/current.jpg
 
 case $session in
     bspwm             ) exec ssh-agent -t 7200 bspwm;;
@@ -47,7 +39,6 @@ case $session in
     kde               ) exec startkde;;
     unity             ) exec unity;;
     xfce|xfce4        ) exec startxfce4;;
-    # No known session, try to run it as command
     *) exec $1;;
 esac
 

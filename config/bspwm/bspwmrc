@@ -1,27 +1,49 @@
 #!/bin/sh
 
-bspc monitor -d Oz Hyrule Winterfell Hogwarts Narnia MiddleEarth Earthsea Neverland Wonderland Gotham
+# --install breeze cursors
+#export XCURSOR_THEME="Breeze"
+xsetroot -cursor_name left_ptr
+
+sxhkd -m -1 &
+dunst &
+musicpd &
+#polybar --reload topbar -c ~/.config/polybar/config &
+#polybar --reload bottombar -c ~/.config/polybar/config &
+feh --bg-scale ~/.wallpapers/current.jpg
+
+#bspc monitor -d Oz Hyrule Winterfell Hogwarts Narnia MiddleEarth Earthsea Neverland Wonderland Gotham
 #bspc monitor -d I II III IV V VI VII VIII IX X
+
+bspc monitor -d I II III IV V
 
 bspc config border_width         2
 bspc config window_gap          12
 
-bspc config split_ratio          0.52
-bspc config top_padding          16
-bspc config bottom_padding          16
+bspc config split_ratio         0.52
+bspc config top_padding         16
+bspc config bottom_padding      16
 
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+#bspc config single_monocle        false
+bspc config borderless_monocle     true
+bspc config gapless_monocle        true
+#bspc config paddingless_monocle   false
+#bspc config focus_follows_pointer true
+#bspc config pointer_follows_monitor true
+#bspc config pointer_modifier mod1
+#bspc config pointer_action1 move
+#bspc config pointer_action2 resize_side
+#bspc config click_to_focus any
+#bspc config swallow_first_click false
+#bspc config ignore_ewmh_focus true
 
 bspc rule -a Zathura state=tiled
+bspc rule -a feh state=floating
 
 #bspc rule -a Gimp desktop='^8' state=floating follow=on
 #bspc rule -a Chromium desktop='^2'
 #bspc rule -a mplayer2 state=floating
 #bspc rule -a Kupfer.py focus=on
 #bspc rule -a Screenkey manage=off
-
-#compton --config "$HOME/.config/compton.conf" -b
 
 bspc rule --add scratchpad sticky=on center=on state=floating hidden=on border=on
 #st -c scratchpad -e telegram-cli &
@@ -30,3 +52,5 @@ bspc rule --add scratchpad sticky=on center=on state=floating hidden=on border=o
 bspc rule --add mon sticky=on center=on state=floating hidden=on
 #[ "$(ps -x | grep -c 'mon')" -eq "1" ] && st -c mon -e monitor &
 
+# ---bar
+#~/.scripts/watchdog.sh

@@ -1,0 +1,24 @@
+#include "colors/wombat"
+!background Black with 90 opacity, with bspwm/i3 you need picom :-/
+URxvt*background:        [90]#000000
+URxvt.boldFont:          -misc-tamsyn-medium-r-normal-*-15-108-100-100-c-80-iso8859-1
+!URxvt.boldFont:         xft:Hack:size=10, Hack:style=Bold
+URxvt.cursorBlink:       true
+!Urxvt.depth: 32
+URxvt*fading:            30
+!URxvt.font:             xft:Hack:size=10, Hack Regular:style=Regular
+!URxvt*font:             xft: Dina ttf 10px-10
+!URxvt*font:             -*-clean-medium-r-*--12-*-*-*-*-*-*-*
+!URxvt*font:             xft:monospace:size=10
+URxvt.font:              -misc-tamsyn-medium-r-normal-*-15-108-100-100-c-80-iso8859-1
+URxvt*foreground:        White
+URxvt.internalBorder:    8
+
+URxvt.scrollBar:        false
+URxvt.termName:         rxvt-256color
+URxvt*underlineColor:   yellow
+
+Xft.antialias:          1
+Xft.dpi:                96
+
+
