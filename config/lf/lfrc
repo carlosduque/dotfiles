@@ -39,10 +39,9 @@ cmd extract ${{
 }}
 
 cmd delete ${{
-	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
-	printf "%s\n\t" "$fx"
-	printf "delete?[y/N]"
+	printf "%s\n" "$fx"
+	printf "delete?[y/N]: "
 	read ans
 	[ $ans = "y" ] && rm -rf -- $fx
 }}
@@ -77,7 +76,8 @@ map <c-f> $lf -remote "send $id select '$(fzf)'"
 map J $lf -remote "send $id cd $(cut -d'	' -f2 ${XDG_CONFIG_HOME:-$HOME/.config}/shell/bm-dirs | fzf)"
 map gh
 map g top
-map D delete
+map d
+map dd delete
 map E extract
 map C copyto
 map M moveto
