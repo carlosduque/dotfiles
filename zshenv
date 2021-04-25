@@ -1,7 +1,7 @@
 # User configuration
 #export TERMINAL=urxvt
 export TERMINAL=st
-export EDITOR=vim
+export EDITOR=nvim
 export BROWSER=surf
 export TZ=America/Santiago
 
