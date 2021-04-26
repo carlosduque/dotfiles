@@ -7,13 +7,15 @@ endif
 
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 
-Plug 'tpope/vim-surround'                 " add command to create surrounding parens
+Plug 'tpope/vim-surround'                   " add command to create surrounding parens
 Plug 'preservim/nerdtree'
-Plug 'tpope/vim-commentary'               " comments
+Plug 'tpope/vim-fugitive'                   " add command to show git info in status line
+Plug 'itchyny/lightline.vim'
+" Plug 'bling/vim-airline'
+Plug 'tpope/vim-commentary'                 " comments
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
-" Plug 'bling/vim-airline'
 " Syntax highlighting
 " Plug 'kjssad/quantum.vim'                 " firefox theme
 " Plug 'sheerun/vim-polyglot'               " better default syntax
@@ -37,7 +39,6 @@ Plug 'junegunn/goyo.vim'
 " Emacs which keys
 " Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 " Status Line
-" Plug 'itchyny/lightline.vim'
 " Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
