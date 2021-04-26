@@ -10,6 +10,4 @@ source $HOME/.config/nvim/plugins/lightline.vim
 source $HOME/.config/nvim/plugins/nerdtree.vim
 source $HOME/.config/nvim/plugins/rainbow.vim
 source $HOME/.config/nvim/plugins/fzf.vim
-" source $HOME/.config/nvim/plugins/coc.vim
-" source $HOME/.config/nvim/plugins/whichkey.vim
-" source $HOME/.config/nvim/plugins/golang.vim
+source $HOME/.config/nvim/plugins/whichkey.vim

@@ -10,37 +10,37 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
 Plug 'tpope/vim-surround'                   " add command to create surrounding parens
 Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
+Plug 'jlanzarotta/bufexplorer'              " easy navigation through buffers
+
 Plug 'tpope/vim-fugitive'                   " add command to show git info in status line
-Plug 'itchyny/lightline.vim'
-" Plug 'bling/vim-airline'
-Plug 'tpope/vim-commentary'                 " comments
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'itchyny/lightline.vim'                " status line
+" Plug 'bling/vim-airline'
+
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " fuzzy finder
+Plug 'junegunn/fzf.vim'
+
+Plug 'Olical/conjure', {'tag': 'v3.3.0'}  " clojure
 Plug 'luochen1990/rainbow'                  " rainbow parens
-" Plug 'jlanzarotta/bufexplorer'            " javascript
+Plug 'sheerun/vim-polyglot'               " better default syntax
+" Plug 'kelvin-mai/vim-cljfmt'              " clojure formatter
+" Plug 'tpope/vim-commentary'                 " comments
+" Plug 'junegunn/goyo.vim'
+" Plug 'neoclide/coc.nvim', {'branch': 'release' } 
 " Plug 'kjssad/quantum.vim'                 " firefox theme
-" Plug 'sheerun/vim-polyglot'               " better default syntax
 " Plug 'pangloss/vim-javascript'            " javascript
 " Plug 'leafgarland/typescript-vim'         " typescript 
 " Plug 'maxmellon/vim-jsx-pretty'           " js / jsx 
 " Plug 'peitalin/vim-jsx-typescript'        " tsx
 " Plug 'jparise/vim-graphql'                " graphql
-" Plug 'Olical/conjure', {'tag': 'v3.3.0'}  " clojure
-" Plug 'kelvin-mai/vim-cljfmt'              " clojure formatter
 " Plug 'reasonml-editor/vim-reason-plus'    " reasonml
 " Editor features
 " Plug 'chun-yang/auto-pairs'               " automatic paren completion
 " Plug 'airblade/vim-gitgutter'             " git gutter
 " Plug 'rhysd/conflict-marker.vim'          " git conflict marker
-" Fuzzy finder
 " Plug 'airblade/vim-rooter'
 " Intellisense
-" Plug 'neoclide/coc.nvim', {'branch': 'release' } 
-" Emacs which keys
-" Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
-" Status Line
 
 call plug#end()
 
