@@ -9,6 +9,7 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
 
 Plug 'tpope/vim-surround'                   " add command to create surrounding parens
 Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
 Plug 'tpope/vim-fugitive'                   " add command to show git info in status line
 Plug 'itchyny/lightline.vim'
 " Plug 'bling/vim-airline'
@@ -16,7 +17,9 @@ Plug 'tpope/vim-commentary'                 " comments
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
-" Syntax highlighting
+Plug 'ryanoasis/vim-devicons'
+Plug 'luochen1990/rainbow'                  " rainbow parens
+" Plug 'jlanzarotta/bufexplorer'            " javascript
 " Plug 'kjssad/quantum.vim'                 " firefox theme
 " Plug 'sheerun/vim-polyglot'               " better default syntax
 " Plug 'pangloss/vim-javascript'            " javascript
@@ -29,7 +32,6 @@ Plug 'junegunn/goyo.vim'
 " Plug 'reasonml-editor/vim-reason-plus'    " reasonml
 " Editor features
 " Plug 'chun-yang/auto-pairs'               " automatic paren completion
-" Plug 'luochen1990/rainbow'                " rainbow parens
 " Plug 'airblade/vim-gitgutter'             " git gutter
 " Plug 'rhysd/conflict-marker.vim'          " git conflict marker
 " Fuzzy finder
@@ -39,7 +41,6 @@ Plug 'junegunn/goyo.vim'
 " Emacs which keys
 " Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 " Status Line
-" Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 

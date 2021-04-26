@@ -1,5 +1,5 @@
 " set leader key
-let g:mapleader = "\<Space>"
+let g:mapleader = ","
 " set vim true colors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1       
 
@@ -20,16 +20,19 @@ set splitbelow                          " Horizontal splits will automatically b
 set splitright                          " Vertical splits will automatically be to the right
 set t_Co=256                            " Support 256 colors
 set conceallevel=0                      " So that I can see `` in markdown files
-set tabstop=2                           " Insert 2 spaces for a tab
-set shiftwidth=2                        " Change the number of space characters inserted for indentation
+set tabstop=4                           " Insert 2 spaces for a tab
+"set softtabstop=4                      " Insert 2 spaces for a tab
+set shiftwidth=4                        " Change the number of space characters inserted for indentation
 set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
 set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set laststatus=2                        " Always display the status line
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
-set relativenumber                      " Line numbers
-set cursorline                          " Enable highlighting of the current line
+" set relativenumber                    " Line numbers relative to current line
+set norelativenumber                    " Line numbers
+set nocursorline                        " Disable highlighting of the current line
+set nocursorcolumn                      " Disable highlighting of the current column
 set background=dark                     " tell vim what the background color looks like
 set showtabline=2                       " Always show tabs 
 set nobackup                            " This is recommended by coc
@@ -38,6 +41,15 @@ set updatetime=300                      " Faster completion
 set timeoutlen=1000                     " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
+set textwidth=120                       " Number of chars before wrap
+set colorcolumn=+1                      " Show when beyond textwidth
+set list
+set listchars=eol:¬,tab:»·,trail:¤,nbsp:· "Display tabs and trailing spaces
+set noswapfile                          " No temp file
+set copyindent                          " Copy previous indentation on autoindex
+set showcmd                             " Show partially-typed commands
+set shiftround                          " Use multiple sfitwidth when indenting
+set foldmethod=manual                   " Folding method: manual, indent, syntax, expr
 "set autochdir                          " Your working directory will always be the same as your working directory
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
