@@ -235,7 +235,7 @@ imap <F5> <ESC>:setlocal spell! spelllang=en_us<cr>
 let g:user_emmet_leader_key='mmt'
 
 " convert markdown to html
-nmap <leader>md :%!~/bin/Markdown.pl --html4tags <CR>
+nmap <leader>md :%!~/bin/md.pl --html4tags <CR>
 
 " Quickly editing
 nmap <silent> <leader>evim :vsplit $MYVIMRC<cr>

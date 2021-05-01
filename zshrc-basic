@@ -42,6 +42,10 @@ alias t='tree'
 alias t2='tree -L 2'
 alias td='tree -d'
 alias td2='tree -L 2 -d'
+alias ga='git add'
+alias gm='git add -u'
+alias gc='git commit'
+alias gp='git push -u origin'
 
 if [[ "$OSTYPE" != "darwin"* ]]; then
     alias ls='ls --color --indicator-style=slash --group-directories-first' #--sort=time|size

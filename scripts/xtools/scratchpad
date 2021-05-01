@@ -1,0 +1,10 @@
+#!/bin/sh
+winid=$(xdotool search --class scratchpad)
+
+#if [ "$winid" != "" ]; then
+#  bspc node "$winid" --flag hidden -f
+#else
+#  st -c scratchpad
+#fi
+
+[ "$winid" != "" ] && bspc node "$winid" --flag hidden -f || st -c scratchpad

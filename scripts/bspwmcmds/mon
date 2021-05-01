@@ -1,9 +1,0 @@
-#!/bin/sh
-winid=$(xdotool search --class mon)
-
-if [ "$winid" != "" ]; then
-  bspc node "$winid" --flag hidden -f
-else
-  st -c mon
-fi
-

@@ -1,4 +1,3 @@
-if [[ -f $HOME/bin/vm-init.sh &&  $TERM == "screen-256color" && "$OSTYPE" != "cygwin" ]]; then
-  source $HOME/bin/vm-init.sh
-fi
+#!/usr/bin/env bash
+[[ -f $HOME/bin/vmmounter &&  $TERM == "screen-256color" && "$OSTYPE" != "cygwin" ]] && source $HOME/bin/vmmounter
 
