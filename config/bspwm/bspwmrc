@@ -5,11 +5,13 @@
 xsetroot -cursor_name left_ptr
 
 sxhkd -m -1 &
+feh --bg-scale ~/.wallpapers/current
 dunst &
+
+polybar --reload topbar -c ~/.config/polybar/config &
+polybar --reload bottombar -c ~/.config/polybar/config &
+
 musicpd &
-#polybar --reload topbar -c ~/.config/polybar/config &
-#polybar --reload bottombar -c ~/.config/polybar/config &
-feh --bg-scale ~/.wallpapers/current.jpg
 
 #bspc monitor -d Oz Hyrule Winterfell Hogwarts Narnia MiddleEarth Earthsea Neverland Wonderland Gotham
 #bspc monitor -d I II III IV V VI VII VIII IX X

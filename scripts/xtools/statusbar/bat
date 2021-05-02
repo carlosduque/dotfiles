@@ -46,6 +46,6 @@ fi
 [ "$status" = "charging" ] && symbol="" && color="#ffffff"
 
 #printf "<span color='%s'>%s%s%s</span>" "$color" "$(echo "$symbol")" "$(echo "$capacity" | sed -e 's/$/%/')"
-printf "%s %s" "$(echo "$symbol")" "$(echo "$capacity" | sed -e 's/$/%/')"
+printf "%s  %s" "$(echo "$symbol")" "$(echo "$capacity")"
 
 # 

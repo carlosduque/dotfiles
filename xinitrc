@@ -16,10 +16,10 @@ session=${1:-bspwm}
 #conky &
 picom &
 
-#feh --bg-scale ~/.wallpapers/current.jpg
+#feh --bg-scale ~/.wallpapers/current
 
-polybar --reload topbar -c ~/.config/polybar/config &
-polybar --reload bottombar -c ~/.config/polybar/config &
+#polybar --reload topbar -c ~/.config/polybar/config &
+#polybar --reload bottombar -c ~/.config/polybar/config &
 
 ##xrandr --output VGA-0 --mode 1366x768  #acerone
 ##xrandr --output VGA-0 --mode 1024x768  #acerone
