@@ -173,7 +173,7 @@ font-3 = "Noto Sans Mono:size=10;0"
 
 modules-left = release 
 modules-center = mpd music vol
-modules-right = mem bat networkspeedup networkspeeddown wireless-network weather date
+modules-right = mem bat networkspeedup networkspeeddown wireless-network mail weather date
 
 #modules-left = ewmh release uptime load-average cpu1 cpu2
 #modules-right = memory1 memory2 memory3 filesystem battery
@@ -830,6 +830,20 @@ format-background = ${colors.background}
 #format-prefix = "  "
 format-prefix-foreground = #0084FF
 format-underline = #0084FF
+
+################################################################################
+[module/mail]
+type = custom/script
+tail = false
+label = %output%
+exec = $HOME/bin/xtools/statusbar/mailbox
+#click-right = mixer vol +5
+click-left = mbsync --all
+#scroll-up = mixer vol +
+#scroll-down = mixer vol -
+format-underline = #FFFFFF
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
 
 ################################################################################
 [module/mem]
