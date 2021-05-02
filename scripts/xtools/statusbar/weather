@@ -1,11 +1,6 @@
 #!/bin/sh
 
-#[ "$(stat -f %Sa /tmp/weatherreport | awk '{print $1}')" != "$(date '+%Y-%m-%d')" ] & getforecast
-
-[ "$(stat -f %Sa /tmp/weatherreport | awk '{print $1}')" != "$(date '+%Y-%m-%d')" ] & curl -s "wttr.in/Santiago" >
-/tmp/weatherreport
 #pkill -RTMIN+5 i3blocks && notify-send "~ Weather forecast updated."
-
 case $BLOCK_BUTTON in
   1) $TERMINAL -e less -S /tmp/weatherreport ;;
   3) pgrep -x dunst >/dev/nul && notify-send "<b> Weather module:</b>
@@ -15,9 +10,8 @@ case $BLOCK_BUTTON in
   z: Daily high" ;;
 esac
 
-printf "%s" "$(sed '16q;d' /tmp/weatherreport | grep -wo "[0-9]*%" | sort -n | sed -e '$!d' | sed -e "s/^/x /g" | tr -d
-'\n')"
+symbol=""
 
-sed '13q;d' /tmp/weatherreport | grep -o "m\\(-\\)*[0-9]\\+" | sort -n -t 'm' -k 2n | sed -e 1b -e '$!d' | tr '\n|m' ' '
-| awk '{print " x",$1 "^", "¦", $2 "~"}'
+curl -s wttr.in/Santiago?format='%t+%m' >/tmp/weatherreport || exit 1
 
+printf "%s %s" "$symbol" "$(cat /tmp/weatherreport)"

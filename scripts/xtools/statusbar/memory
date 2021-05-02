@@ -8,5 +8,8 @@ case $BLOCK_BUTTON in
   -Click to show memory hogs." ;;
 esac
 
-vmstat -h | tail -1 | awk '{print $5 "/" $4}'
+symbol=""
 
+printf "%s %s" "$symbol" "$(vmstat -h | tail -1 | awk '{print $5 "/" $4}')"
+
+#   

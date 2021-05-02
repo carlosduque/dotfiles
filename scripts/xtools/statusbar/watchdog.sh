@@ -23,108 +23,107 @@ mkfifo "$PANEL_FIFO"
 
 info_Battery()
 {
-	STATE="$(sysctl hw.acpi.battery.state | awk '{ print $2 }')"
-	CHARGE="$(sysctl hw.acpi.battery.life | awk '{ print $2 }')"
+    STATE="$(sysctl hw.acpi.battery.state | awk '{ print $2 }')"
+    CHARGE="$(sysctl hw.acpi.battery.life | awk '{ print $2 }')"
 
-	case $STATE in
-			1)
-				#discharging
-				OUTPUT="\ue1fe $CHARGE"
-				;;
-			2)
-				#charging
+    case $STATE in
+            1)
+                #discharging
+                OUTPUT="\ue1fe $CHARGE"
+                ;;
+            2)
+                #charging
                 OUTPUT="\ue200 $CHARGE"
                 ;;
             7)
-				#no battery attached, plugged.
+                #no battery attached, plugged.
                 OUTPUT="\ue041 N/A"
                 ;;
             *)
                 OUTPUT="ERR"
                 ;;
-	esac
-	printf "$OUTPUT"
-	printf "%s" "%"
+    esac
+    printf "$OUTPUT"
+    printf "%s" "%"
 }
 
 info_NetworkStatus()
 {
-	WIFI_INFO=$(ifconfig wlan0)
-	WIFI_STATUS=$(printf "%s\\n" "$WIFI_INFO" | grep -w "status:" | awk '{ print $2 }')
-	SSID=$(printf "%s\\n" "$WIFI_INFO" | grep -w "ssid" | awk '{ print $2 }')
+    WIFI_INFO=$(ifconfig wlan0)
+    WIFI_STATUS=$(printf "%s\\n" "$WIFI_INFO" | grep -w "status:" | awk '{ print $2 }')
+    SSID=$(printf "%s\\n" "$WIFI_INFO" | grep -w "ssid" | awk '{ print $2 }')
 
-	ETH_INFO=$(ifconfig em0)
-	ETH_STATUS=$(printf "%s\\n" "$ETH_INFO" | grep -w "status:" | awk '{ print $2 }')
+    ETH_INFO=$(ifconfig em0)
+    ETH_STATUS=$(printf "%s\\n" "$ETH_INFO" | grep -w "status:" | awk '{ print $2 }')
 
-	if [ "$WIFI_STATUS" = "associated" -a "$ETH_STATUS" = "no" ]
-	then
-		printf "\ue14b ${SSID}"
-	elif [ "$WIFI_STATUS" = "associated" -a "$ETH_STATUS" = "active" ]
-	then
-		printf "\ue149 Wired"
-	else
-		printf "\ue0c6 Down"
-	fi     
+    if [ "$WIFI_STATUS" = "associated" -a "$ETH_STATUS" = "no" ]
+    then
+        printf "\ue14b ${SSID}"
+    elif [ "$WIFI_STATUS" = "associated" -a "$ETH_STATUS" = "active" ]
+    then
+        printf "\ue149 Wired"
+    else
+        printf "\ue0c6 Down"
+    fi     
 }
 
 info_Volume()
 {
-	GETVOL="$(mixer | grep vol | awk '{ print $7 }' | grep -o '[^:]*')"
-	
-	#this is for headphones icon: \ue04d
-	printf "\ue05d "
-	printf "%s\\n" "${GETVOL}% "
+    GETVOL="$(mixer | grep vol | awk '{ print $7 }' | grep -o '[^:]*')"
+    
+    #this is for headphones icon: \ue04d
+    printf "\ue05d "
+    printf "%s\\n" "${GETVOL}% "
 }
 
 info_TimeDate()
 {
-	TTIME=$(date +"%H:%M")
-	TDATE=$(date +"%m-%d-%Y")
+    TTIME=$(date +"%H:%M")
+    TDATE=$(date +"%m-%d-%Y")
        
-	printf "\ue017 $TTIME | $TDATE \ue225"
+    printf "\ue017 $TTIME | $TDATE \ue225"
 }
 
 info_CPU()
 {
-	USEDCPU=$(top -n | grep -w "CPU" | awk '{ print $2+$4+$6+$8 }')
-	
-	printf "\ue021"
-	printf "%s\\n" "${USEDCPU}% |"
+    USEDCPU=$(top -n | grep -w "CPU" | awk '{ print $2+$4+$6+$8 }')
+    
+    printf "\ue021"
+    printf "%s\\n" "${USEDCPU}% |"
 }
 
 info_RAM()
 {
-	#check fix when some outputs are KB instead of MB
-	GETRAM=$(top -n | grep -w "Mem" | awk '{ print $4}' | grep -o '[A-Z]')
-	if [ $GETRAM = "K" ]
-	then
-		USEDRAM=$(top -n | grep -w "Mem" | awk '{ print $2+$6+$8 }')
-	else
-		USEDRAM=$(top -n | grep -w "Mem" | awk '{ print $2+$4+$6+$8 }')
-	fi
-	TOTALRAM=$(dmesg | grep -E '^avail memory' | cut -d'(' -f2 | cut -d')' -f1 | awk '{ print $1 }' | sed -n 1p)
-	PRCNTUSED=$(awk -v u=$USEDRAM -v t=$TOTALRAM 'BEGIN{print 100 * u / t}' | awk -F. '{ print $1"."substr($2,1,2) }')
+    #check fix when some outputs are KB instead of MB
+    GETRAM=$(top -n | grep -w "Mem" | awk '{ print $4}' | grep -o '[A-Z]')
+    if [ $GETRAM = "K" ]
+    then
+        USEDRAM=$(top -n | grep -w "Mem" | awk '{ print $2+$6+$8 }')
+    else
+        USEDRAM=$(top -n | grep -w "Mem" | awk '{ print $2+$4+$6+$8 }')
+    fi
+    TOTALRAM=$(dmesg | grep -E '^avail memory' | cut -d'(' -f2 | cut -d')' -f1 | awk '{ print $1 }' | sed -n 1p)
+    PRCNTUSED=$(awk -v u=$USEDRAM -v t=$TOTALRAM 'BEGIN{print 100 * u / t}' | awk -F. '{ print $1"."substr($2,1,2) }')
 
-	printf "\ue224"
-	printf "%s\\n" "${PRCNTUSED}% |"
+    printf "\ue224"
+    printf "%s\\n" "${PRCNTUSED}% |"
 }
 
 
 info_DriveSpace()
 {
-	AVAIL=$(df -H / | grep -w "ROOT" | awk '{ print $4 }' | awk -F'[A-Z]' '{print $1}')
-	TOTAL=$(df -H / | grep -w "default" | awk '{ print $2 }' | awk -F'[A-Z]' '{print $1}')
-       
-	printf "\ue1e0${AVAIL}GB "
+    AVAIL=$(df -H / | grep -w "ROOT" | awk '{ print $4 }' | awk -F'[A-Z]' '{print $1}')
+    TOTAL=$(df -H / | grep -w "default" | awk '{ print $2 }' | awk -F'[A-Z]' '{print $1}')
+    printf "\ue1e0${AVAIL}GB "
 }
 
 #this requires coretemp or amdtemp loaded with kldload or in boot/loader.conf to work
 info_CpuTemp()
 {
-	CURRENT=$(sysctl dev.cpu.0.temperature | awk '{ print $2 }')
+    CURRENT=$(sysctl dev.cpu.0.temperature | awk '{ print $2 }')
 
-	printf "\ue01d"
-	printf "%s" "${CURRENT} |"
+    printf "\ue01d"
+    printf "%s" "${CURRENT} |"
 }
 
 info_CPU > "$PANEL_FIFO" &
@@ -139,11 +138,11 @@ info_Battery > "$PANEL_FIFO" &
 
 panel_bar()
 {
-	while true; do
-			BAR_INPUT="%{l} $(info_CPU) $(info_RAM) $(info_CpuTemp) $(info_DriveSpace) %{c}$(info_TimeDate) %{r} $(info_NetworkStatus)  $(info_Volume) $(info_Battery)  "
-		printf "%s\\n" "$BAR_INPUT"
-	sleep 1
-	done
+    while true; do
+            BAR_INPUT="%{l} $(info_CPU) $(info_RAM) $(info_CpuTemp) $(info_DriveSpace) %{c}$(info_TimeDate) %{r} $(info_NetworkStatus)  $(info_Volume) $(info_Battery)  "
+        printf "%s\\n" "$BAR_INPUT"
+    sleep 1
+    done
 }
 
 panel_bar < "$PANEL_FIFO" | lemonbar -f $PANEL_FONT_0 -f $PANEL_FONT_1 -g x$PANEL_HEIGHT -F $COLOR_DEFAULT_FG -B $COLOR_DEFAULT_BG &

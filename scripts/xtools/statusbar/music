@@ -1,8 +1,8 @@
 #!/bin/sh
 
 filter() {
-	sed "/^volume:/d" | sed -e "s/\\&/&amp;/g;s/\\[paused\\].*/<span color=\"gray\" font_style=\"italic\">/g;s/\\[playing\\].*/<span>/g" | tr -d '\n' | sed -e "s/$/<\\/span>/g"
-	}
+    sed "/^volume:/d" | sed -e "s/\\&/&amp;/g;s/\\[paused\\].*/<span color=\"gray\" font_style=\"italic\">/g;s/\\[playing\\].*/<span>/g" | tr -d '\n' | sed -e "s/$/<\\/span>/g"
+}
 
 case $BLOCK_BUTTON in
     1) mpc status | filter && setsid "$TERMINAL" -e ncmpcpp & ;;  # right click, pause/unpause
@@ -17,3 +17,9 @@ case $BLOCK_BUTTON in
     5) mpc next   | filter ;;  # scroll down, next
     *) mpc status | filter ;;
 esac
+
+
+
+symbol=""
+
+printf "%s %s" "$symbol" "$(mpc -f '%name%')"

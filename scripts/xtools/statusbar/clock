@@ -7,4 +7,5 @@ esac
 color="#e29462"
 symbol=""
 
-printf "<span color='%s'>%s%s</span>" "$color" "$symbol" "$(date '+%H:%M')"
+#printf "<span color='%s'>%s%s</span>" "$color" "$symbol" "$(date '+%H:%M')"
+printf "%s %s" "$symbol" "$(date '+%H:%M')"
