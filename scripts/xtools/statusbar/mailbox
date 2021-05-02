@@ -16,4 +16,5 @@ color="#ffffff"
 symbol=""
 
 #printf "<span color='%s'>%s%s</span>" "$color" "$symbol" "$(du -a ~/.mail/*/inbox/new/* 2>/dev/null | sed -n '$=')"
-printf "%s %s" "$symbol" "$(du -a ~/.mail/*/inbox/new/* 2>/dev/null | sed -n '$=')"
+printf "%s %s" "$symbol" "$(du -a ~/.mail/*/inbox/* 2>/dev/null | sed -n '$=')"
+
