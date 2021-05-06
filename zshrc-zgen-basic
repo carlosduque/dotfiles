@@ -42,7 +42,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.history
 
-source $HOME/bin/tools/ps1.sh lambda
+source $HOME/bin/tools/setps1 lambda
 
 # aliases
 alias zcfg="vim $HOME/.zshrc"
@@ -53,9 +53,10 @@ alias t2='tree -L 2'
 alias td='tree -d'
 alias td2='tree -L 2 -d'
 alias ga='git add'
-alias gm='git add -u'
 alias gc='git commit'
+alias gm='git add -u'
 alias gp='git push -u origin'
+alias gl='git ls'
 alias ls='ls -AGF'
 alias ll='ls -lah'
 alias lst='ls -lTr'
