@@ -38,7 +38,7 @@ elif [[ "$OSTYPE" == "freebsd*" ]]; then
     path+=($JAVA_HOME/bin)
 else
     #"linux-gnu"*
-    export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+    #export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
     export ANT_HOME=/usr/share/ant
     export MAVEN_HOME=/usr/share/maven
     export OPENEJB_HOME=/srv/openejb/inst

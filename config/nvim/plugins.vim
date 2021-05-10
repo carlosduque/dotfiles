@@ -22,12 +22,15 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " fuzzy finder
 Plug 'junegunn/fzf.vim'
 
 Plug 'Olical/conjure', {'tag': 'v3.3.0'}  " clojure
-Plug 'luochen1990/rainbow'                  " rainbow parens
+Plug 'tpope/vim-dispatch'                 " run commands in the background (required by vim-jack-in)
+Plug 'radenling/vim-dispatch-neovim'      " adds support to neovim's terminal emulator and job control
+Plug 'clojure-vim/vim-jack-in'            " Jack-In to repl
+Plug 'kelvin-mai/vim-cljfmt'              " clojure formatter
+Plug 'luochen1990/rainbow'                " rainbow parens
 Plug 'sheerun/vim-polyglot'               " better default syntax
-" Plug 'kelvin-mai/vim-cljfmt'              " clojure formatter
+" Plug 'neoclide/coc.nvim', {'branch': 'release' } 
 " Plug 'tpope/vim-commentary'                 " comments
 " Plug 'junegunn/goyo.vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release' } 
 " Plug 'kjssad/quantum.vim'                 " firefox theme
 " Plug 'pangloss/vim-javascript'            " javascript
 " Plug 'leafgarland/typescript-vim'         " typescript 
