@@ -12,6 +12,7 @@ esac
 
 #echo "$(du -a ~/.mail/*/inbox/new/* 2>/dev/null | sed -n '$=')"
 
+#color="#e29462"
 color="#ffffff"
 symbol=""
 
