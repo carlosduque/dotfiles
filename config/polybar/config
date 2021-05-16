@@ -171,9 +171,10 @@ font-1 = "FontAwesome:size=10;0"
 font-2 = "Roboto:size=11:weight=bold;2"
 font-3 = "Noto Sans Mono:size=10;0"
 
-modules-left = release 
-modules-center = mpd music vol
-modules-right = mem bat networkspeedup networkspeeddown wireless-network mail weather date
+modules-left = release
+modules-center = mpd music
+#modules-right = vol mem bat networkspeedup networkspeeddown wireless-network mail weather date
+modules-right = vol weather mail mem bat date
 
 #modules-left = ewmh release uptime load-average cpu1 cpu2
 #modules-right = memory1 memory2 memory3 filesystem battery
