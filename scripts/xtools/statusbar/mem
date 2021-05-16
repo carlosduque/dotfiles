@@ -10,6 +10,8 @@ esac
 
 symbol=""
 #
-printf "%s  %s" "$symbol" "$(vmstat -h | tail -1 | awk '{print $5 "/" $4}')"
+#printf "%s  %s" "$symbol" "$(vmstat -h | tail -1 | awk '{print $5 "/" $4}')"
+#printf "%s  %s" "$symbol" "$(freecolor -m -o | grep 'Mem' | awk '{printf "%.2f/%.2f", $3/1024, $2/1024}')"
+printf "%s  Mem:%s%%" "$symbol" "$(freecolor -m -o | grep 'Mem' | awk '{printf "%.2f", ($3/$2)*100}')"
 
 #   
