@@ -1,0 +1,11 @@
+type = custom/script
+exec = $HOME/bin/xtools/statusbar/bat
+tail = false
+interval = 1024
+
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+#format-prefix = "  "
+format-prefix-foreground = #0084FF
+format-underline = #0084FF
+

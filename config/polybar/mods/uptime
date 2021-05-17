@@ -1,0 +1,11 @@
+;https://github.com/jaagr/polybar/wiki/User-contributed-modules#uptime
+type = custom/script
+exec = uptime | awk -F, '{sub(".*up ",x,$1);print $1}'
+interval = 100
+label = Uptime : %output%
+
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = "   "
+format-prefix-foreground = #C15D3E
+format-underline = #C15D3E

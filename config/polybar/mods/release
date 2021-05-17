@@ -1,0 +1,11 @@
+type = custom/script
+exec = uname -r | tr -d '\n'
+#   
+interval = 6000
+
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = "  "
+format-prefix-foreground = #C15D3E
+format-underline = #C15D3E
+

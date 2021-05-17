@@ -1,0 +1,11 @@
+type = custom/script
+exec = uname -i
+tail = false
+interval = 1024
+
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = "  "
+format-prefix-foreground = #0084FF
+format-underline = #0084FF
+

@@ -1,0 +1,12 @@
+type = custom/script
+tail = false
+label = %output%
+exec = $HOME/bin/xtools/statusbar/mailbox
+#click-right = mixer vol +5
+click-left = mbsync --all
+#scroll-up = mixer vol +
+#scroll-down = mixer vol -
+format-underline = #FFFFFF
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+

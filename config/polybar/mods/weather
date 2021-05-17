@@ -1,0 +1,11 @@
+type = custom/script
+exec = $HOME/bin/xtools/statusbar/weather
+tail = true
+interval = 10
+format = <label>
+format-prefix = " "
+format-prefix-foreground = #7e52c6
+format-underline = #7e52c6
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+

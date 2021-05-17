@@ -1,0 +1,8 @@
+#[module/sep]
+; alternative separator
+type = custom/text
+content = 
+content-foreground = ${colors.foreground}
+content-background =  ${colors.background}
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}

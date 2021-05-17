@@ -1,0 +1,12 @@
+type = custom/script
+tail = false
+label = %output%
+exec = $HOME/bin/xtools/statusbar/vol
+click-right = mixer vol +5
+click-left = mixer vol -5
+scroll-up = mixer vol +
+scroll-down = mixer vol -
+format-underline = #c7254f
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+

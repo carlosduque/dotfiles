@@ -1,0 +1,69 @@
+########################################################################
+############                    BOTTOMBAR                   ############
+########################################################################
+monitor = ${env:MONITOR}
+;monitor-fallback = HDMI1
+width = 100%
+height = 25
+;offset-x = 1%
+;offset-y = 1%
+radius = 0.0
+fixed-center = true
+bottom = true
+separator = |
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+#background = #0a0f14
+#foreground = #99d1ce
+
+line-size = 2
+line-color = #f00
+
+wm-restack = bspwm
+override-redirect = true
+
+; Enable support for inter-process messaging
+enable-ipc = true
+
+border-size = 0
+;border-left-size = 0
+;border-right-size = 25
+;border-top-size = 0
+;border-bottom-size = 25
+border-color = #00000000
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 3
+module-margin-right = 3
+
+font-0 = "fixed:pixelsize=10;1"
+font-1 = "unifont:fontformat=truetype:size=8:antialias=false;0"
+font-2 = "Noto Sans:Style=Regular"
+font-3 = "Font Awesome 5 Free:style=Solid:size=10;0"
+font-4 = "Font Awesome 5 Free:style=Regular:size=10;0"
+font-5 = "Font Awesome 5 Brands:style=Regular:size=10;0"
+#font-0 = "Wuncon Siji:style=Regular"
+
+modules-left = mpd music
+modules-center = mail weather
+#modules-right = vol mem bat networkspeedup networkspeeddown wireless-network mail weather date
+modules-right = vol mem bat date
+
+#modules-left = ewmh release uptime load-average cpu1 cpu2
+#modules-right = memory1 memory2 memory3 filesystem battery
+
+tray-detached = false
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 2
+tray-maxsize = 20
+tray-scale = 1.0
+tray-position = right
+tray-background = ${colors.background}
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
