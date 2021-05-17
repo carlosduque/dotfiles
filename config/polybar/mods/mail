@@ -2,11 +2,12 @@ type = custom/script
 tail = false
 label = %output%
 exec = $HOME/bin/xtools/statusbar/mailbox
-#click-right = mixer vol +5
 click-left = mbsync --all
-#scroll-up = mixer vol +
-#scroll-down = mixer vol -
-format-underline = #FFFFFF
+
+format = <label>
+format-prefix = " "
+format-prefix-foreground = #35e4e7
+format-underline = #35e4e7
+#format-underline = #38799d #dark cyan
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-

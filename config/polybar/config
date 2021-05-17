@@ -46,7 +46,7 @@ alert = #d08770
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
-; =======================
+
 
 ; Gotham theme ==========
 ;background = #0a0f14
@@ -55,7 +55,7 @@ volume-max = #bf616a
 ;volume-min = #2aa889
 ;volume-med = #edb443
 ;volume-max = #c23127
-; =======================
+
 
 ############ TOPBAR ############
 [bar/topbar]
@@ -140,10 +140,7 @@ label-private-foreground = ${colors.foreground}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-###############################################################################
 ############                       MODULES A-Z                     ############
-###############################################################################
-
 ################################################################################
 [module/backlight]
 include-file = $HOME/.config/polybar//mods/backlight
@@ -187,7 +184,6 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-foreground = #a3c725
 animation-charging-framerate = 750
-
 
 ################################################################################
 [module/cpu1]
@@ -661,26 +657,33 @@ label-maxlen = 50
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-################################################################################
-include-dir = $HOME/.config/polybar/mods
-
 
 include-file = $HOME/.config/polybar/bottombar
 
+#############  CUSTOM MODULES  #################################################
+#include-dir = $HOME/.config/polybar/mods
+
 [module/bat]
 include-file = $HOME/.config/polybar/mods/bat
+
 [module/kernel]
 include-file = $HOME/.config/polybar/mods/kernel
+
 [module/mail]
 include-file = $HOME/.config/polybar/mods/mail
+
 [module/mem]
 include-file = $HOME/.config/polybar/mods/mem
+
 [module/release]
 include-file = $HOME/.config/polybar/mods/release
+
 [module/uptime]
 include-file = $HOME/.config/polybar/mods/uptime
+
 [module/vol]
 include-file = $HOME/.config/polybar/mods/vol
+
 [module/weather]
 include-file = $HOME/.config/polybar/mods/weather
 

@@ -6,6 +6,13 @@ click-right = mixer vol +5
 click-left = mixer vol -5
 scroll-up = mixer vol +
 scroll-down = mixer vol -
+format = <label>
+
+format-prefix = " "
+#format-prefix = " "
+#format-prefix = " "
+#format-prefix = " "
+format-prefix-foreground = #c7254f
 format-underline = #c7254f
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}

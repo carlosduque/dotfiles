@@ -1,6 +1,6 @@
 type = custom/script
 exec = $HOME/bin/xtools/statusbar/weather
-tail = true
+tail = false
 interval = 10
 format = <label>
 format-prefix = " "
